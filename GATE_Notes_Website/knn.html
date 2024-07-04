@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>K-Nearest Neighbour (KNN)</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <h1 id="knn">Introduction to K-Nearest Neighbour (KNN)</h1>
+    <a href="index.html" class="back-link">Back to Syllabus</a>
+    <p>K-Nearest Neighbour (KNN) is a simple, instance-based learning algorithm that is used for both classification and regression tasks. It is one of the simplest machine learning algorithms and works on the principle of proximity.</p>
+    
+    <h2>How KNN Works</h2>
+    <p>The basic idea behind KNN is to find the K nearest data points (neighbors) to the query point and predict the label based on these neighbors. For classification tasks, the label is determined by the majority class among the K neighbors. For regression tasks, the prediction is the average of the values of the K neighbors.</p>
+    
+    <h3>Steps in KNN Algorithm</h3>
+    <ol>
+        <li>Choose the number of neighbors, K.</li>
+        <li>Calculate the distance between the query point and all the points in the dataset.</li>
+        <li>Select the K nearest neighbors based on the calculated distances.</li>
+        <li>For classification, assign the most common class among the K neighbors to the query point. For regression, assign the average of the values of the K neighbors to the query point.</li>
+    </ol>
+    
+    <h2>Distance Metrics</h2>
+    <p>KNN can use various distance metrics to find the nearest neighbors. The most common distance metrics are:</p>
+    <ul>
+        <li>Euclidean Distance</li>
+        <li>Manhattan Distance</li>
+        <li>Minkowski Distance</li>
+    </ul>
+    
+    <h2>Example in Python</h2>
+    <p>Here is a simple example of how to perform K-Nearest Neighbour classification using Python and the <code>scikit-learn</code> library:</p>
+    <pre><code>import numpy as np
+from sklearn.neighbors import KNeighborsClassifier
+
+# Example data
+X = np.array([[1, 2], [2, 3], [3, 4], [5, 6]])
+y = np.array([0, 0, 1, 1])
+
+# Create a KNN classifier with K=3
+knn = KNeighborsClassifier(n_neighbors=3)
+knn.fit(X, y)
+
+# Make predictions
+predictions = knn.predict(X)
+
+# Output results
+print("Predictions:", predictions)</code></pre>
+    
+    <h2>Conclusion</h2>
+    <p>K-Nearest Neighbour is a versatile and intuitive algorithm that can be applied to various types of problems. Its simplicity makes it a great choice for beginners, but it can also be computationally expensive for large datasets.</p>
+    
+</body>
+</html>

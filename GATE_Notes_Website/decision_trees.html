@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Decision Trees</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <h1 id="decision-trees">Introduction to Decision Trees</h1>
+    <a href="index.html" class="back-link">Back to Syllabus</a>
+    <p>Decision Trees are a type of supervised learning algorithm that is mostly used for classification problems. It works for both categorical and continuous input and output variables. A Decision Tree is a flowchart-like structure where an internal node represents a feature (or attribute), the branch represents a decision rule, and each leaf node represents the outcome.</p>
+    
+    <h2>How Decision Trees Work</h2>
+    <p>The algorithm starts with the entire dataset as the root. It uses recursive partitioning to split the data into subsets, which contain instances with similar values (homogenous) for an attribute. It splits the data into subsets in a way that reduces the impurity (i.e., makes the subsets as pure as possible).</p>
+    
+    <h3>Steps in Decision Tree Algorithm</h3>
+    <ol>
+        <li>Select the best attribute using Attribute Selection Measures (ASM) to split the records. ASM includes Gini index, Information Gain, and Gain Ratio.</li>
+        <li>Make that attribute a decision node and break the dataset into smaller subsets.</li>
+        <li>Start tree building by repeating this process recursively for each child until one of the conditions will match:
+            <ul>
+                <li>All the tuples belong to the same attribute value.</li>
+                <li>There are no more remaining attributes.</li>
+                <li>There are no more instances.</li>
+            </ul>
+        </li>
+    </ol>
+    
+    <h2>Example in Python</h2>
+    <p>Here is a simple example of how to perform Decision Tree classification using Python and the <code>scikit-learn</code> library:</p>
+    <pre><code>import numpy as np
+from sklearn.tree import DecisionTreeClassifier
+from sklearn import tree
+
+# Example data
+X = np.array([[1, 2], [3, 4], [5, 6], [7, 8]])
+y = np.array([0, 1, 0, 1])
+
+# Create a Decision Tree classifier
+clf = DecisionTreeClassifier()
+clf = clf.fit(X, y)
+
+# Make predictions
+predictions = clf.predict(X)
+
+# Output results
+print("Predictions:", predictions)
+
+# Plot the tree
+import matplotlib.pyplot as plt
+plt.figure(figsize=(10, 8))
+tree.plot_tree(clf, filled=True)
+plt.show()</code></pre>
+    
+    <h2>Conclusion</h2>
+    <p>Decision Trees are a powerful and intuitive method for both classification and regression tasks. They are easy to understand and interpret, making them a popular choice in data mining and machine learning. However, they can be prone to overfitting, especially with noisy data, so it is often beneficial to prune the tree or use ensemble methods like Random Forests to improve performance.</p>
+    
+    <a href="index.html" class="back-link">Back to Syllabus</a>
+
+</body>
+</html>

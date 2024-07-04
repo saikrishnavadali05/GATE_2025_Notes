@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Support Vector Machine (SVM)</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <h1 id="svm">Introduction to Support Vector Machine (SVM)</h1>
+    <a href="index.html" class="back-link">Back to Syllabus</a>
+    <p>Support Vector Machine (SVM) is a supervised machine learning algorithm that can be used for both classification and regression tasks. However, it is mostly used in classification problems. The goal of SVM is to find a hyperplane in an N-dimensional space that distinctly classifies the data points.</p>
+    
+    <h2>How SVM Works</h2>
+    <p>SVM works by finding the hyperplane that best separates the classes in the feature space. The best hyperplane is the one that maximizes the margin between the classes. The margin is defined as the distance between the hyperplane and the nearest data point from either class, known as a support vector.</p>
+    
+    <h3>Steps in SVM Algorithm</h3>
+    <ol>
+        <li>Choose the kernel function (linear, polynomial, radial basis function, etc.).</li>
+        <li>Transform the data to a higher dimension if necessary.</li>
+        <li>Find the optimal hyperplane that maximizes the margin between the classes.</li>
+        <li>Classify the data points based on which side of the hyperplane they fall on.</li>
+    </ol>
+    
+    <h2>Example in Python</h2>
+    <p>Here is a simple example of how to perform Support Vector Machine classification using Python and the <code>scikit-learn</code> library:</p>
+    <pre><code>import numpy as np
+from sklearn import svm
+
+# Example data
+X = np.array([[1, 2], [2, 3], [3, 3], [2, 1], [3, 2]])
+y = np.array([0, 0, 0, 1, 1])
+
+# Create an SVM model
+model = svm.SVC(kernel='linear')
+model.fit(X, y)
+
+# Make predictions
+predictions = model.predict(X)
+
+# Output results
+print("Support Vectors:", model.support_vectors_)
+print("Coefficients:", model.coef_)
+print("Intercept:", model.intercept_)
+print("Predictions:", predictions)</code></pre>
+    
+    <h2>Conclusion</h2>
+    <p>Support Vector Machine is a powerful and versatile classifier that works well for both linear and non-linear data. It is effective in high-dimensional spaces and is widely used in applications such as image recognition, text categorization, and bioinformatics.</p>
+    
+    <a href="index.html" class="back-link">Back to Syllabus</a>
+
+</body>
+</html>

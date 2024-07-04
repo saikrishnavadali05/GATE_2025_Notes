@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Logistic Regression</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <h1 id="logistic-regression">Introduction to Logistic Regression</h1>
+    <a href="index.html" class="back-link">Back to Syllabus</a>
+    <p>Logistic regression is a statistical method for predicting binary outcomes from data. It is a type of regression analysis used for predicting the outcome of a categorical dependent variable based on one or more predictor variables.</p>
+    
+    <h2>How Logistic Regression Works</h2>
+    <p>Unlike linear regression, logistic regression uses the logistic function to model a binary dependent variable. The logistic function, also called the sigmoid function, is defined as:</p>
+    <pre><code>f(z) = 1 / (1 + e^(-z))</code></pre>
+    <p>Where <code>z</code> is a linear combination of the predictor variables. The logistic regression model can be written as:</p>
+    <pre><code>logit(p) = ln(p / (1 - p)) = b0 + b1*x1 + b2*x2 + ... + bn*xn</code></pre>
+    <p>Where:</p>
+    <ul>
+        <li><code>p</code> is the probability of the dependent variable being 1</li>
+        <li><code>b0</code> is the intercept</li>
+        <li><code>b1, b2, ..., bn</code> are the coefficients of the independent variables <code>x1, x2, ..., xn</code></li>
+    </ul>
+    
+    <h2>Example in Python</h2>
+    <p>Here is a simple example of how to perform logistic regression using Python and the <code>scikit-learn</code> library:</p>
+    <pre><code>import numpy as np
+from sklearn.linear_model import LogisticRegression
+
+# Example data
+X = np.array([[1, 1], [2, 1], [2, 2], [3, 2]])
+y = np.array([0, 0, 1, 1])
+
+# Create a logistic regression model
+model = LogisticRegression().fit(X, y)
+
+# Make predictions
+predictions = model.predict(X)
+
+# Output results
+print("Coefficients:", model.coef_)
+print("Intercept:", model.intercept_)
+print("Predictions:", predictions)</code></pre>
+    
+    <h2>Conclusion</h2>
+    <p>Logistic regression is a powerful tool for binary classification problems. It estimates the probability of an outcome, providing a measure of confidence for the prediction. Logistic regression is widely used in various fields such as medical research, social sciences, and machine learning.</p>
+    
+</body>
+</html>

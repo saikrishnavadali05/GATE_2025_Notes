@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multiple Linear Regression</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <h1 id="multiple-linear-regression">Introduction to Multiple Linear Regression</h1>
+    <a href="index.html" class="back-link">Back to Syllabus</a>
+    <p>Multiple linear regression is an extension of simple linear regression. It is used to predict the value of a dependent variable based on the values of two or more independent variables.</p>
+    
+    <h2>How Multiple Linear Regression Works</h2>
+    <p>The multiple linear regression model assumes a linear relationship between the dependent variable and each of the independent variables. The general form of the multiple linear regression equation is:</p>
+    <pre><code>y = b0 + b1*x1 + b2*x2 + ... + bn*xn</code></pre>
+    <p>Where:</p>
+    <ul>
+        <li><code>y</code> is the dependent variable</li>
+        <li><code>b0</code> is the y-intercept</li>
+        <li><code>b1, b2, ..., bn</code> are the coefficients of the independent variables <code>x1, x2, ..., xn</code></li>
+    </ul>
+    
+    <h2>Assumptions of Multiple Linear Regression</h2>
+    <p>The multiple linear regression model makes several key assumptions:</p>
+    <ul>
+        <li>There is a linear relationship between the dependent variable and the independent variables.</li>
+        <li>The residuals (errors) are normally distributed.</li>
+        <li>There is little or no multicollinearity in the data (independent variables are not highly correlated).</li>
+        <li>Homoscedasticity: The variance of the residuals is constant across all levels of the independent variables.</li>
+        <li>The observations are independent of each other.</li>
+    </ul>
+    
+    <h2>Example in Python</h2>
+    <p>Here is a simple example of how to perform multiple linear regression using Python and the <code>scikit-learn</code> library:</p>
+    <pre><code>import numpy as np
+from sklearn.linear_model import LinearRegression
+
+# Example data
+X = np.array([[1, 1], [1, 2], [2, 2], [2, 3]])
+y = np.dot(X, np.array([1, 2])) + 3
+
+# Create a multiple linear regression model
+model = LinearRegression().fit(X, y)
+
+# Make predictions
+predictions = model.predict(X)
+
+# Output results
+print("Coefficients:", model.coef_)
+print("Intercept:", model.intercept_)
+print("Predictions:", predictions)</code></pre>
+    
+    <h2>Conclusion</h2>
+    <p>Multiple linear regression is a powerful tool for understanding the relationship between multiple independent variables and a dependent variable. It is widely used in various fields, including finance, economics, biology, and social sciences.</p>
+    
+</body>
+</html>

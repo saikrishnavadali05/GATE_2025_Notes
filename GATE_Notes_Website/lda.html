@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Linear Discriminant Analysis (LDA)</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <h1 id="lda">Introduction to Linear Discriminant Analysis (LDA)</h1>
+    <a href="index.html" class="back-link">Back to Syllabus</a>
+    <p>Linear Discriminant Analysis (LDA) is a classification and dimensionality reduction technique commonly used in machine learning. It aims to project the features in higher dimensions to a lower-dimensional space while maximizing the separability between different classes.</p>
+    
+    <h2>How LDA Works</h2>
+    <p>LDA works by finding a linear combination of features that characterizes or separates two or more classes of objects or events. The result of LDA is a set of linear discriminants, which are the axes that the data is projected onto. The goal is to maximize the distance between the means of the classes while minimizing the spread within each class.</p>
+    
+    <h3>Steps in LDA Algorithm</h3>
+    <ol>
+        <li>Compute the mean vectors for each class.</li>
+        <li>Compute the scatter matrices (within-class scatter matrix and between-class scatter matrix).</li>
+        <li>Compute the eigenvectors and eigenvalues for the scatter matrices.</li>
+        <li>Sort the eigenvectors by decreasing eigenvalues and choose the top eigenvectors to form a matrix.</li>
+        <li>Transform the samples onto the new subspace.</li>
+    </ol>
+    
+    <h2>Example in Python</h2>
+    <p>Here is a simple example of how to perform Linear Discriminant Analysis using Python and the <code>scikit-learn</code> library:</p>
+    <pre><code>import numpy as np
+from sklearn.discriminant_analysis import LinearDiscriminantAnalysis
+
+# Example data
+X = np.array([[1, 2], [3, 4], [5, 6], [7, 8]])
+y = np.array([0, 1, 0, 1])
+
+# Create an LDA model
+lda = LinearDiscriminantAnalysis()
+lda.fit(X, y)
+
+# Transform the data
+X_r = lda.transform(X)
+
+# Output results
+print("Transformed Data:", X_r)
+print("Explained Variance Ratio:", lda.explained_variance_ratio_)</code></pre>
+    
+    <h2>Conclusion</h2>
+    <p>Linear Discriminant Analysis is a powerful tool for classification and dimensionality reduction. It helps in maximizing class separability and improving the performance of classification models. LDA is widely used in various fields, including finance, biology, and marketing.</p>
+    
+    <a href="index.html" class="back-link">Back to Syllabus</a>
+
+</body>
+</html>

@@ -1,0 +1,63 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Linear Regression</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <h1>Introduction to Linear Regression</h1>
+    <a href="index.html" class="back-link">Back to Syllabus</a>
+    <p>Linear regression is a basic and commonly used type of predictive analysis. The overall idea of regression is to examine two things:</p>
+    <ol>
+        <li>Does a set of predictor variables do a good job in predicting an outcome (dependent) variable?</li>
+        <li>Which variables in particular are significant predictors of the outcome variable, and in what way do they impact the outcome variable?</li>
+    </ol>
+    <p>These regression estimates are used to explain the relationship between one dependent variable and one or more independent variables. The simplest form of the regression equation with one dependent and one independent variable is defined by the formula:</p>
+    <pre><code>y = mx + b</code></pre>
+    <p>Where:</p>
+    <ul>
+        <li><code>y</code> is the dependent variable</li>
+        <li><code>m</code> is the slope of the line</li>
+        <li><code>x</code> is the independent variable</li>
+        <li><code>b</code> is the y-intercept</li>
+    </ul>
+    
+    <h2>How Linear Regression Works</h2>
+    <p>The goal of linear regression is to find the best-fitting straight line through the points. The best-fitting line is known as the regression line. The formula for a multiple linear regression line is:</p>
+    <pre><code>y = b0 + b1*x1 + b2*x2 + ... + bn*xn</code></pre>
+    <p>Where:</p>
+    <ul>
+        <li><code>y</code> is the dependent variable</li>
+        <li><code>b0</code> is the y-intercept</li>
+        <li><code>b1, b2, ..., bn</code> are the coefficients of the independent variables <code>x1, x2, ..., xn</code></li>
+    </ul>
+    
+    <h2>Example in Python</h2>
+    <p>Here is a simple example of how to perform linear regression using Python and the <code>scikit-learn</code> library:</p>
+    <pre><code>import numpy as np
+from sklearn.linear_model import LinearRegression
+
+# Example data
+X = np.array([[1, 1], [1, 2], [2, 2], [2, 3]])
+y = np.dot(X, np.array([1, 2])) + 3
+
+# Create a linear regression model
+model = LinearRegression().fit(X, y)
+
+# Make predictions
+predictions = model.predict(X)
+
+# Output results
+print("Coefficients:", model.coef_)
+print("Intercept:", model.intercept_)
+print("Predictions:", predictions)</code></pre>
+    
+    <h2>Conclusion</h2>
+    <p>Linear regression is a powerful tool for understanding the relationship between variables and making predictions. It forms the basis for many more complex models and techniques, making it a fundamental concept in machine learning and data science.</p>
+    
+</body>
+</html>
