@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bias-Variance Trade-off</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <h1 id="bias-variance">Introduction to Bias-Variance Trade-off</h1>
+    <a href="index.html" class="back-link">Back to Syllabus</a>
+    <p>The bias-variance trade-off is a fundamental concept in machine learning that describes the trade-off between the error introduced by bias and the error introduced by variance. Understanding this trade-off is crucial for building models that generalize well to new, unseen data.</p>
+    
+    <h2>Bias</h2>
+    <p>Bias refers to the error introduced by approximating a real-world problem, which may be complex, by a simplified model. A model with high bias pays very little attention to the training data and oversimplifies the model. This can lead to high error on both the training and test data, a problem known as underfitting.</p>
+    
+    <h2>Variance</h2>
+    <p>Variance refers to the error introduced by the model's sensitivity to small fluctuations in the training data. A model with high variance pays too much attention to the training data, including the noise. This can lead to high error on the test data, a problem known as overfitting.</p>
+    
+    <h2>The Trade-off</h2>
+    <p>The goal is to find a balance between bias and variance such that the model minimizes the total error. The total error can be decomposed into three parts:</p>
+    <pre><code>Total Error = Bias^2 + Variance + Irreducible Error</code></pre>
+    <p>The irreducible error is the noise inherent in the problem itself. By increasing the complexity of the model, we can reduce bias but increase variance, and vice versa.</p>
+    
+    <h3>Illustrative Example</h3>
+    <p>Consider the problem of fitting a polynomial to a set of data points:</p>
+    <ul>
+        <li>A linear model (a polynomial of degree 1) may not capture the underlying pattern well, leading to high bias and underfitting.</li>
+        <li>A high-degree polynomial model may fit the training data perfectly but perform poorly on new data due to its high variance and overfitting.</li>
+        <li>An intermediate-degree polynomial may provide the best balance, capturing the underlying pattern without overfitting the noise.</li>
+    </ul>
+    
+    <h2>Example in Python</h2>
+    <p>Here is a simple example demonstrating bias-variance trade-off using polynomial regression in Python with the <code>scikit-learn</code> library:</p>
+    <pre><code>import numpy as np
+import matplotlib.pyplot as plt
+from sklearn.preprocessing import PolynomialFeatures
+from sklearn.linear_model import LinearRegression
+from sklearn.metrics import mean_squared_error
+from sklearn.model_selection import train_test_split
+
+# Generate synthetic data
+np.random.seed(0)
+X = 2 - 3 * np.random.normal(0, 1, 100)
+y = X - 2 * (X ** 2) + np.random.normal(-3, 3, 100)
+
+# Transform data to include another axis
+X = X[:, np.newaxis]
+y = y[:, np.newaxis]
+
+# Split the data into training and testing sets
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=0)
+
+# Function to plot the results
+def plot_polynomial_regression(degree):
+    polynomial_features = PolynomialFeatures(degree=degree)
+    X_train_poly = polynomial_features.fit_transform(X_train)
+    X_test_poly = polynomial_features.transform(X_test)
+    
+    model = LinearRegression()
+    model.fit(X_train_poly, y_train)
+    
+    y_train_pred = model.predict(X_train_poly)
+    y_test_pred = model.predict(X_test_poly)
+    
+    plt.scatter(X, y, color='gray')
+    plt.plot(X, model.predict(polynomial_features.transform(X)), label=f"Degree {degree}")
+    plt.xlabel('X')
+    plt.ylabel('y')
+    plt.legend()
+    plt.show()
+    
+    print(f"Degree {degree}")
+    print(f"Train MSE: {mean_squared_error(y_train, y_train_pred)}")
+    print(f"Test MSE: {mean_squared_error(y_test, y_test_pred)}")
+    print()
+
+# Plotting polynomial regression with different degrees
+for degree in [1, 2, 4, 6]:
+    plot_polynomial_regression(degree)</code></pre>
+    
+    <h2>Conclusion</h2>
+    <p>Understanding the bias-variance trade-off helps in building models that generalize well to new data. By carefully selecting the model complexity, we can achieve a good balance between bias and variance, minimizing the total error and improving the model's performance on unseen data.</p>
+    
+    <a href="index.html" class="back-link">Back to Syllabus</a>
+
+</body>
+</html>

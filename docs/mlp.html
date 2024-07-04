@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multi-Layer Perceptron (MLP)</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <h1 id="mlp">Introduction to Multi-Layer Perceptron (MLP)</h1>
+    <a href="index.html" class="back-link">Back to Syllabus</a>
+    <p>Multi-Layer Perceptron (MLP) is a class of feedforward artificial neural network (ANN). An MLP consists of at least three layers of nodes: an input layer, a hidden layer, and an output layer. Except for the input nodes, each node is a neuron that uses a nonlinear activation function.</p>
+    
+    <h2>How MLP Works</h2>
+    <p>MLPs are fully connected networks, meaning each node in one layer connects to every node in the following layer. The MLP transforms input data into meaningful output through the following steps:</p>
+    <ol>
+        <li><strong>Input Layer:</strong> Takes the input features.</li>
+        <li><strong>Hidden Layer:</strong> Applies weights to the inputs and passes them through an activation function.</li>
+        <li><strong>Output Layer:</strong> Produces the final output of the network.</li>
+    </ol>
+    <p>The training process involves adjusting the weights based on the error of the output using backpropagation and optimization techniques like gradient descent.</p>
+    
+    <h3>Activation Functions</h3>
+    <p>Activation functions introduce non-linearity into the network. Common activation functions include:</p>
+    <ul>
+        <li><strong>Sigmoid:</strong> <code>σ(x) = 1 / (1 + e^(-x))</code></li>
+        <li><strong>Tanh:</strong> <code>tanh(x) = (e^x - e^(-x)) / (e^x + e^(-x))</code></li>
+        <li><strong>ReLU:</strong> <code>ReLU(x) = max(0, x)</code></li>
+    </ul>
+    
+    <h2>Example in Python</h2>
+    <p>Here is a simple example of how to create and train a Multi-Layer Perceptron using Python and the <code>scikit-learn</code> library:</p>
+    <pre><code>import numpy as np
+from sklearn.neural_network import MLPClassifier
+from sklearn.datasets import make_classification
+from sklearn.model_selection import train_test_split
+from sklearn.metrics import accuracy_score
+
+# Generate synthetic data
+X, y = make_classification(n_samples=1000, n_features=20, random_state=42)
+
+# Split the data into training and testing sets
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
+
+# Create an MLP classifier
+mlp = MLPClassifier(hidden_layer_sizes=(50,), max_iter=1000, activation='relu', solver='adam', random_state=42)
+
+# Train the classifier
+mlp.fit(X_train, y_train)
+
+# Make predictions
+y_pred = mlp.predict(X_test)
+
+# Output results
+print("Accuracy:", accuracy_score(y_test, y_pred))</code></pre>
+    
+    <h2>Conclusion</h2>
+    <p>Multi-Layer Perceptrons are powerful models capable of learning complex patterns in data. They are widely used for a variety of tasks, including classification, regression, and time series forecasting. Understanding the basic architecture and training process of MLPs is crucial for leveraging their full potential in machine learning applications.</p>
+    
+    <a href="index.html" class="back-link">Back to Syllabus</a>
+
+</body>
+</html>
