@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hierarchical Clustering (Bottom-Up)</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <h1 id="hierarchical-clustering-bottom-up">Introduction to Hierarchical Clustering (Bottom-Up)</h1>
+    <a href="index.html" class="back-link">Back to Syllabus</a>
+    <p>Hierarchical Clustering is a method of cluster analysis that builds a hierarchy of clusters. In the bottom-up approach, also known as agglomerative clustering, the algorithm starts with each data point as its own cluster and merges the closest pairs of clusters until only one cluster remains.</p>
+    
+    <h2>How Hierarchical Clustering (Bottom-Up) Works</h2>
+    <p>The bottom-up hierarchical clustering algorithm follows these steps:</p>
+    <ol>
+        <li><strong>Initialization:</strong> Start with each data point as a separate cluster.</li>
+        <li><strong>Merge Clusters:</strong> At each step, merge the two clusters that are the closest to each other based on a given distance metric.</li>
+        <li><strong>Repeat:</strong> Repeat the merging step until only one cluster remains or a stopping criterion is met (e.g., a specified number of clusters is reached).</li>
+    </ol>
+    
+    <h3>Distance Metrics</h3>
+    <p>Common distance metrics used in hierarchical clustering include:</p>
+    <ul>
+        <li><strong>Euclidean Distance:</strong> The straight-line distance between two points in Euclidean space.</li>
+        <li><strong>Manhattan Distance:</strong> The sum of the absolute differences of their Cartesian coordinates.</li>
+        <li><strong>Cosine Distance:</strong> Measures the cosine of the angle between two vectors.</li>
+    </ul>
+    
+    <h3>Linkage Criteria</h3>
+    <p>The choice of linkage criterion affects the shape of the clusters. Common linkage criteria include:</p>
+    <ul>
+        <li><strong>Single Linkage:</strong> The distance between the closest points of the clusters.</li>
+        <li><strong>Complete Linkage:</strong> The distance between the farthest points of the clusters.</li>
+        <li><strong>Average Linkage:</strong> The average distance between all pairs of points in the clusters.</li>
+        <li><strong>Ward's Method:</strong> Minimizes the total within-cluster variance.</li>
+    </ul>
+    
+    <h2>Example in Python</h2>
+    <p>Here is a simple example of how to perform Hierarchical Clustering using Python and the <code>scipy</code> and <code>matplotlib</code> libraries:</p>
+    <pre><code>import numpy as np
+import matplotlib.pyplot as plt
+from scipy.cluster.hierarchy import dendrogram, linkage
+
+# Example data
+X = np.array([[1, 2], [2, 3], [3, 4], [5, 6], [7, 8], [8, 9]])
+
+# Perform hierarchical clustering using Ward's method
+Z = linkage(X, method='ward')
+
+# Plot the dendrogram
+plt.figure(figsize=(10, 5))
+dendrogram(Z)
+plt.title('Hierarchical Clustering Dendrogram')
+plt.xlabel('Index')
+plt.ylabel('Distance')
+plt.show()</code></pre>
+    
+    <h2>Conclusion</h2>
+    <p>Hierarchical Clustering (Bottom-Up) is a powerful method for building a hierarchy of clusters. It is useful for understanding the structure of data and for identifying natural groupings. By choosing appropriate distance metrics and linkage criteria, hierarchical clustering can be effectively applied to various types of datasets.</p>
+    
+    <a href="index.html" class="back-link">Back to Syllabus</a>
+
+</body>
+</html>
