@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hierarchical Clustering (Top-Down)</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <h1 id="hierarchical-clustering">Introduction to Hierarchical Clustering (Top-Down)</h1>
+    <a href="index.html" class="back-link">Back to Syllabus</a>
+    <p>Hierarchical Clustering is a method of cluster analysis which seeks to build a hierarchy of clusters. In the top-down approach, also known as divisive clustering, the algorithm starts with all data points in one cluster and recursively splits the cluster into smaller clusters.</p>
+    
+    <h2>How Hierarchical Clustering (Top-Down) Works</h2>
+    <p>The top-down hierarchical clustering algorithm follows these steps:</p>
+    <ol>
+        <li><strong>Initialization:</strong> Start with all data points in a single cluster.</li>
+        <li><strong>Splitting:</strong> Recursively split the clusters into smaller clusters. At each step, choose the cluster that minimizes a given criterion (e.g., minimizing the within-cluster variance) for splitting.</li>
+        <li><strong>Stopping Criteria:</strong> The process continues until each data point is in its own singleton cluster or a stopping criterion is met (e.g., a specified number of clusters is reached).</li>
+    </ol>
+    
+    <h3>Distance Metrics</h3>
+    <p>Common distance metrics used in hierarchical clustering include:</p>
+    <ul>
+        <li><strong>Euclidean Distance:</strong> The straight-line distance between two points in Euclidean space.</li>
+        <li><strong>Manhattan Distance:</strong> The sum of the absolute differences of their Cartesian coordinates.</li>
+        <li><strong>Cosine Distance:</strong> Measures the cosine of the angle between two vectors.</li>
+    </ul>
+    
+    <h3>Linkage Criteria</h3>
+    <p>The choice of linkage criterion affects the shape of the clusters. Common linkage criteria include:</p>
+    <ul>
+        <li><strong>Single Linkage:</strong> The distance between the closest points of the clusters.</li>
+        <li><strong>Complete Linkage:</strong> The distance between the farthest points of the clusters.</li>
+        <li><strong>Average Linkage:</strong> The average distance between all pairs of points in the clusters.</li>
+        <li><strong>Ward's Method:</strong> Minimizes the total within-cluster variance.</li>
+    </ul>
+    
+    <h2>Example in Python</h2>
+    <p>Here is a simple example of how to perform Hierarchical Clustering using Python and the <code>scipy</code> and <code>matplotlib</code> libraries:</p>
+    <pre><code>import numpy as np
+import matplotlib.pyplot as plt
+from scipy.cluster.hierarchy import dendrogram, linkage
+
+# Example data
+X = np.array([[1, 2], [2, 3], [3, 4], [5, 6], [7, 8], [8, 9]])
+
+# Perform hierarchical clustering using Ward's method
+Z = linkage(X, method='ward')
+
+# Plot the dendrogram
+plt.figure(figsize=(10, 5))
+dendrogram(Z)
+plt.title('Hierarchical Clustering Dendrogram')
+plt.xlabel('Index')
+plt.ylabel('Distance')
+plt.show()</code></pre>
+    
+    <h2>Conclusion</h2>
+    <p>Hierarchical Clustering (Top-Down) is a powerful method for building a hierarchy of clusters. It is useful for understanding the structure of data and for identifying natural groupings. By choosing appropriate distance metrics and linkage criteria, hierarchical clustering can be effectively applied to various types of datasets.</p>
+    
+    <a href="index.html" class="back-link">Back to Syllabus</a>
+
+</body>
+</html>
