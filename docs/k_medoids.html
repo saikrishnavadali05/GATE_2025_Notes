@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>K-Medoids Clustering</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <h1 id="k-medoids">Introduction to K-Medoids Clustering</h1>
+    <a href="index.html" class="back-link">Back to Syllabus</a>
+    <p>K-Medoids Clustering is an unsupervised machine learning algorithm used to partition a dataset into K clusters. It is similar to K-Means but is more robust to noise and outliers because it uses medoids instead of centroids. A medoid is the most centrally located data point in a cluster.</p>
+    
+    <h2>How K-Medoids Works</h2>
+    <p>The K-Medoids algorithm follows these steps:</p>
+    <ol>
+        <li><strong>Initialization:</strong> Choose K initial medoids randomly from the dataset.</li>
+        <li><strong>Assignment:</strong> Assign each data point to the nearest medoid.</li>
+        <li><strong>Update:</strong> For each medoid, calculate the total cost of swapping it with any other data point in the cluster. If the total cost is reduced by swapping, perform the swap.</li>
+        <li><strong>Repeat:</strong> Repeat the assignment and update steps until the medoids no longer change or a maximum number of iterations is reached.</li>
+    </ol>
+    
+    <h3>Choosing the Number of Clusters (K)</h3>
+    <p>Choosing the appropriate number of clusters is crucial for the effectiveness of K-Medoids. Common methods for determining the optimal value of K include:</p>
+    <ul>
+        <li><strong>Elbow Method:</strong> Plot the total cost (sum of distances between data points and their medoids) as a function of K. The optimal K is often found at the "elbow point" where the rate of decrease sharply slows.</li>
+        <li><strong>Silhouette Score:</strong> Measure how similar an object is to its own cluster compared to other clusters. The optimal K maximizes the average silhouette score.</li>
+    </ul>
+    
+    <h2>Example in Python</h2>
+    <p>Here is a simple example of how to perform K-Medoids clustering using Python and the <code>scikit-learn-extra</code> library, which includes the K-Medoids implementation:</p>
+    <pre><code>import numpy as np
+import matplotlib.pyplot as plt
+from sklearn_extra.cluster import KMedoids
+
+# Example data
+X = np.array([[1, 2], [1, 4], [1, 0],
+              [4, 2], [4, 4], [4, 0]])
+
+# Create a K-Medoids model with K=2
+kmedoids = KMedoids(n_clusters=2, random_state=0)
+kmedoids.fit(X)
+
+# Get cluster assignments and medoids
+labels = kmedoids.labels_
+medoids = kmedoids.cluster_centers_
+
+# Output results
+print("Cluster Labels:", labels)
+print("Medoids:", medoids)
+
+# Plotting the clusters
+plt.scatter(X[:, 0], X[:, 1], c=labels, cmap='viridis')
+plt.scatter(medoids[:, 0], medoids[:, 1], s=300, c='red', marker='x')
+plt.xlabel('Feature 1')
+plt.ylabel('Feature 2')
+plt.title('K-Medoids Clustering')
+plt.show()</code></pre>
+    
+    <h2>Conclusion</h2>
+    <p>K-Medoids Clustering is a robust algorithm for partitioning data into clusters. It is less sensitive to noise and outliers compared to K-Means. Understanding the basic principles and techniques for choosing the number of clusters can help in effectively applying K-Medoids to real-world problems.</p>
+    
+    <a href="index.html" class="back-link">Back to Syllabus</a>
+
+</body>
+</html>
