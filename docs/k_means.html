@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>K-Means Clustering</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <h1 id="k-means">Introduction to K-Means Clustering</h1>
+    <a href="index.html" class="back-link">Back to Syllabus</a>
+    <p>K-Means Clustering is an unsupervised machine learning algorithm used to partition a dataset into K distinct, non-overlapping clusters. Each cluster is defined by its centroid, which is the mean of all the data points in the cluster. The algorithm aims to minimize the sum of the squared distances between the data points and their respective cluster centroids.</p>
+    
+    <h2>How K-Means Works</h2>
+    <p>The K-Means algorithm follows these steps:</p>
+    <ol>
+        <li><strong>Initialization:</strong> Choose K initial centroids, either randomly or using some heuristic.</li>
+        <li><strong>Assignment:</strong> Assign each data point to the nearest centroid, forming K clusters.</li>
+        <li><strong>Update:</strong> Recalculate the centroids of each cluster by taking the mean of all data points assigned to that cluster.</li>
+        <li><strong>Repeat:</strong> Repeat the assignment and update steps until the centroids no longer change significantly or a maximum number of iterations is reached.</li>
+    </ol>
+    
+    <h3>Choosing the Number of Clusters (K)</h3>
+    <p>Choosing the appropriate number of clusters is crucial for the effectiveness of K-Means. Common methods for determining the optimal value of K include:</p>
+    <ul>
+        <li><strong>Elbow Method:</strong> Plot the sum of squared distances from each point to its assigned centroid as a function of K. The optimal K is often found at the "elbow point" where the rate of decrease sharply slows.</li>
+        <li><strong>Silhouette Score:</strong> Measure how similar an object is to its own cluster compared to other clusters. The optimal K maximizes the average silhouette score.</li>
+    </ul>
+    
+    <h2>Example in Python</h2>
+    <p>Here is a simple example of how to perform K-Means clustering using Python and the <code>scikit-learn</code> library:</p>
+    <pre><code>import numpy as np
+import matplotlib.pyplot as plt
+from sklearn.cluster import KMeans
+
+# Example data
+X = np.array([[1, 2], [1, 4], [1, 0],
+              [4, 2], [4, 4], [4, 0]])
+
+# Create a K-Means model with K=2
+kmeans = KMeans(n_clusters=2, random_state=0)
+kmeans.fit(X)
+
+# Get cluster assignments and centroids
+labels = kmeans.labels_
+centroids = kmeans.cluster_centers_
+
+# Output results
+print("Cluster Labels:", labels)
+print("Centroids:", centroids)
+
+# Plotting the clusters
+plt.scatter(X[:, 0], X[:, 1], c=labels, cmap='viridis')
+plt.scatter(centroids[:, 0], centroids[:, 1], s=300, c='red', marker='x')
+plt.xlabel('Feature 1')
+plt.ylabel('Feature 2')
+plt.title('K-Means Clustering')
+plt.show()</code></pre>
+    
+    <h2>Conclusion</h2>
+    <p>K-Means Clustering is a simple yet powerful algorithm for partitioning data into clusters. It is widely used in various applications such as market segmentation, image compression, and pattern recognition. Understanding the basic principles and techniques for choosing the number of clusters can help in effectively applying K-Means to real-world problems.</p>
+    
+    <a href="index.html" class="back-link">Back to Syllabus</a>
+
+</body>
+</html>
