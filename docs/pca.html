@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Principal Component Analysis (PCA)</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <h1 id="pca">Introduction to Principal Component Analysis (PCA)</h1>
+    <a href="index.html" class="back-link">Back to Syllabus</a>
+    <p>Principal Component Analysis (PCA) is a statistical technique used for dimensionality reduction. It transforms the data into a new coordinate system where the greatest variances by any projection of the data come to lie on the first coordinates (called principal components), the second greatest variances on the second coordinates, and so on.</p>
+    
+    <h2>How PCA Works</h2>
+    <p>The PCA algorithm follows these steps:</p>
+    <ol>
+        <li><strong>Standardize the Data:</strong> Standardize the range of continuous initial variables so that each has mean zero and variance one.</li>
+        <li><strong>Compute the Covariance Matrix:</strong> Compute the covariance matrix to understand how the variables are varying from the mean with respect to each other.</li>
+        <li><strong>Compute the Eigenvectors and Eigenvalues:</strong> Calculate the eigenvectors and eigenvalues of the covariance matrix to identify the principal components.</li>
+        <li><strong>Sort Eigenvalues and Eigenvectors:</strong> Sort the eigenvalues in descending order and select the top k eigenvectors that correspond to the k largest eigenvalues.</li>
+        <li><strong>Transform the Data:</strong> Transform the original data set by multiplying it by the eigenvectors to get the new data set with reduced dimensions.</li>
+    </ol>
+    
+    <h3>Applications of PCA</h3>
+    <p>PCA is widely used in various fields, including:</p>
+    <ul>
+        <li><strong>Data Visualization:</strong> Reducing the dimensionality of data to visualize it in 2D or 3D.</li>
+        <li><strong>Noise Reduction:</strong> Removing noise from data by keeping only the most significant components.</li>
+        <li><strong>Feature Extraction:</strong> Extracting important features from high-dimensional data.</li>
+    </ul>
+    
+    <h2>Example in Python</h2>
+    <p>Here is a simple example of how to perform PCA using Python and the <code>scikit-learn</code> library:</p>
+    <pre><code>import numpy as np
+import matplotlib.pyplot as plt
+from sklearn.decomposition import PCA
+from sklearn.datasets import load_iris
+
+# Load example data
+data = load_iris()
+X = data.data
+y = data.target
+
+# Create a PCA model with 2 components
+pca = PCA(n_components=2)
+X_r = pca.fit_transform(X)
+
+# Output explained variance ratio
+print("Explained variance ratio:", pca.explained_variance_ratio_)
+
+# Plotting the PCA results
+plt.figure(figsize=(8, 6))
+colors = ['navy', 'turquoise', 'darkorange']
+lw = 2
+
+for color, i, target_name in zip(colors, [0, 1, 2], data.target_names):
+    plt.scatter(X_r[y == i, 0], X_r[y == i, 1], color=color, alpha=.8, lw=lw,
+                label=target_name)
+plt.legend(loc='best', shadow=False, scatterpoints=1)
+plt.title('PCA of IRIS dataset')
+plt.xlabel('Principal Component 1')
+plt.ylabel('Principal Component 2')
+plt.show()</code></pre>
+    
+    <h2>Conclusion</h2>
+    <p>Principal Component Analysis (PCA) is a versatile and powerful technique for reducing the dimensionality of data. By transforming the data to a new coordinate system, PCA helps in visualizing, understanding, and simplifying complex datasets while retaining their most significant features.</p>
+    
+    <a href="index.html" class="back-link">Back to Syllabus</a>
+
+</body>
+</html>
