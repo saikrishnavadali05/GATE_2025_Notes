@@ -1,8 +1,63 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<title>Subspaces</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script type="text/javascript" id="MathJax-script" async
+      src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+    </script>
+    <title>Subspaces</title>
+    <link rel="stylesheet" href="../styles.css">
 </head>
 <body>
+
+    <h1 id="subspaces">Subspaces</h1>
+    <a href="linear_algebra.html" class="back-link">Back to Linear Algebra Topics</a>
+    <p>In linear algebra, a subspace is a vector space that is wholly contained within another vector space. Subspaces are important in understanding the structure of vector spaces and their properties.</p>
+    
+    <h2>Definition</h2>
+    <p>A subset \( W \) of a vector space \( V \) is called a subspace if \( W \) is itself a vector space under the operations of vector addition and scalar multiplication defined on \( V \). Formally, \( W \) is a subspace of \( V \) if:</p>
+    <ul>
+        <li>The zero vector of \( V \) is in \( W \).</li>
+        <li>For every \( u, v \in W \), the sum \( u + v \in W \).</li>
+        <li>For every \( u \in W \) and every scalar \( c \), the scalar product \( cu \in W \).</li>
+    </ul>
+    
+    <h2>Examples</h2>
+    <p>Consider the vector space \( \mathbb{R}^3 \). Some examples of subspaces of \( \mathbb{R}^3 \) include:</p>
+    <ul>
+        <li>The set containing only the zero vector: \( \{(0, 0, 0)\} \).</li>
+        <li>A line through the origin, such as \( \{(x, 0, 0) \mid x \in \mathbb{R} \} \).</li>
+        <li>A plane through the origin, such as \( \{(x, y, 0) \mid x, y \in \mathbb{R} \} \).</li>
+    </ul>
+    
+    <h2>Properties</h2>
+    <p>Subspaces have several important properties:</p>
+    <ul>
+        <li><strong>Closed under addition:</strong> If \( u \) and \( v \) are in a subspace \( W \), then \( u + v \) is also in \( W \).</li>
+        <li><strong>Closed under scalar multiplication:</strong> If \( u \) is in a subspace \( W \) and \( c \) is a scalar, then \( cu \) is also in \( W \).</li>
+        <li><strong>Contains the zero vector:</strong> The zero vector of the larger vector space \( V \) is also in the subspace \( W \).</li>
+    </ul>
+    
+    <h2>Basis and Dimension</h2>
+    <p>The basis of a subspace is a set of linearly independent vectors that span the subspace. The number of vectors in the basis of a subspace \( W \) is called the dimension of \( W \), denoted as \( \dim(W) \).</p>
+    
+    <h2>Example</h2>
+    <p>Consider the vector space \( \mathbb{R}^2 \) and the subspace \( W = \{(x, 2x) \mid x \in \mathbb{R} \} \). The set \( \{(1, 2)\} \) is a basis for \( W \) because it is linearly independent and spans \( W \). The dimension of \( W \) is 1.</p>
+    
+    <h2>Applications</h2>
+    <p>Subspaces are used in various applications, including:</p>
+    <ul>
+        <li><strong>Solving linear systems:</strong> Understanding the solution space of a system of linear equations.</li>
+        <li><strong>Fourier analysis:</strong> Decomposing functions into orthogonal components.</li>
+        <li><strong>Principal component analysis (PCA):</strong> Reducing the dimensionality of data while preserving variance.</li>
+    </ul>
+    
+    <h2>Conclusion</h2>
+    <p>Subspaces are a fundamental concept in linear algebra that provide insight into the structure and properties of vector spaces. They are crucial for various applications in mathematics, physics, engineering, and computer science.</p>
+    
+    <a href="linear_algebra.html" class="back-link">Back to Linear Algebra Topics</a>
+
 </body>
 </html>
