@@ -1,8 +1,61 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<title>Er Model</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ER Model</title>
+    <link rel="stylesheet" href="../styles.css">
 </head>
 <body>
+
+    <h1 id="er-model">Entity-Relationship (ER) Model</h1>
+    <a href="db_management_warehousing.html" class="back-link">Back to Database Management and Warehousing Topics</a>
+    <p>The Entity-Relationship (ER) model is a conceptual framework used to describe the structure of a database. It uses entities, attributes, and relationships to represent data and its relationships.</p>
+    
+    <h2>Entities</h2>
+    <p>An entity is a real-world object or concept that can be distinctly identified. Each entity has attributes that describe its properties. Entities are usually represented as rectangles in ER diagrams.</p>
+    
+    <h2>Attributes</h2>
+    <p>Attributes are properties or characteristics of an entity. They are usually represented as ovals connected to their respective entity rectangles in ER diagrams. There are several types of attributes:</p>
+    <ul>
+        <li><strong>Simple Attribute:</strong> Cannot be divided further (e.g., age).</li>
+        <li><strong>Composite Attribute:</strong> Can be divided into smaller sub-parts (e.g., full name can be divided into first name and last name).</li>
+        <li><strong>Derived Attribute:</strong> Can be derived from other attributes (e.g., age can be derived from date of birth).</li>
+        <li><strong>Multi-valued Attribute:</strong> Can have multiple values (e.g., phone numbers).</li>
+    </ul>
+    
+    <h2>Relationships</h2>
+    <p>Relationships are associations between entities. They are represented as diamonds in ER diagrams and connect entity rectangles. There are three types of relationships:</p>
+    <ul>
+        <li><strong>One-to-One (1:1):</strong> Each entity in the relationship will have exactly one related entity (e.g., a person has one passport).</li>
+        <li><strong>One-to-Many (1:N):</strong> One entity is related to multiple entities (e.g., a mother can have many children).</li>
+        <li><strong>Many-to-Many (M:N):</strong> Multiple entities are related to multiple entities (e.g., students and courses).</li>
+    </ul>
+    
+    <h2>Keys</h2>
+    <p>Keys are attributes or sets of attributes that uniquely identify an entity. There are several types of keys:</p>
+    <ul>
+        <li><strong>Primary Key:</strong> A unique identifier for an entity.</li>
+        <li><strong>Candidate Key:</strong> A set of attributes that uniquely identify an entity and can be chosen as the primary key.</li>
+        <li><strong>Foreign Key:</strong> An attribute in one table that refers to the primary key of another table.</li>
+    </ul>
+    
+    <h2>ER Diagram</h2>
+    <p>An ER diagram is a visual representation of an entity-relationship model. It consists of entities, attributes, and relationships, and is used to design databases at a conceptual level. Below is an example of an ER diagram:</p>
+    <p><img src="er_diagram_example.png" alt="Example ER Diagram" style="width:100%;max-width:600px;"></p>
+    
+    <h2>Example</h2>
+    <p>Consider a university database with entities such as Student, Course, and Instructor. The relationships could be:</p>
+    <ul>
+        <li>Students enroll in courses (many-to-many).</li>
+        <li>Instructors teach courses (one-to-many).</li>
+    </ul>
+    <p>Attributes for Student might include StudentID, Name, and Major. Attributes for Course might include CourseID, Title, and Credits. Attributes for Instructor might include InstructorID, Name, and Department.</p>
+    
+    <h2>Conclusion</h2>
+    <p>The ER model is a powerful tool for designing and representing databases. It provides a clear and organized way to represent entities, attributes, and relationships, making it easier to understand and implement complex databases.</p>
+    
+    <a href="db_management_warehousing.html" class="back-link">Back to Database Management and Warehousing Topics</a>
+
 </body>
 </html>
