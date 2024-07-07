@@ -1,8 +1,82 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<title>Relational Algebra</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Relational Algebra</title>
+    <link rel="stylesheet" href="../styles.css">
 </head>
 <body>
+
+    <h1 id="relational-algebra">Relational Algebra</h1>
+    <a href="db_management_warehousing.html" class="back-link">Back to Database Management and Warehousing Topics</a>
+    <p>Relational algebra is a procedural query language that operates on the relations (tables) of a relational database. It provides a set of operations to manipulate and retrieve data from these relations.</p>
+    
+    <h2>Basic Operations</h2>
+    <p>The fundamental operations of relational algebra include:</p>
+    <ul>
+        <li><strong>Select (σ):</strong> Selects rows from a relation that satisfy a given predicate.</li>
+        <li><strong>Project (π):</strong> Selects specific columns from a relation.</li>
+        <li><strong>Union (⋃):</strong> Combines the tuples of two relations and removes duplicates.</li>
+        <li><strong>Set Difference (-):</strong> Returns the tuples that are in one relation but not in another.</li>
+        <li><strong>Cartesian Product (×):</strong> Combines tuples from two relations in a combinatorial fashion.</li>
+        <li><strong>Rename (ρ):</strong> Renames the attributes of a relation.</li>
+    </ul>
+    
+    <h2>Select Operation (σ)</h2>
+    <p>The select operation is used to filter rows based on a specified condition. It is denoted by the symbol σ (sigma).</p>
+    <p>Example:</p>
+    <pre><code>σ<sub>condition</sub>(Relation)</code></pre>
+    <p>If we have a relation Student and we want to select students with age greater than 20, we write:</p>
+    <pre><code>σ<sub>age > 20</sub>(Student)</code></pre>
+    
+    <h2>Project Operation (π)</h2>
+    <p>The project operation is used to select specific columns from a relation. It is denoted by the symbol π (pi).</p>
+    <p>Example:</p>
+    <pre><code>π<sub>column1, column2, ...</sub>(Relation)</code></pre>
+    <p>If we want to select only the names and ages of students, we write:</p>
+    <pre><code>π<sub>Name, Age</sub>(Student)</code></pre>
+    
+    <h2>Union Operation (⋃)</h2>
+    <p>The union operation combines the tuples of two relations and removes duplicates. It is denoted by the symbol ⋃.</p>
+    <p>Example:</p>
+    <pre><code>Relation1 ⋃ Relation2</code></pre>
+    <p>If we have two relations, GraduateStudents and UndergraduateStudents, we can combine them using:</p>
+    <pre><code>GraduateStudents ⋃ UndergraduateStudents</code></pre>
+    
+    <h2>Set Difference Operation (-)</h2>
+    <p>The set difference operation returns the tuples that are in one relation but not in another. It is denoted by the symbol -.</p>
+    <p>Example:</p>
+    <pre><code>Relation1 - Relation2</code></pre>
+    <p>If we want to find students who are not graduates, we write:</p>
+    <pre><code>Student - GraduateStudents</code></pre>
+    
+    <h2>Cartesian Product Operation (×)</h2>
+    <p>The Cartesian product operation combines tuples from two relations in a combinatorial fashion. It is denoted by the symbol ×.</p>
+    <p>Example:</p>
+    <pre><code>Relation1 × Relation2</code></pre>
+    <p>If we want to combine Students and Courses relations, we write:</p>
+    <pre><code>Student × Course</code></pre>
+    
+    <h2>Rename Operation (ρ)</h2>
+    <p>The rename operation is used to rename the attributes of a relation. It is denoted by the symbol ρ (rho).</p>
+    <p>Example:</p>
+    <pre><code>ρ<sub>new_name</sub>(Relation)</code></pre>
+    <p>If we want to rename the Student relation to Scholar, we write:</p>
+    <pre><code>ρ<sub>Scholar</sub>(Student)</code></pre>
+    
+    <h2>Additional Operations</h2>
+    <p>Relational algebra also includes additional operations such as:</p>
+    <ul>
+        <li><strong>Intersection (∩):</strong> Returns the tuples that are common to both relations.</li>
+        <li><strong>Join (⨝):</strong> Combines related tuples from two relations based on a common attribute.</li>
+        <li><strong>Division (÷):</strong> Divides one relation by another.</li>
+    </ul>
+    
+    <h2>Conclusion</h2>
+    <p>Relational algebra provides a powerful and expressive framework for querying relational databases. Understanding these operations is crucial for working with relational databases and designing efficient queries.</p>
+    
+    <a href="db_management_warehousing.html" class="back-link">Back to Database Management and Warehousing Topics</a>
+
 </body>
 </html>
