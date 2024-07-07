@@ -1,8 +1,65 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<title>Eigenvalues Eigenvectors</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eigenvalues and Eigenvectors</title>
+    <link rel="stylesheet" href="../styles.css">
 </head>
 <body>
+
+    <h1 id="eigenvalues-eigenvectors">Eigenvalues and Eigenvectors</h1>
+    <a href="linear_algebra.html" class="back-link">Back to Linear Algebra Topics</a>
+    <p>Eigenvalues and eigenvectors are fundamental concepts in linear algebra, with applications across many fields including physics, engineering, and computer science.</p>
+    
+    <h2>Definition</h2>
+    <p>Given a square matrix \( A \), an eigenvector \( v \) and its corresponding eigenvalue \( \lambda \) satisfy the equation:</p>
+    <p style="text-align: center;">\( A v = \lambda v \)</p>
+    <p>where \( v \) is a non-zero vector and \( \lambda \) is a scalar.</p>
+    
+    <h2>Finding Eigenvalues and Eigenvectors</h2>
+    <p>To find the eigenvalues of a matrix \( A \), solve the characteristic equation:</p>
+    <p style="text-align: center;">\( \det(A - \lambda I) = 0 \)</p>
+    <p>where \( I \) is the identity matrix of the same dimension as \( A \).</p>
+    <p>Once the eigenvalues are found, the corresponding eigenvectors can be found by solving the equation:</p>
+    <p style="text-align: center;">\( (A - \lambda I)v = 0 \)</p>
+    
+    <h2>Example</h2>
+    <p>Consider the matrix:</p>
+    <pre><code> A = [4  1]
+        [2  3]</code></pre>
+    <p>To find the eigenvalues, solve the characteristic equation:</p>
+    <p style="text-align: center;">\( \det \begin{pmatrix} 4-\lambda & 1 \\ 2 & 3-\lambda \end{pmatrix} = 0 \)</p>
+    <p>This simplifies to:</p>
+    <p style="text-align: center;">\( (4-\lambda)(3-\lambda) - 2 = \lambda^2 - 7\lambda + 10 = 0 \)</p>
+    <p>The solutions to this quadratic equation are:</p>
+    <p style="text-align: center;">\( \lambda_1 = 5, \lambda_2 = 2 \)</p>
+    <p>To find the eigenvectors, solve:</p>
+    <p style="text-align: center;">\( (A - 5I)v = 0 \)</p>
+    <p>and</p>
+    <p style="text-align: center;">\( (A - 2I)v = 0 \)</p>
+    <p>For \( \lambda_1 = 5 \):</p>
+    <p style="text-align: center;">\( \begin{pmatrix} -1 & 1 \\ 2 & -2 \end{pmatrix} \begin{pmatrix} x \\ y \end{pmatrix} = 0 \)</p>
+    <p>which gives the eigenvector:</p>
+    <p style="text-align: center;">\( v_1 = \begin{pmatrix} 1 \\ 1 \end{pmatrix} \)</p>
+    <p>For \( \lambda_2 = 2 \):</p>
+    <p style="text-align: center;">\( \begin{pmatrix} 2 & 1 \\ 2 & 1 \end{pmatrix} \begin{pmatrix} x \\ y \end{pmatrix} = 0 \)</p>
+    <p>which gives the eigenvector:</p>
+    <p style="text-align: center;">\( v_2 = \begin{pmatrix} -1 \\ 2 \end{pmatrix} \)</p>
+    
+    <h2>Applications</h2>
+    <p>Eigenvalues and eigenvectors have numerous applications, including:</p>
+    <ul>
+        <li>Principal Component Analysis (PCA)</li>
+        <li>Stability analysis in systems of differential equations</li>
+        <li>Quantum mechanics</li>
+        <li>Vibrations and dynamics</li>
+    </ul>
+    
+    <h2>Conclusion</h2>
+    <p>Understanding eigenvalues and eigenvectors is crucial for many applications in science and engineering. They provide deep insights into the properties of linear transformations and matrices.</p>
+    
+    <a href="linear_algebra.html" class="back-link">Back to Linear Algebra Topics</a>
+
 </body>
 </html>
