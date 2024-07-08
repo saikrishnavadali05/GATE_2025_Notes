@@ -1,8 +1,3 @@
-Understood. For the `matrices.html` file, we'll use the MathJax script to render LaTeX math expressions since it contains mathematical equations. Here is the updated content:
-
-### `Linear_Algebra/matrices.html`
-
-```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -20,42 +15,42 @@ Understood. For the `matrices.html` file, we'll use the MathJax script to render
     <p>Matrices are a fundamental concept in linear algebra and are used to represent and manipulate data in various fields including mathematics, physics, and engineering.</p>
     
     <h2>Definition</h2>
-    <p>A matrix is a rectangular array of numbers arranged in rows and columns. A matrix with $m$ rows and $n$ columns is called an $m \times n$ matrix. Each number in the matrix is called an element.</p>
-    <p>Example of a $2 \times 3$ matrix:</p>
-    <p style="text-align: center;">$\begin{pmatrix} 1 & 2 & 3 \\ 4 & 5 & 6 \end{pmatrix}$</p>
+    <p>A matrix is a rectangular array of numbers arranged in rows and columns. A matrix with \( m \) rows and \( n \) columns is called an \( m \times n \) matrix. Each number in the matrix is called an element.</p>
+    <p>Example of a \( 2 \times 3 \) matrix:</p>
+    <p style="text-align: center;">\[ \begin{pmatrix} 1 & 2 & 3 \\ 4 & 5 & 6 \end{pmatrix} \]</p>
     
     <h2>Matrix Operations</h2>
     <p>Common operations on matrices include addition, subtraction, and multiplication.</p>
     
     <h3>Addition and Subtraction</h3>
-    <p>Two matrices of the same dimension can be added or subtracted element-wise. If $A$ and $B$ are both $m \times n$ matrices, their sum $C = A + B$ is also an $m \times n$ matrix with elements:</p>
-    <p style="text-align: center;">$c_{ij} = a_{ij} + b_{ij}$</p>
+    <p>Two matrices of the same dimension can be added or subtracted element-wise. If \( A \) and \( B \) are both \( m \times n \) matrices, their sum \( C = A + B \) is also an \( m \times n \) matrix with elements:</p>
+    <p style="text-align: center;">\[ c_{ij} = a_{ij} + b_{ij} \]</p>
     <p>Example:</p>
-    <p style="text-align: center;">$\begin{pmatrix} 1 & 2 & 3 \\ 4 & 5 & 6 \end{pmatrix} + \begin{pmatrix} 7 & 8 & 9 \\ 10 & 11 & 12 \end{pmatrix} = \begin{pmatrix} 8 & 10 & 12 \\ 14 & 16 & 18 \end{pmatrix}$</p>
+    <p style="text-align: center;">\[ \begin{pmatrix} 1 & 2 & 3 \\ 4 & 5 & 6 \end{pmatrix} + \begin{pmatrix} 7 & 8 & 9 \\ 10 & 11 & 12 \end{pmatrix} = \begin{pmatrix} 8 & 10 & 12 \\ 14 & 16 & 18 \end{pmatrix} \]</p>
     
     <h3>Matrix Multiplication</h3>
-    <p>The product of an $m \times n$ matrix $A$ and an $n \times p$ matrix $B$ is an $m \times p$ matrix $C = AB$. The element $c_{ij}$ of $C$ is computed as:</p>
-    <p style="text-align: center;">$c_{ij} = \sum_{k=1}^{n} a_{ik} b_{kj}$</p>
+    <p>The product of an \( m \times n \) matrix \( A \) and an \( n \times p \) matrix \( B \) is an \( m \times p \) matrix \( C = AB \). The element \( c_{ij} \) of \( C \) is computed as:</p>
+    <p style="text-align: center;">\[ c_{ij} = \sum_{k=1}^{n} a_{ik} b_{kj} \]</p>
     <p>Example:</p>
-    <p style="text-align: center;">$\begin{pmatrix} 1 & 2 \\ 3 & 4 \end{pmatrix} \times \begin{pmatrix} 5 & 6 \\ 7 & 8 \end{pmatrix} = \begin{pmatrix} 1 \cdot 5 + 2 \cdot 7 & 1 \cdot 6 + 2 \cdot 8 \\ 3 \cdot 5 + 4 \cdot 7 & 3 \cdot 6 + 4 \cdot 8 \end{pmatrix} = \begin{pmatrix} 19 & 22 \\ 43 & 50 \end{pmatrix}$</p>
+    <p style="text-align: center;">\[ \begin{pmatrix} 1 & 2 \\ 3 & 4 \end{pmatrix} \times \begin{pmatrix} 5 & 6 \\ 7 & 8 \end{pmatrix} = \begin{pmatrix} 1 \cdot 5 + 2 \cdot 7 & 1 \cdot 6 + 2 \cdot 8 \\ 3 \cdot 5 + 4 \cdot 7 & 3 \cdot 6 + 4 \cdot 8 \end{pmatrix} = \begin{pmatrix} 19 & 22 \\ 43 & 50 \end{pmatrix} \]</p>
     
     <h2>Transpose of a Matrix</h2>
-    <p>The transpose of a matrix $A$, denoted by $A^T$, is obtained by swapping the rows and columns of $A$. If $A$ is an $m \times n$ matrix, then $A^T$ is an $n \times m$ matrix.</p>
+    <p>The transpose of a matrix \( A \), denoted by \( A^T \), is obtained by swapping the rows and columns of \( A \). If \( A \) is an \( m \times n \) matrix, then \( A^T \) is an \( n \times m \) matrix.</p>
     <p>Example:</p>
-    <p style="text-align: center;">$\begin{pmatrix} 1 & 2 & 3 \\ 4 & 5 & 6 \end{pmatrix}^T = \begin{pmatrix} 1 & 4 \\ 2 & 5 \\ 3 & 6 \end{pmatrix}$</p>
+    <p style="text-align: center;">\[ \begin{pmatrix} 1 & 2 & 3 \\ 4 & 5 & 6 \end{pmatrix}^T = \begin{pmatrix} 1 & 4 \\ 2 & 5 \\ 3 & 6 \end{pmatrix} \]</p>
     
     <h2>Determinant of a Matrix</h2>
-    <p>The determinant is a scalar value that can be computed from a square matrix and encapsulates some of its properties. For a $2 \times 2$ matrix $A$:</p>
-    <p style="text-align: center;">$\text{det}(A) = \begin{vmatrix} a & b \\ c & d \end{vmatrix} = ad - bc$</p>
+    <p>The determinant is a scalar value that can be computed from a square matrix and encapsulates some of its properties. For a \( 2 \times 2 \) matrix \( A \):</p>
+    <p style="text-align: center;">\[ \text{det}(A) = \begin{vmatrix} a & b \\ c & d \end{vmatrix} = ad - bc \]</p>
     <p>Example:</p>
-    <p style="text-align: center;">$\text{det}\begin{pmatrix} 1 & 2 \\ 3 & 4 \end{pmatrix} = 1 \cdot 4 - 2 \cdot 3 = 4 - 6 = -2$</p>
+    <p style="text-align: center;">\[ \text{det}\begin{pmatrix} 1 & 2 \\ 3 & 4 \end{pmatrix} = 1 \cdot 4 - 2 \cdot 3 = 4 - 6 = -2 \]</p>
     
     <h2>Inverse of a Matrix</h2>
-    <p>The inverse of a square matrix $A$ is a matrix $A^{-1}$ such that $AA^{-1} = A^{-1}A = I$, where $I$ is the identity matrix. Not all matrices have inverses; a matrix must be square and have a non-zero determinant to be invertible.</p>
-    <p>Example for a $2 \times 2$ matrix:</p>
-    <p style="text-align: center;">$A = \begin{pmatrix} a & b \\ c & d \end{pmatrix}$, $A^{-1} = \frac{1}{\text{det}(A)} \begin{pmatrix} d & -b \\ -c & a \end{pmatrix}$</p>
-    <p>For $A = \begin{pmatrix} 1 & 2 \\ 3 & 4 \end{pmatrix}$:</p>
-    <p style="text-align: center;">$\text{det}(A) = -2$, $A^{-1} = \frac{1}{-2} \begin{pmatrix} 4 & -2 \\ -3 & 1 \end{pmatrix} = \begin{pmatrix} -2 & 1 \\ 1.5 & -0.5 \end{pmatrix}$</p>
+    <p>The inverse of a square matrix \( A \) is a matrix \( A^{-1} \) such that \( AA^{-1} = A^{-1}A = I \), where \( I \) is the identity matrix. Not all matrices have inverses; a matrix must be square and have a non-zero determinant to be invertible.</p>
+    <p>Example for a \( 2 \times 2 \) matrix:</p>
+    <p style="text-align: center;">\[ A = \begin{pmatrix} a & b \\ c & d \end{pmatrix}, \quad A^{-1} = \frac{1}{\text{det}(A)} \begin{pmatrix} d & -b \\ -c & a \end{pmatrix} \]</p>
+    <p>For \( A = \begin{pmatrix} 1 & 2 \\ 3 & 4 \end{pmatrix} \):</p>
+    <p style="text-align: center;">\[ \text{det}(A) = -2, \quad A^{-1} = \frac{1}{-2} \begin{pmatrix} 4 & -2 \\ -3 & 1 \end{pmatrix} = \begin{pmatrix} -2 & 1 \\ 1.5 & -0.5 \end{pmatrix} \]</p>
     
     <h2>Special Types of Matrices</h2>
     <p>There are several special types of matrices, including:</p>
@@ -63,7 +58,7 @@ Understood. For the `matrices.html` file, we'll use the MathJax script to render
         <li><strong>Identity Matrix:</strong> A square matrix with ones on the diagonal and zeros elsewhere.</li>
         <li><strong>Diagonal Matrix:</strong> A matrix with non-zero elements only on the diagonal.</li>
         <li><strong>Orthogonal Matrix:</strong> A square matrix whose rows and columns are orthogonal unit vectors.</li>
-        <li><strong>Symmetric Matrix:</strong> A matrix that is equal to its transpose, $A = A^T$.</li>
+        <li><strong>Symmetric Matrix:</strong> A matrix that is equal to its transpose, \( A = A^T \).</li>
     </ul>
     
     <h2>Conclusion</h2>
@@ -73,6 +68,3 @@ Understood. For the `matrices.html` file, we'll use the MathJax script to render
 
 </body>
 </html>
-```
-
-This setup includes the necessary MathJax scripts for rendering LaTeX math expressions where required.
