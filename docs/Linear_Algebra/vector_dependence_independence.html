@@ -1,8 +1,50 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<title>Vector Dependence Independence</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vector Dependence and Independence</title>
+    <link rel="stylesheet" href="../styles.css">
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script type="text/javascript" id="MathJax-script" async
+      src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 </head>
 <body>
+
+    <h1 id="vector-dependence-independence">Vector Dependence and Independence</h1>
+    <a href="linear_algebra.html" class="back-link">Back to Linear Algebra Topics</a>
+    <p>In linear algebra, understanding the concepts of vector dependence and independence is crucial for analyzing the structure of vector spaces.</p>
+    
+    <h2>Linear Dependence</h2>
+    <p>A set of vectors $\{v_1, v_2, \ldots, v_n\}$ in a vector space is said to be linearly dependent if there exist scalars $c_1, c_2, \ldots, c_n$, not all zero, such that:</p>
+    <p style="text-align: center;">$c_1v_1 + c_2v_2 + \cdots + c_nv_n = 0$</p>
+    <p>This means that at least one of the vectors in the set can be expressed as a linear combination of the others.</p>
+    
+    <h2>Linear Independence</h2>
+    <p>A set of vectors $\{v_1, v_2, \ldots, v_n\}$ in a vector space is said to be linearly independent if the only solution to the equation:</p>
+    <p style="text-align: center;">$c_1v_1 + c_2v_2 + \cdots + c_nv_n = 0$</p>
+    <p>is $c_1 = c_2 = \cdots = c_n = 0$. This implies that no vector in the set can be written as a linear combination of the others.</p>
+    
+    <h2>Examples</h2>
+    <p>Consider the vectors $v_1 = (1, 2)$ and $v_2 = (2, 4)$ in $\mathbb{R}^2$. These vectors are linearly dependent because:</p>
+    <p style="text-align: center;">$2v_1 - v_2 = 0$</p>
+    <p>For another example, consider $v_1 = (1, 0)$ and $v_2 = (0, 1)$. These vectors are linearly independent because the only solution to:</p>
+    <p style="text-align: center;">$c_1(1, 0) + c_2(0, 1) = (0, 0)$</p>
+    <p>is $c_1 = 0$ and $c_2 = 0$.</p>
+    
+    <h2>Testing for Linear Independence</h2>
+    <p>To test if a set of vectors $\{v_1, v_2, \ldots, v_n\}$ is linearly independent, form a matrix with these vectors as columns and row reduce it to its row echelon form. If all columns contain a leading 1 (pivot position), the vectors are linearly independent.</p>
+    
+    <h2>Spanning Sets</h2>
+    <p>A set of vectors spans a vector space if their linear combinations fill the entire space. For example, in $\mathbb{R}^2$, the vectors $v_1 = (1, 0)$ and $v_2 = (0, 1)$ span $\mathbb{R}^2$ because any vector in $\mathbb{R}^2$ can be written as a linear combination of $v_1$ and $v_2$.</p>
+    
+    <h2>Basis and Dimension</h2>
+    <p>A basis of a vector space is a set of linearly independent vectors that span the space. The number of vectors in the basis is called the dimension of the space. For example, the standard basis for $\mathbb{R}^3$ is $\{(1, 0, 0), (0, 1, 0), (0, 0, 1)\}$, and the dimension is 3.</p>
+    
+    <h2>Conclusion</h2>
+    <p>Understanding vector dependence and independence is fundamental in linear algebra. These concepts are essential for studying the structure of vector spaces and are widely applicable in various fields, including mathematics, physics, and engineering.</p>
+    
+    <a href="linear_algebra.html" class="back-link">Back to Linear Algebra Topics</a>
+
 </body>
 </html>
