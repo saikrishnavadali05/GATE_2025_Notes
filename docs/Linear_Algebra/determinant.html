@@ -1,8 +1,61 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<title>Determinant</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Determinant</title>
+    <link rel="stylesheet" href="../styles.css">
+    <script type="text/javascript" id="MathJax-script" async
+      src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 </head>
 <body>
+
+    <h1 id="determinant">Determinant</h1>
+    <a href="linear_algebra.html" class="back-link">Back to Linear Algebra Topics</a>
+    <p>The determinant is a scalar value that can be computed from a square matrix and encapsulates some of its important properties. Determinants are widely used in linear algebra, calculus, and differential equations.</p>
+    
+    <h2>Definition</h2>
+    <p>For a square matrix \( A \), the determinant is denoted as \( \det(A) \) or \( |A| \). The determinant of a \( 2 \times 2 \) matrix \( A \) is defined as:</p>
+    <p style="text-align: center;">\[ \det\begin{pmatrix} a & b \\ c & d \end{pmatrix} = ad - bc \]</p>
+    <p>For a \( 3 \times 3 \) matrix \( A \), the determinant is given by:</p>
+    <p style="text-align: center;">\[ \det\begin{pmatrix} a & b & c \\ d & e & f \\ g & h & i \end{pmatrix} = a(ei - fh) - b(di - fg) + c(dh - eg) \]</p>
+    
+    <h2>Properties of Determinants</h2>
+    <ul>
+        <li><strong>Multiplicative Property:</strong> The determinant of the product of two matrices is the product of their determinants: \( \det(AB) = \det(A) \det(B) \).</li>
+        <li><strong>Determinant of the Identity Matrix:</strong> The determinant of the identity matrix is 1.</li>
+        <li><strong>Row Operations:</strong> The determinant changes in predictable ways under row operations:
+            <ul>
+                <li>Swapping two rows multiplies the determinant by -1.</li>
+                <li>Multiplying a row by a scalar multiplies the determinant by the same scalar.</li>
+                <li>Adding a multiple of one row to another row does not change the determinant.</li>
+            </ul>
+        </li>
+        <li><strong>Transpose:</strong> The determinant of a matrix is equal to the determinant of its transpose: \( \det(A^T) = \det(A) \).</li>
+        <li><strong>Determinant of Triangular Matrices:</strong> The determinant of a triangular matrix (upper or lower) is the product of its diagonal elements.</li>
+    </ul>
+    
+    <h2>Example Calculations</h2>
+    <p>Consider the matrix \( A \):</p>
+    <p style="text-align: center;">\[ A = \begin{pmatrix} 1 & 2 & 3 \\ 0 & 1 & 4 \\ 5 & 6 & 0 \end{pmatrix} \]</p>
+    <p>The determinant of \( A \) is calculated as:</p>
+    <p style="text-align: center;">\[ \det(A) = 1 \cdot (1 \cdot 0 - 4 \cdot 6) - 2 \cdot (0 \cdot 0 - 4 \cdot 5) + 3 \cdot (0 \cdot 6 - 1 \cdot 5) \]</p>
+    <p style="text-align: center;">\[ = 1 \cdot (0 - 24) - 2 \cdot (0 - 20) + 3 \cdot (0 - 5) \]</p>
+    <p style="text-align: center;">\[ = -24 + 40 - 15 \]</p>
+    <p style="text-align: center;">\[ = 1 \]</p>
+    
+    <h2>Applications</h2>
+    <p>Determinants are used in various applications, such as:</p>
+    <ul>
+        <li><strong>Solving Linear Systems:</strong> Determinants are used in Cramer's rule to solve systems of linear equations.</li>
+        <li><strong>Eigenvalues and Eigenvectors:</strong> The characteristic equation, which is used to find the eigenvalues of a matrix, involves the determinant.</li>
+        <li><strong>Area and Volume:</strong> Determinants are used to compute the area of parallelograms and the volume of parallelepipeds in vector calculus.</li>
+    </ul>
+    
+    <h2>Conclusion</h2>
+    <p>The determinant is a powerful tool in linear algebra that captures important properties of matrices and has wide-ranging applications in mathematics, physics, and engineering.</p>
+    
+    <a href="linear_algebra.html" class="back-link">Back to Linear Algebra Topics</a>
+
 </body>
 </html>

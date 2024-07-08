@@ -1,8 +1,63 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<title>Lu Decomposition</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LU Decomposition</title>
+    <link rel="stylesheet" href="../styles.css">
+    <script type="text/javascript" id="MathJax-script" async
+      src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 </head>
 <body>
+
+    <h1 id="lu-decomposition">LU Decomposition</h1>
+    <a href="linear_algebra.html" class="back-link">Back to Linear Algebra Topics</a>
+    <p>LU decomposition is a matrix factorization method where a matrix is decomposed into the product of a lower triangular matrix and an upper triangular matrix. This technique is widely used to solve systems of linear equations, compute determinants, and find matrix inverses.</p>
+    
+    <h2>Definition</h2>
+    <p>For a given square matrix \( A \), LU decomposition finds two matrices \( L \) and \( U \) such that:</p>
+    <p style="text-align: center;">\[ A = LU \]</p>
+    <p>where \( L \) is a lower triangular matrix and \( U \) is an upper triangular matrix.</p>
+    
+    <h2>Steps to Compute LU Decomposition</h2>
+    <p>The process of finding the matrices \( L \) and \( U \) involves the following steps:</p>
+    <ol>
+        <li>Set \( L \) to be the identity matrix and \( U \) to be the matrix \( A \).</li>
+        <li>Perform Gaussian elimination on \( U \) to make it an upper triangular matrix, while applying the same row operations to \( L \) to maintain the equality \( A = LU \).</li>
+    </ol>
+    
+    <h2>Example</h2>
+    <p>Consider the matrix \( A \):</p>
+    <p style="text-align: center;">\[ A = \begin{pmatrix} 4 & 3 \\ 6 & 3 \end{pmatrix} \]</p>
+    
+    <h3>Step-by-Step LU Decomposition</h3>
+    <p>Start with \( L = \begin{pmatrix} 1 & 0 \\ 0 & 1 \end{pmatrix} \) and \( U = A \).</p>
+    <p>Perform Gaussian elimination to make \( U \) an upper triangular matrix:</p>
+    
+    <ol>
+        <li>Eliminate the entry below the pivot (4 in the first column):</li>
+        <p>Multiply the first row by \(\frac{6}{4} = 1.5\) and subtract from the second row:</p>
+        <p style="text-align: center;">\[ U = \begin{pmatrix} 4 & 3 \\ 6 - 1.5 \cdot 4 & 3 - 1.5 \cdot 3 \end{pmatrix} = \begin{pmatrix} 4 & 3 \\ 0 & -1.5 \end{pmatrix} \]</p>
+        <li>Update \( L \) to keep the equality \( A = LU \):</li>
+        <p>Set \( L_{21} = 1.5 \):</p>
+        <p style="text-align: center;">\[ L = \begin{pmatrix} 1 & 0 \\ 1.5 & 1 \end{pmatrix} \]</p>
+    </ol>
+    
+    <p>Now, \( L \) and \( U \) are:</p>
+    <p style="text-align: center;">\[ L = \begin{pmatrix} 1 & 0 \\ 1.5 & 1 \end{pmatrix}, \quad U = \begin{pmatrix} 4 & 3 \\ 0 & -1.5 \end{pmatrix} \]</p>
+    
+    <h2>Applications</h2>
+    <p>LU decomposition is used in various applications, including:</p>
+    <ul>
+        <li><strong>Solving Linear Systems:</strong> LU decomposition allows for efficient solutions of linear systems \( Ax = b \) by solving \( Ly = b \) and then \( Ux = y \).</li>
+        <li><strong>Computing Determinants:</strong> The determinant of \( A \) can be easily computed as the product of the diagonal elements of \( U \) (or \( L \)).</li>
+        <li><strong>Finding Inverses:</strong> LU decomposition can be used to find the inverse of a matrix by solving multiple linear systems.</li>
+    </ul>
+    
+    <h2>Conclusion</h2>
+    <p>LU decomposition is a fundamental matrix factorization method with wide-ranging applications in numerical analysis and linear algebra. Understanding how to compute and apply LU decomposition is essential for solving complex mathematical problems.</p>
+    
+    <a href="linear_algebra.html" class="back-link">Back to Linear Algebra Topics</a>
+
 </body>
 </html>

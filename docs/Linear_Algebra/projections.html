@@ -1,8 +1,52 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<title>Projections</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projections</title>
+    <link rel="stylesheet" href="../styles.css">
+    <script type="text/javascript" id="MathJax-script" async
+      src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 </head>
 <body>
+
+    <h1 id="projections">Projections</h1>
+    <a href="linear_algebra.html" class="back-link">Back to Linear Algebra Topics</a>
+    <p>In linear algebra, a projection is a linear transformation from a vector space to itself such that applying the transformation twice is the same as applying it once. Projections are used in various applications, including computer graphics, statistics, and numerical analysis.</p>
+    
+    <h2>Definition</h2>
+    <p>A projection matrix \( P \) is a square matrix that satisfies the property:</p>
+    <p style="text-align: center;">\[ P^2 = P \]</p>
+    <p>This means that applying the projection matrix \( P \) to a vector more than once does not change the result.</p>
+    
+    <h2>Orthogonal Projection</h2>
+    <p>An orthogonal projection projects a vector onto a subspace such that the error (difference between the vector and its projection) is orthogonal to the subspace. The projection matrix \( P \) that projects onto the column space of a matrix \( A \) is given by:</p>
+    <p style="text-align: center;">\[ P = A(A^T A)^{-1} A^T \]</p>
+    
+    <h2>Example</h2>
+    <p>Consider a vector \( v \) and a subspace spanned by a vector \( u \). The projection of \( v \) onto \( u \) is given by:</p>
+    <p style="text-align: center;">\[ \text{proj}_u v = \frac{u \cdot v}{u \cdot u} u \]</p>
+    <p>If \( u = \begin{pmatrix} 1 \\ 2 \end{pmatrix} \) and \( v = \begin{pmatrix} 3 \\ 4 \end{pmatrix} \), then:</p>
+    <p style="text-align: center;">\[ \text{proj}_u v = \frac{1 \cdot 3 + 2 \cdot 4}{1^2 + 2^2} \begin{pmatrix} 1 \\ 2 \end{pmatrix} = \frac{11}{5} \begin{pmatrix} 1 \\ 2 \end{pmatrix} = \begin{pmatrix} \frac{11}{5} \\ \frac{22}{5} \end{pmatrix} \]</p>
+    
+    <h2>Properties of Projection Matrices</h2>
+    <ul>
+        <li><strong>Idempotent:</strong> \( P^2 = P \)</li>
+        <li><strong>Symmetric:</strong> For orthogonal projections, \( P = P^T \)</li>
+    </ul>
+    
+    <h2>Applications</h2>
+    <p>Projections are used in various applications, such as:</p>
+    <ul>
+        <li><strong>Least Squares Regression:</strong> In statistics, projection matrices are used to project observed data onto the space of the linear model.</li>
+        <li><strong>Computer Graphics:</strong> Projection matrices are used to project 3D points onto a 2D screen.</li>
+        <li><strong>Numerical Analysis:</strong> Projections are used in iterative methods for solving linear systems.</li>
+    </ul>
+    
+    <h2>Conclusion</h2>
+    <p>Projections are powerful tools in linear algebra with wide-ranging applications. Understanding the properties and computation of projection matrices is essential for various fields of science and engineering.</p>
+    
+    <a href="linear_algebra.html" class="back-link">Back to Linear Algebra Topics</a>
+
 </body>
 </html>

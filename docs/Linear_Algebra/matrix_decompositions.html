@@ -1,8 +1,67 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<title>Matrix Decompositions</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Matrix Decompositions</title>
+    <link rel="stylesheet" href="../styles.css">
+    <script type="text/javascript" id="MathJax-script" async
+      src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 </head>
 <body>
+
+    <h1 id="matrix-decompositions">Matrix Decompositions</h1>
+    <a href="linear_algebra.html" class="back-link">Back to Linear Algebra Topics</a>
+    <p>Matrix decompositions are techniques in linear algebra where a matrix is factored into simpler, constituent matrices. These factorizations are useful in solving systems of linear equations, eigenvalue problems, and in numerical analysis.</p>
+    
+    <h2>Types of Matrix Decompositions</h2>
+    <p>There are several common types of matrix decompositions, including:</p>
+    <ul>
+        <li><strong>LU Decomposition:</strong> Decomposes a matrix into a product of a lower triangular matrix and an upper triangular matrix.</li>
+        <li><strong>QR Decomposition:</strong> Decomposes a matrix into a product of an orthogonal matrix and an upper triangular matrix.</li>
+        <li><strong>Cholesky Decomposition:</strong> Decomposes a positive-definite matrix into a product of a lower triangular matrix and its conjugate transpose.</li>
+        <li><strong>Eigenvalue Decomposition:</strong> Decomposes a matrix into a product involving its eigenvalues and eigenvectors.</li>
+        <li><strong>Singular Value Decomposition (SVD):</strong> Decomposes a matrix into products of orthogonal matrices and a diagonal matrix.</li>
+    </ul>
+    
+    <h2>LU Decomposition</h2>
+    <p>LU decomposition factors a matrix \( A \) into a lower triangular matrix \( L \) and an upper triangular matrix \( U \):</p>
+    <p style="text-align: center;">\[ A = LU \]</p>
+    <p>It is used for solving linear systems, inverting matrices, and computing determinants.</p>
+    
+    <h2>QR Decomposition</h2>
+    <p>QR decomposition factors a matrix \( A \) into an orthogonal matrix \( Q \) and an upper triangular matrix \( R \):</p>
+    <p style="text-align: center;">\[ A = QR \]</p>
+    <p>It is used in solving linear systems and eigenvalue problems.</p>
+    
+    <h2>Cholesky Decomposition</h2>
+    <p>Cholesky decomposition factors a positive-definite matrix \( A \) into a lower triangular matrix \( L \) and its conjugate transpose \( L^T \):</p>
+    <p style="text-align: center;">\[ A = LL^T \]</p>
+    <p>It is used for solving linear systems and inverting matrices, particularly when the matrix is symmetric and positive-definite.</p>
+    
+    <h2>Eigenvalue Decomposition</h2>
+    <p>Eigenvalue decomposition factors a matrix \( A \) into a diagonal matrix \( \Lambda \) of its eigenvalues and a matrix \( V \) of its eigenvectors:</p>
+    <p style="text-align: center;">\[ A = V \Lambda V^{-1} \]</p>
+    <p>It is used in solving differential equations and in analyzing the properties of a matrix.</p>
+    
+    <h2>Singular Value Decomposition (SVD)</h2>
+    <p>Singular value decomposition factors a matrix \( A \) into a product of three matrices: an orthogonal matrix \( U \), a diagonal matrix \( \Sigma \), and the transpose of an orthogonal matrix \( V \):</p>
+    <p style="text-align: center;">\[ A = U \Sigma V^T \]</p>
+    <p>It is used in signal processing, statistics, and in solving linear systems.</p>
+    
+    <h2>Applications</h2>
+    <p>Matrix decompositions have numerous applications in various fields, including:</p>
+    <ul>
+        <li><strong>Numerical Analysis:</strong> Efficiently solving systems of linear equations, inverting matrices, and computing determinants.</li>
+        <li><strong>Data Compression:</strong> Using SVD in image compression and principal component analysis (PCA).</li>
+        <li><strong>Engineering:</strong> Solving differential equations and modeling physical systems.</li>
+        <li><strong>Statistics:</strong> Performing multivariate analysis and regression analysis.</li>
+    </ul>
+    
+    <h2>Conclusion</h2>
+    <p>Matrix decompositions are powerful tools in linear algebra that simplify complex matrix operations. Understanding these techniques is essential for solving various mathematical and engineering problems.</p>
+    
+    <a href="linear_algebra.html" class="back-link">Back to Linear Algebra Topics</a>
+
 </body>
 </html>

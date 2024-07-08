@@ -1,8 +1,55 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<title>Quadratic Forms</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quadratic Forms</title>
+    <link rel="stylesheet" href="../styles.css">
+    <script type="text/javascript" id="MathJax-script" async
+      src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 </head>
 <body>
+
+    <h1 id="quadratic-forms">Quadratic Forms</h1>
+    <a href="linear_algebra.html" class="back-link">Back to Linear Algebra Topics</a>
+    <p>A quadratic form is a polynomial with terms all of degree two. Quadratic forms are widely used in optimization, statistics, and various fields of engineering and science.</p>
+    
+    <h2>Definition</h2>
+    <p>A quadratic form in \( n \) variables is a homogeneous polynomial of degree 2, which can be written in matrix notation as:</p>
+    <p style="text-align: center;">\[ Q(x) = x^T A x \]</p>
+    <p>where \( x \) is an \( n \)-dimensional column vector, \( x^T \) is the transpose of \( x \), and \( A \) is an \( n \times n \) symmetric matrix.</p>
+    
+    <h2>Examples</h2>
+    <p>Consider a quadratic form in two variables:</p>
+    <p style="text-align: center;">\[ Q(x, y) = ax^2 + bxy + cy^2 \]</p>
+    <p>This can be written in matrix notation as:</p>
+    <p style="text-align: center;">\[ Q(x) = \begin{pmatrix} x & y \end{pmatrix} \begin{pmatrix} a & \frac{b}{2} \\ \frac{b}{2} & c \end{pmatrix} \begin{pmatrix} x \\ y \end{pmatrix} = ax^2 + bxy + cy^2 \]</p>
+    
+    <h2>Properties</h2>
+    <p>Some important properties of quadratic forms include:</p>
+    <ul>
+        <li><strong>Symmetry:</strong> The matrix \( A \) in the quadratic form \( x^T A x \) is symmetric.</li>
+        <li><strong>Definiteness:</strong> A quadratic form is said to be positive definite if \( x^T A x > 0 \) for all non-zero vectors \( x \), positive semi-definite if \( x^T A x \geq 0 \), negative definite if \( x^T A x < 0 \), and negative semi-definite if \( x^T A x \leq 0 \).</li>
+        <li><strong>Eigenvalues:</strong> The definiteness of a quadratic form can be determined by the eigenvalues of the matrix \( A \). If all eigenvalues are positive, the quadratic form is positive definite; if all are non-negative, it is positive semi-definite; if all are negative, it is negative definite; and if all are non-positive, it is negative semi-definite.</li>
+    </ul>
+    
+    <h2>Canonical Form</h2>
+    <p>A quadratic form can be transformed into its canonical form using an orthogonal transformation. This involves finding an orthogonal matrix \( P \) that diagonalizes \( A \), such that \( P^T A P = D \), where \( D \) is a diagonal matrix. The quadratic form then becomes:</p>
+    <p style="text-align: center;">\[ Q(x) = y^T D y \]</p>
+    <p>where \( y = P^T x \).</p>
+    
+    <h2>Applications</h2>
+    <p>Quadratic forms are used in various applications, such as:</p>
+    <ul>
+        <li><strong>Optimization:</strong> Quadratic forms are used in quadratic programming and in finding the extrema of multivariable functions.</li>
+        <li><strong>Statistics:</strong> In statistics, quadratic forms are used in the analysis of variance (ANOVA) and in the formulation of test statistics.</li>
+        <li><strong>Physics:</strong> Quadratic forms are used to describe energy functions and in the study of conic sections and ellipsoids.</li>
+    </ul>
+    
+    <h2>Conclusion</h2>
+    <p>Quadratic forms are a fundamental concept in linear algebra with important properties and numerous applications. Understanding how to work with quadratic forms and their properties is essential for various fields of science and engineering.</p>
+    
+    <a href="linear_algebra.html" class="back-link">Back to Linear Algebra Topics</a>
+
 </body>
 </html>

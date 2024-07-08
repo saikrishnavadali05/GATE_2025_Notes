@@ -1,8 +1,49 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<title>Rank Nullity</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rank-Nullity Theorem</title>
+    <link rel="stylesheet" href="../styles.css">
+    <script type="text/javascript" id="MathJax-script" async
+      src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 </head>
 <body>
+
+    <h1 id="rank-nullity-theorem">Rank-Nullity Theorem</h1>
+    <a href="linear_algebra.html" class="back-link">Back to Linear Algebra Topics</a>
+    <p>The Rank-Nullity Theorem is a fundamental result in linear algebra that relates the dimensions of the kernel and the image of a linear transformation to the dimension of the domain of the transformation. It has significant implications in solving linear systems and understanding the structure of linear maps.</p>
+    
+    <h2>Definitions</h2>
+    <p>Consider a linear transformation \( T: V \to W \) where \( V \) and \( W \) are vector spaces. The <strong>rank</strong> of \( T \), denoted \( \text{rank}(T) \), is the dimension of the image of \( T \). The <strong>nullity</strong> of \( T \), denoted \( \text{nullity}(T) \), is the dimension of the kernel of \( T \).</p>
+    
+    <h2>Rank-Nullity Theorem</h2>
+    <p>The Rank-Nullity Theorem states that for a linear transformation \( T: V \to W \):</p>
+    <p style="text-align: center;">\[ \text{dim}(V) = \text{rank}(T) + \text{nullity}(T) \]</p>
+    <p>where \( \text{dim}(V) \) is the dimension of the domain \( V \).</p>
+    
+    <h2>Example</h2>
+    <p>Consider the matrix \( A \) representing a linear transformation \( T: \mathbb{R}^3 \to \mathbb{R}^3 \):</p>
+    <p style="text-align: center;">\[ A = \begin{pmatrix} 1 & 2 & 3 \\ 0 & 1 & 4 \\ 0 & 0 & 0 \end{pmatrix} \]</p>
+    <p>To find the rank and nullity of \( T \), we perform row reduction on \( A \) to obtain its row echelon form:</p>
+    <p style="text-align: center;">\[ \begin{pmatrix} 1 & 2 & 3 \\ 0 & 1 & 4 \\ 0 & 0 & 0 \end{pmatrix} \]</p>
+    <p>The rank of \( A \) is the number of non-zero rows, which is 2. Therefore, \( \text{rank}(A) = 2 \).</p>
+    <p>The dimension of the domain \( \mathbb{R}^3 \) is 3. Using the Rank-Nullity Theorem, we have:</p>
+    <p style="text-align: center;">\[ 3 = \text{rank}(A) + \text{nullity}(A) \]</p>
+    <p>Thus, \( \text{nullity}(A) = 3 - 2 = 1 \).</p>
+    
+    <h2>Implications</h2>
+    <p>The Rank-Nullity Theorem has several important implications:</p>
+    <ul>
+        <li><strong>Solving Linear Systems:</strong> The rank of the coefficient matrix gives the number of linearly independent equations, while the nullity gives the number of free variables in the solution.</li>
+        <li><strong>Dimension Theorem:</strong> The theorem provides a relationship between the dimensions of the domain, image, and kernel of a linear map, which is crucial for understanding linear transformations.</li>
+        <li><strong>Matrix Rank:</strong> The rank of a matrix is a fundamental concept in linear algebra, and the Rank-Nullity Theorem provides a way to compute it and understand its properties.</li>
+    </ul>
+    
+    <h2>Conclusion</h2>
+    <p>The Rank-Nullity Theorem is a cornerstone of linear algebra that connects the dimensions of different subspaces associated with a linear transformation. It is essential for solving linear systems and understanding the structure of linear maps and matrices.</p>
+    
+    <a href="linear_algebra.html" class="back-link">Back to Linear Algebra Topics</a>
+
 </body>
 </html>

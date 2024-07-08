@@ -1,8 +1,54 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<title>Idempotent Matrix</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Idempotent Matrix</title>
+    <link rel="stylesheet" href="../styles.css">
+    <script type="text/javascript" id="MathJax-script" async
+      src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 </head>
 <body>
+
+    <h1 id="idempotent-matrix">Idempotent Matrix</h1>
+    <a href="linear_algebra.html" class="back-link">Back to Linear Algebra Topics</a>
+    <p>An idempotent matrix is a matrix which, when multiplied by itself, yields the same matrix. Idempotent matrices are significant in various fields, including statistics and linear algebra.</p>
+    
+    <h2>Definition</h2>
+    <p>A square matrix \( A \) is said to be idempotent if:</p>
+    <p style="text-align: center;">\[ A^2 = A \]</p>
+    <p>This means that multiplying the matrix by itself does not change the matrix.</p>
+    
+    <h2>Properties</h2>
+    <ul>
+        <li><strong>Eigenvalues:</strong> The eigenvalues of an idempotent matrix are either 0 or 1.</li>
+        <li><strong>Trace:</strong> The trace of an idempotent matrix (the sum of the diagonal elements) is equal to the rank of the matrix.</li>
+        <li><strong>Diagonalizability:</strong> Idempotent matrices are diagonalizable, meaning they can be expressed in the form \( PDP^{-1} \), where \( D \) is a diagonal matrix and \( P \) is an invertible matrix.</li>
+    </ul>
+    
+    <h2>Examples</h2>
+    <p>Consider the matrix:</p>
+    <p style="text-align: center;">\[ A = \begin{pmatrix} 1 & 0 \\ 0 & 0 \end{pmatrix} \]</p>
+    <p>This matrix is idempotent because:</p>
+    <p style="text-align: center;">\[ A^2 = \begin{pmatrix} 1 & 0 \\ 0 & 0 \end{pmatrix} \begin{pmatrix} 1 & 0 \\ 0 & 0 \end{pmatrix} = \begin{pmatrix} 1 & 0 \\ 0 & 0 \end{pmatrix} = A \]</p>
+    <p>Another example is the projection matrix \( P \) which projects vectors onto a subspace spanned by a vector \( u \):</p>
+    <p style="text-align: center;">\[ P = \frac{uu^T}{u^T u} \]</p>
+    <p>For instance, if \( u = \begin{pmatrix} 1 \\ 1 \end{pmatrix} \), then:</p>
+    <p style="text-align: center;">\[ P = \frac{1}{2} \begin{pmatrix} 1 & 1 \\ 1 & 1 \end{pmatrix} \]</p>
+    <p>This matrix is idempotent because:</p>
+    <p style="text-align: center;">\[ P^2 = \left( \frac{1}{2} \begin{pmatrix} 1 & 1 \\ 1 & 1 \end{pmatrix} \right) \left( \frac{1}{2} \begin{pmatrix} 1 & 1 \\ 1 & 1 \end{pmatrix} \right) = \frac{1}{4} \begin{pmatrix} 2 & 2 \\ 2 & 2 \end{pmatrix} = \frac{1}{2} \begin{pmatrix} 1 & 1 \\ 1 & 1 \end{pmatrix} = P \]</p>
+    
+    <h2>Applications</h2>
+    <p>Idempotent matrices have various applications, including:</p>
+    <ul>
+        <li><strong>Statistics:</strong> In regression analysis, the hat matrix (or projection matrix) used to project observed values onto fitted values is idempotent.</li>
+        <li><strong>Linear Algebra:</strong> Idempotent matrices are used to study projections and invariant subspaces.</li>
+    </ul>
+    
+    <h2>Conclusion</h2>
+    <p>Idempotent matrices are an important class of matrices with unique properties and significant applications in mathematics and statistics. Understanding these matrices helps in analyzing projections and linear transformations.</p>
+    
+    <a href="linear_algebra.html" class="back-link">Back to Linear Algebra Topics</a>
+
 </body>
 </html>

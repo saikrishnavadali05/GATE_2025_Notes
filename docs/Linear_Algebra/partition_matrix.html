@@ -1,8 +1,59 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<title>Partition Matrix</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Partitioned Matrix</title>
+    <link rel="stylesheet" href="../styles.css">
+    <script type="text/javascript" id="MathJax-script" async
+      src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 </head>
 <body>
+
+    <h1 id="partitioned-matrix">Partitioned Matrix</h1>
+    <a href="linear_algebra.html" class="back-link">Back to Linear Algebra Topics</a>
+    <p>A partitioned matrix is a matrix that is divided into smaller matrices, or blocks. This technique is often used to simplify matrix operations by breaking them down into operations on the smaller blocks.</p>
+    
+    <h2>Definition</h2>
+    <p>A matrix \( A \) can be partitioned into blocks as follows:</p>
+    <p style="text-align: center;">\[ A = \begin{pmatrix} A_{11} & A_{12} \\ A_{21} & A_{22} \end{pmatrix} \]</p>
+    <p>where \( A_{11}, A_{12}, A_{21}, \) and \( A_{22} \) are submatrices, or blocks, of \( A \).</p>
+    
+    <h2>Block Addition</h2>
+    <p>If \( A \) and \( B \) are partitioned matrices of the same size, their sum \( C = A + B \) is given by the sum of their corresponding blocks:</p>
+    <p style="text-align: center;">\[ C = \begin{pmatrix} A_{11} & A_{12} \\ A_{21} & A_{22} \end{pmatrix} + \begin{pmatrix} B_{11} & B_{12} \\ B_{21} & B_{22} \end{pmatrix} = \begin{pmatrix} A_{11} + B_{11} & A_{12} + B_{12} \\ A_{21} + B_{21} & A_{22} + B_{22} \end{pmatrix} \]</p>
+    
+    <h2>Block Multiplication</h2>
+    <p>If \( A \) and \( B \) are partitioned matrices, their product \( C = AB \) is given by the product of their corresponding blocks, using the standard rules of matrix multiplication:</p>
+    <p style="text-align: center;">\[ C = \begin{pmatrix} A_{11} & A_{12} \\ A_{21} & A_{22} \end{pmatrix} \begin{pmatrix} B_{11} & B_{12} \\ B_{21} & B_{22} \end{pmatrix} = \begin{pmatrix} A_{11}B_{11} + A_{12}B_{21} & A_{11}B_{12} + A_{12}B_{22} \\ A_{21}B_{11} + A_{22}B_{21} & A_{21}B_{12} + A_{22}B_{22} \end{pmatrix} \]</p>
+    
+    <h2>Example</h2>
+    <p>Consider the matrices \( A \) and \( B \):</p>
+    <p style="text-align: center;">\[ A = \begin{pmatrix} 1 & 2 & 3 & 4 \\ 5 & 6 & 7 & 8 \\ 9 & 10 & 11 & 12 \\ 13 & 14 & 15 & 16 \end{pmatrix}, \quad B = \begin{pmatrix} 1 & 0 & 0 & 1 \\ 0 & 1 & 1 & 0 \\ 1 & 1 & 0 & 0 \\ 0 & 0 & 1 & 1 \end{pmatrix} \]</p>
+    <p>These matrices can be partitioned into \( 2 \times 2 \) blocks:</p>
+    <p style="text-align: center;">\[ A = \begin{pmatrix} A_{11} & A_{12} \\ A_{21} & A_{22} \end{pmatrix}, \quad B = \begin{pmatrix} B_{11} & B_{12} \\ B_{21} & B_{22} \end{pmatrix} \]</p>
+    <p>where</p>
+    <p style="text-align: center;">
+    \( A_{11} = \begin{pmatrix} 1 & 2 \\ 5 & 6 \end{pmatrix}, A_{12} = \begin{pmatrix} 3 & 4 \\ 7 & 8 \end{pmatrix}, A_{21} = \begin{pmatrix} 9 & 10 \\ 13 & 14 \end{pmatrix}, A_{22} = \begin{pmatrix} 11 & 12 \\ 15 & 16 \end{pmatrix} \)
+    </p>
+    <p style="text-align: center;">
+    \( B_{11} = \begin{pmatrix} 1 & 0 \\ 0 & 1 \end{pmatrix}, B_{12} = \begin{pmatrix} 0 & 1 \\ 1 & 0 \end{pmatrix}, B_{21} = \begin{pmatrix} 1 & 1 \\ 0 & 0 \end{pmatrix}, B_{22} = \begin{pmatrix} 0 & 0 \\ 1 & 1 \end{pmatrix} \)
+    </p>
+    <p>The product \( C = AB \) is then:</p>
+    <p style="text-align: center;">\[ C = \begin{pmatrix} A_{11} & A_{12} \\ A_{21} & A_{22} \end{pmatrix} \begin{pmatrix} B_{11} & B_{12} \\ B_{21} & B_{22} \end{pmatrix} = \begin{pmatrix} A_{11}B_{11} + A_{12}B_{21} & A_{11}B_{12} + A_{12}B_{22} \\ A_{21}B_{11} + A_{22}B_{21} & A_{21}B_{12} + A_{22}B_{22} \end{pmatrix} \]</p>
+    
+    <h2>Applications</h2>
+    <p>Partitioned matrices are used in various applications, including:</p>
+    <ul>
+        <li><strong>Parallel Computing:</strong> Partitioning matrices allows for parallel processing of matrix operations, which can significantly speed up computations.</li>
+        <li><strong>Block Matrix Algorithms:</strong> Algorithms that operate on block matrices can be more efficient than those that operate on entire matrices at once.</li>
+        <li><strong>Numerical Analysis:</strong> Partitioned matrices are used in numerical methods for solving linear systems, eigenvalue problems, and matrix factorizations.</li>
+    </ul>
+    
+    <h2>Conclusion</h2>
+    <p>Partitioned matrices provide a powerful tool for simplifying and optimizing matrix operations. Understanding how to partition matrices and perform operations on the resulting blocks is essential for advanced linear algebra and numerical analysis.</p>
+    
+    <a href="linear_algebra.html" class="back-link">Back to Linear Algebra Topics</a>
+
 </body>
 </html>

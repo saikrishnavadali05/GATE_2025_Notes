@@ -1,8 +1,93 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<title>Systems Linear Equations</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Systems of Linear Equations</title>
+    <link rel="stylesheet" href="../styles.css">
+    <script type="text/javascript" id="MathJax-script" async
+      src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 </head>
 <body>
+
+    <h1 id="systems-linear-equations">Systems of Linear Equations</h1>
+    <a href="linear_algebra.html" class="back-link">Back to Linear Algebra Topics</a>
+    <p>Systems of linear equations are collections of two or more linear equations involving the same set of variables. They are fundamental in linear algebra and are used to model a wide range of real-world problems.</p>
+    
+    <h2>Definition</h2>
+    <p>A system of linear equations can be written in the form:</p>
+    <p style="text-align: center;">\[ \begin{cases} 
+    a_{11}x_1 + a_{12}x_2 + \cdots + a_{1n}x_n = b_1 \\
+    a_{21}x_1 + a_{22}x_2 + \cdots + a_{2n}x_n = b_2 \\
+    \vdots \\
+    a_{m1}x_1 + a_{m2}x_2 + \cdots + a_{mn}x_n = b_m 
+    \end{cases} \]</p>
+    <p>where \( a_{ij} \) are the coefficients, \( x_i \) are the variables, and \( b_i \) are the constants.</p>
+    
+    <h2>Matrix Representation</h2>
+    <p>A system of linear equations can be represented using matrices as:</p>
+    <p style="text-align: center;">\[ A \mathbf{x} = \mathbf{b} \]</p>
+    <p>where \( A \) is the coefficient matrix, \( \mathbf{x} \) is the column vector of variables, and \( \mathbf{b} \) is the column vector of constants:</p>
+    <p style="text-align: center;">\[ A = \begin{pmatrix} 
+    a_{11} & a_{12} & \cdots & a_{1n} \\
+    a_{21} & a_{22} & \cdots & a_{2n} \\
+    \vdots & \vdots & \ddots & \vdots \\
+    a_{m1} & a_{m2} & \cdots & a_{mn} 
+    \end{pmatrix}, \quad 
+    \mathbf{x} = \begin{pmatrix} 
+    x_1 \\
+    x_2 \\
+    \vdots \\
+    x_n 
+    \end{pmatrix}, \quad 
+    \mathbf{b} = \begin{pmatrix} 
+    b_1 \\
+    b_2 \\
+    \vdots \\
+    b_m 
+    \end{pmatrix} \]</p>
+    
+    <h2>Solving Systems of Linear Equations</h2>
+    <p>There are several methods to solve systems of linear equations, including:</p>
+    <ul>
+        <li><strong>Gaussian Elimination:</strong> A systematic method for reducing a system of linear equations to row echelon form.</li>
+        <li><strong>Gauss-Jordan Elimination:</strong> An extension of Gaussian elimination that reduces the system to reduced row echelon form.</li>
+        <li><strong>Matrix Inversion:</strong> If \( A \) is an invertible matrix, the solution can be found as \( \mathbf{x} = A^{-1} \mathbf{b} \).</li>
+        <li><strong>Cramer's Rule:</strong> A method that uses determinants to solve a system of linear equations with as many equations as unknowns.</li>
+        <li><strong>Iterative Methods:</strong> Methods such as Jacobi and Gauss-Seidel iterations, which are used for large systems.</li>
+    </ul>
+    
+    <h2>Example</h2>
+    <p>Consider the system of linear equations:</p>
+    <p style="text-align: center;">\[ \begin{cases} 
+    2x + 3y = 5 \\
+    4x - y = 1 
+    \end{cases} \]</p>
+    <p>This can be written in matrix form as:</p>
+    <p style="text-align: center;">\[ \begin{pmatrix} 
+    2 & 3 \\
+    4 & -1 
+    \end{pmatrix} \begin{pmatrix} 
+    x \\
+    y 
+    \end{pmatrix} = \begin{pmatrix} 
+    5 \\
+    1 
+    \end{pmatrix} \]</p>
+    <p>Solving this using Gaussian elimination or any other method will yield the values of \( x \) and \( y \).</p>
+    
+    <h2>Applications</h2>
+    <p>Systems of linear equations are used in various fields, including:</p>
+    <ul>
+        <li><strong>Engineering:</strong> To solve electrical circuits, structural analysis, and control systems.</li>
+        <li><strong>Economics:</strong> To model supply and demand, optimization problems, and input-output models.</li>
+        <li><strong>Computer Science:</strong> To solve problems in computer graphics, machine learning, and operations research.</li>
+    </ul>
+    
+    <h2>Conclusion</h2>
+    <p>Understanding and solving systems of linear equations is a fundamental skill in linear algebra with wide-ranging applications. Mastery of the various methods for solving these systems is essential for tackling complex problems in science, engineering, and beyond.</p>
+    
+    <a href="linear_algebra.html" class="back-link">Back to Linear Algebra Topics</a>
+
 </body>
 </html>

@@ -1,8 +1,54 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<title>Orthogonal Matrix</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Orthogonal Matrix</title>
+    <link rel="stylesheet" href="../styles.css">
+    <script type="text/javascript" id="MathJax-script" async
+      src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 </head>
 <body>
+
+    <h1 id="orthogonal-matrix">Orthogonal Matrix</h1>
+    <a href="linear_algebra.html" class="back-link">Back to Linear Algebra Topics</a>
+    <p>An orthogonal matrix is a square matrix whose columns and rows are orthogonal unit vectors (orthonormal vectors). Orthogonal matrices are important in many areas of linear algebra and its applications.</p>
+    
+    <h2>Definition</h2>
+    <p>A square matrix \( Q \) is called orthogonal if its transpose is equal to its inverse:</p>
+    <p style="text-align: center;">\[ Q^T Q = QQ^T = I \]</p>
+    <p>where \( Q^T \) is the transpose of \( Q \), and \( I \) is the identity matrix.</p>
+    
+    <h2>Properties</h2>
+    <ul>
+        <li><strong>Norm Preservation:</strong> Orthogonal matrices preserve the Euclidean norm of vectors. If \( Q \) is an orthogonal matrix and \( x \) is a vector, then \( \|Qx\| = \|x\| \).</li>
+        <li><strong>Determinant:</strong> The determinant of an orthogonal matrix is either +1 or -1.</li>
+        <li><strong>Inverse:</strong> The inverse of an orthogonal matrix is also orthogonal. In fact, the inverse of an orthogonal matrix is its transpose: \( Q^{-1} = Q^T \).</li>
+        <li><strong>Eigenvalues:</strong> The eigenvalues of an orthogonal matrix lie on the unit circle in the complex plane. For real orthogonal matrices, eigenvalues are either +1, -1, or complex conjugate pairs.</li>
+    </ul>
+    
+    <h2>Examples</h2>
+    <p>Consider the following matrix:</p>
+    <p style="text-align: center;">\[ Q = \begin{pmatrix} 1 & 0 \\ 0 & -1 \end{pmatrix} \]</p>
+    <p>This matrix is orthogonal because:</p>
+    <p style="text-align: center;">\[ Q^T Q = \begin{pmatrix} 1 & 0 \\ 0 & -1 \end{pmatrix} \begin{pmatrix} 1 & 0 \\ 0 & -1 \end{pmatrix} = \begin{pmatrix} 1 & 0 \\ 0 & 1 \end{pmatrix} = I \]</p>
+    <p>Another example is the rotation matrix:</p>
+    <p style="text-align: center;">\[ R = \begin{pmatrix} \cos \theta & -\sin \theta \\ \sin \theta & \cos \theta \end{pmatrix} \]</p>
+    <p>This matrix is orthogonal because:</p>
+    <p style="text-align: center;">\[ R^T R = \begin{pmatrix} \cos \theta & \sin \theta \\ -\sin \theta & \cos \theta \end{pmatrix} \begin{pmatrix} \cos \theta & -\sin \theta \\ \sin \theta & \cos \theta \end{pmatrix} = \begin{pmatrix} \cos^2 \theta + \sin^2 \theta & 0 \\ 0 & \cos^2 \theta + \sin^2 \theta \end{pmatrix} = I \]</p>
+    
+    <h2>Applications</h2>
+    <p>Orthogonal matrices are used in various applications, such as:</p>
+    <ul>
+        <li><strong>Computer Graphics:</strong> Orthogonal matrices are used to perform rotations and reflections without changing the shape or size of objects.</li>
+        <li><strong>Signal Processing:</strong> Orthogonal matrices are used in transformations such as the Fourier transform and the discrete cosine transform.</li>
+        <li><strong>Numerical Linear Algebra:</strong> Orthogonal matrices are used in algorithms for solving linear systems, eigenvalue problems, and singular value decomposition.</li>
+    </ul>
+    
+    <h2>Conclusion</h2>
+    <p>Orthogonal matrices are a fundamental concept in linear algebra with important properties and numerous applications. Understanding these matrices is crucial for various fields of science and engineering.</p>
+    
+    <a href="linear_algebra.html" class="back-link">Back to Linear Algebra Topics</a>
+
 </body>
 </html>

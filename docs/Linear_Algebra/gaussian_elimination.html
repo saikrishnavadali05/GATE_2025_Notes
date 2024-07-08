@@ -1,8 +1,98 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<title>Gaussian Elimination</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gaussian Elimination</title>
+    <link rel="stylesheet" href="../styles.css">
+    <script type="text/javascript" id="MathJax-script" async
+      src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 </head>
 <body>
+
+    <h1 id="gaussian-elimination">Gaussian Elimination</h1>
+    <a href="linear_algebra.html" class="back-link">Back to Linear Algebra Topics</a>
+    <p>Gaussian elimination is a method for solving systems of linear equations. It transforms a given system into a simpler equivalent system, which is easier to solve.</p>
+    
+    <h2>Steps of Gaussian Elimination</h2>
+    <p>Gaussian elimination consists of two main steps: forward elimination and back substitution.</p>
+    
+    <h3>1. Forward Elimination</h3>
+    <p>The goal of forward elimination is to transform the system's augmented matrix into an upper triangular form. This is done by performing row operations to eliminate the entries below the main diagonal.</p>
+    <p>The row operations include:</p>
+    <ul>
+        <li><strong>Swapping:</strong> Swap the positions of two rows.</li>
+        <li><strong>Scaling:</strong> Multiply a row by a non-zero scalar.</li>
+        <li><strong>Row Addition:</strong> Add a multiple of one row to another row to eliminate an entry.</li>
+    </ul>
+    
+    <h3>2. Back Substitution</h3>
+    <p>Once the matrix is in upper triangular form, the back substitution method is used to solve for the variables. Starting from the last row, each variable is solved and substituted back into the previous rows to find the other variables.</p>
+    
+    <h2>Example</h2>
+    <p>Consider the system of linear equations:</p>
+    <p style="text-align: center;">
+    \[
+    \begin{cases}
+    2x + 3y - z = 1 \\
+    4x + 4y - 3z = 4 \\
+    2x - 3y + 2z = 2
+    \end{cases}
+    \]
+    </p>
+    <p>The augmented matrix for this system is:</p>
+    <p style="text-align: center;">
+    \[
+    \begin{pmatrix}
+    2 & 3 & -1 & | & 1 \\
+    4 & 4 & -3 & | & 4 \\
+    2 & -3 & 2 & | & 2
+    \end{pmatrix}
+    \]
+    </p>
+    
+    <h3>Step 1: Forward Elimination</h3>
+    <p>Eliminate the entries below the pivot in the first column:</p>
+    <p>Multiply the first row by 2 and subtract from the second row:</p>
+    <p style="text-align: center;">
+    \[
+    \begin{pmatrix}
+    2 & 3 & -1 & | & 1 \\
+    0 & -2 & -1 & | & 2 \\
+    2 & -3 & 2 & | & 2
+    \end{pmatrix}
+    \]
+    </p>
+    <p>Multiply the first row by 1 and subtract from the third row:</p>
+    <p style="text-align: center;">
+    \[
+    \begin{pmatrix}
+    2 & 3 & -1 & | & 1 \\
+    0 & -2 & -1 & | & 2 \\
+    0 & -6 & 3 & | & 1
+    \end{pmatrix}
+    \]
+    </p>
+    <p>Eliminate the entry below the pivot in the second column:</p>
+    <p>Multiply the second row by 3 and add to the third row:</p>
+    <p style="text-align: center;">
+    \[
+    \begin{pmatrix}
+    2 & 3 & -1 & | & 1 \\
+    0 & -2 & -1 & | & 2 \\
+    0 & 0 & 0 & | & 7
+    \end{pmatrix}
+    \]
+    </p>
+    
+    <h3>Step 2: Back Substitution</h3>
+    <p>Starting from the last row, solve for each variable:</p>
+    <p>The third row indicates that there is no solution (inconsistent system), since it corresponds to the equation \(0 = 7\), which is a contradiction.</p>
+    
+    <h2>Conclusion</h2>
+    <p>Gaussian elimination is a powerful method for solving systems of linear equations. It provides a systematic way to reduce a system to an upper triangular form and then solve it using back substitution. However, it may reveal inconsistencies in the system, indicating that there is no solution.</p>
+    
+    <a href="linear_algebra.html" class="back-link">Back to Linear Algebra Topics</a>
+
 </body>
 </html>

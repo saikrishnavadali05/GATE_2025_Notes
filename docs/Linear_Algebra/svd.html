@@ -1,8 +1,57 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<title>Svd</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Singular Value Decomposition (SVD)</title>
+    <link rel="stylesheet" href="../styles.css">
+    <script type="text/javascript" id="MathJax-script" async
+      src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 </head>
 <body>
+
+    <h1 id="svd">Singular Value Decomposition (SVD)</h1>
+    <a href="linear_algebra.html" class="back-link">Back to Linear Algebra Topics</a>
+    <p>Singular Value Decomposition (SVD) is a factorization method for matrices that generalizes the eigendecomposition of a square matrix to any \( m \times n \) matrix. SVD is widely used in signal processing, statistics, and machine learning.</p>
+    
+    <h2>Definition</h2>
+    <p>For any \( m \times n \) matrix \( A \), the SVD is given by:</p>
+    <p style="text-align: center;">\[ A = U \Sigma V^T \]</p>
+    <p>where:</p>
+    <ul>
+        <li>\( U \) is an \( m \times m \) orthogonal matrix.</li>
+        <li>\( \Sigma \) is an \( m \times n \) diagonal matrix with non-negative real numbers on the diagonal, known as the singular values.</li>
+        <li>\( V \) is an \( n \times n \) orthogonal matrix, and \( V^T \) is its transpose.</li>
+    </ul>
+    
+    <h2>Properties</h2>
+    <ul>
+        <li>The columns of \( U \) are the left singular vectors of \( A \).</li>
+        <li>The columns of \( V \) are the right singular vectors of \( A \).</li>
+        <li>The singular values in \( \Sigma \) are the square roots of the eigenvalues of \( A^T A \) and \( A A^T \).</li>
+    </ul>
+    
+    <h2>Example</h2>
+    <p>Consider the matrix:</p>
+    <p style="text-align: center;">\[ A = \begin{pmatrix} 1 & 0 \\ 0 & 2 \\ 0 & 0 \end{pmatrix} \]</p>
+    <p>The SVD of \( A \) is:</p>
+    <p style="text-align: center;">\[ U = \begin{pmatrix} 1 & 0 & 0 \\ 0 & 1 & 0 \\ 0 & 0 & 1 \end{pmatrix}, \quad \Sigma = \begin{pmatrix} 2 & 0 \\ 0 & 1 \\ 0 & 0 \end{pmatrix}, \quad V = \begin{pmatrix} 0 & 1 \\ 1 & 0 \end{pmatrix} \]</p>
+    <p>So:</p>
+    <p style="text-align: center;">\[ A = U \Sigma V^T = \begin{pmatrix} 1 & 0 & 0 \\ 0 & 1 & 0 \\ 0 & 0 & 1 \end{pmatrix} \begin{pmatrix} 2 & 0 \\ 0 & 1 \\ 0 & 0 \end{pmatrix} \begin{pmatrix} 0 & 1 \\ 1 & 0 \end{pmatrix} \]</p>
+    
+    <h2>Applications</h2>
+    <p>SVD has numerous applications, including:</p>
+    <ul>
+        <li><strong>Data Compression:</strong> SVD is used in techniques like Principal Component Analysis (PCA) for reducing the dimensionality of data while retaining the most important features.</li>
+        <li><strong>Signal Processing:</strong> SVD is used to filter noise from signals and images.</li>
+        <li><strong>Recommender Systems:</strong> SVD is used in collaborative filtering methods for making recommendations.</li>
+        <li><strong>Image Compression:</strong> SVD is used to compress images by keeping only the largest singular values and corresponding vectors.</li>
+    </ul>
+    
+    <h2>Conclusion</h2>
+    <p>Singular Value Decomposition is a powerful and versatile tool in linear algebra with a wide range of applications in data science, signal processing, and machine learning. Understanding SVD and its properties is essential for leveraging its capabilities in various fields.</p>
+    
+    <a href="linear_algebra.html" class="back-link">Back to Linear Algebra Topics</a>
+
 </body>
 </html>
