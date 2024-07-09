@@ -1,8 +1,114 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<title>Propositional Logic</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Propositional Logic</title>
+    <link rel="stylesheet" href="../styles.css">
+    <script type="text/javascript" id="MathJax-script" async
+      src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 </head>
 <body>
+
+    <h1 id="propositional-logic">Propositional Logic</h1>
+    <a href="artificial_intelligence.html" class="back-link">Back to Artificial Intelligence Topics</a>
+    <p>Propositional logic, also known as propositional calculus or boolean logic, is a branch of logic that deals with propositions and their relationships. It is the foundation of classical logic and is used extensively in mathematics, computer science, and artificial intelligence.</p>
+    
+    <h2>Basic Components</h2>
+    <ul>
+        <li><strong>Propositions:</strong> Statements that are either true or false. For example, "It is raining" (true or false).</li>
+        <li><strong>Logical Connectives:</strong> Symbols that connect propositions to form more complex statements. Common connectives include:
+            <ul>
+                <li><strong>Negation (\( \neg \)):</strong> Not. For example, \( \neg P \) means "not P".</li>
+                <li><strong>Conjunction (\( \land \)):</strong> And. For example, \( P \land Q \) means "P and Q".</li>
+                <li><strong>Disjunction (\( \lor \)):</strong> Or. For example, \( P \lor Q \) means "P or Q".</li>
+                <li><strong>Implication (\( \rightarrow \)):</strong> If... then. For example, \( P \rightarrow Q \) means "If P then Q".</li>
+                <li><strong>Biconditional (\( \leftrightarrow \)):</strong> If and only if. For example, \( P \leftrightarrow Q \) means "P if and only if Q".</li>
+            </ul>
+        </li>
+    </ul>
+    
+    <h2>Syntax</h2>
+    <p>The syntax of propositional logic defines how propositions and logical connectives can be combined to form well-formed formulas (WFFs). Examples of WFFs include:
+        <ul>
+            <li>\( P \)</li>
+            <li>\( \neg P \)</li>
+            <li>\( P \land Q \)</li>
+            <li>\( P \lor Q \)</li>
+            <li>\( P \rightarrow Q \)</li>
+            <li>\( P \leftrightarrow Q \)</li>
+        </ul>
+    </p>
+    
+    <h2>Semantics</h2>
+    <p>The semantics of propositional logic assign truth values to propositions. The truth value of a complex proposition is determined by the truth values of its components and the meanings of the logical connectives. The truth tables for the common connectives are as follows:</p>
+    
+    <h3>Truth Table for Negation</h3>
+    <table>
+        <tr><th>\( P \)</th><th>\( \neg P \)</th></tr>
+        <tr><td>T</td><td>F</td></tr>
+        <tr><td>F</td><td>T</td></tr>
+    </table>
+    
+    <h3>Truth Table for Conjunction</h3>
+    <table>
+        <tr><th>\( P \)</th><th>\( Q \)</th><th>\( P \land Q \)</th></tr>
+        <tr><td>T</td><td>T</td><td>T</td></tr>
+        <tr><td>T</td><td>F</td><td>F</td></tr>
+        <tr><td>F</td><td>T</td><td>F</td></tr>
+        <tr><td>F</td><td>F</td><td>F</td></tr>
+    </table>
+    
+    <h3>Truth Table for Disjunction</h3>
+    <table>
+        <tr><th>\( P \)</th><th>\( Q \)</th><th>\( P \lor Q \)</th></tr>
+        <tr><td>T</td><td>T</td><td>T</td></tr>
+        <tr><td>T</td><td>F</td><td>T</td></tr>
+        <tr><td>F</td><td>T</td><td>T</td></tr>
+        <tr><td>F</td><td>F</td><td>F</td></tr>
+    </table>
+    
+    <h3>Truth Table for Implication</h3>
+    <table>
+        <tr><th>\( P \)</th><th>\( Q \)</th><th>\( P \rightarrow Q \)</th></tr>
+        <tr><td>T</td><td>T</td><td>T</td></tr>
+        <tr><td>T</td><td>F</td><td>F</td></tr>
+        <tr><td>F</td><td>T</td><td>T</td></tr>
+        <tr><td>F</td><td>F</td><td>T</td></tr>
+    </table>
+    
+    <h3>Truth Table for Biconditional</h3>
+    <table>
+        <tr><th>\( P \)</th><th>\( Q \)</th><th>\( P \leftrightarrow Q \)</th></tr>
+        <tr><td>T</td><td>T</td><td>T</td></tr>
+        <tr><td>T</td><td>F</td><td>F</td></tr>
+        <tr><td>F</td><td>T</td><td>F</td></tr>
+        <tr><td>F</td><td>F</td><td>T</td></tr>
+    </table>
+    
+    <h2>Logical Equivalence</h2>
+    <p>Two propositions are logically equivalent if they have the same truth value in all possible scenarios. Logical equivalences are often used to simplify complex propositions. Some common logical equivalences include:
+        <ul>
+            <li>\( \neg(\neg P) \equiv P \) (Double Negation)</li>
+            <li>\( P \land Q \equiv Q \land P \) (Commutativity of Conjunction)</li>
+            <li>\( P \lor Q \equiv Q \lor P \) (Commutativity of Disjunction)</li>
+            <li>\( P \rightarrow Q \equiv \neg P \lor Q \) (Implication as Disjunction)</li>
+        </ul>
+    </p>
+    
+    <h2>Applications</h2>
+    <ul>
+        <li><strong>Digital Circuits:</strong> Used to design and analyze digital circuits and systems.</li>
+        <li><strong>Mathematical Proofs:</strong> Provides a foundation for formal proofs and logical reasoning.</li>
+        <li><strong>Artificial Intelligence:</strong> Forms the basis for knowledge representation and reasoning in AI systems.</li>
+        <li><strong>Computer Programming:</strong> Used in the development of algorithms and software verification.</li>
+        <li><strong>Database Systems:</strong> Forms the basis for query languages and database design.</li>
+    </ul>
+    
+    <h2>Conclusion</h2>
+    <p>Propositional logic is a fundamental branch of logic that underpins many areas of mathematics, computer science, and artificial intelligence. By understanding the basic components, syntax, semantics, and applications of propositional logic, one can develop a strong foundation for more advanced topics in logic and reasoning.</p>
+    
+    <a href="artificial_intelligence.html" class="back-link">Back to Artificial Intelligence Topics</a>
+
 </body>
 </html>

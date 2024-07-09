@@ -1,8 +1,85 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<title>Approximate Inference Sampling</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Approximate Inference: Sampling</title>
+    <link rel="stylesheet" href="../styles.css">
+    <script type="text/javascript" id="MathJax-script" async
+      src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 </head>
 <body>
+
+    <h1 id="approximate-inference-sampling">Approximate Inference: Sampling</h1>
+    <a href="artificial_intelligence.html" class="back-link">Back to Artificial Intelligence Topics</a>
+    <p>Approximate inference using sampling methods is an approach used in probabilistic models where exact inference is computationally infeasible. These methods generate samples from the probability distributions to approximate the desired probabilities.</p>
+    
+    <h2>Overview</h2>
+    <p>In many complex probabilistic models, performing exact inference is computationally expensive or impossible. Approximate inference methods, such as sampling, provide a way to estimate probabilities and make inferences about the model.</p>
+    
+    <h2>Common Sampling Methods</h2>
+    <p>There are several sampling methods used for approximate inference, including:</p>
+    <ul>
+        <li><strong>Monte Carlo Sampling:</strong> Uses random sampling to approximate the desired quantities. It is simple but can be inefficient for high-dimensional spaces.</li>
+        <li><strong>Importance Sampling:</strong> Improves efficiency by sampling from an auxiliary distribution and weighting the samples to account for the difference between the target and auxiliary distributions.</li>
+        <li><strong>Markov Chain Monte Carlo (MCMC):</strong> Generates samples using a Markov chain that has the target distribution as its equilibrium distribution. Common MCMC methods include the Metropolis-Hastings algorithm and Gibbs sampling.</li>
+        <li><strong>Particle Filtering:</strong> A sequential Monte Carlo method used for dynamic systems. It approximates the posterior distribution of the state variables using a set of particles and weights.</li>
+    </ul>
+    
+    <h2>Monte Carlo Sampling</h2>
+    <p>Monte Carlo sampling involves generating random samples from the probability distribution and using these samples to estimate the desired quantities.</p>
+    <p style="text-align: center;">\[ \hat{P}(X) = \frac{1}{N} \sum_{i=1}^N f(X_i) \]</p>
+    <p>where \( N \) is the number of samples, and \( f(X_i) \) is the function evaluated at the sample \( X_i \).</p>
+    
+    <h2>Importance Sampling</h2>
+    <p>Importance sampling improves efficiency by sampling from an auxiliary distribution \( q(X) \) and weighting the samples to account for the difference between the target distribution \( p(X) \) and \( q(X) \).</p>
+    <p style="text-align: center;">\[ \hat{P}(X) = \frac{1}{N} \sum_{i=1}^N \frac{p(X_i)}{q(X_i)} f(X_i) \]</p>
+    
+    <h2>Markov Chain Monte Carlo (MCMC)</h2>
+    <p>MCMC methods generate samples using a Markov chain that converges to the target distribution. The Metropolis-Hastings algorithm and Gibbs sampling are popular MCMC methods.</p>
+    <h3>Metropolis-Hastings Algorithm</h3>
+    <ol>
+        <li>Initialize with a starting point \( X_0 \).</li>
+        <li>Generate a proposal \( X' \) from a proposal distribution \( q(X'|X) \).</li>
+        <li>Calculate the acceptance ratio:</li>
+        <p style="text-align: center;">\[ \alpha = \min\left(1, \frac{p(X') q(X|X')}{p(X) q(X'|X)}\right) \]</p>
+        <li>Accept or reject the proposal based on \( \alpha \).</li>
+        <li>Repeat steps 2-4 for a sufficient number of iterations.</li>
+    </ol>
+    
+    <h3>Gibbs Sampling</h3>
+    <p>Gibbs sampling is a special case of MCMC where samples are generated from the conditional distributions of each variable in turn.</p>
+    <ol>
+        <li>Initialize with a starting point \( X_0 \).</li>
+        <li>For each variable \( X_i \), sample from the conditional distribution \( p(X_i | X_{-i}) \).</li>
+        <li>Repeat step 2 for all variables and iterate for a sufficient number of iterations.</li>
+    </ol>
+    
+    <h2>Particle Filtering</h2>
+    <p>Particle filtering is used for dynamic systems and involves approximating the posterior distribution of the state variables using a set of particles and their associated weights.</p>
+    <ol>
+        <li>Initialize particles and weights.</li>
+        <li>For each time step:
+            <ul>
+                <li>Propagate particles based on the system model.</li>
+                <li>Update weights based on the likelihood of the observations.</li>
+                <li>Resample particles based on their weights.</li>
+            </ul>
+        </li>
+    </ol>
+    
+    <h2>Applications</h2>
+    <ul>
+        <li><strong>Bayesian Inference:</strong> Used in Bayesian statistics to estimate posterior distributions.</li>
+        <li><strong>Computer Vision:</strong> Used for object tracking and image segmentation.</li>
+        <li><strong>Robotics:</strong> Used for localization and mapping.</li>
+        <li><strong>Economics:</strong> Used for modeling and predicting economic trends.</li>
+    </ul>
+    
+    <h2>Conclusion</h2>
+    <p>Approximate inference using sampling methods is essential for dealing with complex probabilistic models where exact inference is infeasible. Techniques such as Monte Carlo sampling, importance sampling, MCMC, and particle filtering provide powerful tools for estimating probabilities and making inferences in a wide range of applications.</p>
+    
+    <a href="artificial_intelligence.html" class="back-link">Back to Artificial Intelligence Topics</a>
+
 </body>
 </html>

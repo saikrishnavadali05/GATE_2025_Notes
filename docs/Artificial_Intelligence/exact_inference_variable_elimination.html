@@ -1,8 +1,84 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<title>Exact Inference Variable Elimination</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exact Inference: Variable Elimination</title>
+    <link rel="stylesheet" href="../styles.css">
+    <script type="text/javascript" id="MathJax-script" async
+      src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 </head>
 <body>
+
+    <h1 id="exact-inference-variable-elimination">Exact Inference: Variable Elimination</h1>
+    <a href="artificial_intelligence.html" class="back-link">Back to Artificial Intelligence Topics</a>
+    <p>Variable elimination is a method for performing exact inference in probabilistic graphical models, such as Bayesian networks. This technique systematically eliminates variables to compute marginal distributions and is efficient for certain classes of networks.</p>
+    
+    <h2>Overview</h2>
+    <p>In probabilistic graphical models, exact inference involves computing the posterior distribution of a subset of variables given evidence about other variables. Variable elimination is one such method that can be used to perform this computation efficiently.</p>
+    
+    <h2>Algorithm</h2>
+    <p>The variable elimination algorithm works as follows:</p>
+    <ol>
+        <li>Identify the query variable and the evidence variables.</li>
+        <li>List the factors (conditional probability tables) associated with the Bayesian network.</li>
+        <li>For each non-query and non-evidence variable, do the following:
+            <ul>
+                <li>Multiply all factors that include the variable.</li>
+                <li>Sum out the variable from the product to create a new factor.</li>
+                <li>Replace the original factors with the new factor.</li>
+            </ul>
+        </li>
+        <li>Multiply the remaining factors and normalize to obtain the posterior distribution of the query variable given the evidence.</li>
+    </ol>
+    
+    <h2>Example</h2>
+    <p>Consider a Bayesian network with the following structure:</p>
+    <p style="text-align: center;">\[ A \rightarrow B \rightarrow C \]</p>
+    <p>We want to compute the marginal probability \( P(C) \). The factors are:
+    <ul>
+        <li>\( P(A) \)</li>
+        <li>\( P(B | A) \)</li>
+        <li>\( P(C | B) \)</li>
+    </ul>
+    </p>
+    
+    <h3>Steps of Variable Elimination</h3>
+    <ol>
+        <li><strong>List factors:</strong> \( P(A), P(B | A), P(C | B) \)</li>
+        <li><strong>Eliminate \( A \):</strong> Multiply \( P(A) \) and \( P(B | A) \) to get \( P(A, B) \). Sum out \( A \) to get \( P(B) \):
+            <p style="text-align: center;">\[ P(B) = \sum_{A} P(A) P(B | A) \]</p>
+        </li>
+        <li><strong>Eliminate \( B \):</strong> Multiply \( P(B) \) and \( P(C | B) \) to get \( P(B, C) \). Sum out \( B \) to get \( P(C) \):
+            <p style="text-align: center;">\[ P(C) = \sum_{B} P(B) P(C | B) \]</p>
+        </li>
+    </ol>
+    <p>Finally, we obtain \( P(C) \) by normalizing the resulting factor if necessary.</p>
+    
+    <h2>Advantages</h2>
+    <ul>
+        <li>Efficient for certain classes of networks, particularly those with a low treewidth.</li>
+        <li>Provides exact results, unlike approximate methods such as sampling.</li>
+        <li>Can be used as a subroutine in more complex algorithms like the junction tree algorithm.</li>
+    </ul>
+    
+    <h2>Disadvantages</h2>
+    <ul>
+        <li>Computationally expensive for networks with high treewidth.</li>
+        <li>Requires an ordering of variable elimination, which can significantly impact efficiency.</li>
+    </ul>
+    
+    <h2>Applications</h2>
+    <ul>
+        <li><strong>Diagnosis:</strong> Used in medical diagnosis to compute the probability of diseases given symptoms.</li>
+        <li><strong>Predictive Modeling:</strong> Used in predictive models to compute the likelihood of future events based on past data.</li>
+        <li><strong>Natural Language Processing:</strong> Used in NLP tasks such as part-of-speech tagging and parsing.</li>
+    </ul>
+    
+    <h2>Conclusion</h2>
+    <p>Variable elimination is a powerful technique for exact inference in probabilistic graphical models. It is particularly useful for models with a low treewidth and provides a foundation for more advanced inference algorithms. Understanding and applying variable elimination can significantly enhance the performance of probabilistic reasoning systems.</p>
+    
+    <a href="artificial_intelligence.html" class="back-link">Back to Artificial Intelligence Topics</a>
+
 </body>
 </html>

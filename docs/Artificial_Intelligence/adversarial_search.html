@@ -1,8 +1,57 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<title>Adversarial Search</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adversarial Search</title>
+    <link rel="stylesheet" href="../styles.css">
 </head>
 <body>
+
+    <h1 id="adversarial-search">Adversarial Search</h1>
+    <a href="artificial_intelligence.html" class="back-link">Back to Artificial Intelligence Topics</a>
+    <p>Adversarial search is a type of search used in AI that involves decision making in competitive environments where the outcome is determined by the actions of multiple agents, often with opposing objectives. It is widely used in game theory and AI applications such as chess, checkers, and other strategic games.</p>
+    
+    <h2>Overview</h2>
+    <p>In adversarial search, two or more agents compete in a zero-sum game, where one agent's gain is another agent's loss. The objective is to find the optimal strategy to maximize one's own payoff while minimizing the opponent's payoff.</p>
+    
+    <h2>Minimax Algorithm</h2>
+    <p>The minimax algorithm is a classical approach to adversarial search. It assumes that the opponent will always play optimally to minimize the player's advantage.</p>
+    <h3>Steps of the Minimax Algorithm</h3>
+    <ol>
+        <li>Generate the game tree to the desired depth.</li>
+        <li>Evaluate the terminal states using a utility function.</li>
+        <li>Propagate the utility values up the tree, assuming the opponent will minimize the player's utility at their turn (min nodes) and the player will maximize their own utility at their turn (max nodes).</li>
+        <li>Select the move that leads to the optimal outcome based on the propagated values.</li>
+    </ol>
+    
+    <h2>Alpha-Beta Pruning</h2>
+    <p>Alpha-beta pruning is an optimization technique for the minimax algorithm that reduces the number of nodes evaluated in the game tree. It prunes branches that cannot influence the final decision, thereby improving efficiency.</p>
+    <h3>Steps of Alpha-Beta Pruning</h3>
+    <ol>
+        <li>Maintain two values, alpha and beta, representing the minimum score that the maximizing player is assured of and the maximum score that the minimizing player is assured of, respectively.</li>
+        <li>Traverse the game tree using the minimax algorithm, updating alpha and beta values as needed.</li>
+        <li>Prune branches where the current node's value exceeds beta (for max nodes) or is less than alpha (for min nodes), as these branches cannot influence the final decision.</li>
+    </ol>
+    
+    <h2>Heuristic Evaluation</h2>
+    <p>In complex games where it is not feasible to search to the terminal states, heuristic evaluation functions are used to estimate the utility of non-terminal states. These functions provide a score based on the game state, which guides the search algorithm.</p>
+    
+    <h2>Example: Tic-Tac-Toe</h2>
+    <p>Consider a game of Tic-Tac-Toe. The minimax algorithm can be used to determine the optimal move for each player. The game tree is generated, evaluated, and the best move is selected based on the minimax values.</p>
+    <p>With alpha-beta pruning, the search is optimized by eliminating branches that do not affect the final decision, allowing the algorithm to run more efficiently.</p>
+    
+    <h2>Applications</h2>
+    <ul>
+        <li><strong>Board Games:</strong> Chess, checkers, and Go utilize adversarial search algorithms to determine optimal strategies.</li>
+        <li><strong>AI Planning:</strong> In scenarios where multiple agents with opposing goals interact, adversarial search helps in planning optimal actions.</li>
+        <li><strong>Economics:</strong> In competitive markets, adversarial search techniques can be used to model and predict the behavior of competitors.</li>
+    </ul>
+    
+    <h2>Conclusion</h2>
+    <p>Adversarial search is a crucial aspect of AI that deals with competitive environments. Techniques like the minimax algorithm and alpha-beta pruning enable agents to make optimal decisions by anticipating and countering the actions of opponents. Understanding these methods is essential for developing intelligent systems capable of strategic decision making.</p>
+    
+    <a href="artificial_intelligence.html" class="back-link">Back to Artificial Intelligence Topics</a>
+
 </body>
 </html>

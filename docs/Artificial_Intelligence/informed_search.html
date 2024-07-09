@@ -1,8 +1,73 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<title>Informed Search</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Informed Search</title>
+    <link rel="stylesheet" href="../styles.css">
 </head>
 <body>
+
+    <h1 id="informed-search">Informed Search</h1>
+    <a href="artificial_intelligence.html" class="back-link">Back to Artificial Intelligence Topics</a>
+    <p>Informed search algorithms, also known as heuristic search algorithms, utilize additional information about the problem domain to find solutions more efficiently than uninformed search methods. These algorithms use heuristics to estimate the cost of reaching the goal from a given state, guiding the search process.</p>
+    
+    <h2>Overview</h2>
+    <p>Informed search algorithms aim to find the shortest path to the goal by using heuristic functions that provide estimates of the remaining cost to reach the goal. This additional information helps prioritize which paths to explore, improving search efficiency and effectiveness.</p>
+    
+    <h2>Common Informed Search Algorithms</h2>
+    <ul>
+        <li><strong>Greedy Best-First Search:</strong> Prioritizes nodes based on a heuristic function that estimates the cost from the current node to the goal.</li>
+        <li><strong>A* Search:</strong> Combines the actual cost from the start node to the current node with the estimated cost from the current node to the goal, using the formula \( f(n) = g(n) + h(n) \).</li>
+        <li><strong>Weighted A*:</strong> A variation of A* that uses a weighted heuristic to balance exploration and exploitation.</li>
+        <li><strong>Iterative Deepening A* (IDA*):</strong> Combines the concepts of iterative deepening search and A* search to reduce memory usage.</li>
+        <li><strong>Beam Search:</strong> Explores a fixed number of best nodes at each level, reducing the search space size.</li>
+    </ul>
+    
+    <h2>Heuristic Functions</h2>
+    <p>A heuristic function \( h(n) \) estimates the cost of the cheapest path from node \( n \) to the goal. A good heuristic significantly improves the efficiency of informed search algorithms. Common heuristic functions include:</p>
+    <ul>
+        <li><strong>Manhattan Distance:</strong> Used in grid-based problems, calculates the sum of the absolute differences of the coordinates.</li>
+        <li><strong>Euclidean Distance:</strong> Calculates the straight-line distance between two points in a continuous space.</li>
+        <li><strong>Misplaced Tiles:</strong> Used in puzzle problems, counts the number of misplaced tiles compared to the goal state.</li>
+        <li><strong>Hamming Distance:</strong> Counts the number of positions at which the corresponding elements are different.</li>
+    </ul>
+    
+    <h2>Example: A* Search</h2>
+    <p>The A* search algorithm combines the cost to reach the current node (\( g(n) \)) with the estimated cost to reach the goal (\( h(n) \)) to prioritize nodes in the search space. The formula used is:</p>
+    <p style="text-align: center;">\[ f(n) = g(n) + h(n) \]</p>
+    <p>The algorithm follows these steps:</p>
+    <ol>
+        <li>Initialize the open list with the start node and the closed list as empty.</li>
+        <li>While the open list is not empty:
+            <ul>
+                <li>Select the node with the lowest \( f(n) \) value from the open list.</li>
+                <li>If the selected node is the goal, return the path to the goal.</li>
+                <li>Move the selected node to the closed list.</li>
+                <li>Expand the selected node, and for each child node:
+                    <ul>
+                        <li>If the child node is in the closed list, skip it.</li>
+                        <li>If the child node is not in the open list, add it with the calculated \( f(n) \) value.</li>
+                        <li>If the child node is already in the open list, update its \( f(n) \) value if the new path is cheaper.</li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+        <li>If the open list is empty, return failure (no solution found).</li>
+    </ol>
+    
+    <h2>Applications</h2>
+    <ul>
+        <li><strong>Pathfinding:</strong> Used in navigation systems, robotics, and video games to find the shortest path between points.</li>
+        <li><strong>Puzzle Solving:</strong> Applied to solve puzzles like the 8-puzzle, 15-puzzle, and Rubik's Cube.</li>
+        <li><strong>Artificial Intelligence:</strong> Used in AI for decision making, game playing, and problem-solving.</li>
+        <li><strong>Operations Research:</strong> Applied in logistics, scheduling, and optimization problems.</li>
+    </ul>
+    
+    <h2>Conclusion</h2>
+    <p>Informed search algorithms leverage heuristic functions to efficiently navigate large search spaces and find optimal solutions. By incorporating domain-specific knowledge, these algorithms outperform uninformed search methods, making them essential tools in artificial intelligence and optimization.</p>
+    
+    <a href="artificial_intelligence.html" class="back-link">Back to Artificial Intelligence Topics</a>
+
 </body>
 </html>

@@ -1,8 +1,144 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<title>Uninformed Search</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Uninformed Search</title>
+    <link rel="stylesheet" href="../styles.css">
 </head>
 <body>
+
+    <h1 id="uninformed-search">Uninformed Search</h1>
+    <a href="artificial_intelligence.html" class="back-link">Back to Artificial Intelligence Topics</a>
+    <p>Uninformed search algorithms, also known as blind search algorithms, explore the search space without any domain-specific knowledge. They only use the information available in the problem definition, making them generally applicable but often less efficient than informed search methods.</p>
+    
+    <h2>Overview</h2>
+    <p>Uninformed search strategies do not have additional information about the goal's location or the cost of reaching it from a given state. These algorithms systematically explore the search space, ensuring that they find a solution if one exists.</p>
+    
+    <h2>Common Uninformed Search Algorithms</h2>
+    <ul>
+        <li><strong>Breadth-First Search (BFS):</strong> Explores all nodes at the present depth level before moving on to nodes at the next depth level.</li>
+        <li><strong>Depth-First Search (DFS):</strong> Explores as far down a branch as possible before backtracking to explore other branches.</li>
+        <li><strong>Uniform-Cost Search (UCS):</strong> Expands the least-cost node, ensuring the shortest path is found in terms of cost.</li>
+        <li><strong>Iterative Deepening Depth-First Search (IDDFS):</strong> Combines the depth-limited search with an increasing depth limit to ensure completeness and optimality.</li>
+        <li><strong>Bidirectional Search:</strong> Simultaneously searches forward from the start node and backward from the goal node, meeting in the middle.</li>
+    </ul>
+    
+    <h2>Breadth-First Search (BFS)</h2>
+    <p>BFS explores the search space level by level, starting from the root node. It uses a queue to keep track of the nodes to be explored next.</p>
+    <h3>Algorithm</h3>
+    <ol>
+        <li>Initialize a queue with the root node.</li>
+        <li>Repeat until the queue is empty:
+            <ul>
+                <li>Dequeue the front node.</li>
+                <li>If the node is the goal, return the solution.</li>
+                <li>Enqueue all unvisited children of the node.</li>
+            </ul>
+        </li>
+    </ol>
+    <h3>Properties</h3>
+    <ul>
+        <li><strong>Completeness:</strong> Guaranteed to find a solution if one exists.</li>
+        <li><strong>Optimality:</strong> Finds the shortest path in terms of the number of steps.</li>
+        <li><strong>Time Complexity:</strong> \( O(b^d) \), where \( b \) is the branching factor and \( d \) is the depth of the shallowest solution.</li>
+        <li><strong>Space Complexity:</strong> \( O(b^d) \), as it stores all nodes at the current depth level.</li>
+    </ul>
+    
+    <h2>Depth-First Search (DFS)</h2>
+    <p>DFS explores as far down a branch as possible before backtracking. It uses a stack (or recursion) to keep track of the nodes to be explored next.</p>
+    <h3>Algorithm</h3>
+    <ol>
+        <li>Initialize a stack with the root node.</li>
+        <li>Repeat until the stack is empty:
+            <ul>
+                <li>Pop the top node from the stack.</li>
+                <li>If the node is the goal, return the solution.</li>
+                <li>Push all unvisited children of the node onto the stack.</li>
+            </ul>
+        </li>
+    </ol>
+    <h3>Properties</h3>
+    <ul>
+        <li><strong>Completeness:</strong> Not guaranteed, especially in infinite or cyclic search spaces.</li>
+        <li><strong>Optimality:</strong> Not guaranteed, as it may find a suboptimal solution.</li>
+        <li><strong>Time Complexity:</strong> \( O(b^m) \), where \( b \) is the branching factor and \( m \) is the maximum depth of the search space.</li>
+        <li><strong>Space Complexity:</strong> \( O(bm) \), as it only stores the current path from the root to the leaf.</li>
+    </ul>
+    
+    <h2>Uniform-Cost Search (UCS)</h2>
+    <p>UCS expands the least-cost node, ensuring that the shortest path in terms of cost is found. It uses a priority queue to keep track of the nodes to be explored next.</p>
+    <h3>Algorithm</h3>
+    <ol>
+        <li>Initialize a priority queue with the root node, where the priority is the path cost.</li>
+        <li>Repeat until the priority queue is empty:
+            <ul>
+                <li>Dequeue the node with the lowest cost.</li>
+                <li>If the node is the goal, return the solution.</li>
+                <li>Enqueue all unvisited children of the node with the updated path costs.</li>
+            </ul>
+        </li>
+    </ol>
+    <h3>Properties</h3>
+    <ul>
+        <li><strong>Completeness:</strong> Guaranteed to find a solution if one exists and path costs are positive.</li>
+        <li><strong>Optimality:</strong> Guaranteed to find the least-cost path.</li>
+        <li><strong>Time Complexity:</strong> \( O(b^{C^*/\epsilon}) \), where \( C^* \) is the cost of the optimal solution and \( \epsilon \) is the smallest edge cost.</li>
+        <li><strong>Space Complexity:</strong> \( O(b^{C^*/\epsilon}) \), as it stores all generated nodes.</li>
+    </ul>
+    
+    <h2>Iterative Deepening Depth-First Search (IDDFS)</h2>
+    <p>IDDFS combines the depth-first search's space efficiency and the breadth-first search's completeness and optimality. It performs a series of depth-limited searches with increasing depth limits.</p>
+    <h3>Algorithm</h3>
+    <ol>
+        <li>For depth limit \( L \) from 0 to infinity:
+            <ul>
+                <li>Perform a depth-limited search up to depth \( L \).</li>
+                <li>If a solution is found, return it.</li>
+            </ul>
+        </li>
+    </ol>
+    <h3>Properties</h3>
+    <ul>
+        <li><strong>Completeness:</strong> Guaranteed to find a solution if one exists.</li>
+        <li><strong>Optimality:</strong> Finds the shortest path in terms of the number of steps.</li>
+        <li><strong>Time Complexity:</strong> \( O(b^d) \), where \( b \) is the branching factor and \( d \) is the depth of the shallowest solution.</li>
+        <li><strong>Space Complexity:</strong> \( O(bd) \), as it only stores the current path and the nodes at the current depth level.</li>
+    </ul>
+    
+    <h2>Bidirectional Search</h2>
+    <p>Bidirectional search runs two simultaneous searches: one forward from the start node and one backward from the goal node. It stops when the two searches meet.</p>
+    <h3>Algorithm</h3>
+    <ol>
+        <li>Initialize two queues: one for the forward search and one for the backward search.</li>
+        <li>Repeat until the queues intersect:
+            <ul>
+                <li>Expand a node from the forward search queue.</li>
+                <li>Expand a node from the backward search queue.</li>
+            </ul>
+        </li>
+        <li>When the queues intersect, reconstruct the path from the start to the goal.</li>
+    </ol>
+    <h3>Properties</h3>
+    <ul>
+        <li><strong>Completeness:</strong> Guaranteed to find a solution if one exists.</li>
+        <li><strong>Optimality:</strong> Depends on the search strategy used in each direction.</li>
+        <li><strong>Time Complexity:</strong> \( O(b^{d/2}) \), where \( b \) is the branching factor and \( d \) is the depth of the shallowest solution.</li>
+        <li><strong>Space Complexity:</strong> \( O(b^{d/2}) \), as it stores the nodes in both search fronts.</li>
+    </ul>
+    
+    <h2>Applications</h2>
+    <ul>
+        <li><strong>Pathfinding:</strong> Used in navigation systems, robotics, and video games to find paths in graphs.</li>
+        <li><strong>Puzzle Solving:</strong> Applied to solve puzzles like the 8-puzzle, 15-puzzle, and Rubik's Cube.</li>
+        <li><strong>Graph Traversal:</strong> Used in computer networks and web crawling to explore graph structures.</li>
+        <li><strong>Artificial Intelligence:</strong> Forms the basis for problem-solving and planning in AI systems.</li>
+    </ul>
+    
+    <h2>Conclusion</h2>
+    <p>Uninformed search algorithms are fundamental tools in artificial intelligence for exploring search spaces without domain-specific knowledge. While they may be less efficient than informed search methods, they provide a general framework for finding solutions in a wide range of applications. Understanding their properties and applications is essential for developing effective AI systems.</p>
+    
+    <a href="artificial_intelligence.html" class="back-link">Back to Artificial Intelligence Topics</a>
+
 </body>
 </html>

@@ -1,8 +1,72 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<title>Predicate Logic</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Predicate Logic</title>
+    <link rel="stylesheet" href="../styles.css">
+    <script type="text/javascript" id="MathJax-script" async
+      src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 </head>
 <body>
+
+    <h1 id="predicate-logic">Predicate Logic</h1>
+    <a href="artificial_intelligence.html" class="back-link">Back to Artificial Intelligence Topics</a>
+    <p>Predicate logic, also known as first-order logic, extends propositional logic by allowing the expression of statements involving variables and quantifiers. It is a powerful formalism for representing and reasoning about knowledge in artificial intelligence.</p>
+    
+    <h2>Overview</h2>
+    <p>Predicate logic provides a way to describe properties of objects and the relationships between them. It includes variables, predicates, quantifiers, and functions, enabling the representation of more complex statements than propositional logic.</p>
+    
+    <h2>Basic Components</h2>
+    <ul>
+        <li><strong>Variables:</strong> Symbols that can represent objects in the domain of discourse. For example, \( x \), \( y \).</li>
+        <li><strong>Constants:</strong> Symbols that represent specific objects. For example, \( a \), \( b \).</li>
+        <li><strong>Predicates:</strong> Functions that return a truth value, representing properties or relationships. For example, \( P(x) \), \( Q(x, y) \).</li>
+        <li><strong>Quantifiers:</strong> Symbols that specify the scope of a variable. There are two main quantifiers:
+            <ul>
+                <li><strong>Universal Quantifier (\( \forall \)):</strong> Indicates that a statement applies to all elements in the domain. For example, \( \forall x \, P(x) \) means "P(x) is true for all x."</li>
+                <li><strong>Existential Quantifier (\( \exists \)):</strong> Indicates that there is at least one element in the domain for which the statement is true. For example, \( \exists x \, P(x) \) means "There exists an x such that P(x) is true."</li>
+            </ul>
+        </li>
+        <li><strong>Functions:</strong> Mappings from a set of inputs to a single output. For example, \( f(x) \).</li>
+    </ul>
+    
+    <h2>Syntax</h2>
+    <p>The syntax of predicate logic defines how well-formed formulas (WFFs) are constructed. A WFF can be:</p>
+    <ul>
+        <li>A predicate applied to a term. For example, \( P(x) \).</li>
+        <li>The negation of a WFF. For example, \( \neg P(x) \).</li>
+        <li>A conjunction (\( \land \)) or disjunction (\( \lor \)) of two WFFs. For example, \( P(x) \land Q(x) \).</li>
+        <li>An implication (\( \rightarrow \)) or biconditional (\( \leftrightarrow \)) of two WFFs. For example, \( P(x) \rightarrow Q(x) \).</li>
+        <li>A universally or existentially quantified WFF. For example, \( \forall x \, P(x) \) or \( \exists x \, P(x) \).</li>
+    </ul>
+    
+    <h2>Semantics</h2>
+    <p>The semantics of predicate logic defines the meaning of WFFs. It involves interpreting the symbols in a domain of discourse and assigning truth values to predicates. A formula is true if it holds under all interpretations in a model.</p>
+    
+    <h2>Examples</h2>
+    <p>Consider the following examples:</p>
+    <ul>
+        <li>\( P(x) \): "x is a prime number."</li>
+        <li>\( Q(x, y) \): "x is greater than y."</li>
+        <li>\( \forall x \, P(x) \): "All x are prime numbers."</li>
+        <li>\( \exists x \, P(x) \): "There exists an x that is a prime number."</li>
+        <li>\( \forall x \, \exists y \, Q(x, y) \): "For every x, there exists a y such that x is greater than y."</li>
+    </ul>
+    
+    <h2>Applications</h2>
+    <ul>
+        <li><strong>Knowledge Representation:</strong> Used to represent facts and rules in knowledge bases.</li>
+        <li><strong>Automated Reasoning:</strong> Supports theorem proving and logical inference in AI systems.</li>
+        <li><strong>Natural Language Processing:</strong> Helps in understanding and generating human language.</li>
+        <li><strong>Databases:</strong> Forms the basis for query languages like SQL.</li>
+        <li><strong>Ontology Development:</strong> Used in defining structured frameworks for organizing information.</li>
+    </ul>
+    
+    <h2>Conclusion</h2>
+    <p>Predicate logic is a foundational formalism in artificial intelligence, providing the tools to represent and reason about complex statements involving objects and their relationships. Mastery of predicate logic is essential for developing sophisticated AI systems capable of advanced reasoning and knowledge representation.</p>
+    
+    <a href="artificial_intelligence.html" class="back-link">Back to Artificial Intelligence Topics</a>
+
 </body>
 </html>
