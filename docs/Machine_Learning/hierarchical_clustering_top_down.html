@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hierarchical Clustering (Top-Down)</title>
+    <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+
+    <h1 id="hierarchical-clustering-top-down">Hierarchical Clustering (Top-Down)</h1>
+    <a href="machine_learning.html" class="back-link">Back to Machine Learning Topics</a>
+    <p>Hierarchical clustering is a method of cluster analysis which seeks to build a hierarchy of clusters. In the top-down approach, also known as divisive clustering, we start with a single cluster containing all data points and recursively split it into smaller clusters.</p>
+    
+    <h2>Overview</h2>
+    <p>Hierarchical clustering can be performed in two ways:</p>
+    <ul>
+        <li><strong>Top-Down (Divisive):</strong> Start with all data points in one cluster and split recursively.</li>
+        <li><strong>Bottom-Up (Agglomerative):</strong> Start with each data point as its own cluster and merge them iteratively.</li>
+    </ul>
+    <p>In this section, we will focus on the top-down approach.</p>
+    
+    <h2>Algorithm</h2>
+    <p>The top-down hierarchical clustering algorithm works as follows:</p>
+    <ol>
+        <li>Start with all data points in a single cluster.</li>
+        <li>Recursively split the cluster into smaller clusters until each cluster contains a single data point or meets a stopping criterion.</li>
+        <li>At each step, choose the best split based on a specified criterion, such as minimizing the within-cluster variance.</li>
+    </ol>
+    
+    <h2>Steps in Top-Down Hierarchical Clustering</h2>
+    <ul>
+        <li><strong>Initialization:</strong> Begin with all data points in one cluster.</li>
+        <li><strong>Splitting:</strong> At each step, choose the best way to split the current cluster into two smaller clusters.</li>
+        <li><strong>Stopping Criterion:</strong> Stop when each cluster contains a single data point or when the desired number of clusters is reached.</li>
+    </ul>
+    
+    <h2>Advantages</h2>
+    <ul>
+        <li>Produces a hierarchy or tree of clusters that can be useful for understanding data structure.</li>
+        <li>Does not require the number of clusters to be specified in advance.</li>
+        <li>Can capture complex cluster shapes.</li>
+    </ul>
+    
+    <h2>Disadvantages</h2>
+    <ul>
+        <li>Computationally intensive, especially for large datasets.</li>
+        <li>Splits are greedy and irreversible, potentially leading to suboptimal clustering.</li>
+    </ul>
+    
+    <h2>Example</h2>
+    <p>Consider a dataset with the following points:</p>
+    <p style="text-align: center;">\[ \{ (1, 2), (2, 3), (10, 10), (12, 12) \} \]</p>
+    <p>Using top-down hierarchical clustering, we start with one cluster containing all points. The best split might separate the points into two clusters:</p>
+    <ul>
+        <li>\[ \{ (1, 2), (2, 3) \} \]</li>
+        <li>\[ \{ (10, 10), (12, 12) \} \]</li>
+    </ul>
+    <p>Further splits could separate the clusters until each cluster contains a single point.</p>
+    
+    <h2>Applications</h2>
+    <ul>
+        <li><strong>Genomics:</strong> Hierarchical clustering is used to identify gene families and understand evolutionary relationships.</li>
+        <li><strong>Image Segmentation:</strong> Used to partition an image into meaningful regions based on pixel intensity.</li>
+        <li><strong>Marketing:</strong> Helps in market segmentation to identify distinct customer groups.</li>
+    </ul>
+    
+    <h2>Conclusion</h2>
+    <p>Hierarchical clustering (top-down) is a powerful clustering method that builds a hierarchy of clusters. It is particularly useful when the underlying structure of the data is hierarchical, and it provides a comprehensive understanding of the data's organization.</p>
+    
+    <a href="machine_learning.html" class="back-link">Back to Machine Learning Topics</a>
+
+</body>
+</html>
