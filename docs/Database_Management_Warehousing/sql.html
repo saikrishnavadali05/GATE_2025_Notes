@@ -1,8 +1,125 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<title>Sql</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SQL</title>
+    <link rel="stylesheet" href="../styles.css">
 </head>
 <body>
+
+    <h1 id="sql">SQL</h1>
+    <a href="db_management_warehousing.html" class="back-link">Back to Database Management and Warehousing Topics</a>
+    <p>SQL (Structured Query Language) is a standard programming language used for managing and manipulating relational databases. SQL is widely used for querying, updating, and managing data stored in relational database management systems (RDBMS).</p>
+    
+    <h2>Overview</h2>
+    <p>SQL provides a way to interact with databases through a set of commands and statements. These commands can be classified into several categories, including Data Definition Language (DDL), Data Manipulation Language (DML), Data Control Language (DCL), and Transaction Control Language (TCL).</p>
+    
+    <h2>Data Definition Language (DDL)</h2>
+    <p>DDL statements are used to define the database structure. Common DDL commands include:</p>
+    <ul>
+        <li><strong>CREATE:</strong> Used to create databases, tables, indexes, and other database objects.
+            <pre><code>CREATE TABLE Students (
+    StudentID INT PRIMARY KEY,
+    Name VARCHAR(100),
+    Age INT,
+    GPA DECIMAL(3, 2)
+);</code></pre>
+        </li>
+        <li><strong>ALTER:</strong> Used to modify existing database objects.
+            <pre><code>ALTER TABLE Students
+ADD COLUMN Major VARCHAR(50);</code></pre>
+        </li>
+        <li><strong>DROP:</strong> Used to delete database objects.
+            <pre><code>DROP TABLE Students;</code></pre>
+        </li>
+    </ul>
+    
+    <h2>Data Manipulation Language (DML)</h2>
+    <p>DML statements are used to manipulate data within the database. Common DML commands include:</p>
+    <ul>
+        <li><strong>SELECT:</strong> Used to retrieve data from one or more tables.
+            <pre><code>SELECT Name, Age, GPA
+FROM Students
+WHERE GPA > 3.5;</code></pre>
+        </li>
+        <li><strong>INSERT:</strong> Used to add new rows to a table.
+            <pre><code>INSERT INTO Students (StudentID, Name, Age, GPA)
+VALUES (1, 'John Doe', 20, 3.7);</code></pre>
+        </li>
+        <li><strong>UPDATE:</strong> Used to modify existing rows in a table.
+            <pre><code>UPDATE Students
+SET GPA = 3.8
+WHERE StudentID = 1;</code></pre>
+        </li>
+        <li><strong>DELETE:</strong> Used to remove rows from a table.
+            <pre><code>DELETE FROM Students
+WHERE StudentID = 1;</code></pre>
+        </li>
+    </ul>
+    
+    <h2>Data Control Language (DCL)</h2>
+    <p>DCL statements are used to control access to data in the database. Common DCL commands include:</p>
+    <ul>
+        <li><strong>GRANT:</strong> Used to give users access privileges to the database.
+            <pre><code>GRANT SELECT, INSERT ON Students TO 'username';</code></pre>
+        </li>
+        <li><strong>REVOKE:</strong> Used to remove access privileges from users.
+            <pre><code>REVOKE INSERT ON Students FROM 'username';</code></pre>
+        </li>
+    </ul>
+    
+    <h2>Transaction Control Language (TCL)</h2>
+    <p>TCL statements are used to manage transactions in the database. Common TCL commands include:</p>
+    <ul>
+        <li><strong>COMMIT:</strong> Used to save the changes made in the current transaction.
+            <pre><code>COMMIT;</code></pre>
+        </li>
+        <li><strong>ROLLBACK:</strong> Used to undo the changes made in the current transaction.
+            <pre><code>ROLLBACK;</code></pre>
+        </li>
+        <li><strong>SAVEPOINT:</strong> Used to set a savepoint within a transaction.
+            <pre><code>SAVEPOINT savepoint1;</code></pre>
+        </li>
+    </ul>
+    
+    <h2>Joins</h2>
+    <p>Joins are used to combine rows from two or more tables based on a related column between them. Common types of joins include:</p>
+    <ul>
+        <li><strong>INNER JOIN:</strong> Returns only the rows that have matching values in both tables.
+            <pre><code>SELECT Students.Name, Enrollments.CourseID
+FROM Students
+INNER JOIN Enrollments ON Students.StudentID = Enrollments.StudentID;</code></pre>
+        </li>
+        <li><strong>LEFT JOIN:</strong> Returns all rows from the left table and the matched rows from the right table.
+            <pre><code>SELECT Students.Name, Enrollments.CourseID
+FROM Students
+LEFT JOIN Enrollments ON Students.StudentID = Enrollments.StudentID;</code></pre>
+        </li>
+        <li><strong>RIGHT JOIN:</strong> Returns all rows from the right table and the matched rows from the left table.
+            <pre><code>SELECT Students.Name, Enrollments.CourseID
+FROM Students
+RIGHT JOIN Enrollments ON Students.StudentID = Enrollments.StudentID;</code></pre>
+        </li>
+        <li><strong>FULL JOIN:</strong> Returns all rows when there is a match in either left or right table.
+            <pre><code>SELECT Students.Name, Enrollments.CourseID
+FROM Students
+FULL OUTER JOIN Enrollments ON Students.StudentID = Enrollments.StudentID;</code></pre>
+        </li>
+    </ul>
+    
+    <h2>Applications</h2>
+    <ul>
+        <li><strong>Database Management:</strong> SQL is used to create, maintain, and query relational databases.</li>
+        <li><strong>Data Analysis:</strong> SQL is used by data analysts to retrieve and analyze data from databases.</li>
+        <li><strong>Web Development:</strong> SQL is used to interact with databases in web applications.</li>
+        <li><strong>Business Intelligence:</strong> SQL is used to extract and manipulate data for reporting and decision-making.</li>
+    </ul>
+    
+    <h2>Conclusion</h2>
+    <p>SQL is a powerful and versatile language for managing and manipulating relational databases. By understanding and using SQL commands, one can efficiently interact with databases, retrieve meaningful data, and perform various operations essential for data management and analysis.</p>
+    
+    <a href="db_management_warehousing.html" class="back-link">Back to Database Management and Warehousing Topics</a>
+
 </body>
 </html>

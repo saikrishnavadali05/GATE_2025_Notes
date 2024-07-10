@@ -1,8 +1,97 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<title>Sampling</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sampling</title>
+    <link rel="stylesheet" href="../styles.css">
+    <script type="text/javascript" id="MathJax-script" async
+      src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 </head>
 <body>
+
+    <h1 id="sampling">Sampling</h1>
+    <a href="db_management_warehousing.html" class="back-link">Back to Database Management and Warehousing Topics</a>
+    <p>Sampling is a statistical technique used in data management and warehousing to select a subset of data from a larger dataset. This technique is often used to make data analysis more manageable, cost-effective, and time-efficient while still maintaining the accuracy and reliability of the results.</p>
+    
+    <h2>Overview</h2>
+    <p>Sampling involves selecting a representative subset of data from a population to infer the characteristics of the whole population. There are various sampling methods, each with its own advantages and applications. The choice of sampling method depends on the nature of the data and the specific requirements of the analysis.</p>
+    
+    <h2>Types of Sampling Methods</h2>
+    <p>The two main categories of sampling methods are probability sampling and non-probability sampling.</p>
+    
+    <h3>Probability Sampling</h3>
+    <p>In probability sampling, every member of the population has a known, non-zero chance of being selected. Common probability sampling methods include:</p>
+    <ul>
+        <li><strong>Simple Random Sampling:</strong> Every member of the population has an equal chance of being selected.
+            <pre><code>SELECT * FROM table
+ORDER BY RANDOM()
+LIMIT n;</code></pre>
+        </li>
+        <li><strong>Stratified Sampling:</strong> The population is divided into strata, and a random sample is taken from each stratum.
+            <pre><code>SELECT * FROM (
+    SELECT *, NTILE(n) OVER (PARTITION BY stratum_column ORDER BY RANDOM()) AS tile
+    FROM table
+) AS stratified_sample
+WHERE tile = 1;</code></pre>
+        </li>
+        <li><strong>Systematic Sampling:</strong> Every k-th member of the population is selected.
+            <pre><code>SELECT * FROM (
+    SELECT *, ROW_NUMBER() OVER (ORDER BY column) AS row_num
+    FROM table
+) AS systematic_sample
+WHERE row_num % k = 0;</code></pre>
+        </li>
+        <li><strong>Cluster Sampling:</strong> The population is divided into clusters, and entire clusters are randomly selected.
+            <pre><code>SELECT * FROM table
+WHERE cluster_column IN (
+    SELECT cluster_column
+    FROM table
+    GROUP BY cluster_column
+    ORDER BY RANDOM()
+    LIMIT n
+);</code></pre>
+        </li>
+    </ul>
+    
+    <h3>Non-Probability Sampling</h3>
+    <p>In non-probability sampling, the probability of selecting each member is not known. Common non-probability sampling methods include:</p>
+    <ul>
+        <li><strong>Convenience Sampling:</strong> Samples are selected based on their availability and ease of access.</li>
+        <li><strong>Judgmental Sampling:</strong> Samples are selected based on the judgment of the researcher.</li>
+        <li><strong>Quota Sampling:</strong> Samples are selected to meet predefined quotas for certain characteristics.</li>
+        <li><strong>Snowball Sampling:</strong> Existing study subjects recruit future subjects from among their acquaintances.</li>
+    </ul>
+    
+    <h2>Advantages and Disadvantages</h2>
+    <h3>Advantages</h3>
+    <ul>
+        <li><strong>Cost-Effective:</strong> Reduces the cost of data collection and analysis by working with a smaller dataset.</li>
+        <li><strong>Time-Efficient:</strong> Speeds up data analysis and processing times.</li>
+        <li><strong>Manageable Data:</strong> Makes it easier to handle and analyze large datasets by working with a representative sample.</li>
+        <li><strong>Accurate Estimates:</strong> Provides reliable estimates of population parameters if the sample is representative.</li>
+    </ul>
+    
+    <h3>Disadvantages</h3>
+    <ul>
+        <li><strong>Sampling Bias:</strong> If the sample is not representative, it can lead to biased results.</        </li>
+        <li><strong>Sampling Error:</strong> There is always a degree of error introduced by working with a sample instead of the entire population.</li>
+        <li><strong>Complexity:</strong> Some sampling methods can be complex to design and implement.</li>
+    </ul>
+    
+    <h2>Applications</h2>
+    <ul>
+        <li><strong>Market Research:</strong> Used to gather data on consumer preferences and behaviors.</li>
+        <li><strong>Quality Control:</strong> Applied in manufacturing to inspect a sample of products for defects.</li>
+        <li><strong>Public Health:</strong> Used in epidemiological studies to monitor the spread of diseases.</li>
+        <li><strong>Survey Research:</strong> Employed in social science research to collect data from a subset of a population.</li>
+        <li><strong>Data Warehousing:</strong> Used to create manageable datasets for analysis and reporting.</li>
+    </ul>
+    
+    <h2>Conclusion</h2>
+    <p>Sampling is a crucial technique in data management and warehousing that enables analysts to work with manageable subsets of data while still drawing accurate conclusions about the larger population. Understanding the different sampling methods and their appropriate applications is essential for effective data analysis.</p>
+    
+    <a href="db_management_warehousing.html" class="back-link">Back to Database Management and Warehousing Topics</a>
+
 </body>
 </html>

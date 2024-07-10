@@ -1,8 +1,92 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<title>Integrity Constraints</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Integrity Constraints</title>
+    <link rel="stylesheet" href="../styles.css">
 </head>
 <body>
+
+    <h1 id="integrity-constraints">Integrity Constraints</h1>
+    <a href="db_management_warehousing.html" class="back-link">Back to Database Management and Warehousing Topics</a>
+    <p>Integrity constraints are rules that ensure the accuracy and consistency of data within a relational database. These constraints help maintain data quality by restricting the types of data that can be entered into a database and enforcing relationships between tables.</p>
+    
+    <h2>Types of Integrity Constraints</h2>
+    <p>There are several types of integrity constraints commonly used in relational databases:</p>
+    
+    <h3>Domain Constraints</h3>
+    <p>Domain constraints specify the permissible values for an attribute. These constraints ensure that data entered into a column adheres to the defined data type, format, and range.</p>
+    <p><strong>Example:</strong> The age of a student must be an integer between 0 and 120.</p>
+    <pre><code>CREATE TABLE Students (
+    StudentID INT PRIMARY KEY,
+    Name VARCHAR(100),
+    Age INT CHECK (Age >= 0 AND Age <= 120)
+);</code></pre>
+    
+    <h3>Entity Integrity Constraints</h3>
+    <p>Entity integrity constraints ensure that each table has a primary key and that the primary key values are unique and not null.</p>
+    <p><strong>Example:</strong> Each student must have a unique StudentID.</p>
+    <pre><code>CREATE TABLE Students (
+    StudentID INT PRIMARY KEY,
+    Name VARCHAR(100),
+    Age INT
+);</code></pre>
+    
+    <h3>Referential Integrity Constraints</h3>
+    <p>Referential integrity constraints maintain the consistency of relationships between tables. They ensure that a foreign key value in one table corresponds to a primary key value in another table.</p>
+    <p><strong>Example:</strong> Each enrollment must refer to a valid StudentID and CourseID.</p>
+    <pre><code>CREATE TABLE Enrollments (
+    EnrollmentID INT PRIMARY KEY,
+    StudentID INT,
+    CourseID INT,
+    FOREIGN KEY (StudentID) REFERENCES Students(StudentID),
+    FOREIGN KEY (CourseID) REFERENCES Courses(CourseID)
+);</code></pre>
+    
+    <h3>Unique Constraints</h3>
+    <p>Unique constraints ensure that all values in a column or a set of columns are unique across the table.</p>
+    <p><strong>Example:</strong> Each course must have a unique CourseName.</p>
+    <pre><code>CREATE TABLE Courses (
+    CourseID INT PRIMARY KEY,
+    CourseName VARCHAR(100) UNIQUE
+);</code></pre>
+    
+    <h3>Check Constraints</h3>
+    <p>Check constraints enforce a condition that each row in the table must satisfy. These constraints can be used to implement complex business rules.</p>
+    <p><strong>Example:</strong> The GPA of a student must be between 0.0 and 4.0.</p>
+    <pre><code>CREATE TABLE Students (
+    StudentID INT PRIMARY KEY,
+    Name VARCHAR(100),
+    GPA DECIMAL(3, 2) CHECK (GPA >= 0.0 AND GPA <= 4.0)
+);</code></pre>
+    
+    <h2>Advantages of Integrity Constraints</h2>
+    <ul>
+        <li><strong>Data Accuracy:</strong> Ensures that only valid data is stored in the database.</li>
+        <li><strong>Data Consistency:</strong> Maintains the consistency of data across related tables.</li>
+        <li><strong>Data Integrity:</strong> Prevents accidental or intentional data corruption.</li>
+        <li><strong>Business Rule Enforcement:</strong> Enforces business rules at the database level, reducing the need for application-level checks.</li>
+    </ul>
+    
+    <h2>Disadvantages of Integrity Constraints</h2>
+    <ul>
+        <li><strong>Performance Overhead:</strong> Integrity constraints can add performance overhead to database operations, especially during data insertion and updates.</li>
+        <li><strong>Complexity:</strong> Managing and maintaining integrity constraints can add complexity to database design and administration.</li>
+    </ul>
+    
+    <h2>Applications</h2>
+    <ul>
+        <li><strong>Database Design:</strong> Ensures robust database design by enforcing data integrity and consistency.</li>
+        <li><strong>Data Warehousing:</strong> Maintains data quality and reliability in large-scale data warehouses.</li>
+        <li><strong>Transaction Management:</strong> Ensures the consistency of data during transactions by enforcing constraints.</li>
+        <li><strong>Reporting and Analysis:</strong> Provides reliable data for accurate reporting and analysis.</li>
+    </ul>
+    
+    <h2>Conclusion</h2>
+    <p>Integrity constraints are essential for maintaining the accuracy, consistency, and integrity of data in relational databases. By understanding and applying various types of integrity constraints, database designers and administrators can ensure high data quality and robust database systems.</p>
+    
+    <a href="db_management_warehousing.html" class="back-link">Back to Database Management and Warehousing Topics</a>
+
 </body>
 </html>

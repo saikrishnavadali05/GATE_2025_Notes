@@ -1,8 +1,65 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<title>Tuple Calculus</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tuple Calculus</title>
+    <link rel="stylesheet" href="../styles.css">
+    <script type="text/javascript" id="MathJax-script" async
+      src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 </head>
 <body>
+
+    <h1 id="tuple-calculus">Tuple Calculus</h1>
+    <a href="db_management_warehousing.html" class="back-link">Back to Database Management and Warehousing Topics</a>
+    <p>Tuple calculus is a non-procedural query language used to specify queries in a relational database. Unlike relational algebra, which uses operations to manipulate relations, tuple calculus uses logical formulas to describe the properties of the tuples to be retrieved.</p>
+    
+    <h2>Overview</h2>
+    <p>In tuple calculus, queries are expressed using tuple variables, which represent tuples in a relation. A query specifies the conditions that these tuples must satisfy. There are two types of tuple calculus:</p>
+    <ul>
+        <li><strong>Tuple Relational Calculus (TRC):</strong> Uses tuple variables to describe the tuples to be selected.</li>
+        <li><strong>Domain Relational Calculus (DRC):</strong> Uses domain variables that take values from the attributes of the relations.</li>
+    </ul>
+    
+    <h2>Tuple Relational Calculus (TRC)</h2>
+    <p>In TRC, a query is expressed as:</p>
+    <p style="text-align: center;">\[ \{ T | P(T) \} \]</p>
+    <p>where \( T \) is a tuple variable and \( P(T) \) is a formula that describes the properties that \( T \) must satisfy.</p>
+    
+    <h3>Example</h3>
+    <p>Consider a relation <code>Student</code>(<code>name</code>, <code>age</code>, <code>gpa</code>). To find the names of students with a GPA greater than 3.5, the TRC query would be:</p>
+    <p style="text-align: center;">\[ \{ S \, | \, S \in Student \land S.gpa > 3.5 \} \]</p>
+    <p>This query selects all tuples \( S \) such that \( S \) is a tuple in the <code>Student</code> relation and \( S.gpa \) is greater than 3.5.</p>
+    
+    <h2>Domain Relational Calculus (DRC)</h2>
+    <p>In DRC, a query is expressed as:</p>
+    <p style="text-align: center;">\[ \{ < x_1, x_2, \ldots, x_n > \, | \, P(x_1, x_2, \ldots, x_n) \} \]</p>
+    <p>where \( x_1, x_2, \ldots, x_n \) are domain variables and \( P(x_1, x_2, \ldots, x_n) \) is a formula that describes the conditions that the domain variables must satisfy.</p>
+    
+    <h3>Example</h3>
+    <p>Consider the same relation <code>Student</code>(<code>name</code>, <code>age</code>, <code>gpa</code>). To find the names of students with a GPA greater than 3.5, the DRC query would be:</p>
+    <p style="text-align: center;">\[ \{ < n > \, | \, \exists a, g \, (Student(n, a, g) \land g > 3.5) \} \]</p>
+    <p>This query selects all names \( n \) such that there exist \( a \) and \( g \) where \( (n, a, g) \) is a tuple in the <code>Student</code> relation and \( g \) is greater than 3.5.</p>
+    
+    <h2>Properties of Tuple Calculus</h2>
+    <ul>
+        <li><strong>Non-Procedural:</strong> Specifies what to retrieve rather than how to retrieve it.</li>
+        <li><strong>Declarative:</strong> Uses logical formulas to describe the desired result.</li>
+        <li><strong>Expressive:</strong> Can express complex queries with logical connectives and quantifiers.</li>
+        <li><strong>Safe Expressions:</strong> Ensures that queries produce finite results by restricting the use of quantifiers.</li>
+    </ul>
+    
+    <h2>Applications</h2>
+    <ul>
+        <li><strong>Query Languages:</strong> Forms the theoretical foundation for query languages like SQL.</li>
+        <li><strong>Database Theory:</strong> Used in the study of database theory and the development of query optimization techniques.</li>
+        <li><strong>Formal Verification:</strong> Provides a formal framework for verifying the correctness of queries.</li>
+    </ul>
+    
+    <h2>Conclusion</h2>
+    <p>Tuple calculus is a powerful formalism for specifying queries in a relational database. By using logical formulas to describe the properties of the tuples to be retrieved, tuple calculus provides a declarative and expressive way to query databases. Understanding tuple calculus is essential for studying database theory and developing efficient query languages.</p>
+    
+    <a href="db_management_warehousing.html" class="back-link">Back to Database Management and Warehousing Topics</a>
+
 </body>
 </html>

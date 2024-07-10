@@ -1,8 +1,174 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<title>Normal Form</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Normal Form</title>
+    <link rel="stylesheet" href="../styles.css">
 </head>
 <body>
+
+    <h1 id="normal-form">Normal Form</h1>
+    <a href="db_management_warehousing.html" class="back-link">Back to Database Management and Warehousing Topics</a>
+    <p>Normal forms are a set of guidelines used in database design to reduce redundancy and improve data integrity. These guidelines help organize data into tables in such a way that relationships between data are logical and anomalies are minimized.</p>
+    
+    <h2>First Normal Form (1NF)</h2>
+    <p>A table is in 1NF if it meets the following criteria:</p>
+    <ul>
+        <li>All columns contain atomic (indivisible) values.</li>
+        <li>There are no repeating groups of columns.</li>
+    </ul>
+    <p><strong>Example:</strong></p>
+    <pre><code>Non-1NF Table:
+-------------------------
+| StudentID | Name | Courses        |
+|-----------|------|----------------|
+| 1         | John | Math, Science  |
+| 2         | Jane | Math, English  |
+
+1NF Table:
+-------------------------
+| StudentID | Name | Course  |
+|-----------|------|---------|
+| 1         | John | Math    |
+| 1         | John | Science |
+| 2         | Jane | Math    |
+| 2         | Jane | English |
+</code></pre>
+    
+    <h2>Second Normal Form (2NF)</h2>
+    <p>A table is in 2NF if it meets the following criteria:</p>
+    <ul>
+        <li>It is in 1NF.</li>
+        <li>All non-key attributes are fully functional dependent on the primary key.</li>
+    </ul>
+    <p><strong>Example:</strong></p>
+    <pre><code>Non-2NF Table:
+-------------------------
+| StudentID | CourseID | CourseName |
+|-----------|----------|------------|
+| 1         | 101      | Math       |
+| 1         | 102      | Science    |
+| 2         | 101      | Math       |
+| 2         | 103      | English    |
+
+2NF Tables:
+-------------------------
+Students Table:
+-------------------------
+| StudentID | Name |
+|-----------|------|
+| 1         | John |
+| 2         | Jane |
+
+Courses Table:
+-------------------------
+| CourseID | CourseName |
+|----------|------------|
+| 101      | Math       |
+| 102      | Science    |
+| 103      | English    |
+
+Enrollments Table:
+-------------------------
+| StudentID | CourseID |
+|-----------|----------|
+| 1         | 101      |
+| 1         | 102      |
+| 2         | 101      |
+| 2         | 103      |
+</code></pre>
+    
+    <h2>Third Normal Form (3NF)</h2>
+    <p>A table is in 3NF if it meets the following criteria:</p>
+    <ul>
+        <li>It is in 2NF.</li>
+        <li>There are no transitive dependencies (i.e., non-key attributes do not depend on other non-key attributes).</li>
+    </ul>
+    <p><strong>Example:</strong></p>
+    <pre><code>Non-3NF Table:
+-------------------------
+| StudentID | CourseID | CourseName | Instructor |
+|-----------|----------|------------|------------|
+| 1         | 101      | Math       | Dr. Smith  |
+| 1         | 102      | Science    | Dr. Jones  |
+| 2         | 101      | Math       | Dr. Smith  |
+| 2         | 103      | English    | Dr. Brown  |
+
+3NF Tables:
+-------------------------
+Students Table:
+-------------------------
+| StudentID | Name |
+|-----------|------|
+| 1         | John |
+| 2         | Jane |
+
+Courses Table:
+-------------------------
+| CourseID | CourseName | Instructor |
+|----------|------------|------------|
+| 101      | Math       | Dr. Smith  |
+| 102      | Science    | Dr. Jones  |
+| 103      | English    | Dr. Brown  |
+
+Enrollments Table:
+-------------------------
+| StudentID | CourseID |
+|-----------|----------|
+| 1         | 101      |
+| 1         | 102      |
+| 2         | 101      |
+| 2         | 103      |
+</code></pre>
+    
+    <h2>Boyce-Codd Normal Form (BCNF)</h2>
+    <p>A table is in BCNF if it meets the following criteria:</p>
+    <ul>
+        <li>It is in 3NF.</li>
+        <li>For every functional dependency \( X \rightarrow Y \), \( X \) is a super key.</li>
+    </ul>
+    
+    <h2>Fourth Normal Form (4NF)</h2>
+    <p>A table is in 4NF if it meets the following criteria:</p>
+    <ul>
+        <li>It is in BCNF.</li>
+        <li>It has no multi-valued dependencies.</li>
+    </ul>
+    
+    <h2>Fifth Normal Form (5NF)</h2>
+    <p>A table is in 5NF if it meets the following criteria:</p>
+    <ul>
+        <li>It is in 4NF.</li>
+        <li>Every join dependency in the table is implied by the candidate keys.</li>
+    </ul>
+    
+    <h2>Advantages and Disadvantages</h2>
+    <h3>Advantages</h3>
+    <ul>
+        <li><strong>Data Integrity:</strong> Ensures data consistency and reduces anomalies.</li>
+        <li><strong>Reduced Redundancy:</strong> Minimizes duplicate data, saving storage space.</li>
+        <li><strong>Improved Performance:</strong> Enhances query performance by organizing data efficiently.</li>
+    </ul>
+    
+    <h3>Disadvantages</h3>
+    <ul>
+        <li><strong>Complexity:</strong> The normalization process can be complex and time-consuming.</li>
+        <li><strong>Increased Joins:</strong> Highly normalized databases may require more joins, which can impact query performance.</li>
+    </ul>
+    
+    <h2>Applications</h2>
+    <ul>
+        <li><strong>Database Design:</strong> Used to design efficient and scalable database schemas.</li>
+        <li><strong>Data Warehousing:</strong> Ensures data consistency and integrity in large data warehouses.</li>
+        <li><strong>Data Migration:</strong> Helps in the migration of data between systems by organizing it into normalized forms.</li>
+        <li><strong>Reporting and Analysis:</strong> Provides a structured framework for querying and analyzing data.</li>
+    </ul>
+    
+    <h2>Conclusion</h2>
+    <p>Normalization is a critical process in database design that ensures data integrity, reduces redundancy, and improves query performance. By understanding and applying the different normal forms, database designers can create efficient and scalable databases that support robust data management and analysis.</p>
+    
+    <a href="db_management_warehousing.html" class="back-link">Back to Database Management and Warehousing Topics</a>
+
 </body>
 </html>
