@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Confidence Interval</title>
+    <link rel="stylesheet" href="../styles.css">
+    <script type="text/javascript" id="MathJax-script" async
+      src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+
+    <h1 id="confidence-interval">Confidence Interval</h1>
+    <a href="probability_statistics.html" class="back-link">Back to Probability and Statistics Topics</a>
+    <p>A confidence interval is a range of values, derived from sample data, that is likely to contain the true population parameter with a specified level of confidence. It provides an estimate of the parameter along with a measure of uncertainty.</p>
+    
+    <h2>Definition</h2>
+    <p>A confidence interval for a population mean \( \mu \) is given by:</p>
+    <p style="text-align: center;">\[ \text{Confidence Interval} = \overline{X} \pm Z \frac{\sigma}{\sqrt{n}} \]</p>
+    <p>where:</p>
+    <ul>
+        <li>\( \overline{X} \) = sample mean</li>
+        <li>\( Z \) = Z-score corresponding to the desired confidence level</li>
+        <li>\( \sigma \) = population standard deviation (or sample standard deviation if \( \sigma \) is unknown)</li>
+        <li>\( n \) = sample size</li>
+    </ul>
+    
+    <h2>Confidence Levels</h2>
+    <p>Common confidence levels include 90%, 95%, and 99%. The corresponding Z-scores for these confidence levels are approximately:</p>
+    <ul>
+        <li>90%: \( Z = 1.645 \)</li>
+        <li>95%: \( Z = 1.96 \)</li>
+        <li>99%: \( Z = 2.576 \)</li>
+    </ul>
+    
+    <h2>Examples</h2>
+    <h3>Example 1: Population Mean</h3>
+    <p>Suppose we have a sample of 50 students with a mean test score of 75 and a standard deviation of 10. We want to calculate the 95% confidence interval for the true mean test score.</p>
+    <pre><code>Sample mean (\( \overline{X} \)) = 75
+Sample standard deviation (\( s \)) = 10
+Sample size (\( n \)) = 50
+Z-score for 95% confidence (\( Z \)) = 1.96
+
+Confidence Interval = 75 ± 1.96 * (10 / √50)
+                   = 75 ± 1.96 * 1.414
+                   = 75 ± 2.77
+                   = (72.23, 77.77)</code></pre>
+    <p>So, the 95% confidence interval for the true mean test score is (72.23, 77.77).</p>
+    
+    <h3>Example 2: Proportion</h3>
+    <p>Suppose we have a sample of 200 voters, and 120 of them favor a particular candidate. We want to calculate the 95% confidence interval for the true proportion of voters favoring the candidate.</p>
+    <pre><code>Sample proportion (\( \hat{p} \)) = 120 / 200 = 0.60
+Sample size (\( n \)) = 200
+Z-score for 95% confidence (\( Z \)) = 1.96
+
+Standard error (\( SE \)) = √[ (0.60 * (1 - 0.60)) / 200 ]
+                         = √[ 0.24 / 200 ]
+                         = √0.0012
+                         = 0.0346
+
+Confidence Interval = 0.60 ± 1.96 * 0.0346
+                   = 0.60 ± 0.0678
+                   = (0.5322, 0.6678)</code></pre>
+    <p>So, the 95% confidence interval for the true proportion of voters favoring the candidate is (0.5322, 0.6678).</p>
+    
+    <h2>Interpretation</h2>
+    <p>A 95% confidence interval means that if we were to take 100 different samples and compute a confidence interval for each sample, we would expect approximately 95 of the intervals to contain the true population parameter.</p>
+    
+    <h2>Factors Affecting Confidence Intervals</h2>
+    <ul>
+        <li><strong>Sample Size:</strong> Larger sample sizes result in narrower confidence intervals, indicating more precise estimates.</li>
+        <li><strong>Variability:</strong> Higher variability in the data results in wider confidence intervals.</li>
+        <li><strong>Confidence Level:</strong> Higher confidence levels result in wider confidence intervals.</li>
+    </ul>
+    
+    <h2>Applications</h2>
+    <ul>
+        <li><strong>Survey Analysis:</strong> Used to estimate population parameters based on sample data.</li>
+        <li><strong>Quality Control:</strong> Used to determine the precision of process measurements and ensure they are within acceptable limits.</li>
+        <li><strong>Clinical Trials:</strong> Used to estimate the effects of treatments and interventions.</li>
+    </ul>
+    
+    <h2>Conclusion</h2>
+    <p>Confidence intervals are a powerful tool in statistics, providing a range within which we can be reasonably sure the true population parameter lies. By understanding how to calculate and interpret confidence intervals, researchers and analysts can make more informed decisions based on sample data.</p>
+    
+    <a href="probability_statistics.html" class="back-link">Back to Probability and Statistics Topics</a>
+
+</body>
+</html>

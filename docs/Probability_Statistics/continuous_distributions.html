@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Continuous Distributions</title>
+    <link rel="stylesheet" href="../styles.css">
+    <script type="text/javascript" id="MathJax-script" async
+      src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+
+    <h1 id="continuous-distributions">Continuous Distributions</h1>
+    <a href="probability_statistics.html" class="back-link">Back to Probability and Statistics Topics</a>
+    <p>Continuous distributions are probability distributions that describe the likelihood of a continuous random variable taking on a range of values. Unlike discrete distributions, which deal with countable outcomes, continuous distributions deal with uncountable outcomes, often represented as intervals on the real number line.</p>
+    
+    <h2>Key Continuous Distributions</h2>
+    <p>There are several important continuous probability distributions commonly used in statistics:</p>
+    
+    <h3>Uniform Distribution</h3>
+    <p>The uniform distribution is characterized by having equal probability for all values within a specified range \([a, b]\). The probability density function (PDF) is given by:</p>
+    <p style="text-align: center;">\[ f(x) = \frac{1}{b - a} \quad \text{for} \quad a \leq x \leq b \]</p>
+    
+    <h3>Normal Distribution</h3>
+    <p>The normal distribution, also known as the Gaussian distribution, is a symmetric distribution characterized by its bell-shaped curve. It is defined by its mean \(\mu\) and standard deviation \(\sigma\). The PDF is given by:</p>
+    <p style="text-align: center;">\[ f(x) = \frac{1}{\sigma \sqrt{2\pi}} e^{-\frac{(x - \mu)^2}{2\sigma^2}} \]</p>
+    
+    <h3>Exponential Distribution</h3>
+    <p>The exponential distribution describes the time between events in a Poisson process. It is characterized by the rate parameter \(\lambda\). The PDF is given by:</p>
+    <p style="text-align: center;">\[ f(x) = \lambda e^{-\lambda x} \quad \text{for} \quad x \geq 0 \]</p>
+    
+    <h3>Log-Normal Distribution</h3>
+    <p>The log-normal distribution describes a variable whose logarithm is normally distributed. It is characterized by the parameters \(\mu\) and \(\sigma\). The PDF is given by:</p>
+    <p style="text-align: center;">\[ f(x) = \frac{1}{x\sigma \sqrt{2\pi}} e^{-\frac{(\ln x - \mu)^2}{2\sigma^2}} \quad \text{for} \quad x > 0 \]</p>
+    
+    <h3>Chi-Squared Distribution</h3>
+    <p>The chi-squared distribution is used in hypothesis testing and confidence interval estimation for variance. It is characterized by the degrees of freedom \(k\). The PDF is given by:</p>
+    <p style="text-align: center;">\[ f(x) = \frac{1}{2^{k/2} \Gamma(k/2)} x^{k/2 - 1} e^{-x/2} \quad \text{for} \quad x \geq 0 \]</p>
+    
+    <h3>T-Distribution</h3>
+    <p>The t-distribution is used in estimating the mean of a normally distributed population when the sample size is small. It is characterized by the degrees of freedom \( \nu \). The PDF is given by:</p>
+    <p style="text-align: center;">\[ f(x) = \frac{\Gamma((\nu+1)/2)}{\sqrt{\nu\pi} \Gamma(\nu/2)} \left(1 + \frac{x^2}{\nu}\right)^{-(\nu+1)/2} \]</p>
+    
+    <h2>Cumulative Distribution Function (CDF)</h2>
+    <p>The cumulative distribution function (CDF) of a continuous random variable \(X\) gives the probability that \(X\) will take a value less than or equal to \(x\). It is defined as:</p>
+    <p style="text-align: center;">\[ F(x) = P(X \leq x) = \int_{-\infty}^{x} f(t) \, dt \]</p>
+    
+    <h2>Properties of Continuous Distributions</h2>
+    <ul>
+        <li><strong>Probability Density Function (PDF):</strong> Describes the likelihood of a random variable taking on a specific value.</li>
+        <li><strong>Cumulative Distribution Function (CDF):</strong> Describes the probability that a random variable will take a value less than or equal to a specific value.</li>
+        <li><strong>Mean:</strong> The average or expected value of the distribution.</li>
+        <li><strong>Variance:</strong> Measures the spread or dispersion of the distribution.</li>
+        <li><strong>Standard Deviation:</strong> The square root of the variance, representing the average distance from the mean.</li>
+    </ul>
+    
+    <h2>Applications</h2>
+    <ul>
+        <li><strong>Normal Distribution:</strong> Used in natural and social sciences to represent real-valued random variables whose distributions are not known.</li>
+        <li><strong>Exponential Distribution:</strong> Applied in queuing theory, reliability analysis, and survival analysis.</li>
+        <li><strong>Log-Normal Distribution:</strong> Used to model stock prices and other financial data.</li>
+        <li><strong>Chi-Squared Distribution:</strong> Used in hypothesis testing, particularly in tests of independence and goodness of fit.</li>
+        <li><strong>T-Distribution:</strong> Applied in estimating population parameters when sample sizes are small.</li>
+    </ul>
+    
+    <h2>Conclusion</h2>
+    <p>Continuous distributions play a vital role in probability theory and statistics, providing models for real-valued random variables. Understanding these distributions and their properties is essential for data analysis, hypothesis testing, and predictive modeling.</p>
+    
+    <a href="probability_statistics.html" class="back-link">Back to Probability and Statistics Topics</a>
+
+</body>
+</html>

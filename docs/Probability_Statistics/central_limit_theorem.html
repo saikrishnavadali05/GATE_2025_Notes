@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Central Limit Theorem</title>
+    <link rel="stylesheet" href="../styles.css">
+    <script type="text/javascript" id="MathJax-script" async
+      src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+
+    <h1 id="central-limit-theorem">Central Limit Theorem</h1>
+    <a href="probability_statistics.html" class="back-link">Back to Probability and Statistics Topics</a>
+    <p>The Central Limit Theorem (CLT) is a fundamental theorem in probability theory and statistics that describes the behavior of the sum of a large number of independent, identically distributed random variables. The theorem states that, regardless of the original distribution of the data, the distribution of the sample mean approaches a normal distribution as the sample size becomes large.</p>
+    
+    <h2>Definition</h2>
+    <p>Formally, the Central Limit Theorem can be stated as follows:</p>
+    <p>Let \( X_1, X_2, \ldots, X_n \) be a sequence of independent, identically distributed random variables with mean \( \mu \) and variance \( \sigma^2 \). The sample mean \( \overline{X} \) is given by:</p>
+    <p style="text-align: center;">\[ \overline{X} = \frac{1}{n} \sum_{i=1}^{n} X_i \]</p>
+    <p>As the sample size \( n \) increases, the distribution of \( \overline{X} \) approaches a normal distribution with mean \( \mu \) and variance \( \frac{\sigma^2}{n} \). In other words,</p>
+    <p style="text-align: center;">\[ \frac{\overline{X} - \mu}{\sigma / \sqrt{n}} \xrightarrow{d} N(0, 1) \]</p>
+    <p>where \( \xrightarrow{d} \) denotes convergence in distribution, and \( N(0, 1) \) is the standard normal distribution.</p>
+    
+    <h2>Implications</h2>
+    <p>The Central Limit Theorem has several important implications in statistics:</p>
+    <ul>
+        <li><strong>Approximation:</strong> The CLT allows us to approximate the distribution of the sample mean by a normal distribution, even if the original data is not normally distributed.</li>
+        <li><strong>Confidence Intervals:</strong> The normality assumption provided by the CLT is used to construct confidence intervals for the population mean.</li>
+        <li><strong>Hypothesis Testing:</strong> The CLT is used in hypothesis testing to determine the significance of sample statistics.</li>
+    </ul>
+    
+    <h2>Examples</h2>
+    <h3>Example 1: Dice Rolls</h3>
+    <p>Consider rolling a fair six-sided die 30 times. The mean of the rolls is approximately normally distributed due to the CLT, even though the distribution of a single die roll is uniform.</p>
+    <pre><code>Mean of 30 dice rolls ≈ N(3.5, √(35/12))</code></pre>
+    
+    <h3>Example 2: Sample Means</h3>
+    <p>Consider a population with a non-normal distribution. If we take random samples of size 50 and calculate the sample means, the distribution of these sample means will approximate a normal distribution according to the CLT.</p>
+    
+    <h2>Conditions</h2>
+    <p>The Central Limit Theorem applies under certain conditions:</p>
+    <ul>
+        <li><strong>Independence:</strong> The random variables must be independent.</li>
+        <li><strong>Identical Distribution:</strong> The random variables must be identically distributed.</li>
+        <li><strong>Sample Size:</strong> The sample size must be sufficiently large (typically \( n \geq 30 \) is considered adequate).</li>
+    </ul>
+    
+    <h2>Limitations</h2>
+    <ul>
+        <li><strong>Small Samples:</strong> The CLT may not apply well for small sample sizes, especially if the original distribution is highly skewed or has heavy tails.</li>
+        <li><strong>Dependent Data:</strong> The CLT does not apply if the data points are dependent.</li>
+        <li><strong>Non-identical Distributions:</strong> The CLT assumes identically distributed variables, which may not always be the case.</li>
+    </ul>
+    
+    <h2>Applications</h2>
+    <ul>
+        <li><strong>Quality Control:</strong> Used to monitor manufacturing processes by analyzing sample means.</li>
+        <li><strong>Finance:</strong> Applied in the analysis of stock returns and risk management.</li>
+        <li><strong>Survey Analysis:</strong> Used to make inferences about population parameters based on sample data.</li>
+    </ul>
+    
+    <h2>Conclusion</h2>
+    <p>The Central Limit Theorem is a cornerstone of statistical theory, providing the foundation for many statistical methods and analyses. By understanding the CLT and its implications, statisticians and researchers can make more accurate inferences about population parameters based on sample data.</p>
+    
+    <a href="probability_statistics.html" class="back-link">Back to Probability and Statistics Topics</a>
+
+</body>
+</html>

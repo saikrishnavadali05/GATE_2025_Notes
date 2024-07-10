@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Continuous Random Variables</title>
+    <link rel="stylesheet" href="../styles.css">
+    <script type="text/javascript" id="MathJax-script" async
+      src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+
+    <h1 id="continuous-random-variables">Continuous Random Variables</h1>
+    <a href="probability_statistics.html" class="back-link">Back to Probability and Statistics Topics</a>
+    <p>A continuous random variable is a variable that can take on an infinite number of values within a given range. Unlike discrete random variables, which have countable outcomes, continuous random variables are associated with measurements and can take any value within an interval.</p>
+    
+    <h2>Definition</h2>
+    <p>A random variable \( X \) is continuous if there exists a function \( f(x) \), called the probability density function (PDF), such that for any two numbers \( a \) and \( b \) with \( a \leq b \), the probability that \( X \) takes a value in the interval \([a, b]\) is given by:</p>
+    <p style="text-align: center;">\[ P(a \leq X \leq b) = \int_{a}^{b} f(x) \, dx \]</p>
+    <p>where \( f(x) \) is non-negative for all \( x \) and the total area under the curve of \( f(x) \) over the entire range of \( X \) is equal to 1.</p>
+    
+    <h2>Probability Density Function (PDF)</h2>
+    <p>The probability density function (PDF) of a continuous random variable \( X \) describes the likelihood of \( X \) taking on a specific value. The PDF must satisfy the following properties:</p>
+    <ul>
+        <li>\( f(x) \geq 0 \) for all \( x \)</li>
+        <li>\( \int_{-\infty}^{\infty} f(x) \, dx = 1 \)</li>
+    </ul>
+    <p>The probability that \( X \) lies within a particular interval \([a, b]\) is given by the area under the curve of \( f(x) \) from \( a \) to \( b \).</p>
+    
+    <h2>Cumulative Distribution Function (CDF)</h2>
+    <p>The cumulative distribution function (CDF) of a continuous random variable \( X \) is a function \( F(x) \) that gives the probability that \( X \) is less than or equal to \( x \). It is defined as:</p>
+    <p style="text-align: center;">\[ F(x) = P(X \leq x) = \int_{-\infty}^{x} f(t) \, dt \]</p>
+    <p>The CDF is a non-decreasing function that ranges from 0 to 1.</p>
+    
+    <h2>Expectation and Variance</h2>
+    <p>The expectation (or mean) of a continuous random variable \( X \) with PDF \( f(x) \) is given by:</p>
+    <p style="text-align: center;">\[ E(X) = \int_{-\infty}^{\infty} x f(x) \, dx \]</p>
+    <p>The variance of \( X \) is a measure of the spread of its distribution and is given by:</p>
+    <p style="text-align: center;">\[ \text{Var}(X) = E[(X - E(X))^2] = \int_{-\infty}^{\infty} (x - E(X))^2 f(x) \, dx \]</p>
+    
+    <h2>Examples of Continuous Random Variables</h2>
+    <h3>Example 1: Normal Distribution</h3>
+    <p>The normal distribution is a continuous distribution characterized by its bell-shaped curve. The PDF of a normal random variable with mean \( \mu \) and variance \( \sigma^2 \) is given by:</p>
+    <p style="text-align: center;">\[ f(x) = \frac{1}{\sigma \sqrt{2\pi}} e^{-\frac{(x - \mu)^2}{2\sigma^2}} \]</p>
+    
+    <h3>Example 2: Exponential Distribution</h3>
+    <p>The exponential distribution describes the time between events in a Poisson process. The PDF of an exponential random variable with rate parameter \( \lambda \) is given by:</p>
+    <p style="text-align: center;">\[ f(x) = \lambda e^{-\lambda x} \quad \text{for} \quad x \geq 0 \]</p>
+    
+    <h2>Properties of Continuous Random Variables</h2>
+    <ul>
+        <li><strong>Infinite Possible Values:</strong> Can take on an uncountable number of values within a given range.</li>
+        <li><strong>Measured Data:</strong> Typically used to model data that can be measured, such as height, weight, or time.</li>
+        <li><strong>Area Under Curve:</strong> Probabilities are represented by areas under the PDF curve.</li>
+        <li><strong>Smooth CDF:</strong> The CDF of a continuous random variable is a smooth, non-decreasing function.</li>
+    </ul>
+    
+    <h2>Applications</h2>
+    <ul>
+        <li><strong>Natural Sciences:</strong> Used to model measurements and natural phenomena, such as temperature or rainfall.</li>
+        <li><strong>Engineering:</strong> Applied in reliability analysis, signal processing, and quality control.</li>
+        <li><strong>Finance:</strong> Used to model continuous financial data, such as stock prices and interest rates.</li>
+        <li><strong>Social Sciences:</strong> Applied in analyzing survey data and human behavior measurements.</li>
+    </ul>
+    
+    <h2>Conclusion</h2>
+    <p>Continuous random variables are essential in probability and statistics, providing a framework for modeling and analyzing data that can take on an infinite number of values. Understanding the properties and applications of continuous random variables is crucial for various fields, including natural sciences, engineering, finance, and social sciences.</p>
+    
+    <a href="probability_statistics.html" class="back-link">Back to Probability and Statistics Topics</a>
+
+</body>
+</html>
