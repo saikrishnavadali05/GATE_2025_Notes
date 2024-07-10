@@ -1,8 +1,74 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<title>Continuity</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Continuity</title>
+    <link rel="stylesheet" href="../styles.css">
+    <script type="text/javascript" id="MathJax-script" async
+      src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 </head>
 <body>
+
+    <h1 id="continuity">Continuity</h1>
+    <a href="calculus_optimization.html" class="back-link">Back to Calculus and Optimization Topics</a>
+    <p>Continuity is a fundamental concept in calculus that describes the behavior of functions. A function is said to be continuous if, intuitively, its graph can be drawn without lifting the pen from the paper. Formally, continuity at a point means that small changes in the input produce small changes in the output.</p>
+    
+    <h2>Definition</h2>
+    <p>A function \( f(x) \) is continuous at a point \( x = a \) if the following three conditions are satisfied:</p>
+    <ol>
+        <li>\( f(a) \) is defined.</li>
+        <li>\( \lim_{{x \to a}} f(x) \) exists.</li>
+        <li>\( \lim_{{x \to a}} f(x) = f(a) \).</li>
+    </ol>
+    <p>If \( f(x) \) is continuous at every point in its domain, then \( f(x) \) is said to be continuous on its domain.</p>
+    
+    <h2>Examples</h2>
+    <h3>Continuous Function</h3>
+    <p>Consider the function \( f(x) = x^2 \). It is continuous at every point in its domain because for any point \( a \):</p>
+    <p style="text-align: center;">\[ \lim_{{x \to a}} x^2 = a^2 = f(a) \]</p>
+    
+    <h3>Discontinuous Function</h3>
+    <p>Consider the function \( g(x) \) defined as:</p>
+    <p style="text-align: center;">\[ g(x) = \begin{cases} 
+    x^2 & \text{if } x \neq 1 \\
+    3 & \text{if } x = 1 
+    \end{cases} \]</p>
+    <p>This function is not continuous at \( x = 1 \) because:</p>
+    <p style="text-align: center;">\[ \lim_{{x \to 1}} g(x) = 1 \neq g(1) = 3 \]</p>
+    
+    <h2>Types of Discontinuities</h2>
+    <ul>
+        <li><strong>Removable Discontinuity:</strong> A discontinuity that can be "removed" by redefining the function at that point. For example, \( f(x) = \frac{{x^2 - 1}}{{x - 1}} \) has a removable discontinuity at \( x = 1 \).</li>
+        <li><strong>Jump Discontinuity:</strong> A discontinuity where the left and right limits exist but are not equal. For example, the function \( f(x) \) defined as:
+            <p style="text-align: center;">\[ f(x) = \begin{cases} 
+            1 & \text{if } x < 0 \\
+            2 & \text{if } x \geq 0 
+            \end{cases} \]</p>
+            has a jump discontinuity at \( x = 0 \).
+        </li>
+        <li><strong>Infinite Discontinuity:</strong> A discontinuity where the function approaches infinity at a certain point. For example, \( f(x) = \frac{1}{x} \) has an infinite discontinuity at \( x = 0 \).</li>
+    </ul>
+    
+    <h2>Properties of Continuous Functions</h2>
+    <ul>
+        <li><strong>Intermediate Value Theorem:</strong> If \( f(x) \) is continuous on \([a, b]\) and \( N \) is any number between \( f(a) \) and \( f(b) \), then there exists a number \( c \in [a, b] \) such that \( f(c) = N \).</li>
+        <li><strong>Extreme Value Theorem:</strong> If \( f(x) \) is continuous on a closed interval \([a, b]\), then \( f(x) \) has both a maximum and a minimum value on that interval.</li>
+        <li><strong>Sum, Product, and Quotient:</strong> The sum, product, and quotient (provided the denominator is non-zero) of continuous functions are continuous.</li>
+    </ul>
+    
+    <h2>Applications</h2>
+    <ul>
+        <li><strong>Physics:</strong> Describes continuous phenomena like motion, temperature, and electric fields.</li>
+        <li><strong>Engineering:</strong> Used in the analysis and design of systems and structures.</li>
+        <li><strong>Economics:</strong> Models continuous changes in economic variables.</li>
+        <li><strong>Biology:</strong> Studies continuous processes such as population growth and the spread of diseases.</li>
+    </ul>
+    
+    <h2>Conclusion</h2>
+    <p>Continuity is a crucial concept in calculus and mathematical analysis. Understanding continuity and its properties helps in analyzing and modeling various natural and engineered systems. It provides the foundation for more advanced topics in calculus and real analysis.</p>
+    
+    <a href="calculus_optimization.html" class="back-link">Back to Calculus and Optimization Topics</a>
+
 </body>
 </html>

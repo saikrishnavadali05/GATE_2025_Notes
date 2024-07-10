@@ -1,8 +1,62 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<title>Maxima And Minima</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maxima and Minima</title>
+    <link rel="stylesheet" href="../styles.css">
+    <script type="text/javascript" id="MathJax-script" async
+      src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 </head>
 <body>
+
+    <h1 id="maxima-minima">Maxima and Minima</h1>
+    <a href="calculus_optimization.html" class="back-link">Back to Calculus and Optimization Topics</a>
+    <p>Maxima and minima refer to the highest and lowest values that a function can attain. These points are critical for understanding the behavior of functions and are used extensively in optimization problems.</p>
+    
+    <h2>Definitions</h2>
+    <p><strong>Local Maximum:</strong> A function \( f(x) \) has a local maximum at \( x = c \) if \( f(c) \geq f(x) \) for all \( x \) in some interval around \( c \).</p>
+    <p><strong>Local Minimum:</strong> A function \( f(x) \) has a local minimum at \( x = c \) if \( f(c) \leq f(x) \) for all \( x \) in some interval around \( c \).</p>
+    <p><strong>Global Maximum:</strong> A function \( f(x) \) has a global maximum at \( x = c \) if \( f(c) \geq f(x) \) for all \( x \) in the domain of \( f \).</p>
+    <p><strong>Global Minimum:</strong> A function \( f(x) \) has a global minimum at \( x = c \) if \( f(c) \leq f(x) \) for all \( x \) in the domain of \( f \).</p>
+    
+    <h2>Finding Maxima and Minima</h2>
+    <h3>First Derivative Test</h3>
+    <p>The first derivative test involves finding the critical points of \( f(x) \) where \( f'(x) = 0 \) or \( f'(x) \) is undefined. The nature of the critical points can be determined by examining the sign of \( f'(x) \) around these points.</p>
+    <ul>
+        <li>If \( f'(x) \) changes from positive to negative at \( x = c \), then \( f(c) \) is a local maximum.</li>
+        <li>If \( f'(x) \) changes from negative to positive at \( x = c \), then \( f(c) \) is a local minimum.</li>
+    </ul>
+    
+    <h3>Second Derivative Test</h3>
+    <p>The second derivative test involves evaluating the second derivative \( f''(x) \) at the critical points.</p>
+    <ul>
+        <li>If \( f''(c) > 0 \), then \( f(c) \) is a local minimum.</li>
+        <li>If \( f''(c) < 0 \), then \( f(c) \) is a local maximum.</li>
+        <li>If \( f''(c) = 0 \), the test is inconclusive.</li>
+    </ul>
+    
+    <h2>Examples</h2>
+    <h3>Example 1: Polynomial Function</h3>
+    <p>Consider the function \( f(x) = x^3 - 3x^2 + 2 \). To find its maxima and minima:</p>
+    <p style="text-align: center;">\[ f'(x) = 3x^2 - 6x \]</p>
+    <p>Setting \( f'(x) = 0 \), we get \( x(x - 2) = 0 \), so \( x = 0 \) and \( x = 2 \).</p>
+    <p>Using the second derivative test:</p>
+    <p style="text-align: center;">\[ f''(x) = 6x - 6 \]</p>
+    <p>At \( x = 0 \), \( f''(0) = -6 \), so \( x = 0 \) is a local maximum.</p>
+    <p>At \( x = 2 \), \( f''(2) = 6 \), so \( x = 2 \) is a local minimum.</p>
+    
+    <h2>Applications</h2>
+    <ul>
+        <li><strong>Optimization:</strong> Used in finding optimal solutions in various fields like economics, engineering, and operations research.</li>
+        <li><strong>Physics:</strong> Helps in determining points of equilibrium and stability.</li>
+        <li><strong>Economics:</strong> Used to find maximum profit, minimum cost, and optimal production levels.</li>
+    </ul>
+    
+    <h2>Conclusion</h2>
+    <p>Understanding maxima and minima is crucial for analyzing the behavior of functions and solving optimization problems. The first and second derivative tests provide systematic methods for finding these critical points.</p>
+    
+    <a href="calculus_optimization.html" class="back-link">Back to Calculus and Optimization Topics</a>
+
 </body>
 </html>

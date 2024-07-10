@@ -1,8 +1,60 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<title>Limit</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Limit</title>
+    <link rel="stylesheet" href="../styles.css">
+    <script type="text/javascript" id="MathJax-script" async
+      src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 </head>
 <body>
+
+    <h1 id="limit">Limit</h1>
+    <a href="calculus_optimization.html" class="back-link">Back to Calculus and Optimization Topics</a>
+    <p>The concept of a limit is fundamental in calculus and mathematical analysis. A limit describes the value that a function approaches as the input approaches some value. Limits are essential for defining derivatives, integrals, and continuity.</p>
+    
+    <h2>Definition</h2>
+    <p>A function \( f(x) \) has a limit \( L \) as \( x \) approaches \( a \) if, for every number \( \epsilon > 0 \), there exists a number \( \delta > 0 \) such that whenever \( 0 < |x - a| < \delta \), it follows that \( |f(x) - L| < \epsilon \). Formally, this is written as:</p>
+    <p style="text-align: center;">\[ \lim_{{x \to a}} f(x) = L \]</p>
+    
+    <h2>Examples</h2>
+    <h3>Finite Limit</h3>
+    <p>Consider the function \( f(x) = 2x \). The limit as \( x \) approaches 3 is:</p>
+    <p style="text-align: center;">\[ \lim_{{x \to 3}} 2x = 2 \cdot 3 = 6 \]</p>
+    
+    <h3>Infinite Limit</h3>
+    <p>Consider the function \( f(x) = \frac{1}{x} \). The limit as \( x \) approaches 0 is infinite:</p>
+    <p style="text-align: center;">\[ \lim_{{x \to 0}} \frac{1}{x} = \infty \]</p>
+    
+    <h2>One-Sided Limits</h2>
+    <p>One-sided limits consider the behavior of \( f(x) \) as \( x \) approaches \( a \) from one side (left or right).</p>
+    <h3>Left-Hand Limit</h3>
+    <p>The left-hand limit of \( f(x) \) as \( x \) approaches \( a \) is denoted as \( \lim_{{x \to a^-}} f(x) \).</p>
+    <h3>Right-Hand Limit</h3>
+    <p>The right-hand limit of \( f(x) \) as \( x \) approaches \( a \) is denoted as \( \lim_{{x \to a^+}} f(x) \).</p>
+    
+    <h2>Limit Laws</h2>
+    <p>Several useful rules and properties of limits include:</p>
+    <ul>
+        <li><strong>Sum Law:</strong> \( \lim_{{x \to a}} [f(x) + g(x)] = \lim_{{x \to a}} f(x) + \lim_{{x \to a}} g(x) \)</li>
+        <li><strong>Product Law:</strong> \( \lim_{{x \to a}} [f(x) \cdot g(x)] = \lim_{{x \to a}} f(x) \cdot \lim_{{x \to a}} g(x) \)</li>
+        <li><strong>Quotient Law:</strong> \( \lim_{{x \to a}} \left[\frac{f(x)}{g(x)}\right] = \frac{\lim_{{x \to a}} f(x)}{\lim_{{x \to a}} g(x)} \) (provided \( \lim_{{x \to a}} g(x) \neq 0 \))</li>
+        <li><strong>Power Law:</strong> \( \lim_{{x \to a}} [f(x)]^n = \left[\lim_{{x \to a}} f(x)\right]^n \)</li>
+    </ul>
+    
+    <h2>Applications</h2>
+    <ul>
+        <li><strong>Calculus:</strong> Foundational for defining derivatives and integrals.</li>
+        <li><strong>Analysis:</strong> Essential in studying the behavior of functions and series.</li>
+        <li><strong>Physics:</strong> Used to model physical phenomena that involve change and motion.</li>
+        <li><strong>Engineering:</strong> Applied in designing systems and analyzing signals.</li>
+    </ul>
+    
+    <h2>Conclusion</h2>
+    <p>Understanding limits is crucial for studying and applying calculus. Limits provide a rigorous way to discuss the behavior of functions as their inputs approach specific values, laying the groundwork for derivatives and integrals.</p>
+    
+    <a href="calculus_optimization.html" class="back-link">Back to Calculus and Optimization Topics</a>
+
 </body>
 </html>

@@ -1,8 +1,59 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<title>Differentiability</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Differentiability</title>
+    <link rel="stylesheet" href="../styles.css">
+    <script type="text/javascript" id="MathJax-script" async
+      src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 </head>
 <body>
+
+    <h1 id="differentiability">Differentiability</h1>
+    <a href="calculus_optimization.html" class="back-link">Back to Calculus and Optimization Topics</a>
+    <p>Differentiability is a fundamental concept in calculus that describes the existence of a derivative for a function at a given point. If a function is differentiable at a point, it means that it has a well-defined tangent at that point, and the function can be locally approximated by a linear function.</p>
+    
+    <h2>Definition</h2>
+    <p>A function \( f(x) \) is said to be differentiable at a point \( x = a \) if the following limit exists:</p>
+    <p style="text-align: center;">\[ f'(a) = \lim_{{h \to 0}} \frac{{f(a + h) - f(a)}}{h} \]</p>
+    <p>If \( f(x) \) is differentiable at every point in an interval, then it is said to be differentiable on that interval.</p>
+    
+    <h2>Examples</h2>
+    <h3>Differentiable Function</h3>
+    <p>Consider the function \( f(x) = x^2 \). To check if it is differentiable at \( x = a \), we calculate the limit:</p>
+    <p style="text-align: center;">\[ f'(a) = \lim_{{h \to 0}} \frac{{(a + h)^2 - a^2}}{h} = \lim_{{h \to 0}} \frac{{a^2 + 2ah + h^2 - a^2}}{h} = \lim_{{h \to 0}} \frac{{2ah + h^2}}{h} = \lim_{{h \to 0}} (2a + h) = 2a \]</p>
+    <p>Therefore, \( f(x) = x^2 \) is differentiable at \( x = a \) with \( f'(a) = 2a \).</p>
+    
+    <h3>Non-Differentiable Function</h3>
+    <p>Consider the function \( g(x) = |x| \). To check if it is differentiable at \( x = 0 \), we calculate the left-hand and right-hand limits:</p>
+    <p style="text-align: center;">\[ g'(0^-) = \lim_{{h \to 0^-}} \frac{{|0 + h| - |0|}}{h} = \lim_{{h \to 0^-}} \frac{{-h}}{h} = -1 \]</p>
+    <p style="text-align: center;">\[ g'(0^+) = \lim_{{h \to 0^+}} \frac{{|0 + h| - |0|}}{h} = \lim_{{h \to 0^+}} \frac{{h}}{h} = 1 \]</p>
+    <p>Since the left-hand and right-hand limits are not equal, \( g(x) = |x| \) is not differentiable at \( x = 0 \).</p>
+    
+    <h2>Relationship Between Continuity and Differentiability</h2>
+    <ul>
+        <li>If a function is differentiable at a point, it is also continuous at that point.</li>
+        <li>If a function is not continuous at a point, it is not differentiable at that point.</li>
+        <li>However, a function can be continuous at a point but not differentiable at that point (e.g., \( g(x) = |x| \) at \( x = 0 \)).</li>
+    </ul>
+    
+    <h2>Higher-Order Derivatives</h2>
+    <p>If \( f(x) \) is differentiable, its derivative \( f'(x) \) may also be differentiable. If \( f'(x) \) is differentiable, its derivative is called the second-order derivative of \( f(x) \), denoted as \( f''(x) \). This process can continue, leading to higher-order derivatives \( f^{(n)}(x) \) for \( n \geq 1 \).</p>
+    
+    <h2>Applications</h2>
+    <ul>
+        <li><strong>Physics:</strong> Used to describe motion, forces, and other physical phenomena.</li>
+        <li><strong>Engineering:</strong> Essential for analyzing and designing systems and structures.</li>
+        <li><strong>Economics:</strong> Helps in modeling and analyzing changes in economic variables.</li>
+        <li><strong>Biology:</strong> Used in modeling growth rates and other dynamic processes.</li>
+        <li><strong>Computer Science:</strong> Applied in algorithms and optimization problems.</li>
+    </ul>
+    
+    <h2>Conclusion</h2>
+    <p>Differentiability is a key concept in calculus that extends the idea of continuity by describing how a function changes at a given point. Understanding differentiability is essential for studying and applying calculus to real-world problems.</p>
+    
+    <a href="calculus_optimization.html" class="back-link">Back to Calculus and Optimization Topics</a>
+
 </body>
 </html>

@@ -1,8 +1,62 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<title>Optimization Involving A Single Variable</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Single Variable Optimization</title>
+    <link rel="stylesheet" href="../styles.css">
+    <script type="text/javascript" id="MathJax-script" async
+      src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 </head>
 <body>
+
+    <h1 id="single-variable-optimization">Single Variable Optimization</h1>
+    <a href="calculus_optimization.html" class="back-link">Back to Calculus and Optimization Topics</a>
+    <p>Single variable optimization involves finding the maximum or minimum value of a function that depends on a single variable. This process is crucial in various fields, including economics, engineering, and operations research.</p>
+    
+    <h2>Overview</h2>
+    <p>The goal of single variable optimization is to find the value of \( x \) that maximizes or minimizes the function \( f(x) \). This process typically involves finding the critical points of \( f(x) \) by setting its derivative \( f'(x) \) to zero and solving for \( x \).</p>
+    
+    <h2>Steps in Single Variable Optimization</h2>
+    <ol>
+        <li><strong>Find the derivative:</strong> Calculate the first derivative \( f'(x) \) of the function \( f(x) \).</li>
+        <li><strong>Set the derivative to zero:</strong> Solve the equation \( f'(x) = 0 \) to find the critical points.</li>
+        <li><strong>Classify the critical points:</strong> Use the second derivative test or other methods to determine whether each critical point is a maximum, minimum, or saddle point.</li>
+        <li><strong>Evaluate endpoints:</strong> If the domain of \( f(x) \) is closed and bounded, evaluate the function at the endpoints of the domain to find the absolute maximum and minimum values.</li>
+    </ol>
+    
+    <h2>Examples</h2>
+    <h3>Example 1: Quadratic Function</h3>
+    <p>Consider the function \( f(x) = x^2 - 4x + 4 \). To find its minimum value:</p>
+    <p style="text-align: center;">\[ f'(x) = 2x - 4 \]</p>
+    <p>Setting \( f'(x) = 0 \), we get \( x = 2 \).</p>
+    <p>Using the second derivative test:</p>
+    <p style="text-align: center;">\[ f''(x) = 2 \]</p>
+    <p>Since \( f''(2) > 0 \), \( x = 2 \) is a minimum point.</p>
+    <p>The minimum value of \( f(x) \) is \( f(2) = 0 \).</p>
+    
+    <h3>Example 2: Cubic Function</h3>
+    <p>Consider the function \( f(x) = x^3 - 3x^2 + 2x \). To find its extrema:</p>
+    <p style="text-align: center;">\[ f'(x) = 3x^2 - 6x + 2 \]</p>
+    <p>Setting \( f'(x) = 0 \), we solve the quadratic equation \( 3x^2 - 6x + 2 = 0 \).</p>
+    <p>The solutions are \( x = 1 \pm \frac{1}{\sqrt{3}} \).</p>
+    <p>Using the second derivative test:</p>
+    <p style="text-align: center;">\[ f''(x) = 6x - 6 \]</p>
+    <p>At \( x = 1 - \frac{1}{\sqrt{3}} \), \( f''(x) < 0 \), indicating a local maximum.</p>
+    <p>At \( x = 1 + \frac{1}{\sqrt{3}} \), \( f''(x) > 0 \), indicating a local minimum.</p>
+    
+    <h2>Applications</h2>
+    <ul>
+        <li><strong>Economics:</strong> Used to find the maximum profit, minimum cost, and optimal production levels.</li>
+        <li><strong>Engineering:</strong> Applied in the design and analysis of systems to achieve optimal performance.</li>
+        <li><strong>Operations Research:</strong> Helps in optimizing various operations, such as logistics and resource allocation.</li>
+        <li><strong>Finance:</strong> Used to maximize returns and minimize risks in investment portfolios.</li>
+    </ul>
+    
+    <h2>Conclusion</h2>
+    <p>Single variable optimization is a critical process for finding the optimal values of functions that depend on a single variable. By understanding and applying the steps involved, one can solve a wide range of practical optimization problems.</p>
+    
+    <a href="calculus_optimization.html" class="back-link">Back to Calculus and Optimization Topics</a>
+
 </body>
 </html>
