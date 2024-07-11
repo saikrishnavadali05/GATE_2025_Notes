@@ -1,8 +1,65 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<title>Bubble Sort</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bubble Sort</title>
+    <link rel="stylesheet" href="../styles.css">
 </head>
 <body>
+
+    <h1 id="bubble-sort">Bubble Sort</h1>
+    <a href="programming_data_structures_algorithms.html" class="back-link">Back to Programming, Data Structures, and Algorithms Topics</a>
+    <p>Bubble sort is a simple comparison-based sorting algorithm that repeatedly steps through the list, compares adjacent elements, and swaps them if they are in the wrong order. The process is repeated until the list is sorted.</p>
+    
+    <h2>Algorithm</h2>
+    <p>The bubble sort algorithm operates as follows:</p>
+    <ol>
+        <li>Start at the beginning of the list.</li>
+        <li>Compare the first two elements. If the first element is greater than the second, swap them.</li>
+        <li>Move to the next pair of elements and repeat the comparison and swap if necessary.</li>
+        <li>Continue this process until the end of the list. After each pass, the largest element in the unsorted portion of the list is moved to its correct position.</li>
+        <li>Repeat the process for the remaining unsorted portion of the list.</li>
+    </ol>
+    
+    <h2>Example</h2>
+    <p>Consider the list \([5, 3, 8, 4, 2]\). The bubble sort algorithm proceeds as follows:</p>
+    <ol>
+        <li>First pass: \([3, 5, 4, 2, 8]\)</li>
+        <li>Second pass: \([3, 4, 2, 5, 8]\)</li>
+        <li>Third pass: \([3, 2, 4, 5, 8]\)</li>
+        <li>Fourth pass: \([2, 3, 4, 5, 8]\)</li>
+    </ol>
+    <p>After four passes, the list is sorted.</p>
+    
+    <h2>Python Implementation</h2>
+    <pre><code>def bubble_sort(arr):
+    n = len(arr)
+    for i in range(n):
+        for j in range(0, n-i-1):
+            if arr[j] > arr[j+1]:
+                arr[j], arr[j+1] = arr[j+1], arr[j]
+
+# Example usage
+arr = [5, 3, 8, 4, 2]
+bubble_sort(arr)
+print('Sorted array:', arr)</code></pre>
+    
+    <h2>Time Complexity</h2>
+    <p>The time complexity of bubble sort is \( O(n^2) \) in the worst and average cases, where \( n \) is the number of elements in the list. This is because each element is compared with every other element, leading to a quadratic number of comparisons.</p>
+    <p>In the best case, when the list is already sorted, the time complexity is \( O(n) \), as the algorithm can detect that no swaps are needed after one pass.</p>
+    
+    <h2>Applications</h2>
+    <ul>
+        <li><strong>Educational Purposes:</strong> Bubble sort is often used as an introductory algorithm to teach sorting concepts due to its simplicity.</li>
+        <li><strong>Small Datasets:</strong> Suitable for sorting small datasets where the simplicity of implementation outweighs performance concerns.</li>
+        <li><strong>Step-by-Step Visualization:</strong> Easy to visualize and understand the sorting process step by step.</li>
+    </ul>
+    
+    <h2>Conclusion</h2>
+    <p>Bubble sort is a straightforward sorting algorithm that is easy to understand and implement. While it is not efficient for large datasets due to its quadratic time complexity, it serves as a useful educational tool and can be used for small datasets where simplicity is more important than performance.</p>
+    
+    <a href="programming_data_structures_algorithms.html" class="back-link">Back to Programming, Data Structures, and Algorithms Topics</a>
+
 </body>
 </html>
