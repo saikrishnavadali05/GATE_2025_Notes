@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expectation and Variance</title>
+    <link rel="stylesheet" href="../styles.css">
+    <script type="text/javascript" id="MathJax-script" async
+      src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+
+    <h1 id="expectation-and-variance">Expectation and Variance</h1>
+    <a href="probability_statistics.html" class="back-link">Back to Probability and Statistics Topics</a>
+    <p>Expectation and variance are fundamental concepts in probability theory and statistics. They provide important measures of the central tendency and dispersion of random variables, respectively.</p>
+    
+    <h2>Expectation (Mean)</h2>
+    <p>The expectation (or mean) of a random variable provides a measure of the central tendency, indicating the average value the random variable takes. The expectation of a discrete random variable \(X\) with probability mass function (PMF) \(p(x)\) is given by:</p>
+    <p style="text-align: center;">\[ E(X) = \sum_{x} x p(x) \]</p>
+    <p>For a continuous random variable \(X\) with probability density function (PDF) \(f(x)\), the expectation is given by:</p>
+    <p style="text-align: center;">\[ E(X) = \int_{-\infty}^{\infty} x f(x) \, dx \]</p>
+    
+    <h3>Example: Discrete Random Variable</h3>
+    <p>Consider a discrete random variable \(X\) that can take on the values 1, 2, or 3 with probabilities 0.2, 0.5, and 0.3, respectively. The expectation of \(X\) is calculated as:</p>
+    <p style="text-align: center;">\[ E(X) = 1 \cdot 0.2 + 2 \cdot 0.5 + 3 \cdot 0.3 = 0.2 + 1.0 + 0.9 = 2.1 \]</p>
+    
+    <h3>Example: Continuous Random Variable</h3>
+    <p>Consider a continuous random variable \(X\) with PDF \(f(x) = \frac{1}{2} e^{-|x|}\). The expectation of \(X\) is calculated as:</p>
+    <p style="text-align: center;">\[ E(X) = \int_{-\infty}^{\infty} x \cdot \frac{1}{2} e^{-|x|} \, dx = 0 \] 
+    (since the function is symmetric around 0)</p>
+    
+    <h2>Variance</h2>
+    <p>Variance measures the spread or dispersion of a random variable's values around the mean, indicating how much the values of the random variable deviate from the expectation. The variance of a discrete random variable \(X\) with PMF \(p(x)\) is given by:</p>
+    <p style="text-align: center;">\[ \text{Var}(X) = E[(X - E(X))^2] = \sum_{x} (x - E(X))^2 p(x) \]</p>
+    <p>For a continuous random variable \(X\) with PDF \(f(x)\), the variance is given by:</p>
+    <p style="text-align: center;">\[ \text{Var}(X) = E[(X - E(X))^2] = \int_{-\infty}^{\infty} (x - E(X))^2 f(x) \, dx \]</p>
+    
+    <h3>Example: Discrete Random Variable</h3>
+    <p>Consider the same discrete random variable \(X\) with values 1, 2, or 3 and probabilities 0.2, 0.5, and 0.3, respectively. The expectation of \(X\) is 2.1. The variance of \(X\) is calculated as:</p>
+    <p style="text-align: center;">\[ \text{Var}(X) = (1 - 2.1)^2 \cdot 0.2 + (2 - 2.1)^2 \cdot 0.5 + (3 - 2.1)^2 \cdot 0.3 \]
+    \[ = 1.21 \cdot 0.2 + 0.01 \cdot 0.5 + 0.81 \cdot 0.3 = 0.242 + 0.005 + 0.243 = 0.49 \]</p>
+    
+    <h3>Example: Continuous Random Variable</h3>
+    <p>Consider the same continuous random variable \(X\) with PDF \(f(x) = \frac{1}{2} e^{-|x|}\). The expectation of \(X\) is 0. The variance of \(X\) is calculated as:</p>
+    <p style="text-align: center;">\[ \text{Var}(X) = \int_{-\infty}^{\infty} x^2 \cdot \frac{1}{2} e^{-|x|} \, dx = 1 \]</p>
+    
+    <h2>Properties</h2>
+    <ul>
+        <li><strong>Linearity of Expectation:</strong> For any two random variables \(X\) and \(Y\), and constants \(a\) and \(b\), \(E(aX + bY) = aE(X) + bE(Y)\).</li>
+        <li><strong>Non-negativity of Variance:</strong> Variance is always non-negative, i.e., \(\text{Var}(X) \geq 0\).</li>
+        <li><strong>Additivity of Variance (Independent Variables):</strong> For two independent random variables \(X\) and \(Y\), \(\text{Var}(X + Y) = \text{Var}(X) + \text{Var}(Y)\).</li>
+    </ul>
+    
+    <h2>Applications</h2>
+    <ul>
+        <li><strong>Risk Assessment:</strong> Used to evaluate the risk associated with different financial investments.</li>
+        <li><strong>Quality Control:</strong> Applied in manufacturing to monitor the variability of product quality.</li>
+        <li><strong>Statistics:</strong> Fundamental in hypothesis testing, confidence intervals, and regression analysis.</li>
+        <li><strong>Data Analysis:</strong> Essential for summarizing and understanding the distribution of data.</li>
+    </ul>
+    
+    <h2>Conclusion</h2>
+    <p>Expectation and variance are critical measures in probability and statistics, providing insights into the central tendency and variability of random variables. Understanding these concepts is essential for various applications in finance, quality control, statistics, and data analysis.</p>
+    
+    <a href="probability_statistics.html" class="back-link">Back to Probability and Statistics Topics</a>
+
+</body>
+</html>

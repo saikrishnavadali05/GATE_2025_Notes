@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Probability</title>
+    <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+
+    <h1 id="probability">Probability</h1>
+    <a href="probability_statistics.html" class="back-link">Back to Probability and Statistics Topics</a>
+    <p>Probability is a branch of mathematics that deals with the likelihood of the occurrence of different events. It provides a quantitative description of the uncertainty and randomness of various phenomena.</p>
+    
+    <h2>Basic Concepts</h2>
+    <p>Probability is measured on a scale from 0 to 1, where 0 indicates an impossible event and 1 indicates a certain event. The probability of an event \( A \) is denoted by \( P(A) \).</p>
+    
+    <h3>Sample Space</h3>
+    <p>The sample space (\( S \)) is the set of all possible outcomes of a random experiment. For example, the sample space for a coin toss is \( S = \{ \text{Heads}, \text{Tails} \} \).</p>
+    
+    <h3>Event</h3>
+    <p>An event is a subset of the sample space. For example, getting a head when tossing a coin is an event, which can be represented as \( A = \{ \text{Heads} \} \).</p>
+    
+    <h2>Types of Probability</h2>
+    <ul>
+        <li><strong>Classical Probability:</strong> Assumes that all outcomes in the sample space are equally likely. It is defined as the ratio of the number of favorable outcomes to the total number of outcomes.
+            <p style="text-align: center;">\[ P(A) = \frac{\text{Number of favorable outcomes}}{\text{Total number of outcomes}} \]</p>
+        </li>
+        <li><strong>Empirical Probability:</strong> Based on observations or experiments. It is defined as the ratio of the number of times an event occurs to the total number of trials.
+            <p style="text-align: center;">\[ P(A) = \frac{\text{Number of times event A occurs}}{\text{Total number of trials}} \]</p>
+        </li>
+        <li><strong>Subjective Probability:</strong> Based on personal judgment, intuition, or experience, rather than on objective data.
+        </li>
+    </ul>
+    
+    <h2>Rules of Probability</h2>
+    <h3>1. Addition Rule</h3>
+    <p>For any two events \( A \) and \( B \), the probability that either \( A \) or \( B \) (or both) will occur is given by:
+    <p style="text-align: center;">\[ P(A \cup B) = P(A) + P(B) - P(A \cap B) \]</p>
+    <p>If \( A \) and \( B \) are mutually exclusive (disjoint), then:
+    <p style="text-align: center;">\[ P(A \cup B) = P(A) + P(B) \]</p>
+
+    <h3>2. Multiplication Rule</h3>
+    <p>For any two events \( A \) and \( B \), the probability that both \( A \) and \( B \) will occur is given by:
+    <p style="text-align: center;">\[ P(A \cap B) = P(A) \cdot P(B \mid A) \]</p>
+    <p>If \( A \) and \( B \) are independent, then:
+    <p style="text-align: center;">\[ P(A \cap B) = P(A) \cdot P(B) \]</p>
+
+    <h3>3. Complementary Rule</h3>
+    <p>The probability of the complement of an event \( A \) (the event that \( A \) does not occur) is given by:
+    <p style="text-align: center;">\[ P(A^c) = 1 - P(A) \]</p>
+
+    <h2>Conditional Probability</h2>
+    <p>Conditional probability is the probability of an event occurring given that another event has already occurred. The conditional probability of \( A \) given \( B \) is denoted by \( P(A \mid B) \) and is defined as:
+    <p style="text-align: center;">\[ P(A \mid B) = \frac{P(A \cap B)}{P(B)} \]</p>
+    
+    <h2>Bayes' Theorem</h2>
+    <p>Bayes' theorem describes the probability of an event based on prior knowledge of conditions that might be related to the event. It is stated as:
+    <p style="text-align: center;">\[ P(A \mid B) = \frac{P(B \mid A) \cdot P(A)}{P(B)} \]</p>
+    
+    <h2>Applications</h2>
+    <ul>
+        <li><strong>Risk Assessment:</strong> Used in finance and insurance to evaluate the likelihood of various risks.</li>
+        <li><strong>Quality Control:</strong> Applied in manufacturing to monitor and improve product quality.</li>
+        <li><strong>Medical Research:</strong> Used to determine the likelihood of health outcomes and effectiveness of treatments.</li>
+        <li><strong>Decision Making:</strong> Helps in making informed decisions under uncertainty in various fields.</li>
+    </ul>
+    
+    <h2>Conclusion</h2>
+    <p>Probability provides a mathematical framework for quantifying uncertainty and making predictions about the likelihood of different events. Understanding probability is essential for various applications in science, engineering, finance, medicine, and everyday decision-making.</p>
+    
+    <a href="probability_statistics.html" class="back-link">Back to Probability and Statistics Topics</a>
+
+</body>
+</html>

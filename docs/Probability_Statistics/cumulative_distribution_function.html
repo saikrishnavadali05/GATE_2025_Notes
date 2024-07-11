@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cumulative Distribution Function (CDF)</title>
+    <link rel="stylesheet" href="../styles.css">
+    <script type="text/javascript" id="MathJax-script" async
+      src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+
+    <h1 id="cumulative-distribution-function">Cumulative Distribution Function (CDF)</h1>
+    <a href="probability_statistics.html" class="back-link">Back to Probability and Statistics Topics</a>
+    <p>The cumulative distribution function (CDF) is a fundamental concept in probability theory and statistics. It describes the probability that a random variable takes on a value less than or equal to a given point. The CDF provides a complete description of the distribution of a random variable.</p>
+    
+    <h2>Definition</h2>
+    <p>For a random variable \(X\), the cumulative distribution function \(F(x)\) is defined as:</p>
+    <p style="text-align: center;">\[ F(x) = P(X \leq x) \]</p>
+    <p>This function gives the probability that the random variable \(X\) will take a value less than or equal to \(x\).</p>
+    
+    <h2>Properties of the CDF</h2>
+    <ul>
+        <li><strong>Non-decreasing:</strong> The CDF is a non-decreasing function, meaning that \(F(x_1) \leq F(x_2)\) for \(x_1 < x_2\).</li>
+        <li><strong>Limits:</strong> The CDF approaches 0 as \(x\) approaches negative infinity and 1 as \(x\) approaches positive infinity:
+            <ul>
+                <li>\(\lim_{{x \to -\infty}} F(x) = 0\)</li>
+                <li>\(\lim_{{x \to \infty}} F(x) = 1\)</li>
+            </ul>
+        </li>
+        <li><strong>Right-continuous:</strong> The CDF is right-continuous, meaning that for any \(x\), \(\lim_{{h \to 0^+}} F(x + h) = F(x)\).</li>
+    </ul>
+    
+    <h2>Example: Discrete Random Variable</h2>
+    <p>Consider a discrete random variable \(X\) that can take on values 1, 2, or 3 with probabilities 0.2, 0.5, and 0.3, respectively. The CDF of \(X\) is given by:</p>
+    <pre><code>F(x) = 0 for x < 1
+F(x) = 0.2 for 1 ≤ x < 2
+F(x) = 0.7 for 2 ≤ x < 3
+F(x) = 1 for x ≥ 3</code></pre>
+    
+    <h2>Example: Continuous Random Variable</h2>
+    <p>Consider a continuous random variable \(X\) with a probability density function (PDF) \(f(x) = \frac{1}{2} e^{-|x|}\). The CDF of \(X\) is given by:</p>
+    <p style="text-align: center;">\[ F(x) = \begin{cases} 
+      \frac{1}{2} e^x & x < 0 \\
+      1 - \frac{1}{2} e^{-x} & x \geq 0 
+   \end{cases}
+\]</p>
+    
+    <h2>Relationship Between PDF and CDF</h2>
+    <p>For a continuous random variable, the CDF is the integral of the probability density function (PDF). Conversely, the PDF is the derivative of the CDF. Mathematically, if \(X\) is a continuous random variable with PDF \(f(x)\) and CDF \(F(x)\), then:</p>
+    <p style="text-align: center;">\[ F(x) = \int_{-\infty}^{x} f(t) \, dt \]</p>
+    <p style="text-align: center;">\[ f(x) = \frac{d}{dx} F(x) \]</p>
+    
+    <h2>Applications</h2>
+    <ul>
+        <li><strong>Probability Calculations:</strong> The CDF is used to calculate probabilities for intervals and specific values of the random variable.</li>
+        <li><strong>Quantile Calculation:</strong> The CDF is used to determine the quantiles of a distribution, such as the median or percentiles.</li>
+        <li><strong>Statistical Inference:</strong> The CDF is used in hypothesis testing and confidence interval estimation.</li>
+        <li><strong>Data Analysis:</strong> Empirical CDFs are used to summarize and visualize the distribution of sample data.</li>
+    </ul>
+    
+    <h2>Conclusion</h2>
+    <p>The cumulative distribution function (CDF) is a crucial tool in probability and statistics, providing a complete description of the distribution of a random variable. By understanding and utilizing the CDF, statisticians and analysts can perform a wide range of probability calculations and statistical analyses.</p>
+    
+    <a href="probability_statistics.html" class="back-link">Back to Probability and Statistics Topics</a>
+
+</body>
+</html>

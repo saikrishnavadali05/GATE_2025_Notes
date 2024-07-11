@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Discrete Random Variables</title>
+    <link rel="stylesheet" href="../styles.css">
+    <script type="text/javascript" id="MathJax-script" async
+      src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+
+    <h1 id="discrete-random-variables">Discrete Random Variables</h1>
+    <a href="probability_statistics.html" class="back-link">Back to Probability and Statistics Topics</a>
+    <p>A discrete random variable is a type of random variable that can take on a countable number of distinct values. These variables are used to model scenarios where outcomes are distinct and separated from each other.</p>
+    
+    <h2>Definition</h2>
+    <p>A random variable \(X\) is discrete if it can take on only a finite or countably infinite number of distinct values. The probability mass function (PMF) of a discrete random variable \(X\) is a function \(p(x)\) that gives the probability that \(X\) equals \(x\):</p>
+    <p style="text-align: center;">\[ P(X = x) = p(x) \]</p>
+    <p>The PMF must satisfy the following properties:</p>
+    <ul>
+        <li>\( 0 \leq p(x) \leq 1 \) for all \( x \)</li>
+        <li>\( \sum_{x} p(x) = 1 \)</li>
+    </ul>
+    
+    <h2>Examples of Discrete Random Variables</h2>
+    <h3>Example 1: Binomial Random Variable</h3>
+    <p>A binomial random variable counts the number of successes in a fixed number of independent Bernoulli trials, each with the same probability of success \( p \). The PMF of a binomial random variable \( X \) with parameters \( n \) and \( p \) is given by:</p>
+    <p style="text-align: center;">\[ P(X = k) = \binom{n}{k} p^k (1 - p)^{n - k} \]</p>
+    <p>where \( k = 0, 1, 2, \ldots, n \).</p>
+    
+    <h3>Example 2: Poisson Random Variable</h3>
+    <p>A Poisson random variable counts the number of events occurring within a fixed interval of time or space, given that these events occur with a known constant mean rate \( \lambda \) and independently of the time since the last event. The PMF of a Poisson random variable \( X \) is given by:</p>
+    <p style="text-align: center;">\[ P(X = k) = \frac{\lambda^k e^{-\lambda}}{k!} \]</p>
+    <p>where \( k = 0, 1, 2, \ldots \).</p>
+    
+    <h2>Expected Value and Variance</h2>
+    <p>The expected value (mean) of a discrete random variable \( X \) with PMF \( p(x) \) is given by:</p>
+    <p style="text-align: center;">\[ E(X) = \sum_{x} x p(x) \]</p>
+    <p>The variance of \( X \) is a measure of the spread of its distribution and is given by:</p>
+    <p style="text-align: center;">\[ \text{Var}(X) = E[(X - E(X))^2] = \sum_{x} (x - E(X))^2 p(x) \]</p>
+    
+    <h2>Properties of Discrete Random Variables</h2>
+    <ul>
+        <li><strong>Countable Outcomes:</strong> Can take on a finite or countably infinite number of distinct values.</li>
+        <li><strong>Probability Mass Function (PMF):</strong> Describes the probability of each possible value.</li>
+        <li><strong>Expected Value:</strong> The mean or average value of the distribution.</li>
+        <li><strong>Variance:</strong> Measures the spread or dispersion of the distribution.</li>
+    </ul>
+    
+    <h2>Applications</h2>
+    <ul>
+        <li><strong>Quality Control:</strong> Used to model the number of defective items in a batch.</li>
+        <li><strong>Healthcare:</strong> Used to model the number of occurrences of diseases or health conditions.</li>
+        <li><strong>Insurance:</strong> Used to model the number of claims or occurrences of events.</li>
+        <li><strong>Operations Research:</strong> Applied in queuing theory and inventory management.</li>
+        <li><strong>Ecology:</strong> Used to model the count of species or individuals in a given area.</li>
+    </ul>
+    
+    <h2>Conclusion</h2>
+    <p>Discrete random variables are fundamental in probability and statistics, providing a framework for modeling and analyzing scenarios where outcomes are distinct and countable. Understanding their properties and applications is crucial for various fields, including quality control, healthcare, insurance, operations research, and ecology.</p>
+    
+    <a href="probability_statistics.html" class="back-link">Back to Probability and Statistics Topics</a>
+
+</body>
+</html>
