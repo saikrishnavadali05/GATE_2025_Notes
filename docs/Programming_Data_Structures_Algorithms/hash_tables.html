@@ -1,8 +1,99 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<title>Hash Tables</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hash Tables</title>
+    <link rel="stylesheet" href="../styles.css">
 </head>
 <body>
+
+    <h1 id="hash-tables">Hash Tables</h1>
+    <a href="programming_data_structures_algorithms.html" class="back-link">Back to Programming, Data Structures, and Algorithms Topics</a>
+    <p>Hash tables are data structures that provide efficient insertion, deletion, and lookup operations. They use a hash function to map keys to indices in an array, where the values are stored. This allows for fast access to data.</p>
+    
+    <h2>Basic Concepts</h2>
+    <h3>Hash Function</h3>
+    <p>A hash function takes an input (or key) and returns an integer, which is used as an index in the hash table. A good hash function distributes keys uniformly across the array to minimize collisions.</p>
+    
+    <h3>Collisions</h3>
+    <p>Collisions occur when two keys hash to the same index. There are several methods to handle collisions, including chaining and open addressing.</p>
+    
+    <h3>Chaining</h3>
+    <p>In chaining, each index in the hash table points to a linked list of entries that hash to the same index. This allows multiple values to be stored at the same index.</p>
+    
+    <h3>Open Addressing</h3>
+    <p>In open addressing, when a collision occurs, the algorithm searches for the next available slot in the array. Common methods of open addressing include linear probing, quadratic probing, and double hashing.</p>
+    
+    <h2>Hash Table Operations</h2>
+    <h3>Insertion</h3>
+    <p>To insert a key-value pair into a hash table, compute the index using the hash function and insert the pair at that index. If a collision occurs, handle it using the chosen collision resolution method.</p>
+    
+    <h3>Deletion</h3>
+    <p>To delete a key from a hash table, compute the index using the hash function, locate the key in the linked list or array, and remove it. Update the structure to maintain efficient access.</p>
+    
+    <h3>Search</h3>
+    <p>To search for a key in a hash table, compute the index using the hash function and look for the key at that index. If a collision resolution method is used, search within the linked list or array slots.</p>
+    
+    <h2>Example</h2>
+    <p>Consider a hash table with the following key-value pairs: (1, "A"), (2, "B"), (3, "C"), and a hash function \( h(x) = x \mod 3 \). The table would look like this:</p>
+    <pre><code>Index:    0    1    2
+Keys:          1    2
+Values:       "A"  "B"  "C"</code></pre>
+    
+    <h2>Python Implementation</h2>
+    <pre><code>class HashTable:
+    def __init__(self, size):
+        self.size = size
+        self.table = [[] for _ in range(size)]
+    
+    def hash_function(self, key):
+        return key % self.size
+    
+    def insert(self, key, value):
+        index = self.hash_function(key)
+        self.table[index].append((key, value))
+    
+    def delete(self, key):
+        index = self.hash_function(key)
+        for i, (k, v) in enumerate(self.table[index]):
+            if k == key:
+                del self.table[index][i]
+                return True
+        return False
+    
+    def search(self, key):
+        index = self.hash_function(key)
+        for k, v in self.table[index]:
+            if k == key:
+                return v
+        return None
+
+# Example usage
+hash_table = HashTable(3)
+hash_table.insert(1, "A")
+hash_table.insert(2, "B")
+hash_table.insert(3, "C")
+
+print('Search for key 2:', hash_table.search(2))  # Output: "B"
+hash_table.delete(2)
+print('Search for key 2 after deletion:', hash_table.search(2))  # Output: None</code></pre>
+    
+    <h2>Time Complexity</h2>
+    <p>The average time complexity for insertion, deletion, and search operations in a hash table is \( O(1) \). However, in the worst case, when many collisions occur, the time complexity can degrade to \( O(n) \), where \( n \) is the number of elements in the hash table.</p>
+    
+    <h2>Applications</h2>
+    <ul>
+        <li><strong>Database Indexing:</strong> Hash tables are used to index data for fast retrieval in databases.</li>
+        <li><strong>Caching:</strong> Used in caching mechanisms to store and retrieve data quickly.</li>
+        <li><strong>Symbol Tables:</strong> Used in compilers and interpreters to manage variable and function names.</li>
+        <li><strong>Sets and Maps:</strong> Commonly used to implement sets and maps in various programming languages.</li>
+    </ul>
+    
+    <h2>Conclusion</h2>
+    <p>Hash tables are powerful data structures that provide efficient data storage and retrieval. Understanding their operations, collision resolution methods, and applications is essential for solving a wide range of computational problems.</p>
+    
+    <a href="programming_data_structures_algorithms.html" class="back-link">Back to Programming, Data Structures, and Algorithms Topics</a>
+
 </body>
 </html>
