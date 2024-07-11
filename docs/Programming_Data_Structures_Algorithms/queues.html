@@ -1,8 +1,107 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<title>Queues</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Queues</title>
+    <link rel="stylesheet" href="../styles.css">
 </head>
 <body>
+
+    <h1 id="queues">Queues</h1>
+    <a href="programming_data_structures_algorithms.html" class="back-link">Back to Programming, Data Structures, and Algorithms Topics</a>
+    <p>A queue is a linear data structure that follows the First-In-First-Out (FIFO) principle. Elements are added to the back (rear) of the queue and removed from the front.</p>
+    
+    <h2>Basic Operations</h2>
+    <ul>
+        <li><strong>Enqueue:</strong> Add an element to the back of the queue.</li>
+        <li><strong>Dequeue:</strong> Remove an element from the front of the queue.</li>
+        <li><strong>Peek/Front:</strong> Get the front element of the queue without removing it.</li>
+        <li><strong>IsEmpty:</strong> Check if the queue is empty.</li>
+        <li><strong>Size:</strong> Get the number of elements in the queue.</li>
+    </ul>
+    
+    <h2>Queue Implementation</h2>
+    <h3>Using Lists</h3>
+    <pre><code>class Queue:
+    def __init__(self):
+        self.queue = []
+    
+    def enqueue(self, item):
+        self.queue.append(item)
+    
+    def dequeue(self):
+        if not self.is_empty():
+            return self.queue.pop(0)
+        return None
+    
+    def peek(self):
+        if not self.is_empty():
+            return self.queue[0]
+        return None
+    
+    def is_empty(self):
+        return len(self.queue) == 0
+    
+    def size(self):
+        return len(self.queue)
+
+# Example usage
+q = Queue()
+q.enqueue(1)
+q.enqueue(2)
+q.enqueue(3)
+print('Dequeue:', q.dequeue())  # Output: 1
+print('Front:', q.peek())       # Output: 2
+print('Size:', q.size())        # Output: 2</code></pre>
+    
+    <h3>Using Collections.deque</h3>
+    <pre><code>from collections import deque
+
+class Queue:
+    def __init__(self):
+        self.queue = deque()
+    
+    def enqueue(self, item):
+        self.queue.append(item)
+    
+    def dequeue(self):
+        if not self.is_empty():
+            return self.queue.popleft()
+        return None
+    
+    def peek(self):
+        if not self.is_empty():
+            return self.queue[0]
+        return None
+    
+    def is_empty(self):
+        return len(self.queue) == 0
+    
+    def size(self):
+        return len(self.queue)
+
+# Example usage
+q = Queue()
+q.enqueue(1)
+q.enqueue(2)
+q.enqueue(3)
+print('Dequeue:', q.dequeue())  # Output: 1
+print('Front:', q.peek())       # Output: 2
+print('Size:', q.size())        # Output: 2</code></pre>
+    
+    <h2>Applications</h2>
+    <ul>
+        <li><strong>Task Scheduling:</strong> Queues are used in operating systems for managing tasks and processes.</li>
+        <li><strong>Breadth-First Search (BFS):</strong> Queues are used to implement BFS in graph traversal algorithms.</li>
+        <li><strong>Print Spooling:</strong> Queues are used to manage print jobs in printers.</li>
+        <li><strong>Customer Service:</strong> Queues are used to manage customers in service systems like banks and call centers.</li>
+    </ul>
+    
+    <h2>Conclusion</h2>
+    <p>Queues are fundamental data structures that are widely used in computer science for managing ordered collections of elements. Understanding their implementation and applications is essential for solving a variety of computational problems.</p>
+    
+    <a href="programming_data_structures_algorithms.html" class="back-link">Back to Programming, Data Structures, and Algorithms Topics</a>
+
 </body>
 </html>

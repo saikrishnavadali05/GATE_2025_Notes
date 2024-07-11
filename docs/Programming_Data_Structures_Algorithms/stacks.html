@@ -1,8 +1,107 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<title>Stacks</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stacks</title>
+    <link rel="stylesheet" href="../styles.css">
 </head>
 <body>
+
+    <h1 id="stacks">Stacks</h1>
+    <a href="programming_data_structures_algorithms.html" class="back-link">Back to Programming, Data Structures, and Algorithms Topics</a>
+    <p>A stack is a linear data structure that follows the Last-In-First-Out (LIFO) principle. Elements are added to and removed from the top of the stack. It is analogous to a stack of plates where you can only take the top plate off the stack or put a plate on the top of the stack.</p>
+    
+    <h2>Basic Operations</h2>
+    <ul>
+        <li><strong>Push:</strong> Add an element to the top of the stack.</li>
+        <li><strong>Pop:</strong> Remove the top element from the stack.</li>
+        <li><strong>Peek/Top:</strong> Get the top element of the stack without removing it.</li>
+        <li><strong>IsEmpty:</strong> Check if the stack is empty.</li>
+        <li><strong>Size:</strong> Get the number of elements in the stack.</li>
+    </ul>
+    
+    <h2>Stack Implementation</h2>
+    <h3>Using Lists</h3>
+    <pre><code>class Stack:
+    def __init__(self):
+        self.stack = []
+    
+    def push(self, item):
+        self.stack.append(item)
+    
+    def pop(self):
+        if not self.is_empty():
+            return self.stack.pop()
+        return None
+    
+    def peek(self):
+        if not self.is_empty():
+            return self.stack[-1]
+        return None
+    
+    def is_empty(self):
+        return len(self.stack) == 0
+    
+    def size(self):
+        return len(self.stack)
+
+# Example usage
+s = Stack()
+s.push(1)
+s.push(2)
+s.push(3)
+print('Pop:', s.pop())  # Output: 3
+print('Top:', s.peek())  # Output: 2
+print('Size:', s.size())  # Output: 2</code></pre>
+    
+    <h3>Using Collections.deque</h3>
+    <pre><code>from collections import deque
+
+class Stack:
+    def __init__(self):
+        self.stack = deque()
+    
+    def push(self, item):
+        self.stack.append(item)
+    
+    def pop(self):
+        if not self.is_empty():
+            return self.stack.pop()
+        return None
+    
+    def peek(self):
+        if not self.is_empty():
+            return self.stack[-1]
+        return None
+    
+    def is_empty(self):
+        return len(self.stack) == 0
+    
+    def size(self):
+        return len(self.stack)
+
+# Example usage
+s = Stack()
+s.push(1)
+s.push(2)
+s.push(3)
+print('Pop:', s.pop())  # Output: 3
+print('Top:', s.peek())  # Output: 2
+print('Size:', s.size())  # Output: 2</code></pre>
+    
+    <h2>Applications</h2>
+    <ul>
+        <li><strong>Expression Evaluation:</strong> Stacks are used to evaluate arithmetic expressions, including infix, postfix, and prefix notations.</li>
+        <li><strong>Backtracking:</strong> Stacks are used in algorithms that involve backtracking, such as maze solving and puzzle solving.</li>
+        <li><strong>Function Call Management:</strong> Stacks are used to manage function calls in programming languages, supporting recursion and nested function calls.</li>
+        <li><strong>Undo Mechanisms:</strong> Stacks are used in applications to implement undo features, where the last performed action can be undone first.</li>
+    </ul>
+    
+    <h2>Conclusion</h2>
+    <p>Stacks are fundamental data structures that provide efficient management of elements with their LIFO principle. Understanding their implementation and applications is essential for solving a variety of computational problems and for use in various algorithms and systems.</p>
+    
+    <a href="programming_data_structures_algorithms.html" class="back-link">Back to Programming, Data Structures, and Algorithms Topics</a>
+
 </body>
 </html>

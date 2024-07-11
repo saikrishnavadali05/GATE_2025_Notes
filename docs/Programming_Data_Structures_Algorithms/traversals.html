@@ -1,8 +1,101 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<title>Traversals</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tree Traversals</title>
+    <link rel="stylesheet" href="../styles.css">
 </head>
 <body>
+
+    <h1 id="traversals">Tree Traversals</h1>
+    <a href="programming_data_structures_algorithms.html" class="back-link">Back to Programming, Data Structures, and Algorithms Topics</a>
+    <p>Tree traversal refers to the process of visiting all the nodes in a tree data structure in a specific order. There are several methods for traversing trees, each with its own use cases and characteristics. The most common tree traversal methods are:</p>
+    
+    <h2>Depth-First Traversal</h2>
+    <p>Depth-first traversal explores a tree by going as deep as possible along each branch before backtracking. There are three types of depth-first traversals:</p>
+    
+    <h3>Pre-order Traversal</h3>
+    <p>In pre-order traversal, the nodes are visited in the following order: root, left subtree, right subtree.</p>
+    <pre><code>def pre_order(node):
+    if node:
+        print(node.data, end=' ')
+        pre_order(node.left)
+        pre_order(node.right)</code></pre>
+    <p><strong>Example:</strong> For the tree:</p>
+    <pre><code>    1
+   / \
+  2   3
+ / \
+4   5</code></pre>
+    <p>The pre-order traversal is: 1, 2, 4, 5, 3</p>
+    
+    <h3>In-order Traversal</h3>
+    <p>In in-order traversal, the nodes are visited in the following order: left subtree, root, right subtree.</p>
+    <pre><code>def in_order(node):
+    if node:
+        in_order(node.left)
+        print(node.data, end=' ')
+        in_order(node.right)</code></pre>
+    <p><strong>Example:</strong> For the tree:</p>
+    <pre><code>    1
+   / \
+  2   3
+ / \
+4   5</code></pre>
+    <p>The in-order traversal is: 4, 2, 5, 1, 3</p>
+    
+    <h3>Post-order Traversal</h3>
+    <p>In post-order traversal, the nodes are visited in the following order: left subtree, right subtree, root.</p>
+    <pre><code>def post_order(node):
+    if node:
+        post_order(node.left)
+        post_order(node.right)
+        print(node.data, end=' ')</code></pre>
+    <p><strong>Example:</strong> For the tree:</p>
+    <pre><code>    1
+   / \
+  2   3
+ / \
+4   5</code></pre>
+    <p>The post-order traversal is: 4, 5, 2, 3, 1</p>
+    
+    <h2>Breadth-First Traversal</h2>
+    <p>Breadth-first traversal, also known as level-order traversal, explores the tree level by level, starting from the root and moving to the next level down.</p>
+    <pre><code>from collections import deque
+
+def level_order(root):
+    if not root:
+        return
+    queue = deque([root])
+    while queue:
+        node = queue.popleft()
+        print(node.data, end=' ')
+        if node.left:
+            queue.append(node.left)
+        if node.right:
+            queue.append(node.right)</code></pre>
+    <p><strong>Example:</strong> For the tree:</p>
+    <pre><code>    1
+   / \
+  2   3
+ / \
+4   5</code></pre>
+    <p>The level-order traversal is: 1, 2, 3, 4, 5</p>
+    
+    <h2>Applications</h2>
+    <ul>
+        <li><strong>Expression Trees:</strong> In-order traversal is used to retrieve the infix expression from an expression tree.</li>
+        <li><strong>File Systems:</strong> Pre-order traversal is used to list directory structures.</li>
+        <li><strong>Binary Search Trees (BST):</strong> In-order traversal of a BST retrieves elements in sorted order.</li>
+        <li><strong>Tree Deletion:</strong> Post-order traversal is used for safely deleting or freeing nodes in a tree.</li>
+        <li><strong>Level-Order Applications:</strong> Level-order traversal is used in algorithms like breadth-first search (BFS).</li>
+    </ul>
+    
+    <h2>Conclusion</h2>
+    <p>Understanding tree traversal methods is essential for working with tree data structures. Each traversal method has its own use cases and is useful for solving different types of problems.</p>
+    
+    <a href="programming_data_structures_algorithms.html" class="back-link">Back to Programming, Data Structures, and Algorithms Topics</a>
+
 </body>
 </html>

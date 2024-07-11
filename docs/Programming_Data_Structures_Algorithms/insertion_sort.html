@@ -1,8 +1,67 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<title>Insertion Sort</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Insertion Sort</title>
+    <link rel="stylesheet" href="../styles.css">
 </head>
 <body>
+
+    <h1 id="insertion-sort">Insertion Sort</h1>
+    <a href="programming_data_structures_algorithms.html" class="back-link">Back to Programming, Data Structures, and Algorithms Topics</a>
+    <p>Insertion sort is a simple and intuitive comparison-based sorting algorithm. It builds the sorted array one element at a time by repeatedly picking the next element and inserting it into the correct position among the previously sorted elements.</p>
+    
+    <h2>Algorithm</h2>
+    <p>The insertion sort algorithm operates as follows:</p>
+    <ol>
+        <li>Start with the second element in the array (the first element is considered sorted).</li>
+        <li>Compare the current element with the elements in the sorted portion of the array.</li>
+        <li>Shift elements in the sorted portion to the right to create the correct position for the current element.</li>
+        <li>Insert the current element into its correct position.</li>
+        <li>Repeat steps 2-4 for all remaining elements in the array.</li>
+    </ol>
+    
+    <h2>Example</h2>
+    <p>Consider the array \([5, 3, 8, 4, 2]\). The insertion sort algorithm proceeds as follows:</p>
+    <ol>
+        <li>Initial array: \([5, 3, 8, 4, 2]\)</li>
+        <li>Insert 3: \([3, 5, 8, 4, 2]\)</li>
+        <li>Insert 8: \([3, 5, 8, 4, 2]\)</li>
+        <li>Insert 4: \([3, 4, 5, 8, 2]\)</li>
+        <li>Insert 2: \([2, 3, 4, 5, 8]\)</li>
+    </ol>
+    <p>After all elements are processed, the array is sorted.</p>
+    
+    <h2>Python Implementation</h2>
+    <pre><code>def insertion_sort(arr):
+    for i in range(1, len(arr)):
+        key = arr[i]
+        j = i - 1
+        while j >= 0 and key < arr[j]:
+            arr[j + 1] = arr[j]
+            j -= 1
+        arr[j + 1] = key
+
+# Example usage
+arr = [5, 3, 8, 4, 2]
+insertion_sort(arr)
+print('Sorted array:', arr)</code></pre>
+    
+    <h2>Time Complexity</h2>
+    <p>The time complexity of insertion sort is \( O(n^2) \) in the worst and average cases, where \( n \) is the number of elements in the array. This is because each element must be compared with and potentially shifted past every other element. However, the time complexity is \( O(n) \) in the best case when the array is already sorted.</p>
+    
+    <h2>Applications</h2>
+    <ul>
+        <li><strong>Small Datasets:</strong> Insertion sort is efficient for small datasets where the simplicity of the algorithm outweighs its quadratic time complexity.</li>
+        <li><strong>Nearly Sorted Data:</strong> Insertion sort performs well on nearly sorted data, as it requires fewer shifts.</li>
+        <li><strong>Online Sorting:</strong> Insertion sort can be used to sort data as it is received, since it processes one element at a time.</li>
+    </ul>
+    
+    <h2>Conclusion</h2>
+    <p>Insertion sort is a straightforward and easy-to-implement sorting algorithm. While it is not efficient for large datasets, it is useful for small datasets, nearly sorted data, and scenarios where simplicity and ease of implementation are more important than performance.</p>
+    
+    <a href="programming_data_structures_algorithms.html" class="back-link">Back to Programming, Data Structures, and Algorithms Topics</a>
+
 </body>
 </html>

@@ -1,8 +1,79 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<title>Quicksort</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quicksort</title>
+    <link rel="stylesheet" href="../styles.css">
 </head>
 <body>
+
+    <h1 id="quicksort">Quicksort</h1>
+    <a href="programming_data_structures_algorithms.html" class="back-link">Back to Programming, Data Structures, and Algorithms Topics</a>
+    <p>Quicksort is an efficient, comparison-based, divide-and-conquer sorting algorithm. It works by selecting a 'pivot' element from the array and partitioning the other elements into two sub-arrays, according to whether they are less than or greater than the pivot. The sub-arrays are then sorted recursively.</p>
+    
+    <h2>Algorithm</h2>
+    <p>The quicksort algorithm operates as follows:</p>
+    <ol>
+        <li>Pick a pivot element from the array.</li>
+        <li>Partition the array into two sub-arrays: elements less than the pivot and elements greater than the pivot.</li>
+        <li>Recursively apply the above steps to the sub-arrays.</li>
+        <li>Combine the sub-arrays to get the sorted array.</li>
+    </ol>
+    
+    <h2>Example</h2>
+    <p>Consider the array \([10, 7, 8, 9, 1, 5]\). The quicksort algorithm proceeds as follows:</p>
+    <ol>
+        <li>Pick pivot = 5.</li>
+        <li>Partition: \([1]\) and \([10, 7, 8, 9]\).</li>
+        <li>Recursively sort the sub-arrays.</li>
+        <li>Combine to get the sorted array: \([1, 5, 7, 8, 9, 10]\).</li>
+    </ol>
+    
+    <h2>Python Implementation</h2>
+    <pre><code>def partition(arr, low, high):
+    pivot = arr[high]
+    i = low - 1
+    for j in range(low, high):
+        if arr[j] < pivot:
+            i += 1
+            arr[i], arr[j] = arr[j], arr[i]
+    arr[i + 1], arr[high] = arr[high], arr[i + 1]
+    return i + 1
+
+def quicksort(arr, low, high):
+    if low < high:
+        pi = partition(arr, low, high)
+        quicksort(arr, low, pi - 1)
+        quicksort(arr, pi + 1, high)
+
+# Example usage
+arr = [10, 7, 8, 9, 1, 5]
+quicksort(arr, 0, len(arr) - 1)
+print('Sorted array:', arr)</code></pre>
+    
+    <h2>Time Complexity</h2>
+    <p>The time complexity of quicksort is:</p>
+    <ul>
+        <li><strong>Best case:</strong> \( O(n \log n) \), when the pivot divides the array into two equal halves.</li>
+        <li><strong>Average case:</strong> \( O(n \log n) \), when the pivot divides the array into reasonably balanced partitions.</li>
+        <li><strong>Worst case:</strong> \( O(n^2) \), when the pivot divides the array into extremely unbalanced partitions (e.g., the smallest or largest element is always chosen as the pivot).</li>
+    </ul>
+    
+    <h2>Space Complexity</h2>
+    <p>The space complexity of quicksort is \( O(\log n) \) due to the recursion stack used during the sorting process.</p>
+    
+    <h2>Applications</h2>
+    <ul>
+        <li><strong>General-Purpose Sorting:</strong> Quicksort is often used for general-purpose sorting due to its average-case efficiency.</li>
+        <li><strong>Systems Programming:</strong> Quicksort is used in various systems programming tasks, such as sorting file records and database entries.</li>
+        <li><strong>Divide-and-Conquer Algorithms:</strong> Quicksort serves as a classic example of divide-and-conquer algorithms.</li>
+    </ul>
+    
+    <h2>Conclusion</h2>
+    <p>Quicksort is a powerful and efficient sorting algorithm that uses the divide-and-conquer approach. Understanding its implementation and the principles behind it is essential for solving many sorting problems in computer science and software engineering.</p>
+    
+    <a href="programming_data_structures_algorithms.html" class="back-link">Back to Programming, Data Structures, and Algorithms Topics</a>
+
 </body>
 </html>

@@ -1,8 +1,107 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<title>Programming Language Python</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Python Programming Language</title>
+    <link rel="stylesheet" href="../styles.css">
 </head>
 <body>
+
+    <h1 id="python-programming-language">Python Programming Language</h1>
+    <a href="programming_data_structures_algorithms.html" class="back-link">Back to Programming, Data Structures, and Algorithms Topics</a>
+    <p>Python is a high-level, interpreted, general-purpose programming language known for its readability and versatility. It is widely used in web development, data analysis, scientific computing, artificial intelligence, and more.</p>
+    
+    <h2>Features of Python</h2>
+    <ul>
+        <li><strong>Readable and Easy to Learn:</strong> Python's syntax is clear and easy to understand, making it a great language for beginners.</li>
+        <li><strong>Interpreted:</strong> Python code is executed line by line, which makes debugging easier and quicker.</li>
+        <li><strong>High-Level Language:</strong> Python abstracts away many of the complex details of the computer's operation, allowing developers to focus on programming.</li>
+        <li><strong>Dynamic Typing:</strong> Variable types are determined at runtime, which allows for more flexible and shorter code.</li>
+        <li><strong>Extensive Standard Library:</strong> Python has a rich standard library that provides modules and functions for various tasks, from file I/O to web development.</li>
+        <li><strong>Community Support:</strong> Python has a large and active community that contributes to a wealth of third-party libraries and frameworks.</li>
+    </ul>
+    
+    <h2>Basic Syntax</h2>
+    <h3>Hello, World!</h3>
+    <pre><code>print("Hello, World!")</code></pre>
+    
+    <h3>Variables and Data Types</h3>
+    <pre><code>x = 5          # Integer
+y = 3.14       # Float
+name = "Alice" # String
+is_valid = True  # Boolean</code></pre>
+    
+    <h3>Control Structures</h3>
+    <h4>Conditional Statements</h4>
+    <pre><code>if x > 0:
+    print("Positive")
+elif x == 0:
+    print("Zero")
+else:
+    print("Negative")</code></pre>
+    
+    <h4>Loops</h4>
+    <pre><code># For loop
+for i in range(5):
+    print(i)
+
+# While loop
+i = 0
+while i < 5:
+    print(i)
+    i += 1</code></pre>
+    
+    <h3>Functions</h3>
+    <pre><code>def add(a, b):
+    return a + b
+
+result = add(5, 3)
+print(result)  # Output: 8</code></pre>
+    
+    <h2>Data Structures</h2>
+    <h3>Lists</h3>
+    <pre><code>fruits = ["apple", "banana", "cherry"]
+print(fruits[0])  # Output: apple
+
+fruits.append("orange")
+print(fruits)  # Output: ['apple', 'banana', 'cherry', 'orange']</code></pre>
+    
+    <h3>Tuples</h3>
+    <pre><code>point = (1, 2)
+print(point[0])  # Output: 1</code></pre>
+    
+    <h3>Dictionaries</h3>
+    <pre><code>person = {"name": "Alice", "age": 25}
+print(person["name"])  # Output: Alice
+
+person["age"] = 26
+print(person)  # Output: {'name': 'Alice', 'age': 26}</code></pre>
+    
+    <h3>Sets</h3>
+    <pre><code>numbers = {1, 2, 3, 4, 5}
+print(3 in numbers)  # Output: True</code></pre>
+    
+    <h2>Modules and Libraries</h2>
+    <p>Python's standard library includes modules for various tasks, such as:</p>
+    <ul>
+        <li><strong>os:</strong> Interacting with the operating system.</li>
+        <li><strong>sys:</strong> Accessing system-specific parameters and functions.</li>
+        <li><strong>math:</strong> Mathematical functions.</li>
+        <li><strong>datetime:</strong> Manipulating dates and times.</li>
+    </ul>
+    <p>Additionally, many third-party libraries extend Python's functionality, such as:</p>
+    <ul>
+        <li><strong>NumPy:</strong> Numerical computing.</li>
+        <li><strong>Pandas:</strong> Data analysis and manipulation.</li>
+        <li><strong>Matplotlib:</strong> Data visualization.</li>
+        <li><strong>Requests:</strong> HTTP requests.</li>
+    </ul>
+    
+    <h2>Conclusion</h2>
+    <p>Python is a versatile and powerful programming language that is suitable for a wide range of applications. Its readability, extensive libraries, and strong community support make it a popular choice for both beginners and experienced developers.</p>
+    
+    <a href="programming_data_structures_algorithms.html" class="back-link">Back to Programming, Data Structures, and Algorithms Topics</a>
+
 </body>
 </html>

@@ -1,8 +1,91 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<title>Mergesort</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Merge Sort</title>
+    <link rel="stylesheet" href="../styles.css">
 </head>
 <body>
+
+    <h1 id="mergesort">Merge Sort</h1>
+    <a href="programming_data_structures_algorithms.html" class="back-link">Back to Programming, Data Structures, and Algorithms Topics</a>
+    <p>Merge sort is an efficient, stable, comparison-based, divide-and-conquer sorting algorithm. It works by dividing the unsorted list into smaller sublists until each sublist contains a single element, then merging those sublists to produce a sorted list.</p>
+    
+    <h2>Algorithm</h2>
+    <p>The merge sort algorithm operates as follows:</p>
+    <ol>
+        <li>Divide the unsorted list into two approximately equal sublists.</li>
+        <li>Recursively sort each sublist.</li>
+        <li>Merge the two sorted sublists into a single sorted list.</li>
+    </ol>
+    
+    <h2>Example</h2>
+    <p>Consider the array \([38, 27, 43, 3, 9, 82, 10]\). The merge sort algorithm proceeds as follows:</p>
+    <ol>
+        <li>Divide the array into two sublists: \([38, 27, 43]\) and \([3, 9, 82, 10]\).</li>
+        <li>Recursively sort each sublist:
+            <ul>
+                <li>Sort \([38, 27, 43]\): \([27, 38, 43]\).</li>
+                <li>Sort \([3, 9, 82, 10]\): \([3, 9, 10, 82]\).</li>
+            </ul>
+        </li>
+        <li>Merge the sorted sublists: \([3, 9, 10, 27, 38, 43, 82]\).</li>
+    </ol>
+    
+    <h2>Python Implementation</h2>
+    <pre><code>def merge_sort(arr):
+    if len(arr) > 1:
+        mid = len(arr) // 2
+        left_half = arr[:mid]
+        right_half = arr[mid:]
+
+        merge_sort(left_half)
+        merge_sort(right_half)
+
+        i = j = k = 0
+
+        while i < len(left_half) and j < len(right_half):
+            if left_half[i] < right_half[j]:
+                arr[k] = left_half[i]
+                i += 1
+            else:
+                arr[k] = right_half[j]
+                j += 1
+            k += 1
+
+        while i < len(left_half):
+            arr[k] = left_half[i]
+            i += 1
+            k += 1
+
+        while j < len(right_half):
+            arr[k] = right_half[j]
+            j += 1
+            k += 1
+
+# Example usage
+arr = [38, 27, 43, 3, 9, 82, 10]
+merge_sort(arr)
+print('Sorted array:', arr)</code></pre>
+    
+    <h2>Time Complexity</h2>
+    <p>The time complexity of merge sort is \( O(n \log n) \) in all cases (worst, average, and best). This is because the list is divided into two halves at each step, and the merging process takes linear time.</p>
+    
+    <h2>Space Complexity</h2>
+    <p>The space complexity of merge sort is \( O(n) \), as it requires additional space for the temporary arrays used during the merging process.</p>
+    
+    <h2>Applications</h2>
+    <ul>
+        <li><strong>Large Datasets:</strong> Merge sort is well-suited for sorting large datasets, especially when the data cannot be loaded into memory all at once.</li>
+        <li><strong>Linked Lists:</strong> Efficient for sorting linked lists, as it does not require random access to elements.</li>
+        <li><strong>External Sorting:</strong> Used in external sorting algorithms, where data is stored in external memory (e.g., disk) and cannot be loaded entirely into RAM.</li>
+    </ul>
+    
+    <h2>Conclusion</h2>
+    <p>Merge sort is a powerful and efficient sorting algorithm that guarantees a time complexity of \( O(n \log n) \). Its divide-and-conquer approach makes it suitable for large datasets and applications where stability and performance are important.</p>
+    
+    <a href="programming_data_structures_algorithms.html" class="back-link">Back to Programming, Data Structures, and Algorithms Topics</a>
+
 </body>
 </html>

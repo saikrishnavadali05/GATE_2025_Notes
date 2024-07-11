@@ -1,8 +1,174 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<title>Trees</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trees</title>
+    <link rel="stylesheet" href="../styles.css">
 </head>
 <body>
+
+    <h1 id="trees">Trees</h1>
+    <a href="programming_data_structures_algorithms.html" class="back-link">Back to Programming, Data Structures, and Algorithms Topics</a>
+    <p>Trees are hierarchical data structures consisting of nodes connected by edges. They are widely used in various applications such as databases, file systems, and artificial intelligence.</p>
+    
+    <h2>Basic Terminology</h2>
+    <ul>
+        <li><strong>Node:</strong> The fundamental part of a tree, containing data and links to other nodes.</li>
+        <li><strong>Root:</strong> The top node of a tree, where traversal begins.</li>
+        <li><strong>Parent:</strong> A node that has one or more child nodes.</li>
+        <li><strong>Child:</strong> A node that is a descendant of another node (its parent).</li>
+        <li><strong>Leaf:</strong> A node with no children, also known as an external node.</li>
+        <li><strong>Internal Node:</strong> A node with at least one child.</li>
+        <li><strong>Edge:</strong> A connection between two nodes.</li>
+        <li><strong>Subtree:</strong> A tree consisting of a node and its descendants.</li>
+        <li><strong>Height:</strong> The length of the longest path from the root to a leaf.</li>
+        <li><strong>Depth:</strong> The length of the path from the root to a specific node.</li>
+        <li><strong>Level:</strong> All nodes at a specific depth.</li>
+        <li><strong>Binary Tree:</strong> A tree in which each node has at most two children.</li>
+    </ul>
+    
+    <h2>Types of Trees</h2>
+    <ul>
+        <li><strong>Binary Tree:</strong> Each node has at most two children, referred to as the left and right child.</li>
+        <li><strong>Binary Search Tree (BST):</strong> A binary tree in which the left child contains values less than the parent node and the right child contains values greater than the parent node.</li>
+        <li><strong>AVL Tree:</strong> A self-balancing binary search tree where the difference in heights between the left and right subtrees of any node is at most one.</li>
+        <li><strong>Red-Black Tree:</strong> A self-balancing binary search tree with additional properties to ensure balance, such as nodes being colored red or black.</li>
+        <li><strong>Trie:</strong> A tree used to store dynamic sets of strings, commonly used in dictionary and prefix matching applications.</li>
+        <li><strong>B-tree:</strong> A self-balancing search tree in which nodes can have multiple children, commonly used in databases and file systems.</li>
+    </ul>
+    
+    <h2>Basic Operations</h2>
+    <h3>Insertion</h3>
+    <pre><code>class Node:
+    def __init__(self, key):
+        self.left = None
+        self.right = None
+        self.val = key
+
+def insert(root, key):
+    if root is None:
+        return Node(key)
+    else:
+        if root.val < key:
+            root.right = insert(root.right, key)
+        else:
+            root.left = insert(root.left, key)
+    return root
+
+# Example usage
+root = Node(50)
+root = insert(root, 30)
+root = insert(root, 20)
+root = insert(root, 40)
+root = insert(root, 70)
+root = insert(root, 60)
+root = insert(root, 80)</code></pre>
+    
+    <h3>Search</h3>
+    <pre><code>def search(root, key):
+    if root is None or root.val == key:
+        return root
+    if root.val < key:
+        return search(root.right, key)
+    return search(root.left, key)
+
+# Example usage
+result = search(root, 40)
+if result:
+    print("Found:", result.val)
+else:
+    print("Not Found")</code></pre>
+    
+    <h3>Deletion</h3>
+    <pre><code>def delete_node(root, key):
+    if root is None:
+        return root
+    if key < root.val:
+        root.left = delete_node(root.left, key)
+    elif key > root.val:
+        root.right = delete_node(root.right, key)
+    else:
+        if root.left is None:
+            return root.right
+        elif root.right is None:
+            return root.left
+        temp = min_value_node(root.right)
+        root.val = temp.val
+        root.right = delete_node(root.right, temp.val)
+    return root
+
+def min_value_node(node):
+    current = node
+    while current.left is not None:
+        current = current.left
+    return current
+
+# Example usage
+root = delete_node(root, 20)</code></pre>
+    
+    <h2>Tree Traversals</h2>
+    <p>Tree traversals are methods of visiting all the nodes in a tree in a specific order. The most common tree traversal methods are:</p>
+    <ul>
+        <li><strong>In-order Traversal:</strong> Visit the left subtree, the root, and then the right subtree.</li>
+        <li><strong>Pre-order Traversal:</strong> Visit the root, the left subtree, and then the right subtree.</li>
+        <li><strong>Post-order Traversal:</strong> Visit the left subtree, the right subtree, and then the root.</li>
+        <li><strong>Level-order Traversal:</strong> Visit the nodes level by level, from left to right.</li>
+    </ul>
+    <pre><code>def in_order(root):
+    if root:
+        in_order(root.left)
+        print(root.val, end=' ')
+        in_order(root.right)
+
+def pre_order(root):
+    if root:
+        print(root.val, end=' ')
+        pre_order(root.left)
+        pre_order(root.right)
+
+def post_order(root):
+    if root:
+        post_order(root.left)
+        post_order(root.right)
+        print(root.val, end=' ')
+
+def level_order(root):
+    if root is None:
+        return
+    queue = []
+    queue.append(root)
+    while len(queue) > 0:
+        print(queue[0].val, end=' ')
+        node = queue.pop(0)
+        if node.left:
+            queue.append(node.left)
+        if node.right:
+            queue.append(node.right)
+
+# Example usage
+print("In-order Traversal:")
+in_order(root)  # Output: 30 40 50 60 70 80
+print("\nPre-order Traversal:")
+pre_order(root)  # Output: 50 30 20 40 70 60 80
+print("\nPost-order Traversal:")
+post_order(root)  # Output: 20 40 30 60 80 70 50
+print("\nLevel-order Traversal:")
+level_order(root)  # Output: 50 30 70 20 40 60 80</code></pre>
+    
+    <h2>Applications</h2>
+    <ul>
+        <li><strong>Databases:</strong> Trees are used to implement indexing structures such as B-trees and B+ trees.</li>
+        <li><strong>File Systems:</strong> Directory structures are often represented as trees.</li>
+        <li><strong>Artificial Intelligence:</strong> Decision trees and game trees are used for decision making and game playing.</li>
+        <li><strong>Networking:</strong> Trees are used in routing algorithms and network topology representations.</li>
+        <li><strong>Data Compression:</strong> Huffman coding trees are used for data compression.</li>
+    </ul>
+    
+    <h2>Conclusion</h2>
+    <p>Trees are versatile data structures that provide efficient ways to manage hierarchical data. Understanding their properties, types, and operations is crucial for solving a variety of computational problems and implementing efficient algorithms.</p>
+    
+    <a href="programming_data_structures_algorithms.html" class="back-link">Back to Programming, Data Structures, and Algorithms Topics</a>
+
 </body>
 </html>

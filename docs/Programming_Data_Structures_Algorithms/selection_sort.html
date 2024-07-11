@@ -1,8 +1,73 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<title>Selection Sort</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Selection Sort</title>
+    <link rel="stylesheet" href="../styles.css">
 </head>
 <body>
+
+    <h1 id="selection-sort">Selection Sort</h1>
+    <a href="programming_data_structures_algorithms.html" class="back-link">Back to Programming, Data Structures, and Algorithms Topics</a>
+    <p>Selection sort is a simple comparison-based sorting algorithm. It works by repeatedly finding the minimum element from the unsorted part of the array and putting it at the beginning. The algorithm maintains two subarrays in a given array:</p>
+    <ul>
+        <li><strong>Sorted subarray:</strong> Initially empty and gradually grows to include elements in the correct order.</li>
+        <li><strong>Unsorted subarray:</strong> Initially contains all the elements and shrinks as elements are moved to the sorted subarray.</li>
+    </ul>
+    
+    <h2>Algorithm</h2>
+    <p>The selection sort algorithm operates as follows:</p>
+    <ol>
+        <li>Start with the first element in the array.</li>
+        <li>Find the minimum element in the unsorted part of the array.</li>
+        <li>Swap the minimum element with the first unsorted element.</li>
+        <li>Move the boundary between the sorted and unsorted subarrays one position to the right.</li>
+        <li>Repeat steps 2-4 until the entire array is sorted.</li>
+    </ol>
+    
+    <h2>Example</h2>
+    <p>Consider the array \([64, 25, 12, 22, 11]\). The selection sort algorithm proceeds as follows:</p>
+    <ol>
+        <li>Find the minimum element (11) and swap it with the first element: \([11, 25, 12, 22, 64]\).</li>
+        <li>Find the minimum element in the remaining unsorted part (12) and swap it with the second element: \([11, 12, 25, 22, 64]\).</li>
+        <li>Find the minimum element in the remaining unsorted part (22) and swap it with the third element: \([11, 12, 22, 25, 64]\).</li>
+        <li>Find the minimum element in the remaining unsorted part (25) and swap it with the fourth element: \([11, 12, 22, 25, 64]\).</li>
+    </ol>
+    <p>After all iterations, the array is sorted.</p>
+    
+    <h2>Python Implementation</h2>
+    <pre><code>def selection_sort(arr):
+    n = len(arr)
+    for i in range(n):
+        min_idx = i
+        for j in range(i+1, n):
+            if arr[j] < arr[min_idx]:
+                min_idx = j
+        arr[i], arr[min_idx] = arr[min_idx], arr[i]
+
+# Example usage
+arr = [64, 25, 12, 22, 11]
+selection_sort(arr)
+print('Sorted array:', arr)</code></pre>
+    
+    <h2>Time Complexity</h2>
+    <p>The time complexity of selection sort is \( O(n^2) \) for all cases (worst, average, and best). This is because there are two nested loops, each of which runs approximately \( n \) times.</p>
+    
+    <h2>Space Complexity</h2>
+    <p>The space complexity of selection sort is \( O(1) \), as it only requires a constant amount of additional memory space for the swapping operation.</p>
+    
+    <h2>Applications</h2>
+    <ul>
+        <li><strong>Small Datasets:</strong> Selection sort is suitable for small datasets where the simplicity of the algorithm outweighs its inefficiency.</li>
+        <li><strong>Educational Purposes:</strong> It is often used in teaching because it is easy to understand and implement.</li>
+        <li><strong>Memory-Constrained Environments:</strong> Since it has a space complexity of \( O(1) \), it is useful in environments with limited memory.</li>
+    </ul>
+    
+    <h2>Conclusion</h2>
+    <p>Selection sort is a straightforward sorting algorithm that is easy to implement and understand. While it is not the most efficient sorting algorithm for large datasets, it is useful for small datasets and educational purposes.</p>
+    
+    <a href="programming_data_structures_algorithms.html" class="back-link">Back to Programming, Data Structures, and Algorithms Topics</a>
+
 </body>
 </html>

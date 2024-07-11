@@ -1,8 +1,124 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<title>Shortest Path</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shortest Path</title>
+    <link rel="stylesheet" href="../styles.css">
 </head>
 <body>
+
+    <h1 id="shortest-path">Shortest Path</h1>
+    <a href="programming_data_structures_algorithms.html" class="back-link">Back to Programming, Data Structures, and Algorithms Topics</a>
+    <p>The shortest path problem is a fundamental problem in graph theory and computer science, which involves finding the shortest path between two vertices in a graph. This problem has numerous applications in areas such as networking, geographic information systems, and operations research.</p>
+    
+    <h2>Common Algorithms</h2>
+    <p>Several algorithms are used to solve the shortest path problem, each with its own strengths and weaknesses:</p>
+    
+    <h3>Dijkstra's Algorithm</h3>
+    <p>Dijkstra's algorithm finds the shortest path from a source vertex to all other vertices in a graph with non-negative edge weights. It uses a priority queue to greedily select the vertex with the smallest known distance.</p>
+    <pre><code>import heapq
+
+def dijkstra(graph, start):
+    distances = {vertex: float('infinity') for vertex in graph}
+    distances[start] = 0
+    priority_queue = [(0, start)]
+
+    while priority_queue:
+        current_distance, current_vertex = heapq.heappop(priority_queue)
+
+        if current_distance > distances[current_vertex]:
+            continue
+
+        for neighbor, weight in graph[current_vertex].items():
+            distance = current_distance + weight
+
+            if distance < distances[neighbor]:
+                distances[neighbor] = distance
+                heapq.heappush(priority_queue, (distance, neighbor))
+
+    return distances
+
+# Example usage
+graph = {
+    'A': {'B': 1, 'C': 4},
+    'B': {'A': 1, 'C': 2, 'D': 5},
+    'C': {'A': 4, 'B': 2, 'D': 1},
+    'D': {'B': 5, 'C': 1}
+}
+start_vertex = 'A'
+distances = dijkstra(graph, start_vertex)
+print('Shortest distances:', distances)</code></pre>
+    
+    <h3>Bellman-Ford Algorithm</h3>
+    <p>The Bellman-Ford algorithm finds the shortest path from a source vertex to all other vertices in a graph, even if the graph contains negative edge weights. It uses dynamic programming to iteratively relax the edges.</p>
+    <pre><code>def bellman_ford(graph, start):
+    distances = {vertex: float('infinity') for vertex in graph}
+    distances[start] = 0
+
+    for _ in range(len(graph) - 1):
+        for vertex in graph:
+            for neighbor, weight in graph[vertex].items():
+                distance = distances[vertex] + weight
+                if distance < distances[neighbor]:
+                    distances[neighbor] = distance
+
+    for vertex in graph:
+        for neighbor, weight in graph[vertex].items():
+            if distances[vertex] + weight < distances[neighbor]:
+                raise ValueError("Graph contains a negative-weight cycle")
+
+    return distances
+
+# Example usage
+graph = {
+    'A': {'B': 1, 'C': 4},
+    'B': {'A': 1, 'C': 2, 'D': 5},
+    'C': {'A': 4, 'B': 2, 'D': 1},
+    'D': {'B': 5, 'C': 1}
+}
+start_vertex = 'A'
+distances = bellman_ford(graph, start_vertex)
+print('Shortest distances:', distances)</code></pre>
+    
+    <h3>Floyd-Warshall Algorithm</h3>
+    <p>The Floyd-Warshall algorithm finds the shortest paths between all pairs of vertices in a graph. It uses dynamic programming to iteratively improve the shortest paths.</p>
+    <pre><code>def floyd_warshall(graph):
+    dist = {vertex: {vertex2: float('infinity') for vertex2 in graph} for vertex in graph}
+    for vertex in graph:
+        dist[vertex][vertex] = 0
+        for neighbor, weight in graph[vertex].items():
+            dist[vertex][neighbor] = weight
+
+    for k in graph:
+        for i in graph:
+            for j in graph:
+                dist[i][j] = min(dist[i][j], dist[i][k] + dist[k][j])
+
+    return dist
+
+# Example usage
+graph = {
+    'A': {'B': 1, 'C': 4},
+    'B': {'A': 1, 'C': 2, 'D': 5},
+    'C': {'A': 4, 'B': 2, 'D': 1},
+    'D': {'B': 5, 'C': 1}
+}
+distances = floyd_warshall(graph)
+print('Shortest distances between all pairs:', distances)</code></pre>
+    
+    <h2>Applications</h2>
+    <ul>
+        <li><strong>Routing in Networks:</strong> Finding the shortest path for data packets in computer networks.</li>
+        <li><strong>Navigation Systems:</strong> Determining the shortest route in GPS navigation systems.</li>
+        <li><strong>Operations Research:</strong> Solving logistics and transportation problems.</li>
+        <li><strong>Social Networks:</strong> Analyzing the shortest paths between individuals in social graphs.</li>
+    </ul>
+    
+    <h2>Conclusion</h2>
+    <p>The shortest path problem is a critical problem in graph theory with many real-world applications. Understanding and implementing the various algorithms to solve this problem is essential for tackling complex graph-related challenges.</p>
+    
+    <a href="programming_data_structures_algorithms.html" class="back-link">Back to Programming, Data Structures, and Algorithms Topics</a>
+
 </body>
 </html>
