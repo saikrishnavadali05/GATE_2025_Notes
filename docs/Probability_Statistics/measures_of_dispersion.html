@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Measures of Dispersion</title>
+    <link rel="stylesheet" href="../styles.css">
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+
+    <h1 id="measures-of-dispersion">Measures of Dispersion</h1>
+    <a href="../Probability_Statistics/probability_statistics.html" class="back-link">Back to Probability and Statistics Topics</a>
+    
+    <p>Measures of dispersion describe the spread or variability of a dataset. The most common measures of dispersion are range, variance, and standard deviation.</p>
+    
+    <h2>1. Range</h2>
+    <p>The range is the difference between the highest and lowest values in a dataset. It is calculated as:</p>
+    <p>\[ \text{Range} = \text{Maximum value} - \text{Minimum value} \]</p>
+    
+    <h2>2. Variance</h2>
+    <p>Variance measures the average squared deviation of each value from the mean. The formula for variance (\( \sigma^2 \)) is:</p>
+    <p>\[ \sigma^2 = \frac{1}{N} \sum_{i=1}^{N} (x_i - \mu)^2 \]</p>
+    <p>where \( N \) is the number of values, \( x_i \) are the values, and \( \mu \) is the mean of the values.</p>
+    
+    <h2>3. Standard Deviation</h2>
+    <p>Standard deviation is the square root of the variance and provides a measure of the average distance of each value from the mean. It is calculated as:</p>
+    <p>\[ \sigma = \sqrt{\frac{1}{N} \sum_{i=1}^{N} (x_i - \mu)^2} \]</p>
+    
+    <h2>Example</h2>
+    <p>Consider the dataset: \[ 3, 5, 2, 9, 5, 7 \]</p>
+    <ul>
+        <li><strong>Mean:</strong> \[ \mu = \frac{3 + 5 + 2 + 9 + 5 + 7}{6} = \frac{31}{6} \approx 5.17 \]</li>
+        <li><strong>Variance:</strong> \[ \sigma^2 = \frac{1}{6} \left( (3 - 5.17)^2 + (5 - 5.17)^2 + (2 - 5.17)^2 + (9 - 5.17)^2 + (5 - 5.17)^2 + (7 - 5.17)^2 \right) \approx 6.97 \]</li>
+        <li><strong>Standard Deviation:</strong> \[ \sigma = \sqrt{6.97} \approx 2.64 \]</li>
+    </ul>
+    
+    <h2>Applications</h2>
+    <ul>
+        <li><strong>Range:</strong> The range is used to understand the spread of data at a glance and identify outliers.</li>
+        <li><strong>Variance:</strong> Variance is used to measure the degree of spread in a dataset, often in finance and scientific research.</li>
+        <li><strong>Standard Deviation:</strong> Standard deviation is widely used to measure variability in fields such as finance, quality control, and scientific research.</li>
+    </ul>
+    
+    <h2>Conclusion</h2>
+    <p>Understanding measures of dispersion is essential for assessing the variability in data. Each measure provides different insights into the spread of the data, making them valuable tools in statistics.</p>
+    
+    <a href="../Probability_Statistics/probability_statistics.html" class="back-link">Back to Probability and Statistics Topics</a>
+
+</body>
+</html>
