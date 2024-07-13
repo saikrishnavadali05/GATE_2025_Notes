@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Analysis of \( f(x) = x^2 \)</title>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+    <h1>Analysis of \( f(x) = x^2 \)</h1>
+
+    <h2>Domain and Range</h2>
+    <p>
+        The domain of \( f \) is \( \mathbb{R} \) (all real numbers) since any real number \( x \) can be squared. <br>
+        The range of \( f \) is \( [0, \infty) \) (all non-negative real numbers) because \( x^2 \) is always non-negative and can take any value greater than or equal to 0.
+    </p>
+
+    <h2>Function Properties</h2>
+    <p>
+        <strong>Even Function:</strong> \( f \) is an even function because \( f(-x) = (-x)^2 = x^2 = f(x) \). <br>
+        <strong>Continuous:</strong> \( f \) is continuous for all \( x \in \mathbb{R} \) because the polynomial function \( x^2 \) is continuous everywhere. <br>
+        <strong>Differentiable:</strong> \( f \) is differentiable for all \( x \in \mathbb{R} \). The derivative \( f'(x) = 2x \) is defined everywhere on \( \mathbb{R} \).
+    </p>
+
+    <h2>Critical Points and Extrema</h2>
+    <p>
+        To find the critical points, set the derivative equal to zero: \( f'(x) = 2x = 0 \) gives \( x = 0 \). <br>
+        At \( x = 0 \), \( f(0) = 0^2 = 0 \). <br>
+        This is a minimum point because the second derivative \( f''(x) = 2 \) is positive, indicating a local minimum.
+    </p>
+
+    <h2>Behavior at Infinity</h2>
+    <p>
+        As \( x \to \infty \), \( f(x) = x^2 \to \infty \). <br>
+        As \( x \to -\infty \), \( f(x) = x^2 \to \infty \).
+    </p>
+
+    <h2>Graph of the Function</h2>
+    <p>
+        The graph of \( f(x) = x^2 \) is a parabola opening upwards with its vertex at the origin (0,0).
+    </p>
+
+    <h2>Injectivity</h2>
+    <p>
+        A function is injective if different inputs produce different outputs, i.e., if \( f(x_1) = f(x_2) \) implies \( x_1 = x_2 \). <br>
+        For \( f(x) = x^2 \): <br>
+        If \( f(x_1) = f(x_2) \), then \( x_1^2 = x_2^2 \). <br>
+        This implies \( x_1 = x_2 \) or \( x_1 = -x_2 \). <br>
+        Since \( x_1 \) and \( x_2 \) can be different (one positive and one negative) but produce the same output, \( f \) is <strong>not injective</strong>. <br>
+        For example, \( f(2) = 4 \) and \( f(-2) = 4 \).
+    </p>
+
+    <h2>Surjectivity</h2>
+    <p>
+        A function is surjective if every element in the codomain has a preimage in the domain, i.e., for every \( y \in \mathbb{R} \), there exists an \( x \in \mathbb{R} \) such that \( f(x) = y \). <br>
+        For \( f(x) = x^2 \): <br>
+        The codomain (range) we consider here is \( \mathbb{R} \). <br>
+        However, \( x^2 \) is always non-negative, meaning \( f(x) \geq 0 \). <br>
+        Therefore, \( f(x) = x^2 \) maps \( \mathbb{R} \) to \([0, \infty)\), not the entire set of real numbers \( \mathbb{R} \). <br>
+        There are no \( x \in \mathbb{R} \) such that \( f(x) = -1 \) or any negative number. Hence, \( f \) is <strong>not surjective</strong> when considering the codomain as \( \mathbb{R} \).
+    </p>
+
+    <h2>Graphical Analysis</h2>
+    <p>
+        <strong>Graph of \( f(x) = x^2 \):</strong> <br>
+        The graph is a parabola that opens upwards with its vertex at the origin \((0, 0)\). <br><br>
+
+        <strong>Horizontal Line Test for Injectivity:</strong> <br>
+        Draw horizontal lines at various levels (e.g., \( y = 1, y = 4 \)). <br>
+        Observe that these lines intersect the graph at two points for \( y > 0 \). <br>
+        This shows that the function is not injective. <br><br>
+
+        <strong>Horizontal Line Test for Surjectivity:</strong> <br>
+        Draw horizontal lines at various levels. <br>
+        Horizontal lines at \( y = -1, y = -2 \) do not intersect the graph at all, indicating the function is not surjective for the entire set of real numbers. <br>
+        For horizontal lines at \( y \geq 0 \), every line intersects the graph at least once, indicating the function is surjective for the non-negative real numbers.
+    </p>
+
+    <h2>Summary</h2>
+    <p>
+        Using the graph of \( f(x) = x^2 \): <br>
+        <strong>Not Injective:</strong> The horizontal line test shows that horizontal lines intersect the graph at more than one point. <br>
+        <strong>Not Surjective for \( \mathbb{R} \):</strong> There are no intersections for horizontal lines with negative \( y \)-values. <br>
+        <strong>Surjective for \([0, \infty)\):</strong> Every non-negative horizontal line intersects the graph at least once.
+    </p>
+</body>
+</html>
