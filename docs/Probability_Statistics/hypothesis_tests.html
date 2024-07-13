@@ -5,71 +5,69 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hypothesis Tests</title>
     <link rel="stylesheet" href="../styles.css">
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 </head>
 <body>
 
     <h1 id="hypothesis-tests">Hypothesis Tests</h1>
-    <a href="probability_statistics.html" class="back-link">Back to Probability and Statistics Topics</a>
-    <p>Hypothesis testing is a statistical method used to make inferences or draw conclusions about a population based on sample data. It involves formulating a hypothesis, collecting data, and determining whether the evidence supports the hypothesis or not.</p>
+    <a href="../Probability_Statistics/probability_statistics.html" class="back-link">Back to Probability and Statistics Topics</a>
+    
+    <p>Hypothesis testing is a statistical method used to make decisions about a population parameter based on sample data. It involves formulating a null hypothesis and an alternative hypothesis, then using statistical evidence to determine whether to reject the null hypothesis.</p>
     
     <h2>Steps in Hypothesis Testing</h2>
     <ol>
-        <li><strong>Formulate Hypotheses:</strong> Establish the null hypothesis \(H_0\) and the alternative hypothesis \(H_a\).</li>
-        <li><strong>Select Significance Level:</strong> Choose a significance level (\(\alpha\)), commonly 0.05 or 0.01.</li>
-        <li><strong>Collect Data:</strong> Gather sample data relevant to the hypotheses.</li>
-        <li><strong>Calculate Test Statistic:</strong> Compute the test statistic based on the sample data.</li>
-        <li><strong>Determine P-Value or Critical Value:</strong> Compare the test statistic to a critical value or calculate the p-value.</li>
-        <li><strong>Make a Decision:</strong> Reject \(H_0\) if the p-value is less than \(\alpha\) or if the test statistic exceeds the critical value.</li>
+        <li><strong>Formulate Hypotheses:</strong> Define the null hypothesis (\( H_0 \)) and the alternative hypothesis (\( H_1 \)).</li>
+        <li><strong>Choose Significance Level:</strong> Select a significance level (\( \alpha \)), commonly set at 0.05 or 0.01.</li>
+        <li><strong>Collect Data:</strong> Gather sample data and calculate the test statistic.</li>
+        <li><strong>Determine Critical Region:</strong> Identify the critical region based on the chosen significance level and the distribution of the test statistic.</li>
+        <li><strong>Make Decision:</strong> Compare the test statistic to the critical region to decide whether to reject the null hypothesis.</li>
     </ol>
     
     <h2>Types of Hypothesis Tests</h2>
-    <p>There are several types of hypothesis tests, each suited for different types of data and hypotheses:</p>
+    <ul>
+        <li><strong>z-test:</strong> Used to test the mean of a population when the population variance is known and the sample size is large (\( n > 30 \)).</li>
+        <li><strong>t-test:</strong> Used to test the mean of a population when the population variance is unknown and the sample size is small (\( n \leq 30 \)).</li>
+        <li><strong>chi-squared test:</strong> Used to test the independence of two categorical variables or the goodness of fit of an observed distribution to an expected distribution.</li>
+    </ul>
     
-    <h3>1. Z-Test</h3>
-    <p>A z-test is used to determine whether there is a significant difference between the means of two populations when the variances are known and the sample size is large. The test statistic is given by:</p>
-    <p style="text-align: center;">\[ z = \frac{\overline{X} - \mu}{\sigma / \sqrt{n}} \]</p>
+    <h2>Example: One-Sample z-test</h2>
+    <p>Suppose we want to test whether the average height of a population is 170 cm. We collect a sample of 50 individuals with a mean height of 172 cm and a known population standard deviation of 5 cm.</p>
     
-    <h3>2. T-Test</h3>
-    <p>A t-test is used to determine whether there is a significant difference between the means of two populations when the variances are unknown and the sample size is small. The test statistic is given by:</p>
-    <p style="text-align: center;">\[ t = \frac{\overline{X} - \mu}{s / \sqrt{n}} \]</p>
+    <h3>Step 1: Formulate Hypotheses</h3>
+    <p>\[
+    \begin{align*}
+    H_0 &: \mu = 170 \\
+    H_1 &: \mu \neq 170
+    \end{align*}
+    \]</p>
     
-    <h3>3. Chi-Squared Test</h3>
-    <p>A chi-squared test is used to determine whether there is a significant association between categorical variables. It compares the observed frequencies in each category to the expected frequencies. The test statistic is given by:</p>
-    <p style="text-align: center;">\[ \chi^2 = \sum \frac{(O_i - E_i)^2}{E_i} \]</p>
+    <h3>Step 2: Choose Significance Level</h3>
+    <p>Let \( \alpha = 0.05 \).</p>
     
-    <h3>4. ANOVA (Analysis of Variance)</h3>
-    <p>ANOVA is used to determine whether there are significant differences between the means of three or more groups. It compares the variance within groups to the variance between groups. The test statistic is given by:</p>
-    <p style="text-align: center;">\[ F = \frac{\text{variance between groups}}{\text{variance within groups}} \]</p>
+    <h3>Step 3: Collect Data</h3>
+    <p>Sample mean (\( \bar{x} \)) = 172 cm, population standard deviation (\( \sigma \)) = 5 cm, sample size (\( n \)) = 50.</p>
     
-    <h2>Null and Alternative Hypotheses</h2>
-    <p>The null hypothesis (\(H_0\)) is a statement that there is no effect or no difference, and it serves as the default assumption. The alternative hypothesis (\(H_a\)) is a statement that there is an effect or a difference. Hypothesis tests are designed to assess the strength of evidence against \(H_0\).</p>
+    <h3>Step 4: Determine Critical Region</h3>
+    <p>Calculate the test statistic:</p>
+    <p>\[
+    z = \frac{\bar{x} - \mu_0}{\sigma / \sqrt{n}} = \frac{172 - 170}{5 / \sqrt{50}} \approx 2.83
+    \]</p>
     
-    <h2>Significance Level</h2>
-    <p>The significance level (\(\alpha\)) is the probability of rejecting the null hypothesis when it is true. Common significance levels are 0.05 and 0.01. A smaller \(\alpha\) means stricter criteria for rejecting \(H_0\).</p>
-    
-    <h2>P-Value</h2>
-    <p>The p-value is the probability of obtaining test results at least as extreme as the observed results, assuming the null hypothesis is true. A smaller p-value indicates stronger evidence against \(H_0\).</p>
-    
-    <h2>Decision Rule</h2>
-    <p>If the p-value is less than the significance level (\(\alpha\)), we reject the null hypothesis (\(H_0\)). If the p-value is greater than or equal to \(\alpha\), we fail to reject \(H_0\).</p>
-    
-    <h2>Example</h2>
-    <p>Suppose we want to test whether the mean height of a population is different from 170 cm. We take a sample of 30 individuals with a mean height of 172 cm and a standard deviation of 5 cm. Using a significance level of 0.05, we perform a t-test:</p>
-    <p style="text-align: center;">\[ t = \frac{172 - 170}{5 / \sqrt{30}} = 2.19 \]</p>
-    <p>With 29 degrees of freedom, the critical value for a two-tailed test at \(\alpha = 0.05\) is approximately 2.045. Since 2.19 > 2.045, we reject the null hypothesis and conclude that the mean height is significantly different from 170 cm.</p>
+    <h3>Step 5: Make Decision</h3>
+    <p>For \( \alpha = 0.05 \), the critical values are \( \pm 1.96 \). Since 2.83 > 1.96, we reject the null hypothesis.</p>
     
     <h2>Applications</h2>
     <ul>
-        <li><strong>Medical Research:</strong> Used to test the efficacy of new treatments or drugs.</li>
-        <li><strong>Quality Control:</strong> Used to determine if a manufacturing process meets standards.</li>
-        <li><strong>Social Sciences:</strong> Used to assess hypotheses about population parameters.</li>
-        <li><strong>Business:</strong> Used to make data-driven decisions and evaluate strategies.</li>
+        <li><strong>Medical Research:</strong> Hypothesis testing is used to determine the effectiveness of new treatments or drugs.</li>
+        <li><strong>Quality Control:</strong> Hypothesis testing is used to assess whether products meet certain standards or specifications.</li>
+        <li><strong>Market Research:</strong> Hypothesis testing is used to make decisions based on sample data about consumer preferences and behaviors.</li>
     </ul>
     
     <h2>Conclusion</h2>
-    <p>Hypothesis testing is a powerful statistical tool for making inferences about populations based on sample data. By understanding the principles and steps involved in hypothesis testing, researchers and analysts can make informed decisions and draw valid conclusions from their data.</p>
+    <p>Hypothesis testing is a fundamental tool in statistics that allows researchers to make data-driven decisions and draw conclusions about a population based on sample data. Understanding the steps and types of hypothesis tests is crucial for conducting and interpreting statistical analyses.</p>
     
-    <a href="probability_statistics.html" class="back-link">Back to Probability and Statistics Topics</a>
+    <a href="../Probability_Statistics/probability_statistics.html" class="back-link">Back to Probability and Statistics Topics</a>
 
 </body>
 </html>

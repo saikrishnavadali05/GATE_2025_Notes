@@ -5,53 +5,43 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Permutations and Combinations</title>
     <link rel="stylesheet" href="../styles.css">
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 </head>
 <body>
 
     <h1 id="permutations-and-combinations">Permutations and Combinations</h1>
-    <a href="probability_statistics.html" class="back-link">Back to Probability and Statistics Topics</a>
-    <p>Permutations and combinations are fundamental concepts in combinatorics, a branch of mathematics concerned with counting, arranging, and grouping objects. These concepts are widely used in probability, statistics, and various fields of science and engineering.</p>
+    <a href="../Probability_Statistics/probability_statistics.html" class="back-link">Back to Probability and Statistics Topics</a>
     
     <h2>Permutations</h2>
-    <p>Permutations refer to the arrangement of objects in a specific order. The order of arrangement is important in permutations. The number of permutations of \( n \) distinct objects taken \( r \) at a time is given by:</p>
-    <p style="text-align: center;">\[ P(n, r) = \frac{n!}{(n - r)!} \]</p>
+    <p>Permutations refer to the arrangement of objects in a specific order. The number of permutations of \( n \) distinct objects taken \( r \) at a time is given by:</p>
+    <p>\[ P(n, r) = \frac{n!}{(n - r)!} \]</p>
     <p>where \( n! \) (n factorial) is the product of all positive integers up to \( n \).</p>
     
     <h3>Example</h3>
-    <p>Consider the set of letters \{A, B, C\}. The permutations of these letters taken 2 at a time are:</p>
-    <pre><code>AB, AC, BA, BC, CA, CB</code></pre>
-    <p>The number of permutations is:</p>
-    <p style="text-align: center;">\[ P(3, 2) = \frac{3!}{(3 - 2)!} = \frac{3!}{1!} = 6 \]</p>
+    <p>Consider 3 distinct objects: A, B, and C. The number of permutations of these 3 objects taken 2 at a time is:</p>
+    <p>\[ P(3, 2) = \frac{3!}{(3 - 2)!} = \frac{3!}{1!} = 6 \]</p>
+    <p>The permutations are: AB, BA, AC, CA, BC, and CB.</p>
     
     <h2>Combinations</h2>
-    <p>Combinations refer to the selection of objects without regard to the order of arrangement. The number of combinations of \( n \) distinct objects taken \( r \) at a time is given by:</p>
-    <p style="text-align: center;">\[ C(n, r) = \binom{n}{r} = \frac{n!}{r!(n - r)!} \]</p>
+    <p>Combinations refer to the selection of objects without regard to the order. The number of combinations of \( n \) distinct objects taken \( r \) at a time is given by:</p>
+    <p>\[ C(n, r) = \binom{n}{r} = \frac{n!}{r!(n - r)!} \]</p>
     
     <h3>Example</h3>
-    <p>Consider the set of letters \{A, B, C\}. The combinations of these letters taken 2 at a time are:</p>
-    <pre><code>AB, AC, BC</code></pre>
-    <p>The number of combinations is:</p>
-    <p style="text-align: center;">\[ C(3, 2) = \binom{3}{2} = \frac{3!}{2!(3 - 2)!} = \frac{3!}{2!1!} = 3 \]</p>
-    
-    <h2>Difference Between Permutations and Combinations</h2>
-    <ul>
-        <li><strong>Permutations:</strong> Order matters. The arrangement AB is different from BA.</li>
-        <li><strong>Combinations:</strong> Order does not matter. The selection AB is the same as BA.</li>
-    </ul>
+    <p>Consider 3 distinct objects: A, B, and C. The number of combinations of these 3 objects taken 2 at a time is:</p>
+    <p>\[ C(3, 2) = \binom{3}{2} = \frac{3!}{2!(3 - 2)!} = \frac{3!}{2! \cdot 1!} = 3 \]</p>
+    <p>The combinations are: AB, AC, and BC.</p>
     
     <h2>Applications</h2>
     <ul>
-        <li><strong>Probability:</strong> Used to calculate probabilities of different outcomes in experiments and events.</li>
-        <li><strong>Statistics:</strong> Applied in sampling techniques and hypothesis testing.</li>
-        <li><strong>Computer Science:</strong> Utilized in algorithms, cryptography, and coding theory.</li>
-        <li><strong>Operations Research:</strong> Used in optimization problems and resource allocation.</li>
-        <li><strong>Biology:</strong> Applied in genetics for understanding possible combinations of genes.</li>
+        <li><strong>Permutations:</strong> Used in scenarios where the order of arrangement is important, such as seating arrangements, rankings, and schedules.</li>
+        <li><strong>Combinations:</strong> Used in scenarios where the order of selection is not important, such as lottery draws, team selections, and combinations of flavors.</li>
     </ul>
     
     <h2>Conclusion</h2>
-    <p>Permutations and combinations are essential tools in combinatorics, providing methods to count and arrange objects in various ways. Understanding these concepts is crucial for solving problems in probability, statistics, computer science, and many other fields.</p>
+    <p>Understanding permutations and combinations is essential for solving problems related to counting and arrangement. These concepts are fundamental in probability and statistics, as well as in various real-world applications.</p>
     
-    <a href="probability_statistics.html" class="back-link">Back to Probability and Statistics Topics</a>
+    <a href="../Probability_Statistics/probability_statistics.html" class="back-link">Back to Probability and Statistics Topics</a>
 
 </body>
 </html>

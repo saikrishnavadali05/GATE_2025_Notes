@@ -5,71 +5,56 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sample Space</title>
     <link rel="stylesheet" href="../styles.css">
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 </head>
 <body>
 
     <h1 id="sample-space">Sample Space</h1>
-    <a href="probability_statistics.html" class="back-link">Back to Probability and Statistics Topics</a>
-    <p>The sample space is a fundamental concept in probability theory. It represents the set of all possible outcomes of a random experiment. Understanding the sample space is crucial for defining events and calculating probabilities.</p>
+    <a href="../Probability_Statistics/probability_statistics.html" class="back-link">Back to Probability and Statistics Topics</a>
     
-    <h2>Definition</h2>
-    <p>The sample space, often denoted by \( S \) or \( \Omega \), is the set of all possible outcomes of a random experiment. Each individual outcome is called a sample point or an element of the sample space.</p>
+    <p>In probability theory, the sample space is the set of all possible outcomes of a random experiment. Each outcome is an element of the sample space, and the sample space is denoted by \( S \) or \( \Omega \).</p>
+    
+    <h2>Example</h2>
+    <p>Consider the experiment of tossing a coin. The sample space is:</p>
+    <p>\[ S = \{ \text{Heads}, \text{Tails} \} \]</p>
+    
+    <p>For rolling a six-sided die, the sample space is:</p>
+    <p>\[ S = \{ 1, 2, 3, 4, 5, 6 \} \]</p>
     
     <h2>Types of Sample Spaces</h2>
-    <p>Sample spaces can be classified into two main types:</p>
     <ul>
-        <li><strong>Discrete Sample Space:</strong> Contains a finite or countably infinite number of distinct outcomes.</li>
-        <li><strong>Continuous Sample Space:</strong> Contains an uncountable number of outcomes, often representing measurements on a continuous scale.</li>
+        <li><strong>Discrete Sample Space:</strong> Contains a finite or countably infinite number of outcomes. Examples include the outcomes of rolling a die or tossing a coin.</li>
+        <li><strong>Continuous Sample Space:</strong> Contains an uncountably infinite number of outcomes. Examples include the possible outcomes of measuring the height of a person or the time taken to complete a task.</li>
     </ul>
     
-    <h2>Examples</h2>
-    
-    <h3>Example 1: Coin Toss</h3>
-    <p>For a single coin toss, the sample space is:</p>
-    <p style="text-align: center;">\( S = \{ \text{Heads}, \text{Tails} \} \)</p>
-    
-    <h3>Example 2: Rolling a Die</h3>
-    <p>For rolling a six-sided die, the sample space is:</p>
-    <p style="text-align: center;">\( S = \{ 1, 2, 3, 4, 5, 6 \} \)</p>
-    
-    <h3>Example 3: Drawing a Card</h3>
-    <p>For drawing a single card from a standard deck of 52 cards, the sample space is:</p>
-    <p style="text-align: center;">\( S = \{ \text{Ace of Hearts}, \text{2 of Hearts}, \ldots, \text{King of Spades} \} \)</p>
-    
-    <h3>Example 4: Measuring Temperature</h3>
-    <p>For measuring the temperature in a room, assuming it can take any real value, the sample space is continuous and can be represented as:</p>
-    <p style="text-align: center;">\( S = \{ x \in \mathbb{R} \mid a \leq x \leq b \} \)</p>
-    <p>where \( a \) and \( b \) are the minimum and maximum possible temperatures.</p>
-    
     <h2>Events</h2>
-    <p>An event is a subset of the sample space. It represents one or more outcomes of the random experiment. For example, in the case of rolling a die, an event could be rolling an even number:</p>
-    <p style="text-align: center;">\( E = \{ 2, 4, 6 \} \)</p>
+    <p>An event is a subset of the sample space. For example, in the experiment of rolling a die, the event of rolling an even number is:</p>
+    <p>\[ E = \{ 2, 4, 6 \} \]</p>
     
-    <h2>Venn Diagrams</h2>
-    <p>Venn diagrams are often used to represent sample spaces and events. Each outcome in the sample space is represented by a point, and events are represented by regions within a closed curve.</p>
+    <h3>Union of Events</h3>
+    <p>The union of two events \( A \) and \( B \), denoted by \( A \cup B \), is the set of outcomes that belong to either \( A \) or \( B \) or both. If \( A \) and \( B \) are events, then:</p>
+    <p>\[ A \cup B = \{ x : x \in A \text{ or } x \in B \} \]</p>
     
-    <h2>Complement of an Event</h2>
-    <p>The complement of an event \( A \), denoted by \( A^c \), is the set of all outcomes in the sample space that are not in \( A \). For example, if \( A \) is the event of rolling an even number on a die, then:</p>
-    <p style="text-align: center;">\( A^c = \{ 1, 3, 5 \} \)</p>
+    <h3>Intersection of Events</h3>
+    <p>The intersection of two events \( A \) and \( B \), denoted by \( A \cap B \), is the set of outcomes that belong to both \( A \) and \( B \). If \( A \) and \( B \) are events, then:</p>
+    <p>\[ A \cap B = \{ x : x \in A \text{ and } x \in B \} \]</p>
     
-    <h2>Union and Intersection of Events</h2>
-    <p>The union of two events \( A \) and \( B \), denoted by \( A \cup B \), is the set of outcomes that are in \( A \), \( B \), or both. The intersection of \( A \) and \( B \), denoted by \( A \cap B \), is the set of outcomes that are in both \( A \) and \( B \).</p>
-    <p>For example, if \( A \) is the event of rolling an even number and \( B \) is the event of rolling a number greater than 3 on a die, then:</p>
-    <p style="text-align: center;">\( A \cup B = \{ 2, 4, 5, 6 \} \)</p>
-    <p style="text-align: center;">\( A \cap B = \{ 4, 6 \} \)</p>
+    <h3>Complement of an Event</h3>
+    <p>The complement of an event \( A \), denoted by \( A' \) or \( A^c \), is the set of outcomes in the sample space that are not in \( A \). If \( A \) is an event, then:</p>
+    <p>\[ A' = \{ x : x \in S \text{ and } x \notin A \} \]</p>
     
     <h2>Applications</h2>
     <ul>
-        <li><strong>Game Theory:</strong> Analyzing all possible outcomes in strategic games.</li>
-        <li><strong>Statistics:</strong> Defining the space of all possible outcomes before calculating probabilities.</li>
-        <li><strong>Risk Management:</strong> Identifying all potential outcomes of financial decisions or investments.</li>
-        <li><strong>Operations Research:</strong> Evaluating possible outcomes in optimization problems.</li>
+        <li><strong>Probability Calculation:</strong> Sample spaces are used to define probabilities of events.</li>
+        <li><strong>Statistical Analysis:</strong> Sample spaces form the basis for conducting statistical experiments and analyses.</li>
+        <li><strong>Risk Assessment:</strong> Sample spaces are used to model possible outcomes and assess risks in various fields such as finance and engineering.</li>
     </ul>
     
     <h2>Conclusion</h2>
-    <p>The sample space is a crucial concept in probability, serving as the foundation for defining events and calculating probabilities. Understanding and correctly identifying the sample space is essential for accurate probability analysis and statistical inference.</p>
+    <p>The concept of sample space is fundamental to probability theory and statistics. It provides a framework for defining and analyzing events, calculating probabilities, and conducting experiments.</p>
     
-    <a href="probability_statistics.html" class="back-link">Back to Probability and Statistics Topics</a>
+    <a href="../Probability_Statistics/probability_statistics.html" class="back-link">Back to Probability and Statistics Topics</a>
 
 </body>
 </html>
