@@ -5,93 +5,65 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hash Tables</title>
     <link rel="stylesheet" href="../styles.css">
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 </head>
 <body>
 
     <h1 id="hash-tables">Hash Tables</h1>
     <a href="programming_data_structures_algorithms.html" class="back-link">Back to Programming, Data Structures, and Algorithms Topics</a>
-    <p>Hash tables are data structures that provide efficient insertion, deletion, and lookup operations. They use a hash function to map keys to indices in an array, where the values are stored. This allows for fast access to data.</p>
     
-    <h2>Basic Concepts</h2>
-    <h3>Hash Function</h3>
-    <p>A hash function takes an input (or key) and returns an integer, which is used as an index in the hash table. A good hash function distributes keys uniformly across the array to minimize collisions.</p>
+    <p>A hash table is a data structure that implements an associative array, a structure that can map keys to values. It uses a hash function to compute an index into an array of buckets or slots, from which the desired value can be found.</p>
     
-    <h3>Collisions</h3>
-    <p>Collisions occur when two keys hash to the same index. There are several methods to handle collisions, including chaining and open addressing.</p>
+    <h2>Hash Function</h2>
+    <p>A hash function is a function that takes an input (or key) and returns a fixed-size string of bytes. The output is typically a "digest" that is unique to each unique input. A good hash function has the following properties:</p>
+    <ul>
+        <li><strong>Deterministic:</strong> The same input always produces the same output.</li>
+        <li><strong>Fast:</strong> It is quick to compute.</li>
+        <li><strong>Uniformly Distributed:</strong> The hash values are uniformly distributed across the output space.</li>
+    </ul>
+    <p>An example of a simple hash function is:</p>
+    <p>\[ h(k) = k \mod m \]</p>
+    <p>where \( k \) is the key and \( m \) is the size of the hash table.</p>
     
-    <h3>Chaining</h3>
-    <p>In chaining, each index in the hash table points to a linked list of entries that hash to the same index. This allows multiple values to be stored at the same index.</p>
+    <h2>Collision Resolution</h2>
+    <p>Since different keys may hash to the same index, collisions can occur. There are several techniques to handle collisions:</p>
+    <ul>
+        <li><strong>Chaining:</strong> Each bucket of the hash table points to a linked list of entries that have the same hash value.</li>
+        <li><strong>Open Addressing:</strong> When a collision occurs, the algorithm searches for the next available slot in the array.</li>
+    </ul>
     
-    <h3>Open Addressing</h3>
-    <p>In open addressing, when a collision occurs, the algorithm searches for the next available slot in the array. Common methods of open addressing include linear probing, quadratic probing, and double hashing.</p>
+    <h3>Chaining Example</h3>
+    <p>Suppose we have the following keys: 10, 20, 30, and a hash table of size 10 with the hash function \( h(k) = k \mod 10 \). All keys hash to the same index 0:</p>
+    <pre>
+    Index:   0    1    2    3    4    5    6    7    8    9
+    Table: [10, 20, 30]
+    </pre>
     
-    <h2>Hash Table Operations</h2>
-    <h3>Insertion</h3>
-    <p>To insert a key-value pair into a hash table, compute the index using the hash function and insert the pair at that index. If a collision occurs, handle it using the chosen collision resolution method.</p>
+    <h3>Open Addressing Example</h3>
+    <p>Suppose we have the same keys and hash table as above. Using linear probing, we resolve collisions by checking the next available slot:</p>
+    <pre>
+    Index:   0    1    2    3    4    5    6    7    8    9
+    Table: [10, 20, 30, - , - , - , - , - , - , -]
+    </pre>
     
-    <h3>Deletion</h3>
-    <p>To delete a key from a hash table, compute the index using the hash function, locate the key in the linked list or array, and remove it. Update the structure to maintain efficient access.</p>
-    
-    <h3>Search</h3>
-    <p>To search for a key in a hash table, compute the index using the hash function and look for the key at that index. If a collision resolution method is used, search within the linked list or array slots.</p>
-    
-    <h2>Example</h2>
-    <p>Consider a hash table with the following key-value pairs: (1, "A"), (2, "B"), (3, "C"), and a hash function \( h(x) = x \mod 3 \). The table would look like this:</p>
-    <pre><code>Index:    0    1    2
-Keys:          1    2
-Values:       "A"  "B"  "C"</code></pre>
-    
-    <h2>Python Implementation</h2>
-    <pre><code>class HashTable:
-    def __init__(self, size):
-        self.size = size
-        self.table = [[] for _ in range(size)]
-    
-    def hash_function(self, key):
-        return key % self.size
-    
-    def insert(self, key, value):
-        index = self.hash_function(key)
-        self.table[index].append((key, value))
-    
-    def delete(self, key):
-        index = self.hash_function(key)
-        for i, (k, v) in enumerate(self.table[index]):
-            if k == key:
-                del self.table[index][i]
-                return True
-        return False
-    
-    def search(self, key):
-        index = self.hash_function(key)
-        for k, v in self.table[index]:
-            if k == key:
-                return v
-        return None
-
-# Example usage
-hash_table = HashTable(3)
-hash_table.insert(1, "A")
-hash_table.insert(2, "B")
-hash_table.insert(3, "C")
-
-print('Search for key 2:', hash_table.search(2))  # Output: "B"
-hash_table.delete(2)
-print('Search for key 2 after deletion:', hash_table.search(2))  # Output: None</code></pre>
-    
-    <h2>Time Complexity</h2>
-    <p>The average time complexity for insertion, deletion, and search operations in a hash table is \( O(1) \). However, in the worst case, when many collisions occur, the time complexity can degrade to \( O(n) \), where \( n \) is the number of elements in the hash table.</p>
+    <h2>Operations</h2>
+    <ul>
+        <li><strong>Insert:</strong> Calculate the hash value of the key and insert it into the appropriate bucket.</li>
+        <li><strong>Search:</strong> Calculate the hash value of the key and search the appropriate bucket for the value.</li>
+        <li><strong>Delete:</strong> Calculate the hash value of the key and remove the value from the appropriate bucket.</li>
+    </ul>
     
     <h2>Applications</h2>
     <ul>
-        <li><strong>Database Indexing:</strong> Hash tables are used to index data for fast retrieval in databases.</li>
-        <li><strong>Caching:</strong> Used in caching mechanisms to store and retrieve data quickly.</li>
-        <li><strong>Symbol Tables:</strong> Used in compilers and interpreters to manage variable and function names.</li>
-        <li><strong>Sets and Maps:</strong> Commonly used to implement sets and maps in various programming languages.</li>
+        <li><strong>Databases:</strong> Hash tables are used to index data for fast retrieval.</li>
+        <li><strong>Caching:</strong> Hash tables are used to store frequently accessed data for quick access.</li>
+        <li><strong>Symbol Tables:</strong> Hash tables are used in compilers to store information about variables and functions.</li>
+        <li><strong>Sets:</strong> Hash tables are used to implement sets, supporting fast membership testing.</li>
     </ul>
     
     <h2>Conclusion</h2>
-    <p>Hash tables are powerful data structures that provide efficient data storage and retrieval. Understanding their operations, collision resolution methods, and applications is essential for solving a wide range of computational problems.</p>
+    <p>Hash tables are powerful data structures that provide fast insertion, deletion, and lookup operations. Understanding hash functions and collision resolution techniques is essential for effectively using hash tables in various applications.</p>
     
     <a href="programming_data_structures_algorithms.html" class="back-link">Back to Programming, Data Structures, and Algorithms Topics</a>
 

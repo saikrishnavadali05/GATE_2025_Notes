@@ -5,62 +5,78 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Introduction to Graph Theory</title>
     <link rel="stylesheet" href="../styles.css">
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 </head>
 <body>
 
     <h1 id="introduction-to-graph-theory">Introduction to Graph Theory</h1>
     <a href="programming_data_structures_algorithms.html" class="back-link">Back to Programming, Data Structures, and Algorithms Topics</a>
-    <p>Graph theory is a branch of mathematics and computer science that studies the properties and applications of graphs. Graphs are mathematical structures used to model pairwise relationships between objects. They are widely used in various fields, including computer science, biology, social sciences, and more.</p>
     
-    <h2>Basic Concepts</h2>
-    <h3>Graph</h3>
-    <p>A graph \( G \) is defined as an ordered pair \( (V, E) \), where \( V \) is a set of vertices (or nodes) and \( E \) is a set of edges (or links) that connect pairs of vertices.</p>
+    <p>Graph theory is the study of graphs, which are mathematical structures used to model pairwise relations between objects. A graph is composed of vertices (or nodes) and edges (or arcs) that connect pairs of vertices.</p>
     
-    <h3>Vertices and Edges</h3>
-    <p>Vertices are the fundamental units of a graph, representing objects or entities. Edges are the connections between vertices, representing relationships or interactions between the objects.</p>
-    
-    <h3>Types of Graphs</h3>
+    <h2>Basic Terminology</h2>
     <ul>
-        <li><strong>Undirected Graph:</strong> A graph in which edges have no direction. The edge \((u, v)\) is identical to \((v, u)\).</li>
-        <li><strong>Directed Graph (Digraph):</strong> A graph in which edges have a direction. The edge \((u, v)\) is not identical to \((v, u)\).</li>
-        <li><strong>Weighted Graph:</strong> A graph in which edges have associated weights or costs.</li>
-        <li><strong>Unweighted Graph:</strong> A graph in which edges do not have weights.</li>
-        <li><strong>Simple Graph:</strong> A graph with no loops (edges connecting a vertex to itself) and no multiple edges between the same pair of vertices.</li>
-        <li><strong>Multigraph:</strong> A graph that may have multiple edges between the same pair of vertices.</li>
+        <li><strong>Vertex (Node):</strong> A fundamental unit of a graph, represented as a point.</li>
+        <li><strong>Edge (Arc):</strong> A connection between two vertices, represented as a line.</li>
+        <li><strong>Degree:</strong> The number of edges incident to a vertex. For a vertex \( v \), its degree is denoted by \( \deg(v) \).</li>
+        <li><strong>Path:</strong> A sequence of vertices connected by edges, where each vertex is visited only once.</li>
+        <li><strong>Cycle:</strong> A path that starts and ends at the same vertex, with no other repetitions.</li>
+        <li><strong>Connected Graph:</strong> A graph in which there is a path between every pair of vertices.</li>
+        <li><strong>Subgraph:</strong> A graph formed from a subset of the vertices and edges of a larger graph.</li>
     </ul>
     
-    <h2>Representation of Graphs</h2>
-    <p>Graphs can be represented in several ways:</p>
+    <h2>Types of Graphs</h2>
+    <ul>
+        <li><strong>Undirected Graph:</strong> A graph in which edges have no direction. If there is an edge between vertices \( u \) and \( v \), it is denoted as \( \{u, v\} \).</li>
+        <li><strong>Directed Graph (Digraph):</strong> A graph in which edges have a direction. If there is an edge from vertex \( u \) to vertex \( v \), it is denoted as \( (u, v) \).</li>
+        <li><strong>Weighted Graph:</strong> A graph in which each edge is assigned a weight (or cost). The weight of an edge \( \{u, v\} \) is denoted as \( w(u, v) \).</li>
+        <li><strong>Tree:</strong> A connected acyclic graph.</li>
+        <li><strong>Bipartite Graph:</strong> A graph whose vertices can be divided into two disjoint sets such that no two vertices within the same set are adjacent.</li>
+    </ul>
     
-    <h3>Adjacency Matrix</h3>
-    <p>An adjacency matrix is a \( V \times V \) matrix \( A \) where \( A[i][j] \) is 1 if there is an edge from vertex \( i \) to vertex \( j \), and 0 otherwise.</p>
+    <h2>Graph Representation</h2>
+    <p>Graphs can be represented in various ways:</p>
+    <ul>
+        <li><strong>Adjacency Matrix:</strong> A 2D array in which the element at row \( i \) and column \( j \) indicates the presence (and possibly the weight) of an edge between vertices \( i \) and \( j \).</li>
+        <li><strong>Adjacency List:</strong> An array of lists. The list at index \( i \) contains all the vertices adjacent to vertex \( i \).</li>
+    </ul>
     
-    <h3>Adjacency List</h3>
-    <p>An adjacency list is an array of lists. The \( i \)-th list contains all vertices adjacent to the \( i \)-th vertex.</p>
-    
-    <h3>Incidence Matrix</h3>
-    <p>An incidence matrix is a \( V \times E \) matrix \( B \) where \( B[i][j] \) is 1 if vertex \( i \) is incident to edge \( j \), and 0 otherwise.</p>
-    
-    <h2>Graph Traversal</h2>
-    <p>Graph traversal refers to the process of visiting all the vertices in a graph in a systematic manner. Two common graph traversal algorithms are:</p>
-    
-    <h3>Breadth-First Search (BFS)</h3>
-    <p>BFS explores the graph level by level, starting from a given source vertex and visiting all its neighbors before moving on to the next level. It uses a queue to keep track of the vertices to be explored.</p>
-    
-    <h3>Depth-First Search (DFS)</h3>
-    <p>DFS explores the graph by going as deep as possible along each branch before backtracking. It uses a stack (or recursion) to keep track of the vertices to be explored.</p>
+    <h2>Example</h2>
+    <p>Consider the following undirected graph:</p>
+    <pre>
+    A --- B
+    | \   |
+    |  \  |
+    |   \ |
+    C --- D
+    </pre>
+    <p>The adjacency matrix representation is:</p>
+    <pre>
+       A B C D
+    A [0 1 1 1]
+    B [1 0 0 1]
+    C [1 0 0 1]
+    D [1 1 1 0]
+    </pre>
+    <p>The adjacency list representation is:</p>
+    <pre>
+    A: B, C, D
+    B: A, D
+    C: A, D
+    D: A, B, C
+    </pre>
     
     <h2>Applications</h2>
     <ul>
-        <li><strong>Computer Networks:</strong> Modeling and analyzing network topologies, routing algorithms, and communication protocols.</li>
-        <li><strong>Social Networks:</strong> Analyzing relationships and interactions between individuals, detecting communities, and studying influence.</li>
-        <li><strong>Biology:</strong> Modeling biological networks such as protein-protein interaction networks, metabolic networks, and ecological networks.</li>
-        <li><strong>Operations Research:</strong> Solving optimization problems such as the shortest path, minimum spanning tree, and network flow problems.</li>
-        <li><strong>Artificial Intelligence:</strong> Representing and solving problems in knowledge representation, planning, and reasoning.</li>
+        <li><strong>Networking:</strong> Graphs are used to model computer networks, social networks, and communication systems.</li>
+        <li><strong>Transportation:</strong> Graphs model transportation networks such as roads, railways, and flight routes.</li>
+        <li><strong>Biology:</strong> Graphs represent biological networks like neural networks and protein-protein interaction networks.</li>
+        <li><strong>Operations Research:</strong> Graphs solve problems related to resource allocation, scheduling, and optimization.</li>
     </ul>
     
     <h2>Conclusion</h2>
-    <p>Graph theory provides a powerful framework for modeling and analyzing complex relationships and interactions. Understanding the basic concepts and algorithms of graph theory is essential for solving a wide range of problems in computer science and other fields.</p>
+    <p>Graph theory is a fundamental area of mathematics and computer science that provides powerful tools for modeling and solving complex problems. Understanding the basics of graph theory is essential for various applications in science, engineering, and industry.</p>
     
     <a href="programming_data_structures_algorithms.html" class="back-link">Back to Programming, Data Structures, and Algorithms Topics</a>
 
