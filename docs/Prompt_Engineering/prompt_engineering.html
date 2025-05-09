@@ -2,34 +2,46 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Prompt Engineering - Table of Contents</title>
+  <title>Prompt Engineering TOC</title>
   <style>
     body {
       font-family: Arial, sans-serif;
-      line-height: 1.6;
       margin: 20px;
     }
     h1 {
       font-size: 28px;
-      color: #333;
+      margin-bottom: 20px;
     }
-    h2 {
-      margin-top: 60px;
+    .accordion {
+      background-color: #f1f1f1;
       color: #444;
+      cursor: pointer;
+      padding: 14px 20px;
+      width: 100%;
+      border: none;
+      text-align: left;
+      outline: none;
+      font-size: 16px;
+      transition: 0.3s;
+      margin-top: 5px;
+      border-radius: 4px;
     }
-    ol {
-      padding-left: 20px;
+    .active, .accordion:hover {
+      background-color: #ddd;
     }
-    li {
-      margin: 6px 0;
-    }
-    li ol {
-      margin-top: 4px;
-      padding-left: 20px;
+    .panel {
+      padding: 0 18px;
+      background-color: white;
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.2s ease-out;
+      border-left: 2px solid #ccc;
     }
     a {
-      text-decoration: none;
+      display: block;
+      padding: 8px 0;
       color: #1a0dab;
+      text-decoration: none;
     }
     a:hover {
       text-decoration: underline;
@@ -40,133 +52,132 @@
 
   <h1>Prompt Engineering: Table of Contents</h1>
 
-  <ol>
-    <li><a href="#introduction">Introduction to Prompt Engineering</a>
-      <ol>
-        <li><a href="#what-is">What is Prompt Engineering?</a></li>
-        <li><a href="#importance">Importance in AI and LLMs</a></li>
-        <li><a href="#applications">Real-world Applications</a></li>
-      </ol>
-    </li>
-    <li><a href="#understanding">Understanding Language Models</a>
-      <ol>
-        <li><a href="#how-llms-work">How LLMs Work</a></li>
-        <li><a href="#biases">Limitations and Biases</a></li>
-        <li><a href="#role-of-prompts">Role of Prompts in Shaping Outputs</a></li>
-      </ol>
-    </li>
-    <li><a href="#fundamentals">Prompt Fundamentals</a>
-      <ol>
-        <li><a href="#types">Types of Prompts</a></li>
-        <li><a href="#components">Components of a Good Prompt</a></li>
-        <li><a href="#clarity">Clarity, Specificity, and Context</a></li>
-      </ol>
-    </li>
-    <li><a href="#patterns">Prompt Patterns and Techniques</a>
-      <ol>
-        <li><a href="#fewshot">Zero-shot, One-shot, and Few-shot prompting</a></li>
-        <li><a href="#cot">Chain-of-Thought Prompting</a></li>
-        <li><a href="#role-prompting">Role Prompting</a></li>
-        <li><a href="#delimiting">Delimiting and Structuring Input</a></li>
-        <li><a href="#system-user">System vs. User Messages</a></li>
-      </ol>
-    </li>
-    <li><a href="#advanced">Advanced Prompting Techniques</a>
-      <ol>
-        <li><a href="#multi-turn">Multi-turn Prompting</a></li>
-        <li><a href="#chaining">Prompt Chaining</a></li>
-        <li><a href="#self-reflection">Self-reflection and Critique Prompts</a></li>
-        <li><a href="#tools-with-llms">Using Tools with LLMs</a></li>
-      </ol>
-    </li>
-    <li><a href="#evaluation">Evaluation and Iteration</a>
-      <ol>
-        <li><a href="#measuring">Measuring Prompt Effectiveness</a></li>
-        <li><a href="#troubleshooting">Troubleshooting and Refinement</a></li>
-        <li><a href="#hallucinations">Avoiding Hallucinations and Misinterpretation</a></li>
-      </ol>
-    </li>
-    <li><a href="#domains">Prompt Engineering for Specific Domains</a>
-      <ol>
-        <li><a href="#writing">Creative Writing</a></li>
-        <li><a href="#code">Code Generation and Debugging</a></li>
-        <li><a href="#data">Data Analysis and Visualization</a></li>
-        <li><a href="#education">Education and Tutoring</a></li>
-        <li><a href="#support">Customer Support</a></li>
-      </ol>
-    </li>
-    <li><a href="#models">Prompt Engineering for Different Models</a>
-      <ol>
-        <li><a href="#chatgpt">ChatGPT (OpenAI)</a></li>
-        <li><a href="#claude">Claude (Anthropic)</a></li>
-        <li><a href="#gemini">Gemini (Google)</a></li>
-        <li><a href="#mistral">Mistral, LLaMA, etc.</a></li>
-        <li><a href="#differences">Differences in behavior and optimization</a></li>
-      </ol>
-    </li>
-    <li><a href="#tools">Tools and Frameworks</a>
-      <ol>
-        <li><a href="#langchain">LangChain</a></li>
-        <li><a href="#llamaindex">LlamaIndex</a></li>
-        <li><a href="#promptlayer">PromptLayer</a></li>
-        <li><a href="#eval">Eval tools and prompt libraries</a></li>
-      </ol>
-    </li>
-  </ol>
+  <button class="accordion">1. Introduction to Prompt Engineering</button>
+  <div class="panel">
+    <a href="#what-is">1.1 What is Prompt Engineering?</a>
+    <a href="#importance">1.2 Importance in AI and LLMs</a>
+    <a href="#applications">1.3 Real-world Applications</a>
+  </div>
+
+  <button class="accordion">2. Understanding Language Models</button>
+  <div class="panel">
+    <a href="#how-llms-work">2.1 How LLMs Work</a>
+    <a href="#biases">2.2 Limitations and Biases</a>
+    <a href="#role-of-prompts">2.3 Role of Prompts in Shaping Outputs</a>
+  </div>
+
+  <button class="accordion">3. Prompt Fundamentals</button>
+  <div class="panel">
+    <a href="#types">3.1 Types of Prompts</a>
+    <a href="#components">3.2 Components of a Good Prompt</a>
+    <a href="#clarity">3.3 Clarity, Specificity, and Context</a>
+  </div>
+
+  <button class="accordion">4. Prompt Patterns and Techniques</button>
+  <div class="panel">
+    <a href="#fewshot">4.1 Zero-shot, One-shot, and Few-shot</a>
+    <a href="#cot">4.2 Chain-of-Thought Prompting</a>
+    <a href="#role-prompting">4.3 Role Prompting</a>
+    <a href="#delimiting">4.4 Delimiting and Structuring Input</a>
+    <a href="#system-user">4.5 System vs. User Messages</a>
+  </div>
+
+  <button class="accordion">5. Advanced Prompting Techniques</button>
+  <div class="panel">
+    <a href="#multi-turn">5.1 Multi-turn Prompting</a>
+    <a href="#chaining">5.2 Prompt Chaining</a>
+    <a href="#self-reflection">5.3 Self-reflection and Critique Prompts</a>
+    <a href="#tools-with-llms">5.4 Using Tools with LLMs</a>
+  </div>
+
+  <button class="accordion">6. Evaluation and Iteration</button>
+  <div class="panel">
+    <a href="#measuring">6.1 Measuring Prompt Effectiveness</a>
+    <a href="#troubleshooting">6.2 Troubleshooting and Refinement</a>
+    <a href="#hallucinations">6.3 Avoiding Hallucinations</a>
+  </div>
+
+  <button class="accordion">7. Prompt Engineering for Specific Domains</button>
+  <div class="panel">
+    <a href="#writing">7.1 Creative Writing</a>
+    <a href="#code">7.2 Code Generation and Debugging</a>
+    <a href="#data">7.3 Data Analysis and Visualization</a>
+    <a href="#education">7.4 Education and Tutoring</a>
+    <a href="#support">7.5 Customer Support</a>
+  </div>
+
+  <button class="accordion">8. Prompt Engineering for Different Models</button>
+  <div class="panel">
+    <a href="#chatgpt">8.1 ChatGPT (OpenAI)</a>
+    <a href="#claude">8.2 Claude (Anthropic)</a>
+    <a href="#gemini">8.3 Gemini (Google)</a>
+    <a href="#mistral">8.4 Mistral, LLaMA, etc.</a>
+    <a href="#differences">8.5 Differences in behavior</a>
+  </div>
+
+  <button class="accordion">9. Tools and Frameworks</button>
+  <div class="panel">
+    <a href="#langchain">9.1 LangChain</a>
+    <a href="#llamaindex">9.2 LlamaIndex</a>
+    <a href="#promptlayer">9.3 PromptLayer</a>
+    <a href="#eval">9.4 Eval tools and libraries</a>
+  </div>
 
   <!-- Anchor Targets -->
-  <h2 id="introduction">1. Introduction to Prompt Engineering</h2>
   <h2 id="what-is">1.1 What is Prompt Engineering?</h2>
   <h2 id="importance">1.2 Importance in AI and LLMs</h2>
   <h2 id="applications">1.3 Real-world Applications</h2>
 
-  <h2 id="understanding">2. Understanding Language Models</h2>
   <h2 id="how-llms-work">2.1 How LLMs Work</h2>
   <h2 id="biases">2.2 Limitations and Biases</h2>
   <h2 id="role-of-prompts">2.3 Role of Prompts in Shaping Outputs</h2>
 
-  <h2 id="fundamentals">3. Prompt Fundamentals</h2>
   <h2 id="types">3.1 Types of Prompts</h2>
   <h2 id="components">3.2 Components of a Good Prompt</h2>
   <h2 id="clarity">3.3 Clarity, Specificity, and Context</h2>
 
-  <h2 id="patterns">4. Prompt Patterns and Techniques</h2>
-  <h2 id="fewshot">4.1 Zero-shot, One-shot, and Few-shot prompting</h2>
+  <h2 id="fewshot">4.1 Zero-shot, One-shot, and Few-shot</h2>
   <h2 id="cot">4.2 Chain-of-Thought Prompting</h2>
   <h2 id="role-prompting">4.3 Role Prompting</h2>
   <h2 id="delimiting">4.4 Delimiting and Structuring Input</h2>
   <h2 id="system-user">4.5 System vs. User Messages</h2>
 
-  <h2 id="advanced">5. Advanced Prompting Techniques</h2>
   <h2 id="multi-turn">5.1 Multi-turn Prompting</h2>
   <h2 id="chaining">5.2 Prompt Chaining</h2>
   <h2 id="self-reflection">5.3 Self-reflection and Critique Prompts</h2>
   <h2 id="tools-with-llms">5.4 Using Tools with LLMs</h2>
 
-  <h2 id="evaluation">6. Evaluation and Iteration</h2>
   <h2 id="measuring">6.1 Measuring Prompt Effectiveness</h2>
   <h2 id="troubleshooting">6.2 Troubleshooting and Refinement</h2>
-  <h2 id="hallucinations">6.3 Avoiding Hallucinations and Misinterpretation</h2>
+  <h2 id="hallucinations">6.3 Avoiding Hallucinations</h2>
 
-  <h2 id="domains">7. Prompt Engineering for Specific Domains</h2>
   <h2 id="writing">7.1 Creative Writing</h2>
   <h2 id="code">7.2 Code Generation and Debugging</h2>
   <h2 id="data">7.3 Data Analysis and Visualization</h2>
   <h2 id="education">7.4 Education and Tutoring</h2>
   <h2 id="support">7.5 Customer Support</h2>
 
-  <h2 id="models">8. Prompt Engineering for Different Models</h2>
   <h2 id="chatgpt">8.1 ChatGPT (OpenAI)</h2>
   <h2 id="claude">8.2 Claude (Anthropic)</h2>
   <h2 id="gemini">8.3 Gemini (Google)</h2>
   <h2 id="mistral">8.4 Mistral, LLaMA, etc.</h2>
-  <h2 id="differences">8.5 Differences in behavior and optimization</h2>
+  <h2 id="differences">8.5 Differences in behavior</h2>
 
-  <h2 id="tools">9. Tools and Frameworks</h2>
   <h2 id="langchain">9.1 LangChain</h2>
   <h2 id="llamaindex">9.2 LlamaIndex</h2>
   <h2 id="promptlayer">9.3 PromptLayer</h2>
-  <h2 id="eval">9.4 Eval tools and prompt libraries</h2>
+  <h2 id="eval">9.4 Eval tools and libraries</h2>
+
+  <script>
+    const acc = document.getElementsByClassName("accordion");
+    for (let i = 0; i < acc.length; i++) {
+      acc[i].addEventListener("click", function () {
+        this.classList.toggle("active");
+        const panel = this.nextElementSibling;
+        panel.style.maxHeight = panel.style.maxHeight ? null : panel.scrollHeight + "px";
+      });
+    }
+  </script>
 
 </body>
 </html>
