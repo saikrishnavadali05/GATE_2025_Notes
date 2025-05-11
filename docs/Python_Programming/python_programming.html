@@ -2,27 +2,51 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Python - Table of Contents</title>
+  <title>Python Programming</title>
   <style>
     body {
       font-family: Arial, sans-serif;
       padding: 30px;
       background: #f9f9f9;
     }
-    details {
-      margin-bottom: 10px;
+    h1 {
+      font-size: 28px;
+      margin-bottom: 20px;
     }
-    summary {
-      font-size: 18px;
-      font-weight: bold;
+    .accordion {
+      background-color: #f1f1f1;
+      color: #444;
       cursor: pointer;
+      padding: 14px 20px;
+      width: 100%;
+      border: none;
+      text-align: left;
+      outline: none;
+      font-size: 16px;
+      transition: 0.3s;
+      margin-top: 5px;
+      border-radius: 4px;
+    }
+    .active, .accordion:hover {
+      background-color: #ddd;
+    }
+    .panel {
+      padding: 0 18px;
+      background-color: white;
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.2s ease-out;
+      border-left: 2px solid #ccc;
     }
     ul {
       padding-left: 20px;
+      margin: 10px 0;
     }
     a {
+      display: block;
+      padding: 8px 0;
+      color: #1a0dab;
       text-decoration: none;
-      color: #0077cc;
     }
     a:hover {
       text-decoration: underline;
@@ -30,12 +54,11 @@
   </style>
 </head>
 <body>
+
   <h1>Programming in Python</h1>
 
-  <hr><p><a href="python-curriculum.html" target="_blank">View Full Weekly Python Curriculum</a></p>
-
-  <details open>
-    <summary>1. Introduction to Python</summary>
+  <button class="accordion">1. Introduction to Python</button>
+  <div class="panel">
     <ul>
       <li><a href="#history">History of Python</a></li>
       <li><a href="#what">What is Python</a></li>
@@ -44,10 +67,10 @@
       <li><a href="#comparison">Comparison with Other Languages</a></li>
       <li><a href="#versions">Famous and Most Used Versions</a></li>
     </ul>
-  </details>
+  </div>
 
-  <details>
-    <summary>2. Python Basics</summary>
+  <button class="accordion">2. Python Basics</button>
+  <div class="panel">
     <ul>
       <li><a href="#about">About Python</a></li>
       <li><a href="#header">Python Script Header</a></li>
@@ -60,10 +83,10 @@
       <li><a href="#indentation">Indentation</a></li>
       <li><a href="#continuation">Continuation Lines</a></li>
     </ul>
-  </details>
+  </div>
 
-  <details>
-    <summary>3. Data Types and Variables</summary>
+  <button class="accordion">3. Data Types and Variables</button>
+  <div class="panel">
     <ul>
       <li><a href="#integers">Integers</a></li>
       <li><a href="#floats">Floating Point</a></li>
@@ -75,10 +98,10 @@
       <li><a href="#naming">Naming Conventions</a></li>
       <li><a href="#goodnames">Creating Good Names</a></li>
     </ul>
-  </details>
+  </div>
 
-  <details>
-    <summary>4. User Input and Operators</summary>
+  <button class="accordion">4. User Input and Operators</button>
+  <div class="panel">
     <ul>
       <li><a href="#input">Input Function</a></li>
       <li><a href="#cliargs">Command Line Arguments</a></li>
@@ -90,23 +113,23 @@
       <li><a href="#identity">Identity Operators</a></li>
       <li><a href="#bitwise">Bitwise Operators</a></li>
     </ul>
-  </details>
+  </div>
 
-  <details>
-    <summary>5. Strings</summary>
+  <button class="accordion">5. Strings</button>
+  <div class="panel">
     <ul>
       <li><a href="#indexing">Indexing</a></li>
       <li><a href="#objectid">Object Identity</a></li>
       <li><a href="#builtin">Built-in Functions</a></li>
       <li><a href="#methods">String Methods</a></li>
-      <li><a href="#format">Formatting with <code>.format()</code></a></li>
+      <li><a href="#format">Formatting with .format()</a></li>
       <li><a href="#slicing">Slicing Operator</a></li>
       <li><a href="#important">Important Points</a></li>
     </ul>
-  </details>
+  </div>
 
-  <details>
-    <summary>6. Escape Sequences</summary>
+  <button class="accordion">6. Escape Sequences</button>
+  <div class="panel">
     <ul>
       <li><a href="#newline">\\n - Newline</a></li>
       <li><a href="#return">\\r - Return</a></li>
@@ -117,10 +140,10 @@
       <li><a href="#tab">\\t - Tab</a></li>
       <li><a href="#alarm">\\a - Alarm</a></li>
     </ul>
-  </details>
+  </div>
 
-  <details>
-    <summary>7. Control Structures</summary>
+  <button class="accordion">7. Control Structures</button>
+  <div class="panel">
     <ul>
       <li><a href="#if">If</a></li>
       <li><a href="#ifelse">If-Else</a></li>
@@ -128,10 +151,10 @@
       <li><a href="#while">While Loop</a></li>
       <li><a href="#for">For Loop</a></li>
     </ul>
-  </details>
+  </div>
 
-  <details>
-    <summary>8. Core Data Structures</summary>
+  <button class="accordion">8. Core Data Structures</button>
+  <div class="panel">
     <ul>
       <li><a href="#range">Range Function</a></li>
       <li><a href="#functions">Functions</a></li>
@@ -141,29 +164,29 @@
       <li><a href="#dicts">Dictionaries</a></li>
       <li><a href="#ordereddict">OrderedDict Module</a></li>
     </ul>
-  </details>
+  </div>
 
-  <details>
-    <summary>9. Modules and Packages</summary>
+  <button class="accordion">9. Modules and Packages</button>
+  <div class="panel">
     <ul>
       <li><a href="#modules">Modules</a></li>
       <li><a href="#namespaces">Namespaces</a></li>
       <li><a href="#packages">Packages</a></li>
     </ul>
-  </details>
+  </div>
 
-  <details>
-    <summary>10. Advanced Python Tools</summary>
+  <button class="accordion">10. Advanced Python Tools</button>
+  <div class="panel">
     <ul>
       <li><a href="#regex">Regex</a></li>
       <li><a href="#exceptions">Exception Handling</a></li>
       <li><a href="#tools">Built-in Tools</a></li>
       <li><a href="#comprehensions">List Comprehensions</a></li>
     </ul>
-  </details>
+  </div>
 
-  <details>
-    <summary>11. File Handling</summary>
+  <button class="accordion">11. File Handling</button>
+  <div class="panel">
     <ul>
       <li><a href="#csv">CSV</a></li>
       <li><a href="#json">JSON</a></li>
@@ -173,37 +196,37 @@
       <li><a href="#delete">Delete</a></li>
       <li><a href="#filepoints">Important Points</a></li>
     </ul>
-  </details>
+  </div>
 
-  <details>
-    <summary>12. Data Analysis</summary>
+  <button class="accordion">12. Data Analysis</button>
+  <div class="panel">
     <ul>
       <li><a href="#numpy">NumPy</a></li>
       <li><a href="#pandas">Pandas</a></li>
       <li><a href="#duckdb">DuckDB</a></li>
       <li><a href="#sql">SQL Table Access and ETL</a></li>
     </ul>
-  </details>
+  </div>
 
-  <details>
-    <summary>13. DSA and Image Processing</summary>
+  <button class="accordion">13. DSA and Image Processing</button>
+  <div class="panel">
     <ul>
       <li><a href="#dsa">Data Structures and Algorithms</a></li>
       <li><a href="#opencv">Image Processing with OpenCV</a></li>
     </ul>
-  </details>
+  </div>
 
-  <details>
-    <summary>14. Web Development and Scraping</summary>
+  <button class="accordion">14. Web Development and Scraping</button>
+  <div class="panel">
     <ul>
       <li><a href="#flask">Flask</a></li>
       <li><a href="#fastapi">FastAPI</a></li>
       <li><a href="#scraping">Web Scraping with BeautifulSoup</a></li>
     </ul>
-  </details>
+  </div>
 
-  <details>
-    <summary>15. Natural Language Processing (NLP)</summary>
+  <button class="accordion">15. Natural Language Processing (NLP)</button>
+  <div class="panel">
     <ul>
       <li><a href="#nltk">NLTK</a></li>
       <li><a href="#cleansing">Text Cleansing</a></li>
@@ -219,7 +242,18 @@
       <li><a href="#summarization">Text Summarization</a></li>
       <li><a href="#sentiment">Sentiment Analysis</a></li>
     </ul>
-  </details>
+  </div>
+
+  <script>
+    const acc = document.getElementsByClassName("accordion");
+    for (let i = 0; i < acc.length; i++) {
+      acc[i].addEventListener("click", function () {
+        this.classList.toggle("active");
+        const panel = this.nextElementSibling;
+        panel.style.maxHeight = panel.style.maxHeight ? null : panel.scrollHeight + "px";
+      });
+    }
+  </script>
 
 </body>
 </html>
