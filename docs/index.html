@@ -56,6 +56,7 @@
       align-items: center;
       justify-content: center;
       gap: 10px;
+      flex-wrap: wrap;
     }
 
     a:hover {
@@ -65,6 +66,21 @@
     i {
       font-size: 1.5em;
     }
+
+    .live-badge {
+      background-color: #e53935;
+      color: white;
+      padding: 2px 6px;
+      font-size: 0.7em;
+      border-radius: 10px;
+      animation: pulse 1.5s infinite;
+    }
+
+    @keyframes pulse {
+      0% { opacity: 1; }
+      50% { opacity: 0.6; }
+      100% { opacity: 1; }
+    }
   </style>
 </head>
 <body>
@@ -72,32 +88,38 @@
   <ul>
     <li>
       <a href="Prompt_Engineering/prompt_engineering.html">
-        <i class="fas fa-magic" style="color:#9C27B0;"></i> Prompt Engineering
+        <i class="fas fa-magic" style="color:#9C27B0;"></i>
+        Prompt Engineering <span class="live-badge">Live</span>
       </a>
     </li>
     <li>
       <a href="Python_Programming/python_programming.html">
-        <i class="fab fa-python" style="color:#306998;"></i> Python Programming
+        <i class="fab fa-python" style="color:#306998;"></i>
+        Python Programming <span class="live-badge">Live</span>
       </a>
     </li>
     <li>
       <a href="GATE_CS/GATE_CS_index.html">
-        <i class="fas fa-laptop-code" style="color:#1976D2;"></i> GATE 2025 CS
+        <i class="fas fa-laptop-code" style="color:#1976D2;"></i>
+        GATE 2025 CS
       </a>
     </li>
     <li>
       <a href="GATE_DA/GATE_DA_index.html">
-        <i class="fas fa-chart-line" style="color:#FF5722;"></i> GATE 2025 DA
+        <i class="fas fa-chart-line" style="color:#FF5722;"></i>
+        GATE 2025 DA
       </a>
     </li>
     <li>
       <a href="Cpp_Learning_Hub/CLH_index.html">
-        <i class="fas fa-code" style="color:#00599C;"></i> C++ Learning Hub
+        <i class="fas fa-code" style="color:#00599C;"></i>
+        C++ Learning Hub
       </a>
     </li>
     <li>
       <a href="Self_Help/self_help.html">
-        <i class="fas fa-heart" style="color:#E91E63;"></i> Self Help
+        <i class="fas fa-heart" style="color:#E91E63;"></i>
+        Self Help
       </a>
     </li>
   </ul>
