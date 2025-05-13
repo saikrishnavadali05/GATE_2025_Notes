@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Git and GitHub</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 30px;
+      background: #f9f9f9;
+    }
+    h1 {
+      font-size: 28px;
+      margin-bottom: 20px;
+    }
+    .accordion {
+      background-color: #f1f1f1;
+      color: #444;
+      cursor: pointer;
+      padding: 14px 20px;
+      width: 100%;
+      border: none;
+      text-align: left;
+      outline: none;
+      font-size: 16px;
+      transition: 0.3s;
+      margin-top: 5px;
+      border-radius: 4px;
+    }
+    .active, .accordion:hover {
+      background-color: #ddd;
+    }
+    .panel {
+      padding: 0 18px;
+      background-color: white;
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.2s ease-out;
+      border-left: 2px solid #ccc;
+    }
+    ul {
+      padding-left: 20px;
+      margin: 10px 0;
+    }
+    a {
+      display: block;
+      padding: 8px 0;
+      color: #1a0dab;
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+    .home-button {
+      display: inline-block;
+      background-color: #0077cc;
+      color: white;
+      padding: 12px 24px;
+      text-decoration: none;
+      font-size: 16px;
+      border-radius: 5px;
+      transition: background-color 0.3s ease;
+    }
+    .home-button:hover {
+      background-color: #005fa3;
+    }
+
+  </style>
+</head>
+<body>
+
+  <h1>Git & GitHub</h1>
+  
+
+  <button class="accordion">1. Assignment Submission Guide</button>
+  <div class="panel">
+    <ul>
+      <li><a href="01-Introduction-to-Python/history.html">History of Python</a></li>
+      <li><a href="01-Introduction-to-Python/what.html">What is Python</a></li>
+      <li><a href="01-Introduction-to-Python/applications.html">Applications of Python</a></li>
+      <li><a href="01-Introduction-to-Python/why.html">Why should we learn Python</a></li>
+      <li><a href="01-Introduction-to-Python/comparison.html">Comparison with Other Languages</a></li>
+      <li><a href="01-Introduction-to-Python/famous.html">Famous and Most Used Versions</a></li>
+    </ul>
+  </div>
+
+  
+  <script>
+    const acc = document.getElementsByClassName("accordion");
+    for (let i = 0; i < acc.length; i++) {
+      acc[i].addEventListener("click", function () {
+        this.classList.toggle("active");
+        const panel = this.nextElementSibling;
+        panel.style.maxHeight = panel.style.maxHeight ? null : panel.scrollHeight + "px";
+      });
+    }
+  </script>
+
+<div style="text-align: center; margin-top: 40px;">
+  <a href="../index.html" class="home-button"> Back to Home</a>
+</div>
+
+</body>
+</html>

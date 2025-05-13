@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GitHub Assignment Submission Guide</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    :root {
+      --primary: #007bff;
+      --secondary: #6610f2;
+      --accent: #28a745;
+      --warning: #fd7e14;
+      --background: #f5f7fa;
+      --card-bg: #ffffff;
+      --text: #333;
+      --heading1: #1f2937;
+      --heading2: #374151;
+      --heading3: #4b5563;
+    }
+
+    body {
+      font-family: "Segoe UI", sans-serif;
+      background-color: var(--background);
+      margin: 0;
+      padding: 0;
+      line-height: 1.6;
+    }
+
+    .container {
+      max-width: 960px;
+      margin: 2rem auto;
+      padding: 2rem;
+      background: var(--card-bg);
+      border-radius: 12px;
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+    }
+
+    h1 {
+      font-size: 2.2rem;
+      margin-bottom: 1rem;
+      border-bottom: 3px solid var(--primary);
+      padding-bottom: 0.5rem;
+      color: var(--heading1);
+    }
+
+    h2 {
+      margin-top: 2rem;
+      font-size: 1.5rem;
+      color: var(--heading2);
+    }
+
+    h3 {
+      color: var(--heading3);
+    }
+
+    p, li {
+      color: var(--text);
+      font-size: 1rem;
+    }
+
+    a {
+      color: var(--primary);
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    pre {
+      background: #272c36;
+      color: #ffffff;
+      padding: 1rem;
+      border-radius: 8px;
+      overflow-x: auto;
+    }
+
+    .icon {
+      margin-right: 0.5rem;
+      color: var(--primary);
+    }
+
+    ul, ol {
+      padding-left: 1.5rem;
+    }
+
+    .section {
+      margin-bottom: 2rem;
+    }
+
+    .card {
+      padding: 1.2rem;
+      border-left: 4px solid var(--primary);
+      background: #f0f4ff;
+      border-radius: 8px;
+      margin-top: 1rem;
+    }
+
+    strong {
+      color: var(--accent);
+    }
+
+    .highlight {
+      color: var(--warning);
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1><i class="fas fa-code-branch icon"></i>GitHub Assignment Submission Guide</h1>
+    <p>This guide helps you learn how to <span class="highlight">fork</span>, <span class="highlight">clone</span>, <span class="highlight">push</span> and submit assignments through <strong>GitHub</strong> pull requests.</p>
+
+    <div class="section">
+      <h2><i class="fas fa-cogs icon"></i>Prerequisites</h2>
+      <ul>
+        <li>Create <strong>GitHub</strong> account <a href="https://github.com" target="_blank">https://github.com</a></li>
+        <li>Install <strong>Git</strong> on your PC <a href="https://git-scm.com" target="_blank">https://git-scm.com</a></li>
+        <li>Install <strong>Visual Studio Code</strong> on your PC <a href="https://code.visualstudio.com" target="_blank">https://code.visualstudio.com</a></li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <h2><i class="fas fa-code-fork icon"></i>Step 1: Fork the Repository</h2>
+      <ol>
+        <li>Open the repo shared by your trainer.</li>
+        <li>Click <strong>Fork</strong> on the top-right corner.</li>
+        <li>You will now have your own copy.</li>
+      </ol>
+    </div>
+
+    <div class="section">
+      <h2><i class="fas fa-terminal icon"></i>Step 2: Clone the Fork</h2>
+      <pre><code>git clone https://github.com/YOUR-USERNAME/assignment-repo.git
+cd assignment-repo</code></pre>
+    </div>
+
+    <div class="section">
+      <h2><i class="fas fa-code icon"></i>Step 3: Create a Branch (Optional)</h2>
+      <pre><code>git checkout -b your-name-assignment1</code></pre>
+    </div>
+
+    <div class="section">
+      <h2><i class="fas fa-edit icon"></i>Step 4: Add Your Assignment</h2>
+      <p>Edit or add files in the project folder. Save your work.</p>
+    </div>
+
+    <div class="section">
+      <h2><i class="fas fa-check icon"></i>Step 5: Commit Your Work</h2>
+      <pre><code>git add .
+git commit -m "Add assignment 1 solution"</code></pre>
+    </div>
+
+    <div class="section">
+      <h2><i class="fas fa-upload icon"></i>Step 6: Push to GitHub</h2>
+      <pre><code>git push origin your-name-assignment1</code></pre>
+    </div>
+
+    <div class="section">
+      <h2><i class="fas fa-paper-plane icon"></i>Step 7: Create Pull Request</h2>
+      <ol>
+        <li>Go to your forked repo on GitHub.</li>
+        <li>Click <strong>Compare & pull request</strong>.</li>
+        <li>Add a <span class="highlight">meaningful title</span> and <span class="highlight">description</span>.</li>
+        <li>Click <strong>Create pull request</strong>.</li>
+      </ol>
+    </div>
+
+    <div class="section">
+      <h2><i class="fas fa-sync icon"></i>Bonus: Sync Your Fork</h2>
+      <pre><code>git remote add upstream https://github.com/ORIGINAL_OWNER/assignment-repo.git
+git fetch upstream
+git checkout main
+git merge upstream/main
+git push origin main</code></pre>
+    </div>
+
+    <div class="section">
+      <h2><i class="fas fa-question-circle icon"></i>Help</h2>
+      <ul>
+        <li><a href="https://docs.github.com/en" target="_blank">GitHub Docs</a></li>
+        <li><a href="https://www.markdownguide.org/basic-syntax/" target="_blank">Markdown Guide</a></li>
+      </ul>
+    </div>
+  </div>
+</body>
+</html>
