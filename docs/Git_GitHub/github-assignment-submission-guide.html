@@ -5,6 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>GitHub Assignment Submission Guide</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <script type="module">
+    import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
+    mermaid.initialize({ startOnLoad: true });
+  </script>
   <style>
     :root {
       --primary: #007bff;
@@ -105,12 +109,36 @@
       color: var(--warning);
       font-weight: bold;
     }
+
+    .mermaid {
+      background: #f9f9f9;
+      padding: 1rem;
+      border-radius: 12px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.05);
+      margin-top: 1rem;
+    }
   </style>
 </head>
 <body>
   <div class="container">
     <h1><i class="fas fa-code-branch icon"></i>GitHub Assignment Submission Guide</h1>
     <p>This guide helps you learn how to <span class="highlight">fork</span>, <span class="highlight">clone</span>, <span class="highlight">push</span> and submit assignments through <strong>GitHub</strong> pull requests.</p>
+
+    <div class="section">
+      <h2><i class="fas fa-project-diagram icon"></i>Workflow Diagram</h2>
+      <div class="mermaid">
+        graph TD
+          A[Create GitHub Account] --> B[Install Git & VS Code]
+          B --> C[Fork Trainer's Repo]
+          C --> D[Clone to Local Machine]
+          D --> E[Create Branch (Optional)]
+          E --> F[Edit/Add Assignment Files]
+          F --> G[Commit Changes]
+          G --> H[Push to GitHub]
+          H --> I[Create Pull Request]
+          I --> J[Trainer Reviews & Merges]
+      </div>
+    </div>
 
     <div class="section">
       <h2><i class="fas fa-cogs icon"></i>Prerequisites</h2>
@@ -124,7 +152,7 @@
     <div class="section">
       <h2><i class="fas fa-code-fork icon"></i>Step 1: Fork the Repository</h2>
       <ol>
-        <li>Open the repo shared by your trainer.</li>
+        <li>Open: <strong><a href="https://github.com/saikrishnavadali05/SSSSO-RR-District-Skill-Development-Training" target="_blank">SSSSO-RR-District-Skill-Development-Training</a></strong></li>
         <li>Click <strong>Fork</strong> on the top-right corner.</li>
         <li>You will now have your own copy.</li>
       </ol>
@@ -132,8 +160,8 @@
 
     <div class="section">
       <h2><i class="fas fa-terminal icon"></i>Step 2: Clone the Fork</h2>
-      <pre><code>git clone https://github.com/YOUR-USERNAME/assignment-repo.git
-cd assignment-repo</code></pre>
+      <pre><code>git clone https://github.com/YOUR-USERNAME/SSSSO-RR-District-Skill-Development-Training.git
+cd SSSSO-RR-District-Skill-Development-Training</code></pre>
     </div>
 
     <div class="section">
@@ -169,7 +197,7 @@ git commit -m "Add assignment 1 solution"</code></pre>
 
     <div class="section">
       <h2><i class="fas fa-sync icon"></i>Bonus: Sync Your Fork</h2>
-      <pre><code>git remote add upstream https://github.com/ORIGINAL_OWNER/assignment-repo.git
+      <pre><code>git remote add upstream https://github.com/saikrishnavadali05/SSSSO-RR-District-Skill-Development-Training.git
 git fetch upstream
 git checkout main
 git merge upstream/main
@@ -188,6 +216,5 @@ git push origin main</code></pre>
   <div style="text-align: center; margin-top: 40px;">
     <a href="git-github.html" class="home-button"> Back to Git Main Page</a>
   </div>
-
 </body>
 </html>
