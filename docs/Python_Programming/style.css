@@ -1,0 +1,60 @@
+/* General Styles */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(to bottom right, #f0f8ff, #e6f0fa);
+  margin: 0;
+  padding: 0;
+  color: #333;
+  line-height: 1.6;
+}
+
+/* Header */
+header {
+  background-color: #4B8BBE;
+  color: white;
+  text-align: center;
+  padding: 25px 0;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Main Container */
+main {
+  max-width: 900px;
+  margin: 30px auto;
+  background-color: white;
+  padding: 25px;
+  border-radius: 10px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+}
+
+/* Section Headings */
+h2 {
+  color: #306998;
+  border-bottom: 2px solid #a4c8f0;
+  padding-bottom: 5px;
+}
+
+/* Code Styling */
+code {
+  background-color: #f4f4f4;
+  color: #c7254e;
+  padding: 3px 6px;
+  border-radius: 4px;
+  font-family: Consolas, Monaco, 'Courier New', monospace;
+}
+
+/* List Styling */
+ul {
+  padding-left: 20px;
+  margin-top: 10px;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 15px;
+  background: #dce8f5;
+  font-size: 0.9em;
+  color: #333;
+  border-top: 1px solid #bdd4ef;
+}
