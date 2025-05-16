@@ -5,10 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>GitHub Assignment Submission Guide</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-  <script type="module">
-    import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
-    mermaid.initialize({ startOnLoad: true });
-  </script>
   <style>
     :root {
       --primary: #007bff;
@@ -110,12 +106,12 @@
       font-weight: bold;
     }
 
-    .mermaid {
-      background: #f9f9f9;
-      padding: 1rem;
+    .flowchart-img {
+      margin-top: 1rem;
+      width: 100%;
+      max-width: 960px;
       border-radius: 12px;
       box-shadow: 0 0 10px rgba(0,0,0,0.05);
-      margin-top: 1rem;
     }
   </style>
 </head>
@@ -126,18 +122,7 @@
 
     <div class="section">
       <h2><i class="fas fa-project-diagram icon"></i>Workflow Diagram</h2>
-      <div class="mermaid">
-        graph TD
-          A[Create GitHub Account] --> B[Install Git & VS Code]
-          B --> C[Fork Trainer's Repo]
-          C --> D[Clone to Local Machine]
-          D --> E[Create Branch (Optional)]
-          E --> F[Edit/Add Assignment Files]
-          F --> G[Commit Changes]
-          G --> H[Push to GitHub]
-          H --> I[Create Pull Request]
-          I --> J[Trainer Reviews & Merges]
-      </div>
+      <img src="images/github_assignment_flowchart.png" alt="GitHub Assignment Workflow Diagram" class="flowchart-img" />
     </div>
 
     <div class="section">
