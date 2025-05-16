@@ -2,55 +2,161 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Git and GitHub Overview</title>
   <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap');
+
+    :root {
+      --color-primary: #2ea44f;
+      --color-primary-hover: #22863a;
+      --color-bg: #f9fafb;
+      --color-text: #24292e;
+      --color-text-muted: #57606a;
+      --color-white: #fff;
+      --shadow: 0 4px 12px rgba(0,0,0,0.1);
+      --border-radius: 12px;
+      --transition: 0.3s ease;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
     body {
-      font-family: Arial, sans-serif;
-      background-color: #f4f6f8;
-      color: #333;
       margin: 0;
-      padding: 20px;
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
+        Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+      background-color: var(--color-bg);
+      color: var(--color-text);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      padding: 40px 20px;
+      max-width: 900px;
+      margin-left: auto;
+      margin-right: auto;
     }
+
     header {
-      background-color: #24292e;
-      color: white;
-      padding: 20px 0;
+      background: var(--color-primary);
+      color: var(--color-white);
+      padding: 40px 30px;
+      border-radius: var(--border-radius);
+      box-shadow: var(--shadow);
       text-align: center;
+      margin-bottom: 40px;
     }
-    h1 {
+
+    header h1 {
       margin: 0;
+      font-weight: 600;
+      font-size: 2.4rem;
+      letter-spacing: 0.02em;
+      text-shadow: 0 1px 3px rgba(0,0,0,0.2);
     }
+
     section {
-      margin: 20px 0;
-      background: white;
-      padding: 20px;
-      border-radius: 8px;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      background: var(--color-white);
+      border-radius: var(--border-radius);
+      box-shadow: var(--shadow);
+      padding: 30px 40px;
+      margin-bottom: 30px;
+      transition: box-shadow 0.3s ease;
     }
+
+    section:hover {
+      box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+    }
+
     h2 {
-      color: #0366d6;
+      color: var(--color-primary);
+      font-weight: 600;
+      font-size: 1.6rem;
+      margin-bottom: 20px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
     }
+
     ul {
-      margin-left: 20px;
+      padding-left: 1.4rem;
+      margin: 0;
+      list-style: inside disc;
+      color: var(--color-text-muted);
+      font-size: 1rem;
     }
+
+    ul li {
+      margin-bottom: 12px;
+      line-height: 1.5;
+    }
+
+    p {
+      font-size: 1.05rem;
+      margin-bottom: 20px;
+      color: var(--color-text-muted);
+    }
+
     code {
-      background: #f0f0f0;
-      padding: 2px 6px;
-      border-radius: 4px;
+      background: #e1e4e8;
+      padding: 4px 8px;
+      border-radius: 6px;
+      font-family: 'Fira Mono', monospace, monospace;
+      font-size: 0.95rem;
+      color: #24292e;
+      user-select: all;
+      box-shadow: inset 0 -1px 0 rgba(27,31,35,0.1);
+      transition: background-color 0.3s ease;
     }
+
     a {
-      color: #0366d6;
+      color: var(--color-primary);
       text-decoration: none;
+      font-weight: 600;
+      transition: color 0.3s ease;
+      position: relative;
     }
+
+    a::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: -3px;
+      width: 100%;
+      height: 2px;
+      background-color: var(--color-primary);
+      opacity: 0.4;
+      transition: opacity 0.3s ease;
+      border-radius: 2px;
+    }
+
     a:hover {
-      text-decoration: underline;
+      color: var(--color-primary-hover);
     }
+
+    a:hover::after {
+      opacity: 1;
+    }
+
     footer {
       text-align: center;
-      margin-top: 30px;
-      color: #777;
+      margin-top: 60px;
+      font-size: 0.9rem;
+      color: var(--color-text-muted);
+      user-select: none;
     }
+
+    footer a {
+      font-weight: 600;
+    }
+
+    /* Emoji size aligned with text */
+    h2 > span {
+      font-size: 1.3rem;
+      line-height: 1;
+    }
+
   </style>
 </head>
 <body>
@@ -60,7 +166,7 @@
   </header>
 
   <section>
-    <h2>🔧 What is Git?</h2>
+    <h2><span>🔧</span> What is Git?</h2>
     <p>
       Git is a distributed version control system used to track changes in source code during software development.
       It allows multiple developers to collaborate efficiently.
@@ -73,7 +179,7 @@
   </section>
 
   <section>
-    <h2>🌐 What is GitHub?</h2>
+    <h2><span>🌐</span> What is GitHub?</h2>
     <p>
       GitHub is a cloud-based platform that hosts Git repositories. It helps developers share code, collaborate, and manage projects.
     </p>
@@ -85,17 +191,17 @@
   </section>
 
   <section>
-    <h2>🛠️ Other Git Hosting Platforms</h2>
+    <h2><span>🛠️</span> Other Git Hosting Platforms</h2>
     <ul>
-      <li><strong><a href="https://gitlab.com" target="_blank">GitLab</a>:</strong> A Git-based DevOps platform that includes CI/CD, issue tracking, and project planning tools.</li>
-      <li><strong><a href="https://bitbucket.org" target="_blank">Bitbucket</a>:</strong> A Git repository management tool from Atlassian with Jira integration and support for private repositories.</li>
-      <li><strong><a href="https://sourceforge.net" target="_blank">SourceForge</a>:</strong> A web-based service that offers version control, bug tracking, and downloads for open-source projects.</li>
-      <li><strong><a href="https://azure.microsoft.com/en-us/services/devops/repos/" target="_blank">Azure Repos</a>:</strong> Microsoft's Git hosting platform with enterprise-grade DevOps integration.</li>
+      <li><strong><a href="https://gitlab.com" target="_blank" rel="noopener noreferrer">GitLab</a>:</strong> A Git-based DevOps platform that includes CI/CD, issue tracking, and project planning tools.</li>
+      <li><strong><a href="https://bitbucket.org" target="_blank" rel="noopener noreferrer">Bitbucket</a>:</strong> A Git repository management tool from Atlassian with Jira integration and support for private repositories.</li>
+      <li><strong><a href="https://sourceforge.net" target="_blank" rel="noopener noreferrer">SourceForge</a>:</strong> A web-based service that offers version control, bug tracking, and downloads for open-source projects.</li>
+      <li><strong><a href="https://azure.microsoft.com/en-us/services/devops/repos/" target="_blank" rel="noopener noreferrer">Azure Repos</a>:</strong> Microsoft's Git hosting platform with enterprise-grade DevOps integration.</li>
     </ul>
   </section>
 
   <section>
-    <h2>📝 Common Git Commands</h2>
+    <h2><span>📝</span> Common Git Commands</h2>
     <ul>
       <li><code>git init</code> Initialize a new Git repository</li>
       <li><code>git clone &lt;url&gt;</code> Clone a remote repo</li>
@@ -106,7 +212,7 @@
   </section>
 
   <section>
-    <h2>✅ Why Use Git & Git Hosting Platforms?</h2>
+    <h2><span>✅</span> Why Use Git & Git Hosting Platforms?</h2>
     <ul>
       <li>Track every change and revert if needed</li>
       <li>Collaborate with others easily</li>
@@ -117,7 +223,7 @@
   </section>
 
   <footer>
-    <p>💻 Learn more at <a href="https://git-scm.com" target="_blank">git-scm.com</a> | <a href="https://github.com" target="_blank">GitHub.com</a></p>
+    <p>💻 Learn more at <a href="https://git-scm.com" target="_blank" rel="noopener noreferrer">git-scm.com</a> | <a href="https://github.com" target="_blank" rel="noopener noreferrer">GitHub.com</a></p>
   </footer>
 
 </body>
