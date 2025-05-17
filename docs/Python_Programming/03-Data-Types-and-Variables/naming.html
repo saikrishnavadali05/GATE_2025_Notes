@@ -1,9 +1,171 @@
 <!DOCTYPE html>
-<html>
-<head><title>Naming</title></head>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Python Data Types Training</title>
+
+  <!-- Prism CSS for syntax highlighting -->
+  <link href="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/themes/prism.css" rel="stylesheet" />
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #fdfdfd;
+      color: #222;
+      margin: 0;
+      padding: 0 20px 40px 20px;
+      max-width: 900px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    header {
+      background-color: #306998;
+      color: white;
+      padding: 20px;
+      text-align: center;
+      margin-bottom: 20px;
+      border-radius: 4px;
+    }
+    h2 {
+      color: #306998;
+      margin-top: 30px;
+    }
+    pre {
+      padding: 12px;
+      border-radius: 6px;
+      overflow-x: auto;
+      font-size: 15px;
+      line-height: 1.4;
+    }
+    table {
+      border-collapse: collapse;
+      width: 100%;
+      margin-top: 10px;
+      margin-bottom: 30px;
+    }
+    th, td {
+      border: 1px solid #ddd;
+      padding: 8px;
+    }
+    th {
+      background-color: #dce6f0;
+      text-align: left;
+    }
+    footer {
+      background-color: #306998;
+      color: white;
+      text-align: center;
+      padding: 10px;
+      margin-top: 40px;
+      border-radius: 4px;
+    }
+  </style>
+</head>
 <body>
-<h1>Naming</h1>
-<p>This is a placeholder page for the topic: Naming.</p>
-<a href="../python-programming.html">Back to Home</a>
+
+<header>
+  <h1>Python Data Types Training Class</h1>
+  <p>Master the building blocks of Python</p>
+</header>
+
+<section>
+  <h2>1. Introduction to Python Data Types</h2>
+  <p>Data types define the kind of value a variable holds. Python is dynamically typed, so it infers the data type at runtime.</p>
+
+  <h2>2. Basic Data Types</h2>
+  <ul>
+    <li><strong>int</strong> Whole numbers.</li>
+    <pre><code class="language-python">x = 10</code></pre>
+
+    <li><strong>float</strong> Decimal numbers.</li>
+    <pre><code class="language-python">pi = 3.14</code></pre>
+
+    <li><strong>bool</strong> True or False.</li>
+    <pre><code class="language-python">is_valid = True</code></pre>
+
+    <li><strong>NoneType</strong> Represents "no value".</li>
+    <pre><code class="language-python">value = None</code></pre>
+  </ul>
+
+  <h2>3. Text Type</h2>
+  <p><strong>str</strong> String of characters.</p>
+  <pre><code class="language-python">name = "John Doe"</code></pre>
+
+  <h2>4. Sequence Types</h2>
+  <ul>
+    <li><strong>list</strong></li>
+    <pre><code class="language-python">fruits = ["apple", "banana"]</code></pre>
+
+    <li><strong>tuple</strong></li>
+    <pre><code class="language-python">point = (1, 2)</code></pre>
+
+    <li><strong>range</strong></li>
+    <pre><code class="language-python">for i in range(5):
+    print(i)</code></pre>
+  </ul>
+
+  <h2>5. Mapping Type</h2>
+  <p><strong>dict</strong> Key-value pairs.</p>
+  <pre><code class="language-python">student = {
+    "name": "Alice",
+    "age": 21,
+    "course": "Python"
+}</code></pre>
+
+  <h2>6. Set Types</h2>
+  <ul>
+    <li><strong>set</strong></li>
+    <pre><code class="language-python">colors = {"red", "green", "blue"}</code></pre>
+
+    <li><strong>frozenset</strong></li>
+    <pre><code class="language-python">fs = frozenset([1, 2, 3])</code></pre>
+  </ul>
+
+  <h2>7. Type Conversion</h2>
+  <pre><code class="language-python">int("5")        # 5
+str(10)         # "10"
+list("abc")     # ['a', 'b', 'c']</code></pre>
+
+  <h2>8. Type Checking</h2>
+  <pre><code class="language-python">type(10)                 # &lt;class 'int'&gt;
+isinstance(3.14, float)  # True</code></pre>
+
+  <h2>9. Mutability of Data Types</h2>
+  <table>
+    <tr>
+      <th>Data Type</th>
+      <th>Mutable?</th>
+      <th>Examples</th>
+    </tr>
+    <tr>
+      <td>int, float, str, tuple, frozenset</td>
+      <td>No</td>
+      <td>Value can't change after creation</td>
+    </tr>
+    <tr>
+      <td>list, dict, set</td>
+      <td>Yes</td>
+      <td>Values can be updated</td>
+    </tr>
+  </table>
+
+  <h2>10. Practice Questions</h2>
+  <ul>
+    <li>Create a list of your 3 favorite books.</li>
+    <li>Write a program to check if a number is even or odd using booleans.</li>
+    <li>Convert a string "123" into an integer and add 10.</li>
+    <li>Create a dictionary for a student's name, ID, and course.</li>
+  </ul>
+</section>
+
+<footer>
+  <p>&copy; 2025 Python Training Session</p>
+</footer>
+
+<!-- Prism JS -->
+<script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/prism.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-python.min.js"></script>
+
 </body>
 </html>
