@@ -1,9 +1,153 @@
 <!DOCTYPE html>
-<html>
-<head><title>Pylint</title></head>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Python pylint</title>
+
+  <!-- Prism CSS for syntax highlighting -->
+  <link href="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/themes/prism.css" rel="stylesheet" />
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #fdfdfd;
+      color: #222;
+      margin: 0;
+      padding: 0 20px 40px 20px;
+      max-width: 900px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    header {
+      background-color: #306998;
+      color: white;
+      padding: 20px;
+      text-align: center;
+      margin-bottom: 20px;
+      border-radius: 4px;
+    }
+    h2 {
+      color: #306998;
+      margin-top: 30px;
+    }
+    pre {
+      padding: 12px;
+      border-radius: 6px;
+      overflow-x: auto;
+      font-size: 15px;
+      line-height: 1.4;
+      background-color: #f4f4f4;
+    }
+    footer {
+      background-color: #306998;
+      color: white;
+      text-align: center;
+      padding: 10px;
+      margin-top: 40px;
+      border-radius: 4px;
+    }
+    ul {
+      margin-top: 0;
+    }
+  </style>
+</head>
 <body>
-<h1>Pylint</h1>
-<p>This is a placeholder page for the topic: Pylint.</p>
-<a href="../python-programming.html">Back to Home</a>
+
+<header>
+  <h1>Python <code>pylint</code></h1>
+  <p>Static Code Analysis for Better Code Quality</p>
+</header>
+
+<section>
+  <h2>What is pylint?</h2>
+  <p><code>pylint</code> is a static code analyzer that checks Python source code for errors, enforces coding standards, and suggests improvements for readability and maintainability.</p>
+
+  <h2>How to Install pylint</h2>
+  <p>Install <code>pylint</code> using <code>pip</code>:</p>
+  <pre><code class="language-bash">pip install pylint</code></pre>
+  <p>Verify installation:</p>
+  <pre><code class="language-bash">pylint --version</code></pre>
+
+  <h2>How to Use pylint</h2>
+  <ol>
+    <li>Run pylint on a Python script or module:
+      <pre><code class="language-bash">pylint your_script.py</code></pre>
+    </li>
+    <li>Read the output report, which includes:
+      <ul>
+        <li>Errors (e.g., syntax issues)</li>
+        <li>Warnings (e.g., unused imports, variables)</li>
+        <li>Refactor suggestions</li>
+        <li>Convention violations (e.g., naming style)</li>
+      </ul>
+    </li>
+    <li>Fix issues or decide which warnings to ignore.</li>
+    <li>Optionally, customize behavior with a <code>.pylintrc</code> config file.</li>
+  </ol>
+
+  <h2>Common pylint Rules</h2>
+  <p>pylint categorizes messages by type and provides specific message codes. Here are some common categories and examples:</p>
+  <ul>
+    <li><strong>Convention (C):</strong> Coding standard violations
+      <ul>
+        <li><code>C0103</code> - Invalid naming style (e.g., variable or function name not snake_case)</li>
+        <li><code>C0114</code> - Missing module docstring</li>
+        <li><code>C0115</code> - Missing class docstring</li>
+      </ul>
+    </li>
+    <li><strong>Refactor (R):</strong> Suggestions for code improvements
+      <ul>
+        <li><code>R0913</code> - Too many arguments in function</li>
+        <li><code>R1705</code> - Simplify conditional expression</li>
+      </ul>
+    </li>
+    <li><strong>Warning (W):</strong> Possible errors or suspicious code
+      <ul>
+        <li><code>W0611</code> - Unused import</li>
+        <li><code>W0612</code> - Unused variable</li>
+      </ul>
+    </li>
+    <li><strong>Error (E):</strong> Syntax or runtime errors
+      <ul>
+        <li><code>E1101</code> - Module has no member (possible typo or wrong import)</li>
+        <li><code>E0001</code> - Syntax error</li>
+      </ul>
+    </li>
+    <li><strong>Fatal (F):</strong> Serious errors that prevent pylint from running
+      <ul>
+        <li><code>F0001</code> - Fatal error (e.g., invalid Python version)</li>
+      </ul>
+    </li>
+  </ul>
+
+  <h2>Example 1: Basic pylint Check</h2>
+  <pre><code class="language-python"># bad_script.py
+def myFunction():
+print("Hello")  # Indentation error and naming style warning</code></pre>
+  <p>Running <code>pylint bad_script.py</code> highlights errors and warnings.</p>
+
+  <h2>Example 2: Ignoring a Warning with a Comment</h2>
+  <pre><code class="language-python">def foo():
+    x = 1  # pylint: disable=unused-variable
+    print("Foo called")</code></pre>
+  <p>This disables the warning about the unused variable <code>x</code> for that line.</p>
+
+  <h2>Example 3: Configuring pylint with a <code>.pylintrc</code> File</h2>
+  <pre><code class="language-bash">[MESSAGES CONTROL]
+disable=C0114, C0115, C0116  # disable missing docstring warnings</code></pre>
+  <p>Place this file in your project root to customize pylint's checks globally.</p>
+
+  <p><strong>Using <code>pylint</code> regularly helps maintain clean, readable, and error-free Python code.</strong></p>
+</section>
+
+<footer>
+  <p>&copy; 2025 Python Training Session</p>
+</footer>
+
+<!-- Prism JS -->
+<script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/prism.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-python.min.js"></script>
+
 </body>
 </html>

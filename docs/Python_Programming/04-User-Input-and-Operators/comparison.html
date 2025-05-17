@@ -1,9 +1,139 @@
 <!DOCTYPE html>
-<html>
-<head><title>Comparison</title></head>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Comparison Operators in Python</title>
+
+  <!-- Prism CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/themes/prism.css" rel="stylesheet" />
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 20px;
+      background-color: #fafafa;
+      color: #222;
+    }
+    header {
+      background-color: #4a148c;
+      color: white;
+      padding: 20px;
+      text-align: center;
+      border-radius: 6px;
+      margin-bottom: 30px;
+    }
+    h2 {
+      color: #4a148c;
+      margin-top: 30px;
+    }
+    pre {
+      background-color: #ede7f6;
+      border-radius: 6px;
+      padding: 15px;
+      overflow-x: auto;
+      font-size: 15px;
+      line-height: 1.4;
+    }
+    table {
+      border-collapse: collapse;
+      width: 100%;
+      margin-top: 20px;
+    }
+    th, td {
+      border: 1px solid #ccc;
+      padding: 12px;
+      text-align: center;
+    }
+    th {
+      background-color: #f3e5f5;
+    }
+    footer {
+      background-color: #4a148c;
+      color: white;
+      text-align: center;
+      padding: 12px;
+      margin-top: 40px;
+      border-radius: 6px;
+    }
+  </style>
+</head>
 <body>
-<h1>Comparison</h1>
-<p>This is a placeholder page for the topic: Comparison.</p>
-<a href="../python-programming.html">Back to Home</a>
+
+<header>
+  <h1>Comparison Operators in Python</h1>
+  <p>Compare numbers, strings, and other values using simple expressions</p>
+</header>
+
+<section>
+  <h2>What Are Comparison Operators?</h2>
+  <p>Comparison operators compare two values and return a Boolean: <code>True</code> or <code>False</code>.</p>
+
+  <h2>Comparison Operator Table</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>Operator</th>
+        <th>Description</th>
+        <th>Example</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td><code>==</code></td><td>Equal to</td><td><code>5 == 5 → True</code></td></tr>
+      <tr><td><code>!=</code></td><td>Not equal to</td><td><code>5 != 3 → True</code></td></tr>
+      <tr><td><code>&gt;</code></td><td>Greater than</td><td><code>7 &gt; 2 → True</code></td></tr>
+      <tr><td><code>&lt;</code></td><td>Less than</td><td><code>4 &lt; 6 → True</code></td></tr>
+      <tr><td><code>&gt;=</code></td><td>Greater than or equal to</td><td><code>5 &gt;= 5 → True</code></td></tr>
+      <tr><td><code>&lt;=</code></td><td>Less than or equal to</td><td><code>3 &lt;= 4 → True</code></td></tr>
+    </tbody>
+  </table>
+
+  <h2>Examples</h2>
+  <pre><code class="language-python">x = 10
+y = 7
+
+print(x == y)   # False
+print(x != y)   # True
+print(x > y)    # True
+print(x < y)    # False
+print(x >= y)   # True
+print(x <= y)   # False</code></pre>
+
+  <h2>Comparing Strings</h2>
+  <p>Strings are compared using lexicographic (dictionary) order.</p>
+  <pre><code class="language-python">a = "apple"
+b = "banana"
+
+print(a == b)  # False
+print(a < b)   # True ('apple' comes before 'banana')</code></pre>
+
+  <h2>Using in Conditions</h2>
+  <pre><code class="language-python">score = 85
+
+if score >= 90:
+    print("Grade: A")
+elif score >= 80:
+    print("Grade: B")
+else:
+    print("Grade: C or below")</code></pre>
+
+  <h2>Best Practices</h2>
+  <ul>
+    <li>Always use <code>==</code> instead of <code>=</code> when checking equality.</li>
+    <li>Chained comparisons like <code>18 &lt; age &lt; 65</code> are allowed in Python.</li>
+    <li>Use parentheses to group comparisons for clarity if needed.</li>
+  </ul>
+</section>
+
+<footer>
+  <p>&copy; 2025 Python Training</p>
+</footer>
+
+<!-- PrismJS for syntax highlighting -->
+<script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/prism.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-python.min.js"></script>
+
 </body>
 </html>

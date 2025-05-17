@@ -1,9 +1,151 @@
 <!DOCTYPE html>
-<html>
-<head><title>Boolean</title></head>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Python Boolean Data Type</title>
+
+  <!-- Prism CSS for syntax highlighting -->
+  <link href="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/themes/prism.css" rel="stylesheet" />
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 20px;
+      background-color: #f0f8ff;
+      color: #222;
+    }
+    header {
+      background-color: #007acc;
+      color: white;
+      padding: 20px;
+      text-align: center;
+      border-radius: 6px;
+      margin-bottom: 30px;
+    }
+    h2 {
+      color: #007acc;
+      margin-top: 30px;
+    }
+    pre {
+      background-color: #e8f4ff;
+      border-radius: 6px;
+      padding: 15px;
+      overflow-x: auto;
+      font-size: 15px;
+      line-height: 1.5;
+    }
+    ul {
+      margin-left: 20px;
+    }
+    footer {
+      background-color: #007acc;
+      color: white;
+      text-align: center;
+      padding: 12px;
+      margin-top: 40px;
+      border-radius: 6px;
+    }
+  </style>
+</head>
 <body>
-<h1>Boolean</h1>
-<p>This is a placeholder page for the topic: Boolean.</p>
-<a href="../python-programming.html">Back to Home</a>
+
+<header>
+  <h1>Python Boolean Data Type</h1>
+</header>
+
+<section>
+  <h2>What is a Boolean?</h2>
+  <p>In Python, a <strong>boolean</strong> is a built-in data type that can hold one of two values: <code>True</code> or <code>False</code>. These values represent truth values, and are commonly used in conditional statements, loops, and logical operations.</p>
+
+  <h2>Boolean Values</h2>
+  <ul>
+    <li><code>True</code> — represents a true condition</li>
+    <li><code>False</code> — represents a false condition</li>
+  </ul>
+
+  <h2>Boolean Type and Truthiness</h2>
+  <p>Python treats several values as <em>falsy</em>, meaning they evaluate to <code>False</code> when converted to boolean:</p>
+  <ul>
+    <li><code>None</code></li>
+    <li><code>False</code></li>
+    <li>Zero of any numeric type: <code>0, 0.0, 0j</code></li>
+    <li>Empty sequences and collections: <code>'', [], (), {}</code></li>
+  </ul>
+  <p>All other values are considered <em>truthy</em> (evaluate to <code>True</code>).</p>
+
+  <h2>Using Boolean Values</h2>
+  <pre><code class="language-python">a = True
+b = False
+
+if a:
+    print("a is True")
+
+if not b:
+    print("b is False")</code></pre>
+
+  <h2>Boolean Operations</h2>
+  <p>Python supports logical operators to combine boolean expressions:</p>
+  <ul>
+    <li><code>and</code> — True if both operands are True</li>
+    <li><code>or</code> — True if at least one operand is True</li>
+    <li><code>not</code> — negates the boolean value</li>
+  </ul>
+
+  <pre><code class="language-python">x = True
+y = False
+
+print(x and y)  # Output: False
+print(x or y)   # Output: True
+print(not x)    # Output: False</code></pre>
+
+  <h2>Boolean Conversion</h2>
+  <p>Use the <code>bool()</code> function to convert any value to its boolean equivalent.</p>
+
+  <pre><code class="language-python">print(bool(0))        # False
+print(bool(42))       # True
+print(bool(""))       # False
+print(bool("Python")) # True</code></pre>
+
+  <h2>Best Practices with Booleans</h2>
+  <ul>
+    <li>Avoid comparing a boolean variable to <code>True</code> or <code>False</code> explicitly. Instead, use the variable directly:</li>
+    <pre><code class="language-python"># Prefer this:
+if is_active:
+    print("Active")
+
+# Over this:
+if is_active == True:
+    print("Active")</code></pre>
+
+    <li>Use boolean variables to make code more readable and meaningful.</li>
+    <li>Use parentheses to clarify complex boolean expressions for better readability.</li>
+    <li>Use descriptive variable names that imply boolean nature, e.g., <code>is_valid</code>, <code>has_errors</code>.</li>
+  </ul>
+
+  <h2>Example: Simple Login Check</h2>
+  <pre><code class="language-python">username = "user1"
+password = "password123"
+
+def check_login(user, pwd):
+    is_authenticated = (user == "user1") and (pwd == "password123")
+    return is_authenticated
+
+if check_login(username, password):
+    print("Login successful!")
+else:
+    print("Login failed.")</code></pre>
+</section>
+
+<footer>
+  <p>&copy; 2025 Python Training</p>
+</footer>
+
+<!-- Prism JS -->
+<script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/prism.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-python.min.js"></script>
+
 </body>
 </html>

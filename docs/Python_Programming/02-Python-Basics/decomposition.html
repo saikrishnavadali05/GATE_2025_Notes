@@ -1,9 +1,130 @@
 <!DOCTYPE html>
-<html>
-<head><title>Decomposition</title></head>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Python Decomposition</title>
+
+  <!-- Prism CSS for syntax highlighting -->
+  <link href="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/themes/prism.css" rel="stylesheet" />
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #fdfdfd;
+      color: #222;
+      margin: 0;
+      padding: 0 20px 40px 20px;
+      max-width: 900px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    header {
+      background-color: #306998;
+      color: white;
+      padding: 20px;
+      text-align: center;
+      margin-bottom: 20px;
+      border-radius: 4px;
+    }
+    h2 {
+      color: #306998;
+      margin-top: 30px;
+    }
+    pre {
+      padding: 12px;
+      border-radius: 6px;
+      overflow-x: auto;
+      font-size: 15px;
+      line-height: 1.4;
+      background-color: #f4f4f4;
+    }
+    footer {
+      background-color: #306998;
+      color: white;
+      text-align: center;
+      padding: 10px;
+      margin-top: 40px;
+      border-radius: 4px;
+    }
+  </style>
+</head>
 <body>
-<h1>Decomposition</h1>
-<p>This is a placeholder page for the topic: Decomposition.</p>
-<a href="../python-programming.html">Back to Home</a>
+
+<header>
+  <h1>Python Decomposition</h1>
+  <p>Breaking Down Complex Problems into Manageable Functions</p>
+</header>
+
+<section>
+  <h2>What is Decomposition?</h2>
+  <p>Decomposition is the practice of breaking a large problem into smaller, manageable components. In Python, this is often done by defining functions or organizing code into modules. This enhances:</p>
+  <ul>
+    <li><strong>Readability:</strong> Clearer logic through smaller pieces.</li>
+    <li><strong>Testing:</strong> Easier unit testing for each function.</li>
+    <li><strong>Reusability:</strong> Common logic can be reused elsewhere.</li>
+  </ul>
+
+  <h2>Example 1: Read, Process, and Print</h2>
+  <pre><code class="language-python">def read_data(path):
+    # Simulated data reading
+    return [1, 2, 3, 4, 5]
+
+def process(data):
+    # Square each number
+    return [x**2 for x in data]
+
+def main():
+    raw = read_data("data.csv")
+    result = process(raw)
+    print("Processed Result:", result)
+
+if __name__ == "__main__":
+    main()</code></pre>
+
+  <h2>Example 2: Email Validation Pipeline</h2>
+  <pre><code class="language-python">def get_input():
+    return input("Enter your email: ")
+
+def is_valid_email(email):
+    return "@" in email and "." in email
+
+def main():
+    email = get_input()
+    if is_valid_email(email):
+        print("Valid email!")
+    else:
+        print("Invalid email.")
+
+if __name__ == "__main__":
+    main()</code></pre>
+
+  <h2>Example 3: Basic Calculator</h2>
+  <pre><code class="language-python">def add(a, b):
+    return a + b
+
+def subtract(a, b):
+    return a - b
+
+def calculate():
+    x = 10
+    y = 5
+    print("Add:", add(x, y))
+    print("Subtract:", subtract(x, y))
+
+if __name__ == "__main__":
+    calculate()</code></pre>
+
+  <p>Each example demonstrates decomposition by separating logic into smaller functions. This makes the code cleaner, testable, and easier to maintain.</p>
+</section>
+
+<footer>
+  <p>&copy; 2025 Python Training Session</p>
+</footer>
+
+<!-- Prism JS -->
+<script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/prism.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-python.min.js"></script>
+
 </body>
 </html>

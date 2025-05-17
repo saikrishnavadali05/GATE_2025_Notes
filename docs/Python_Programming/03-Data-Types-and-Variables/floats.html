@@ -1,9 +1,124 @@
 <!DOCTYPE html>
-<html>
-<head><title>Floats</title></head>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Python Floats</title>
+
+  <!-- Prism CSS for code highlighting -->
+  <link href="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/themes/prism.css" rel="stylesheet" />
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 20px;
+      background-color: #fefefe;
+      color: #222;
+    }
+    header {
+      background-color: #1565c0;
+      color: white;
+      padding: 20px;
+      text-align: center;
+      border-radius: 6px;
+      margin-bottom: 30px;
+    }
+    h2 {
+      color: #1565c0;
+      margin-top: 30px;
+    }
+    pre {
+      background-color: #e3f2fd;
+      border-radius: 6px;
+      padding: 15px;
+      overflow-x: auto;
+      font-size: 15px;
+      line-height: 1.5;
+    }
+    ul {
+      margin-left: 20px;
+    }
+    footer {
+      background-color: #1565c0;
+      color: white;
+      text-align: center;
+      padding: 12px;
+      margin-top: 40px;
+      border-radius: 6px;
+    }
+  </style>
+</head>
 <body>
-<h1>Floats</h1>
-<p>This is a placeholder page for the topic: Floats.</p>
-<a href="../python-programming.html">Back to Home</a>
+
+<header>
+  <h1>Python Floating Point Numbers (Floats)</h1>
+</header>
+
+<section>
+  <h2>What is a Float?</h2>
+  <p>In Python, a <strong>float</strong> is a data type used to represent real numbers that have a decimal point.</p>
+  <p>Examples: 3.14, -0.001, 2.0, 0.0, 5e-3 (scientific notation).</p>
+
+  <h2>Creating Float Values</h2>
+  <pre><code class="language-python"># Examples of float literals
+a = 3.14
+b = -2.5
+c = 0.0
+d = 5e-3    # 5 × 10⁻³ = 0.005
+print(a, b, c, d)</code></pre>
+
+  <h2>Operations with Floats</h2>
+  <pre><code class="language-python">x = 5.5
+y = 2.0
+
+print(x + y)  # Addition, output: 7.5
+print(x - y)  # Subtraction, output: 3.5
+print(x * y)  # Multiplication, output: 11.0
+print(x / y)  # Division, output: 2.75</code></pre>
+
+  <h2>Mixing Integers and Floats</h2>
+  <p>When integers and floats are used together in operations, Python converts integers to floats automatically.</p>
+  <pre><code class="language-python">i = 7      # int
+f = 2.5    # float
+
+result = i + f
+print(result)       # Output: 9.5 (float)
+print(type(result)) # &lt;class 'float'&gt;</code></pre>
+
+  <h2>Precision and Floating Point Errors</h2>
+  <p>Floats are represented in binary and sometimes lead to precision issues.</p>
+  <pre><code class="language-python">print(0.1 + 0.2)  # Output: 0.30000000000000004</code></pre>
+  <p>This is a common floating point arithmetic artifact and is not a bug in Python.</p>
+
+  <h2>Rounding Floats</h2>
+  <pre><code class="language-python">num = 3.14159
+print(round(num, 2))  # Output: 3.14 (round to 2 decimal places)
+print(round(num))     # Output: 3 (round to nearest integer)</code></pre>
+
+  <h2>Converting to Float</h2>
+  <pre><code class="language-python">print(float(5))       # 5.0
+print(float("3.14"))  # 3.14 (from string)
+print(float("2e3"))   # 2000.0 (scientific notation string)</code></pre>
+
+  <h2>Best Practices</h2>
+  <ul>
+    <li>Use floats for numbers that require decimal points.</li>
+    <li>Be cautious of floating point precision errors; use the <code>decimal</code> module for financial calculations.</li>
+    <li>Use <code>round()</code> when you need to display a fixed number of decimal places.</li>
+    <li>Avoid equality checks directly with floats; instead, check if the difference is smaller than a threshold.</li>
+    <li>Use scientific notation for very large or very small float values.</li>
+  </ul>
+</section>
+
+<footer>
+  <p>&copy; 2025 Python Training</p>
+</footer>
+
+<!-- Prism JS for syntax highlighting -->
+<script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/prism.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-python.min.js"></script>
+
 </body>
 </html>

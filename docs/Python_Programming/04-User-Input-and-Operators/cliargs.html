@@ -1,9 +1,127 @@
 <!DOCTYPE html>
-<html>
-<head><title>Cliargs</title></head>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Command‑Line Arguments in Python</title>
+
+  <!-- Prism CSS for syntax highlighting -->
+  <link href="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/themes/prism.css" rel="stylesheet" />
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 20px;
+      background-color: #fafafa;
+      color: #222;
+    }
+    header {
+      background-color: #0d47a1;
+      color: white;
+      padding: 20px;
+      text-align: center;
+      border-radius: 6px;
+      margin-bottom: 30px;
+    }
+    h2 {
+      color: #0d47a1;
+      margin-top: 30px;
+    }
+    pre {
+      background-color: #e3f2fd;
+      border-radius: 6px;
+      padding: 15px;
+      overflow-x: auto;
+      font-size: 15px;
+      line-height: 1.4;
+    }
+    ul {
+      margin-left: 20px;
+    }
+    footer {
+      background-color: #0d47a1;
+      color: white;
+      text-align: center;
+      padding: 12px;
+      margin-top: 40px;
+      border-radius: 6px;
+    }
+  </style>
+</head>
 <body>
-<h1>Cliargs</h1>
-<p>This is a placeholder page for the topic: Cliargs.</p>
-<a href="../python-programming.html">Back to Home</a>
+
+<header>
+  <h1>Python Command‑Line Arguments</h1>
+  <p>Using <code>sys.argv</code> and <code>argparse</code></p>
+</header>
+
+<section>
+  <h2>1. Why Use Command‑Line Arguments?</h2>
+  <ul>
+    <li>Make scripts flexible without editing code.</li>
+    <li>Automate tasks with shell scripts or build tools.</li>
+    <li>Pass filenames, options, or configuration at runtime.</li>
+  </ul>
+
+  <h2>2. Quick & Easy: <code>sys.argv</code></h2>
+  <p><code>sys.argv</code> is a list containing the script name and any arguments.</p>
+  <pre><code class="language-python">import sys
+
+# python greet.py Sai 27
+script, name, age = sys.argv
+print(f"Hello, {name}! You are {age} years old.")</code></pre>
+  <ul>
+    <li><code>sys.argv[0]</code> is always the script name.</li>
+    <li>All values are strings—convert types as needed.</li>
+  </ul>
+
+  <h2>3. Robust Parsing: <code>argparse</code></h2>
+  <p>The <code>argparse</code> module provides automatic help messages, type conversion, default values, and more.</p>
+  <pre><code class="language-python">import argparse
+
+parser = argparse.ArgumentParser(description="Greet a user.")
+parser.add_argument("name", help="Name of the user")
+parser.add_argument("age", type=int, help="Age of the user")
+parser.add_argument("-v", "--verbose", action="store_true",
+                    help="Enable verbose output")
+
+args = parser.parse_args()
+
+greeting = f"Hello, {args.name}! You are {args.age}."
+if args.verbose:
+    greeting += " Nice to meet you!"
+
+print(greeting)</code></pre>
+  <p>Run <code>python greet.py Sai 27 --verbose</code> to see the optional flag in action.</p>
+
+  <h2>4. Common <code>argparse</code> Features</h2>
+  <ul>
+    <li><strong>Types & Validation:</strong> <code>type=int</code>, <code>choices=[...]</code></li>
+    <li><strong>Default Values:</strong> <code>parser.add_argument("--level", default=1)</code></li>
+    <li><strong>Boolean Flags:</strong> <code>action="store_true"</code></li>
+    <li><strong>Help Text:</strong> Automatically generated with <code>-h/--help</code></li>
+    <li><strong>Mutually Exclusive Options:</strong> <code>parser.add_mutually_exclusive_group()</code></li>
+  </ul>
+
+  <h2>5. Best Practices</h2>
+  <ul>
+    <li>Use <code>argparse</code> for anything beyond trivial scripts.</li>
+    <li>Provide clear <code>help</code> messages and sensible defaults.</li>
+    <li>Validate inputs with <code>type=</code> or custom functions.</li>
+    <li>Keep flag names short (<code>-o</code>) and long (<code>--output</code>) for usability.</li>
+    <li>Document usage examples in your project README.</li>
+  </ul>
+</section>
+
+<footer>
+  <p>&copy; 2025 Python Training</p>
+</footer>
+
+<!-- Prism JS -->
+<script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/prism.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-python.min.js"></script>
+
 </body>
 </html>

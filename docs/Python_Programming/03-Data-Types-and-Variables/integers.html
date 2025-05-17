@@ -1,9 +1,125 @@
 <!DOCTYPE html>
-<html>
-<head><title>Integers</title></head>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Python Integers</title>
+
+  <!-- Prism CSS for code highlighting -->
+  <link href="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/themes/prism.css" rel="stylesheet" />
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 20px;
+      background-color: #fff;
+      color: #222;
+    }
+    header {
+      background-color: #1565c0;
+      color: white;
+      padding: 20px;
+      text-align: center;
+      border-radius: 6px;
+      margin-bottom: 30px;
+    }
+    h2 {
+      color: #1565c0;
+      margin-top: 30px;
+    }
+    pre {
+      background-color: #e3f2fd;
+      border-radius: 6px;
+      padding: 15px;
+      overflow-x: auto;
+      font-size: 15px;
+      line-height: 1.5;
+    }
+    ul {
+      margin-left: 20px;
+    }
+    footer {
+      background-color: #1565c0;
+      color: white;
+      text-align: center;
+      padding: 12px;
+      margin-top: 40px;
+      border-radius: 6px;
+    }
+  </style>
+</head>
 <body>
-<h1>Integers</h1>
-<p>This is a placeholder page for the topic: Integers.</p>
-<a href="../python-programming.html">Back to Home</a>
+
+<header>
+  <h1>Python Integers</h1>
+</header>
+
+<section>
+  <h2>What Are Integers?</h2>
+  <p>In Python, integers are whole numbers without a fractional part. They can be positive, negative, or zero.</p>
+
+  <h2>Key Properties</h2>
+  <ul>
+    <li>Integers are of unlimited size (limited only by available memory).</li>
+    <li>They support all standard arithmetic operations: addition, subtraction, multiplication, division, modulus, exponentiation, etc.</li>
+    <li>Python automatically converts large integers to a long integer type behind the scenes.</li>
+  </ul>
+
+  <h2>Creating Integers</h2>
+  <p>You can create integers simply by assigning whole numbers to variables:</p>
+  <pre><code class="language-python">a = 10
+b = -25
+c = 0</code></pre>
+
+  <h2>Common Integer Operations</h2>
+  <pre><code class="language-python"># Addition
+x = 15 + 5     # 20
+
+# Subtraction
+y = 20 - 4     # 16
+
+# Multiplication
+z = 3 * 7      # 21
+
+# Division (returns float)
+d = 10 / 3     # 3.3333333333333335
+
+# Floor Division (integer division)
+f = 10 // 3    # 3
+
+# Modulus (remainder)
+m = 10 % 3     # 1
+
+# Exponentiation
+e = 2 ** 4     # 16
+</code></pre>
+
+  <h2>Checking Type</h2>
+  <pre><code class="language-python">type(a)   # &lt;class 'int'&gt;</code></pre>
+
+  <h2>Converting to Integer</h2>
+  <p>You can convert other types to integers using the <code>int()</code> function:</p>
+  <pre><code class="language-python">int("42")      # 42
+int(3.99)       # 3 (fractional part truncated)
+int(True)       # 1
+int(False)      # 0</code></pre>
+
+  <h2>Important Notes</h2>
+  <ul>
+    <li>Integer division with <code>/</code> returns a <code>float</code>. Use <code>//</code> for floor division if you want an integer result.</li>
+    <li>Integers are immutable, meaning you cannot change the value of an existing integer object; you assign new values to variables.</li>
+  </ul>
+</section>
+
+<footer>
+  <p>&copy; 2025 Python Training</p>
+</footer>
+
+<!-- Prism JS for syntax highlighting -->
+<script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/prism.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-python.min.js"></script>
+
 </body>
 </html>

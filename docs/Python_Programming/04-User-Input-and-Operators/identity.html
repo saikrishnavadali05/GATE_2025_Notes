@@ -1,9 +1,134 @@
 <!DOCTYPE html>
-<html>
-<head><title>Identity</title></head>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Identity Operators in Python</title>
+
+  <!-- Prism CSS for code highlighting -->
+  <link href="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/themes/prism.css" rel="stylesheet" />
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      max-width: 900px;
+      margin: auto;
+      padding: 20px;
+      background-color: #fefefe;
+      color: #222;
+    }
+    header {
+      background-color: #1e88e5;
+      color: white;
+      padding: 20px;
+      text-align: center;
+      border-radius: 8px;
+      margin-bottom: 30px;
+    }
+    h2 {
+      color: #1e88e5;
+      margin-top: 30px;
+    }
+    pre {
+      background-color: #e3f2fd;
+      padding: 15px;
+      border-radius: 6px;
+      font-size: 15px;
+      line-height: 1.5;
+      overflow-x: auto;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 20px;
+    }
+    th, td {
+      border: 1px solid #bbb;
+      padding: 12px;
+      text-align: center;
+    }
+    th {
+      background-color: #bbdefb;
+    }
+    footer {
+      margin-top: 40px;
+      background-color: #1e88e5;
+      color: white;
+      text-align: center;
+      padding: 12px;
+      border-radius: 6px;
+    }
+  </style>
+</head>
 <body>
-<h1>Identity</h1>
-<p>This is a placeholder page for the topic: Identity.</p>
-<a href="../python-programming.html">Back to Home</a>
+
+<header>
+  <h1>Identity Operators in Python</h1>
+  <p>Check if two variables point to the same object in memory using <code>is</code> and <code>is not</code></p>
+</header>
+
+<section>
+  <h2>What Are Identity Operators?</h2>
+  <p>Identity operators compare the memory location of two objects.</p>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Operator</th>
+        <th>Description</th>
+        <th>Example</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td><code>is</code></td><td>True if both variables point to the same object</td><td><code>x is y</code></td></tr>
+      <tr><td><code>is not</code></td><td>True if they point to different objects</td><td><code>x is not y</code></td></tr>
+    </tbody>
+  </table>
+
+  <h2>Examples</h2>
+  <pre><code class="language-python">a = [1, 2, 3]
+b = a        # Same object
+c = [1, 2, 3] # Same content, different object
+
+print(a is b)     # True
+print(a is c)     # False
+print(a == c)     # True (compares value)
+print(a is not c) # True</code></pre>
+
+  <h2>Use Case with Immutable Types</h2>
+  <p>Python reuses small immutable objects (like integers and short strings), so <code>is</code> may return <code>True</code> for small values.</p>
+  <pre><code class="language-python">x = 100
+y = 100
+print(x is y)  # True (small int caching)
+
+x = 1000
+y = 1000
+print(x is y)  # Might be False (large int)</code></pre>
+
+  <h2>Use in Conditions</h2>
+  <pre><code class="language-python">value = None
+
+if value is None:
+    print("No value provided")
+
+if value is not None:
+    print("Processing value...")</code></pre>
+
+  <h2>Best Practices</h2>
+  <ul>
+    <li>Use <code>is</code> and <code>is not</code> only for identity comparisons (e.g., <code>is None</code>).</li>
+    <li>Use <code>==</code> and <code>!=</code> for value comparisons.</li>
+    <li>Avoid using <code>is</code> with numbers or strings for equality — use <code>==</code> instead.</li>
+  </ul>
+</section>
+
+<footer>
+  <p>&copy; 2025 Python Training</p>
+</footer>
+
+<!-- PrismJS Scripts -->
+<script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/prism.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-python.min.js"></script>
+
 </body>
 </html>

@@ -1,9 +1,156 @@
 <!DOCTYPE html>
-<html>
-<head><title>Conversion</title></head>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Python Type Conversion</title>
+
+  <!-- Prism CSS for syntax highlighting -->
+  <link href="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/themes/prism.css" rel="stylesheet" />
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 20px;
+      background-color: #fdfdfd;
+      color: #222;
+    }
+    header {
+      background-color: #6a1b9a;
+      color: white;
+      padding: 20px;
+      text-align: center;
+      border-radius: 6px;
+      margin-bottom: 30px;
+    }
+    h2 {
+      color: #6a1b9a;
+      margin-top: 30px;
+    }
+    pre {
+      background-color: #f3e5f5;
+      border-radius: 6px;
+      padding: 15px;
+      overflow-x: auto;
+      font-size: 15px;
+      line-height: 1.5;
+    }
+    ul {
+      margin-left: 20px;
+    }
+    footer {
+      background-color: #6a1b9a;
+      color: white;
+      text-align: center;
+      padding: 12px;
+      margin-top: 40px;
+      border-radius: 6px;
+    }
+  </style>
+</head>
 <body>
-<h1>Conversion</h1>
-<p>This is a placeholder page for the topic: Conversion.</p>
-<a href="../python-programming.html">Back to Home</a>
+
+<header>
+  <h1>Python Type Conversion</h1>
+</header>
+
+<section>
+  <h2>What is Type Conversion?</h2>
+  <p>Type conversion means converting a value from one data type to another. In Python, this is often called <strong>typecasting</strong>.</p>
+
+  <h2>Types of Type Conversion</h2>
+  <ul>
+    <li><strong>Implicit Conversion (Type Coercion):</strong> Python automatically converts data types when needed.</li>
+    <li><strong>Explicit Conversion (Typecasting):</strong> The programmer manually converts data types using functions like <code>int()</code>, <code>float()</code>, <code>str()</code>, etc.</li>
+  </ul>
+
+  <h2>Implicit Conversion Examples</h2>
+  <pre><code class="language-python"># Python automatically converts int to float in expressions
+a = 5     # int
+b = 2.5   # float
+c = a + b # a converted to float automatically
+print(c)  # Output: 7.5 (float)
+print(type(c))  # &lt;class 'float'&gt;</code></pre>
+
+  <h2>Explicit Conversion Examples</h2>
+  <pre><code class="language-python"># Convert float to int (note: decimal part is truncated)
+f = 9.8
+i = int(f)
+print(i)  # Output: 9
+
+# Convert int to float
+i = 5
+f = float(i)
+print(f)  # Output: 5.0
+
+# Convert int to string
+i = 100
+s = str(i)
+print(s)  # Output: "100"
+
+# Convert string to int (string must represent a valid integer)
+s = "42"
+i = int(s)
+print(i)  # Output: 42
+
+# Convert string to float
+s = "3.14"
+f = float(s)
+print(f)  # Output: 3.14
+
+# Convert other types to boolean
+print(bool(0))      # False
+print(bool(10))     # True
+print(bool(""))     # False
+print(bool("False")) # True (non-empty string)</code></pre>
+
+  <h2>Common Type Conversion Functions</h2>
+  <ul>
+    <li><code>int(x)</code> — converts x to integer</li>
+    <li><code>float(x)</code> — converts x to float</li>
+    <li><code>str(x)</code> — converts x to string</li>
+    <li><code>bool(x)</code> — converts x to boolean</li>
+    <li><code>complex(x)</code> — converts x to complex number</li>
+    <li><code>list(x)</code>, <code>tuple(x)</code>, <code>set(x)</code> — convert to collection types</li>
+  </ul>
+
+  <h2>Important Notes</h2>
+  <ul>
+    <li>When converting strings to numbers, ensure the string is a valid numeric literal, else a <code>ValueError</code> occurs.</li>
+    <li>Converting float to int truncates the decimal part, it does NOT round.</li>
+    <li>Implicit conversion happens mostly between numeric types (int, float, complex).</li>
+  </ul>
+
+  <h2>Example: User Input Conversion</h2>
+  <pre><code class="language-python"># Get two numbers as input and add them
+
+num1 = input("Enter first number: ")  # input returns string
+num2 = input("Enter second number: ")
+
+# Convert strings to int before adding
+sum_ = int(num1) + int(num2)
+
+print("Sum is:", sum_)</code></pre>
+
+  <h2>Best Practices</h2>
+  <ul>
+    <li>Always validate or handle exceptions when converting user input.</li>
+    <li>Be aware of data loss when converting from float to int.</li>
+    <li>Use explicit conversion to keep code readable and avoid unexpected errors.</li>
+    <li>Prefer explicit conversion over relying on implicit type coercion.</li>
+    <li>Use descriptive variable names to make it clear when conversion occurs.</li>
+  </ul>
+</section>
+
+<footer>
+  <p>&copy; 2025 Python Training</p>
+</footer>
+
+<!-- Prism JS -->
+<script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/prism.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-python.min.js"></script>
+
 </body>
 </html>

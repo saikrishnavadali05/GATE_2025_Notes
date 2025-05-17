@@ -1,9 +1,143 @@
 <!DOCTYPE html>
-<html>
-<head><title>Numeric</title></head>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Numeric (Arithmetic) Operators in Python</title>
+
+  <!-- Prism CSS for syntax highlighting -->
+  <link href="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/themes/prism.css" rel="stylesheet" />
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 20px;
+      background-color: #fdfdfd;
+      color: #222;
+    }
+    header {
+      background-color: #00897b;
+      color: white;
+      padding: 20px;
+      text-align: center;
+      border-radius: 6px;
+      margin-bottom: 30px;
+    }
+    h2 {
+      color: #00897b;
+      margin-top: 30px;
+    }
+    pre {
+      background-color: #e0f2f1;
+      border-radius: 6px;
+      padding: 15px;
+      overflow-x: auto;
+      font-size: 15px;
+      line-height: 1.4;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 20px;
+    }
+    th, td {
+      border: 1px solid #bbb;
+      padding: 12px;
+      text-align: center;
+    }
+    th {
+      background-color: #b2dfdb;
+    }
+    footer {
+      background-color: #00897b;
+      color: white;
+      text-align: center;
+      padding: 12px;
+      margin-top: 40px;
+      border-radius: 6px;
+    }
+  </style>
+</head>
 <body>
-<h1>Numeric</h1>
-<p>This is a placeholder page for the topic: Numeric.</p>
-<a href="../python-programming.html">Back to Home</a>
+
+<header>
+  <h1>Numeric (Arithmetic) Operators in Python</h1>
+  <p>Perform calculations with integers and floats</p>
+</header>
+
+<section>
+  <h2>Operator Overview</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>Operator</th>
+        <th>Name</th>
+        <th>Description</th>
+        <th>Example</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td><code>+</code></td><td>Addition</td><td>Adds two numbers</td><td><code>3 + 2 → 5</code></td></tr>
+      <tr><td><code>-</code></td><td>Subtraction</td><td>Subtracts right side from left</td><td><code>5 - 1 → 4</code></td></tr>
+      <tr><td><code>*</code></td><td>Multiplication</td><td>Multiplies numbers</td><td><code>4 * 2 → 8</code></td></tr>
+      <tr><td><code>/</code></td><td>Division</td><td>True division (float)</td><td><code>5 / 2 → 2.5</code></td></tr>
+      <tr><td><code>//</code></td><td>Floor Division</td><td>Divides &amp; rounds down</td><td><code>5 // 2 → 2</code></td></tr>
+      <tr><td><code>%</code></td><td>Modulus</td><td>Remainder of division</td><td><code>5 % 2 → 1</code></td></tr>
+      <tr><td><code>**</code></td><td>Exponentiation</td><td>Power operator</td><td><code>2 ** 3 → 8</code></td></tr>
+    </tbody>
+  </table>
+
+  <h2>Basic Examples</h2>
+  <pre><code class="language-python">a = 10
+b = 3
+
+print(a + b)   # 13
+print(a - b)   # 7
+print(a * b)   # 30
+print(a / b)   # 3.333...
+print(a // b)  # 3
+print(a % b)   # 1
+print(a ** b)  # 1000</code></pre>
+
+  <h2>Working with Floats</h2>
+  <pre><code class="language-python">x = 7.5
+y = 2.0
+
+print(x * y)   # 15.0
+print(x / y)   # 3.75
+print(x // y)  # 3.0  (still float)
+print(x % y)   # 1.5</code></pre>
+
+  <h2>Operator Precedence</h2>
+  <p>Order of evaluation (highest → lowest): <code>**</code>, unary <code>+</code>/<code>-</code>, <code>* / // %</code>, <code>+ -</code>. Use parentheses for clarity.</p>
+  <pre><code class="language-python">result = 3 + 2 * 4      # 11
+result = (3 + 2) * 4    # 20
+result = 2 ** 3 ** 2    # 512 (evaluates right‑to‑left)</code></pre>
+
+  <h2>Best Practices</h2>
+  <ul>
+    <li>Use <code>//</code> for integer division when you need a whole‑number result.</li>
+    <li>Beware of float precision (e.g., <code>0.1 + 0.2</code> issue); use <code>decimal</code> for financial calcs.</li>
+    <li>Use meaningful variable names and avoid magic numbers.</li>
+    <li>Leverage built‑in functions like <code>abs()</code>, <code>round()</code>, <code>pow()</code>, and <code>divmod()</code>.</li>
+  </ul>
+
+  <h2>Handy Built‑ins</h2>
+  <pre><code class="language-python">print(abs(-7))            # 7
+print(round(3.14159, 2))  # 3.14
+print(pow(2, 5))          # 32 (same as 2 ** 5)
+print(divmod(17, 5))      # (3, 2) → quotient & remainder</code></pre>
+</section>
+
+<footer>
+  <p>&copy; 2025 Python Training — Numeric Operators</p>
+</footer>
+
+<!-- Prism JS -->
+<script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/prism.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-python.min.js"></script>
+
 </body>
 </html>

@@ -1,9 +1,116 @@
 <!DOCTYPE html>
-<html>
-<head><title>Run</title></head>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Running Python Scripts</title>
+
+  <!-- Prism CSS for syntax highlighting -->
+  <link href="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/themes/prism.css" rel="stylesheet" />
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 20px;
+      background-color: #fefefe;
+      color: #222;
+    }
+    header {
+      background-color: #306998;
+      color: white;
+      padding: 20px;
+      text-align: center;
+      border-radius: 4px;
+      margin-bottom: 30px;
+    }
+    h2 {
+      color: #306998;
+      margin-top: 30px;
+    }
+    pre {
+      background-color: #f4f4f4;
+      border-radius: 6px;
+      padding: 15px;
+      overflow-x: auto;
+      font-size: 15px;
+      line-height: 1.4;
+    }
+    footer {
+      background-color: #306998;
+      color: white;
+      text-align: center;
+      padding: 10px;
+      margin-top: 40px;
+      border-radius: 4px;
+    }
+    ul {
+      margin-left: 20px;
+    }
+  </style>
+</head>
 <body>
-<h1>Run</h1>
-<p>This is a placeholder page for the topic: Run.</p>
-<a href="../python-programming.html">Back to Home</a>
+
+<header>
+  <h1>How to Run Python Scripts</h1>
+</header>
+
+<section>
+  <h2>Running Python in the Command Line</h2>
+  <p>To run a Python script from the command line or terminal, use the <code>python</code> or <code>python3</code> command followed by the script filename:</p>
+  <pre><code class="language-bash">python my_script.py
+# or, if python3 is your default:
+python3 my_script.py</code></pre>
+  <p>This executes the Python script and displays any output in the terminal.</p>
+
+  <h2>Running Python Interactively</h2>
+  <p>You can start an interactive Python session by typing:</p>
+  <pre><code class="language-bash">python
+# or
+python3</code></pre>
+  <p>This opens the Python REPL (Read-Eval-Print Loop) where you can type and execute Python commands one by one.</p>
+
+  <h2>Running Python Scripts Directly (Unix-like OS)</h2>
+  <p>If your script has a shebang line and executable permission, you can run it directly like:</p>
+  <pre><code class="language-bash">chmod +x my_script.py
+./my_script.py</code></pre>
+
+  <h2>3 Sample Python Scripts You Can Run</h2>
+
+  <h3>1. Hello World</h3>
+  <pre><code class="language-python">print("Hello, World!")</code></pre>
+
+  <h3>2. Simple Addition</h3>
+  <pre><code class="language-python">a = 5
+b = 7
+sum = a + b
+print("Sum:", sum)</code></pre>
+
+  <h3>3. Check Even or Odd</h3>
+  <pre><code class="language-python">num = int(input("Enter a number: "))
+if num % 2 == 0:
+    print(num, "is even")
+else:
+    print(num, "is odd")</code></pre>
+
+  <h2>Tips for Running Python Scripts</h2>
+  <ul>
+    <li>Make sure Python is installed on your system (<code>python --version</code> to check).</li>
+    <li>Use the correct version command (<code>python</code> vs <code>python3</code>) depending on your environment.</li>
+    <li>Use virtual environments to manage project dependencies.</li>
+    <li>On Windows, scripts typically run with <code>python script.py</code> (shebang lines are not used).</li>
+  </ul>
+
+</section>
+
+<footer>
+  <p>&copy; 2025 Python Training Session</p>
+</footer>
+
+<!-- Prism JS -->
+<script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/prism.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-python.min.js"></script>
+
 </body>
 </html>

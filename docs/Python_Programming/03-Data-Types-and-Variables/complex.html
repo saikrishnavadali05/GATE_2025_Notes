@@ -1,9 +1,139 @@
 <!DOCTYPE html>
-<html>
-<head><title>Complex</title></head>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Python Complex Numbers</title>
+
+  <!-- Prism CSS for syntax highlighting -->
+  <link href="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/themes/prism.css" rel="stylesheet" />
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 20px;
+      background-color: #f9f9f9;
+      color: #222;
+    }
+    header {
+      background-color: #4a90e2;
+      color: white;
+      padding: 20px;
+      text-align: center;
+      border-radius: 6px;
+      margin-bottom: 30px;
+    }
+    h2 {
+      color: #4a90e2;
+      margin-top: 30px;
+    }
+    pre {
+      background-color: #e3f2fd;
+      border-radius: 6px;
+      padding: 15px;
+      overflow-x: auto;
+      font-size: 15px;
+      line-height: 1.5;
+    }
+    ul {
+      margin-left: 20px;
+    }
+    footer {
+      background-color: #4a90e2;
+      color: white;
+      text-align: center;
+      padding: 12px;
+      margin-top: 40px;
+      border-radius: 6px;
+    }
+  </style>
+</head>
 <body>
-<h1>Complex</h1>
-<p>This is a placeholder page for the topic: Complex.</p>
-<a href="../python-programming.html">Back to Home</a>
+
+<header>
+  <h1>Python Complex Numbers</h1>
+</header>
+
+<section>
+  <h2>What is a Complex Number?</h2>
+  <p>A <strong>complex number</strong> is a number that has two parts: a real part and an imaginary part. In Python, complex numbers are represented by <code>complex</code> type and written as <code>real + imaginary j</code>, where <code>j</code> is the imaginary unit.</p>
+
+  <h2>Creating Complex Numbers</h2>
+  <p>You can create complex numbers directly by writing them as literals or by using the <code>complex()</code> constructor.</p>
+  
+  <pre><code class="language-python"># Using literals
+z1 = 3 + 4j
+z2 = 5 - 2j
+
+# Using constructor
+z3 = complex(3, 4)  # same as 3+4j
+z4 = complex(5, -2)</code></pre>
+
+  <h2>Accessing Real and Imaginary Parts</h2>
+  <p>Use the <code>.real</code> and <code>.imag</code> attributes to access components.</p>
+  <pre><code class="language-python">print(z1.real)  # Output: 3.0
+print(z1.imag)  # Output: 4.0</code></pre>
+
+  <h2>Operations with Complex Numbers</h2>
+  <p>Python supports arithmetic operations on complex numbers:</p>
+  
+  <pre><code class="language-python">z1 = 3 + 4j
+z2 = 1 - 1j
+
+print(z1 + z2)  # Output: (4+3j)
+print(z1 - z2)  # Output: (2+5j)
+print(z1 * z2)  # Output: (7+1j)
+print(z1 / z2)  # Output: (0.5+3.5j)</code></pre>
+
+  <h2>Built-in Functions</h2>
+  <ul>
+    <li><code>abs(z)</code>: Returns the magnitude (modulus) of the complex number.</li>
+    <li><code>complex.real</code> and <code>complex.imag</code>: Access parts of the complex number.</li>
+    <li><code>complex.conjugate()</code>: Returns the complex conjugate.</li>
+  </ul>
+
+  <pre><code class="language-python">z = 3 + 4j
+print(abs(z))          # Output: 5.0 (magnitude)
+print(z.conjugate())   # Output: (3-4j)</code></pre>
+
+  <h2>Use Cases of Complex Numbers</h2>
+  <ul>
+    <li>Signal processing</li>
+    <li>Electrical engineering calculations</li>
+    <li>Scientific and mathematical computations involving imaginary numbers</li>
+  </ul>
+
+  <h2>Best Practices</h2>
+  <ul>
+    <li>Use complex numbers only when dealing with problems that require them; avoid overusing where real numbers suffice.</li>
+    <li>Use meaningful variable names like <code>impedance</code>, <code>signal</code>, or <code>z</code> when working with complex data.</li>
+    <li>Use <code>abs()</code> for magnitude rather than manually computing it.</li>
+    <li>Remember that the imaginary part uses the letter <code>j</code> (not <code>i</code>) in Python.</li>
+    <li>When printing or logging complex numbers, use formatting for readability if needed.</li>
+  </ul>
+
+  <h2>Example: Calculating Magnitude and Conjugate</h2>
+  <pre><code class="language-python">def print_complex_info(z):
+    print(f"Complex number: {z}")
+    print(f"Real part: {z.real}")
+    print(f"Imaginary part: {z.imag}")
+    print(f"Magnitude: {abs(z)}")
+    print(f"Conjugate: {z.conjugate()}")
+
+z = complex(6, 8)
+print_complex_info(z)</code></pre>
+
+</section>
+
+<footer>
+  <p>&copy; 2025 Python Training</p>
+</footer>
+
+<!-- Prism JS -->
+<script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/prism.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-python.min.js"></script>
+
 </body>
 </html>

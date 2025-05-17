@@ -1,13 +1,104 @@
 <!DOCTYPE html>
-<html>
-<head><title>Interpreter</title></head>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Python Interpreter</title>
+
+  <!-- Prism CSS for syntax highlighting -->
+  <link href="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/themes/prism.css" rel="stylesheet" />
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #fdfdfd;
+      color: #222;
+      margin: 0;
+      padding: 0 20px 40px 20px;
+      max-width: 900px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    header {
+      background-color: #306998;
+      color: white;
+      padding: 20px;
+      text-align: center;
+      margin-bottom: 20px;
+      border-radius: 4px;
+    }
+    h2 {
+      color: #306998;
+      margin-top: 30px;
+    }
+    pre {
+      padding: 12px;
+      border-radius: 6px;
+      overflow-x: auto;
+      font-size: 15px;
+      line-height: 1.4;
+      background-color: #f4f4f4;
+    }
+    footer {
+      background-color: #306998;
+      color: white;
+      text-align: center;
+      padding: 10px;
+      margin-top: 40px;
+      border-radius: 4px;
+    }
+  </style>
+</head>
 <body>
-<h1>Interpreter</h1>
-<p>This is a placeholder page for the topic: Interpreter.</p>
-<a href="../python-programming.html">Back to Home</a>
+
+<header>
+  <h1>Python Interpreter</h1>
+  <p>Understanding How Python Executes Code Line-by-Line</p>
+</header>
+
+<section>
+  <h2>What is an Interpreter?</h2>
+  <p>An <strong>interpreter</strong> is a program that reads and executes code line-by-line. Python uses an interpreter, which means:</p>
+  <ul>
+    <li>Code is executed one statement at a time.</li>
+    <li>Errors stop execution immediately (unless handled).</li>
+    <li>You can interact with Python using a REPL (Read-Eval-Print Loop).</li>
+  </ul>
+
+  <h2>Example 1: Step-by-Step Execution</h2>
+  <pre><code class="language-python">x = 5
+y = 3
+print("Sum:", x + y)
+print("Product:", x * y)</code></pre>
+  <p>This code is interpreted and executed one line at a time. Python computes values and prints results as it goes.</p>
+
+  <h2>Example 2: Interpreter Stops on Error</h2>
+  <pre><code class="language-python">print("Starting...")
+print(10 / 2)
+print("This line will run")
+print(10 / 0)  # Error occurs here
+print("This line won't run")</code></pre>
+  <p>The interpreter halts at the division-by-zero error, and no lines after that are executed unless the error is handled.</p>
+
+  <h2>Example 3: Interactive Interpreter (REPL)</h2>
+  <pre><code class="language-python">>>> a = 2
+>>> b = 4
+>>> a * b
+8
+>>> print("Done")
+Done</code></pre>
+  <p>Each command is interpreted and run instantly, which is the essence of Python's interactive shell.</p>
+
+  <p>Python's interpreter makes it easy to debug and test code interactively, enhancing learning and development speed.</p>
+</section>
+
+<footer>
+  <p>&copy; 2025 Python Training Session</p>
+</footer>
+
+<!-- Prism JS -->
+<script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/prism.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-python.min.js"></script>
+
 </body>
 </html>
-
-python Interpreter syntax in markdown format
-```
-# Python Interpreter

@@ -1,9 +1,125 @@
 <!DOCTYPE html>
-<html>
-<head><title>Comments</title></head>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Comments & Documentation in Python</title>
+
+  <!-- Prism CSS for syntax highlighting -->
+  <link href="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/themes/prism.css" rel="stylesheet" />
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 20px;
+      background-color: #fafafa;
+      color: #222;
+    }
+    header {
+      background-color: #306998;
+      color: white;
+      padding: 20px;
+      text-align: center;
+      border-radius: 4px;
+      margin-bottom: 30px;
+    }
+    h2 {
+      color: #306998;
+      margin-top: 30px;
+    }
+    pre {
+      background-color: #f4f4f4;
+      border-radius: 6px;
+      padding: 15px;
+      overflow-x: auto;
+      font-size: 15px;
+      line-height: 1.4;
+    }
+    footer {
+      background-color: #306998;
+      color: white;
+      text-align: center;
+      padding: 10px;
+      margin-top: 40px;
+      border-radius: 4px;
+    }
+    ul {
+      margin-left: 20px;
+    }
+  </style>
+</head>
 <body>
-<h1>Comments</h1>
-<p>This is a placeholder page for the topic: Comments.</p>
-<a href="../python-programming.html">Back to Home</a>
+
+<header>
+  <h1>Comments & Documentation in Python</h1>
+</header>
+
+<section>
+  <h2>Why Use Comments?</h2>
+  <p>Comments clarify <em>why</em> certain code exists or how it works. They help others (and your future self) understand your code.</p>
+  <ul>
+    <li>Explain complex logic</li>
+    <li>Describe why a particular solution was chosen</li>
+    <li>Mark TODOs or reminders</li>
+  </ul>
+
+  <h2>Single-line Comments</h2>
+  <p>Use the <code>#</code> symbol to add a comment for the rest of the line.</p>
+  <pre><code class="language-python"># This is a single-line comment
+print("Hello, World!")  # This comment follows code on the same line</code></pre>
+
+  <h2>Multi-line Comments</h2>
+  <p>Use consecutive <code>#</code> lines or triple quotes (though triple quotes are mainly for docstrings).</p>
+  <pre><code class="language-python"># This is a multi-line comment
+# explaining the following code block
+print("Example")</code></pre>
+
+  <h2>What are Docstrings?</h2>
+  <p>Docstrings are special string literals used to document modules, classes, methods, and functions.</p>
+  <ul>
+    <li>Placed immediately after a function, class, or module header</li>
+    <li>Accessible via the <code>.__doc__</code> attribute or <code>help()</code></li>
+  </ul>
+
+  <h2>Example: Function Docstring</h2>
+  <pre><code class="language-python">def add(a, b):
+    """
+    Adds two numbers and returns the result.
+
+    Parameters:
+    a (int or float): First number
+    b (int or float): Second number
+
+    Returns:
+    int or float: Sum of a and b
+    """
+    return a + b
+</code></pre>
+
+  <h2>Example: Accessing Docstrings</h2>
+  <pre><code class="language-python">print(add.__doc__)
+
+help(add)</code></pre>
+
+  <h2>Best Practices</h2>
+  <ul>
+    <li>Write clear, concise comments focusing on <em>why</em>, not <em>what</em>.</li>
+    <li>Keep comments up-to-date with code changes.</li>
+    <li>Use docstrings for documenting APIs, functions, and classes.</li>
+    <li>Follow PEP 8 conventions for comments and docstrings.</li>
+  </ul>
+
+</section>
+
+<footer>
+  <p>&copy; 2025 Python Training Session</p>
+</footer>
+
+<!-- Prism JS -->
+<script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/prism.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-python.min.js"></script>
+
 </body>
 </html>

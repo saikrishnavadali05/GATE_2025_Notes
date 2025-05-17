@@ -1,9 +1,144 @@
 <!DOCTYPE html>
-<html>
-<head><title>Bitwise</title></head>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Bitwise Operators in Python</title>
+
+  <!-- Prism CSS for syntax highlighting -->
+  <link href="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/themes/prism.css" rel="stylesheet" />
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 20px;
+      background-color: #fefefe;
+      color: #222;
+    }
+    header {
+      background-color: #6a4c93;
+      color: white;
+      padding: 20px;
+      text-align: center;
+      border-radius: 4px;
+      margin-bottom: 30px;
+    }
+    h2 {
+      color: #6a4c93;
+      margin-top: 30px;
+    }
+    pre {
+      background-color: #e0e0ff;
+      border-radius: 6px;
+      padding: 15px;
+      overflow-x: auto;
+      font-size: 15px;
+      line-height: 1.4;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 20px;
+    }
+    th, td {
+      border: 1px solid #bbb;
+      padding: 10px;
+      text-align: left;
+    }
+    th {
+      background-color: #cdb4db;
+    }
+    footer {
+      background-color: #6a4c93;
+      color: white;
+      text-align: center;
+      padding: 12px;
+      margin-top: 40px;
+      border-radius: 4px;
+    }
+  </style>
+</head>
 <body>
-<h1>Bitwise</h1>
-<p>This is a placeholder page for the topic: Bitwise.</p>
-<a href="../python-programming.html">Back to Home</a>
+
+<header>
+  <h1>Bitwise Operators in Python</h1>
+</header>
+
+<section>
+  <h2>What are Bitwise Operators?</h2>
+  <p>Bitwise operators operate on the binary representations of integers. They perform bit-level operations and are very useful in system programming, embedded programming, and performance-optimized code.</p>
+
+  <h2>Bitwise Operators Table</h2>
+  <table>
+    <tr>
+      <th>Operator</th>
+      <th>Name</th>
+      <th>Description</th>
+      <th>Example</th>
+    </tr>
+    <tr>
+      <td>&</td>
+      <td>AND</td>
+      <td>Sets each bit to 1 if both bits are 1</td>
+      <td>5 & 3 = 1</td>
+    </tr>
+    <tr>
+      <td>|</td>
+      <td>OR</td>
+      <td>Sets each bit to 1 if one of two bits is 1</td>
+      <td>5 | 3 = 7</td>
+    </tr>
+    <tr>
+      <td>^</td>
+      <td>XOR</td>
+      <td>Sets each bit to 1 if only one of two bits is 1</td>
+      <td>5 ^ 3 = 6</td>
+    </tr>
+    <tr>
+      <td>~</td>
+      <td>NOT</td>
+      <td>Inverts all the bits</td>
+      <td>~5 = -6</td>
+    </tr>
+    <tr>
+      <td>&lt;&lt;</td>
+      <td>Left Shift</td>
+      <td>Shifts bits to the left by a specified number of positions</td>
+      <td>5 &lt;&lt; 1 = 10</td>
+    </tr>
+    <tr>
+      <td>&gt;&gt;</td>
+      <td>Right Shift</td>
+      <td>Shifts bits to the right by a specified number of positions</td>
+      <td>5 &gt;&gt; 1 = 2</td>
+    </tr>
+  </table>
+
+  <h2>Examples</h2>
+  <pre><code class="language-python">a = 5       # 0b0101
+b = 3       # 0b0011
+
+print(a & b)   # 1 (0b0001)
+print(a | b)   # 7 (0b0111)
+print(a ^ b)   # 6 (0b0110)
+print(~a)      # -6 (inverts all bits)
+print(a << 1)  # 10 (0b1010)
+print(a >> 1)  # 2 (0b0010)</code></pre>
+
+  <h2>Tip</h2>
+  <p>Use <code>bin()</code> to see the binary form of a number in Python:</p>
+  <pre><code class="language-python">print(bin(5))  # Output: '0b101'</code></pre>
+</section>
+
+<footer>
+  <p>&copy; 2025 Python Training Session</p>
+</footer>
+
+<!-- Prism JS -->
+<script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/prism.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-python.min.js"></script>
+
 </body>
 </html>

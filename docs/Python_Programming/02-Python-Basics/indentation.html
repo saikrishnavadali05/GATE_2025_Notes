@@ -1,9 +1,128 @@
 <!DOCTYPE html>
-<html>
-<head><title>Indentation</title></head>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Python Indentation</title>
+
+  <!-- Prism CSS for syntax highlighting -->
+  <link href="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/themes/prism.css" rel="stylesheet" />
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 20px;
+      background-color: #fefefe;
+      color: #222;
+    }
+    header {
+      background-color: #306998;
+      color: white;
+      padding: 20px;
+      text-align: center;
+      border-radius: 4px;
+      margin-bottom: 30px;
+    }
+    h2 {
+      color: #306998;
+      margin-top: 30px;
+    }
+    pre {
+      background-color: #f4f4f4;
+      border-radius: 6px;
+      padding: 15px;
+      overflow-x: auto;
+      font-size: 15px;
+      line-height: 1.4;
+    }
+    footer {
+      background-color: #306998;
+      color: white;
+      text-align: center;
+      padding: 10px;
+      margin-top: 40px;
+      border-radius: 4px;
+    }
+  </style>
+</head>
 <body>
-<h1>Indentation</h1>
-<p>This is a placeholder page for the topic: Indentation.</p>
-<a href="../python-programming.html">Back to Home</a>
+
+<header>
+  <h1>Python Indentation</h1>
+  <p>Understanding and Applying Proper Indentation in Python</p>
+</header>
+
+<section>
+  <h2>Why Indentation Matters in Python</h2>
+  <p>Python uses indentation to define blocks of code instead of braces or keywords. Proper indentation is mandatory; incorrect indentation causes <code>IndentationError</code> or changes program behavior.</p>
+
+  <h2>Basic Rules</h2>
+  <ul>
+    <li>Use consistent indentation throughout your code (commonly 4 spaces).</li>
+    <li>Indent blocks after statements like <code>if</code>, <code>for</code>, <code>while</code>, <code>def</code>, and <code>class</code>.</li>
+    <li>Never mix tabs and spaces in indentation.</li>
+  </ul>
+
+  <h2>Example 1: Correct Indentation</h2>
+  <pre><code class="language-python">def greet(name):
+    if name:
+        print(f"Hello, {name}!")
+    else:
+        print("Hello, stranger!")
+
+greet("Alice")</code></pre>
+
+  <h2>Example 2: IndentationError</h2>
+  <pre><code class="language-python">def greet(name):
+if name:  # IndentationError: expected an indented block
+    print(f"Hello, {name}!")
+else:
+    print("Hello, stranger!")
+
+greet("Alice")</code></pre>
+
+  <h2>Example 3: Mixing Tabs and Spaces (Causes Error)</h2>
+  <pre><code class="language-python">def foo():
+↹print("Hello")  # Tab
+    print("World")  # Spaces
+
+# This will raise:
+# TabError: inconsistent use of tabs and spaces in indentation</code></pre>
+
+  <h2>Tips to Avoid Indentation Problems</h2>
+  <ul>
+    <li>Configure your code editor to insert spaces (not tabs) when you press the Tab key.</li>
+    <li>Use an editor that highlights indentation errors.</li>
+    <li>Use <code>python -m tabnanny your_script.py</code> to detect inconsistent indentation.</li>
+    <li>Keep your indentation consistent across your project.</li>
+  </ul>
+
+  <h2>How Python Interprets Indentation</h2>
+  <p>Indented blocks define the body of functions, loops, conditionals, and classes. Example:</p>
+  <pre><code class="language-python">for i in range(3):
+    print(i)
+    if i == 1:
+        print("One")
+print("Done")  # This line is outside the loop</code></pre>
+
+  <p>Output:</p>
+  <pre><code>0
+1
+One
+2
+Done</code></pre>
+
+</section>
+
+<footer>
+  <p>&copy; 2025 Python Training Session</p>
+</footer>
+
+<!-- Prism JS -->
+<script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/prism.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-python.min.js"></script>
+
 </body>
 </html>

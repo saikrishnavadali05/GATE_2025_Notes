@@ -1,9 +1,133 @@
 <!DOCTYPE html>
-<html>
-<head><title>Continuation</title></head>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Continuation and Organization of Code in Python</title>
+
+  <!-- Prism CSS for syntax highlighting -->
+  <link href="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/themes/prism.css" rel="stylesheet" />
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 20px;
+      background-color: #f9f9f9;
+      color: #222;
+    }
+    header {
+      background-color: #306998;
+      color: white;
+      padding: 20px;
+      text-align: center;
+      border-radius: 4px;
+      margin-bottom: 30px;
+    }
+    h2 {
+      color: #306998;
+      margin-top: 30px;
+    }
+    pre {
+      background-color: #f4f4f4;
+      border-radius: 6px;
+      padding: 15px;
+      overflow-x: auto;
+      font-size: 15px;
+      line-height: 1.4;
+    }
+    footer {
+      background-color: #306998;
+      color: white;
+      text-align: center;
+      padding: 10px;
+      margin-top: 40px;
+      border-radius: 4px;
+    }
+    ul {
+      margin-left: 20px;
+    }
+  </style>
+</head>
 <body>
-<h1>Continuation</h1>
-<p>This is a placeholder page for the topic: Continuation.</p>
-<a href="../python-programming.html">Back to Home</a>
+
+<header>
+  <h1>Continuation and Organization of Code in Python</h1>
+</header>
+
+<section>
+  <h2>Line Continuation in Python</h2>
+  <p>Sometimes, you need to split a long statement across multiple lines for readability. Python offers two main ways:</p>
+
+  <h3>1. Implicit Line Continuation</h3>
+  <p>Inside parentheses <code>()</code>, brackets <code>[]</code>, or braces <code>{}</code>, you can split lines without any special character.</p>
+
+  <pre><code class="language-python">numbers = [
+    1, 2, 3,
+    4, 5, 6,
+    7, 8, 9
+]
+
+result = (1 + 2 + 3 +
+          4 + 5 + 6)</code></pre>
+
+  <h3>2. Explicit Line Continuation with Backslash</h3>
+  <p>Use a backslash <code>\</code> at the end of the line to indicate continuation:</p>
+
+  <pre><code class="language-python">total = 1 + 2 + 3 + \
+        4 + 5 + 6</code></pre>
+
+  <p><strong>Note:</strong> Avoid unnecessary backslashes when implicit continuation can be used.</p>
+
+  <h2>Code Organization Best Practices</h2>
+  <p>Organizing your code well makes it easier to read, maintain, and reuse.</p>
+  <ul>
+    <li><strong>Use functions:</strong> Break your code into reusable, logically separated functions.</li>
+    <li><strong>Use modules:</strong> Group related functions and classes into separate files (modules).</li>
+    <li><strong>Use classes:</strong> For related data and behavior, organize with classes.</li>
+    <li><strong>Follow naming conventions:</strong> Use meaningful names and PEP 8 guidelines.</li>
+    <li><strong>Use comments and docstrings:</strong> Document your code to explain what and why.</li>
+    <li><strong>Use a main guard:</strong> Write code that runs only if the file is executed as a script:</li>
+  </ul>
+
+  <pre><code class="language-python">def main():
+    # Main program logic here
+    print("Program started")
+
+if __name__ == "__main__":
+    main()</code></pre>
+
+  <h3>Additional Best Practices</h3>
+  <ul>
+    <li><strong>Keep functions small and focused:</strong> Each function should do one thing and do it well.</li>
+    <li><strong>Consistent indentation:</strong> Use 4 spaces per indentation level, never tabs.</li>
+    <li><strong>Avoid global variables:</strong> Pass variables explicitly to functions to improve clarity and avoid side-effects.</li>
+    <li><strong>Use exception handling:</strong> Catch and handle errors gracefully using <code>try-except</code> blocks.</li>
+    <li><strong>Write tests:</strong> Add unit tests to verify your code works as expected and to catch future regressions.</li>
+  </ul>
+
+  <h2>Example: Organized Python Script</h2>
+  <pre><code class="language-python">def add(a, b):
+    """Return sum of a and b."""
+    return a + b
+
+def main():
+    result = add(5, 7)
+    print(f"Sum is {result}")
+
+if __name__ == "__main__":
+    main()</code></pre>
+
+</section>
+
+<footer>
+  <p>&copy; 2025 Python Training Session</p>
+</footer>
+
+<!-- Prism JS -->
+<script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/prism.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-python.min.js"></script>
+
 </body>
 </html>

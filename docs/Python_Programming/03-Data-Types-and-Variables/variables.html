@@ -1,9 +1,109 @@
 <!DOCTYPE html>
-<html>
-<head><title>Variables</title></head>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Python Variables Basics</title>
+
+  <!-- Prism CSS for syntax highlighting -->
+  <link href="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/themes/prism.css" rel="stylesheet" />
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 20px;
+      background-color: #fdfdfd;
+      color: #222;
+    }
+    header {
+      background-color: #2a6ebb;
+      color: white;
+      padding: 20px;
+      text-align: center;
+      border-radius: 4px;
+      margin-bottom: 30px;
+    }
+    h2 {
+      color: #2a6ebb;
+      margin-top: 30px;
+    }
+    pre {
+      background-color: #e3f2fd;
+      border-radius: 6px;
+      padding: 15px;
+      overflow-x: auto;
+      font-size: 15px;
+      line-height: 1.4;
+    }
+    ul {
+      margin-left: 20px;
+    }
+    footer {
+      background-color: #2a6ebb;
+      color: white;
+      text-align: center;
+      padding: 12px;
+      margin-top: 40px;
+      border-radius: 4px;
+    }
+  </style>
+</head>
 <body>
-<h1>Variables</h1>
-<p>This is a placeholder page for the topic: Variables.</p>
-<a href="../python-programming.html">Back to Home</a>
+
+<header>
+  <h1>Python Variables Basics</h1>
+</header>
+
+<section>
+  <h2>What is a Variable?</h2>
+  <p>A variable is a name that refers to a value stored in memory. You can assign and reassign values to variables freely in Python.</p>
+
+  <h2>Variable Assignment</h2>
+  <p>Use the <code>=</code> operator to assign a value to a variable.</p>
+  <pre><code class="language-python">x = 10
+name = "Sai"
+is_active = True</code></pre>
+
+  <h2>Dynamic Typing</h2>
+  <p>Python is dynamically typed, meaning variables can be reassigned to different data types:</p>
+  <pre><code class="language-python">x = 10        # integer
+x = "Hello"   # now a string</code></pre>
+
+  <h2>Variable Naming Rules</h2>
+  <ul>
+    <li>Names can contain letters, digits, and underscores (_).</li>
+    <li>Must start with a letter or underscore, not a digit.</li>
+    <li>Case-sensitive (e.g., <code>var</code> and <code>Var</code> are different).</li>
+    <li>Cannot be a Python reserved keyword (like <code>for</code>, <code>if</code>, <code>else</code>).</li>
+  </ul>
+
+  <h2>Examples</h2>
+  <pre><code class="language-python">age = 27
+_user_name = "Sai"
+total_price = 150.75
+is_logged_in = False</code></pre>
+
+  <h2>Multiple Assignment</h2>
+  <p>Assign multiple variables in one line:</p>
+  <pre><code class="language-python">a, b, c = 1, 2, 3
+name, age = "Sai", 27</code></pre>
+
+  <h2>Constants</h2>
+  <p>By convention, constants are written in uppercase:</p>
+  <pre><code class="language-python">PI = 3.14159
+MAX_CONNECTIONS = 10</code></pre>
+
+</section>
+
+<footer>
+  <p>&copy; 2025 Python Training Session</p>
+</footer>
+
+<!-- Prism JS -->
+<script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/prism.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-python.min.js"></script>
+
 </body>
 </html>

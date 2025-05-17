@@ -1,9 +1,102 @@
 <!DOCTYPE html>
-<html>
-<head><title>Print</title></head>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Python print()</title>
+
+  <!-- Prism CSS for syntax highlighting -->
+  <link href="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/themes/prism.css" rel="stylesheet" />
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #fdfdfd;
+      color: #222;
+      margin: 0;
+      padding: 0 20px 40px 20px;
+      max-width: 900px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    header {
+      background-color: #306998;
+      color: white;
+      padding: 20px;
+      text-align: center;
+      margin-bottom: 20px;
+      border-radius: 4px;
+    }
+    h2 {
+      color: #306998;
+      margin-top: 30px;
+    }
+    pre {
+      padding: 12px;
+      border-radius: 6px;
+      overflow-x: auto;
+      font-size: 15px;
+      line-height: 1.4;
+      background-color: #f4f4f4;
+    }
+    footer {
+      background-color: #306998;
+      color: white;
+      text-align: center;
+      padding: 10px;
+      margin-top: 40px;
+      border-radius: 4px;
+    }
+  </style>
+</head>
 <body>
-<h1>Print</h1>
-<p>This is a placeholder page for the topic: Print.</p>
-<a href="../python-programming.html">Back to Home</a>
+
+<header>
+  <h1>Python <code>print()</code></h1>
+  <p>Sending Output to <code>stdout</code></p>
+</header>
+
+<section>
+  <h2>Why <code>print()</code> Matters</h2>
+  <p>The built‑in <code>print()</code> function is the quickest way to display information in Python.  
+     It’s invaluable for debugging, logging progress, and presenting results to users.</p>
+
+  <h2>Syntax Overview</h2>
+  <ul>
+    <li><code>print(*objects, sep=' ', end='\\n', file=sys.stdout, flush=False)</code></li>
+    <li><strong><code>*objects</code></strong> – one or more items to display.</li>
+    <li><strong><code>sep</code></strong> – text inserted between items (default space).</li>
+    <li><strong><code>end</code></strong> – text appended after the final item (default newline).</li>
+    <li><strong><code>flush</code></strong> – force flushing the output buffer when <code>True</code>.</li>
+  </ul>
+
+  <!-- Example 1 -->
+  <h2>Example 1: Basic Usage with f‑Strings</h2>
+  <pre><code class="language-python">name = "Sai"
+age = 27
+print(f"Hello, {name}! You are {age} years old.")</code></pre>
+
+  <!-- Example 2 -->
+  <h2>Example 2: Custom Separators and Endings</h2>
+  <pre><code class="language-python">numbers = [1, 2, 3, 4, 5]
+print(*numbers, sep=" | ", end=" <-- list complete\n")</code></pre>
+
+  <!-- Example 3 -->
+  <h2>Example 3: Printing to a File</h2>
+  <pre><code class="language-python">with open("log.txt", "a") as log:
+    print("Computation finished successfully.", file=log, flush=True)
+print("Log written!")</code></pre>
+
+  <p>These snippets show how versatile <code>print()</code> can be—from simple messages to structured output and file logging.</p>
+</section>
+
+<footer>
+  <p>&copy; 2025 Python Training Session</p>
+</footer>
+
+<!-- Prism JS -->
+<script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/prism.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-python.min.js"></script>
+
 </body>
 </html>

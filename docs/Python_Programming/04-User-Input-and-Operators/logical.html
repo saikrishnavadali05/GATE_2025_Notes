@@ -1,9 +1,144 @@
 <!DOCTYPE html>
-<html>
-<head><title>Logical</title></head>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Logical Operators in Python</title>
+
+  <!-- Prism CSS for code highlighting -->
+  <link href="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/themes/prism.css" rel="stylesheet" />
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 20px;
+      background-color: #fdfdfd;
+      color: #222;
+    }
+    header {
+      background-color: #c62828;
+      color: #fff;
+      text-align: center;
+      padding: 20px;
+      border-radius: 6px;
+      margin-bottom: 30px;
+    }
+    h2 {
+      color: #c62828;
+      margin-top: 30px;
+    }
+    pre {
+      background-color: #ffebee;
+      border-radius: 6px;
+      padding: 15px;
+      overflow-x: auto;
+      font-size: 15px;
+      line-height: 1.4;
+    }
+    table {
+      border-collapse: collapse;
+      width: 100%;
+      margin-top: 20px;
+    }
+    th, td {
+      border: 1px solid #ccc;
+      padding: 12px;
+      text-align: center;
+    }
+    th {
+      background-color: #ffcdd2;
+    }
+    footer {
+      margin-top: 40px;
+      background-color: #c62828;
+      color: #fff;
+      text-align: center;
+      padding: 12px;
+      border-radius: 6px;
+    }
+  </style>
+</head>
 <body>
-<h1>Logical</h1>
-<p>This is a placeholder page for the topic: Logical.</p>
-<a href="../python-programming.html">Back to Home</a>
+
+<header>
+  <h1>Logical Operators in Python</h1>
+  <p>Combining Boolean expressions with <code>and</code>, <code>or</code>, and <code>not</code></p>
+</header>
+
+<section>
+  <h2>What Are Logical Operators?</h2>
+  <p>Logical operators evaluate Boolean expressions and return <code>True</code> or <code>False</code>.</p>
+
+  <h2>Operator Table</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>Operator</th>
+        <th>Description</th>
+        <th>Example</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td><code>and</code></td><td>True if <em>both</em> operands are True</td><td><code>True and False → False</code></td></tr>
+      <tr><td><code>or</code></td><td>True if <em>at least one</em> operand is True</td><td><code>True or False → True</code></td></tr>
+      <tr><td><code>not</code></td><td>Inverts the Boolean value</td><td><code>not True → False</code></td></tr>
+    </tbody>
+  </table>
+
+  <h2>Basic Examples</h2>
+  <pre><code class="language-python">x = 5
+y = 10
+
+# and
+print(x > 0 and y > 0)   # True (both conditions True)
+
+# or
+print(x < 0 or y > 0)    # True (second condition True)
+
+# not
+print(not (x == y))      # True (x == y is False, not False → True)</code></pre>
+
+  <h2>Short‑Circuit Evaluation</h2>
+  <p>Python stops evaluating as soon as the result is determined:</p>
+  <pre><code class="language-python">def side_effect():
+    print("Function called")
+    return True
+
+print(False and side_effect())  # side_effect() not called
+print(True or side_effect())    # side_effect() not called</code></pre>
+
+  <h2>Truthy & Falsy Values</h2>
+  <p>Any object can be tested for truthiness:</p>
+  <pre><code class="language-python">name = ""
+print(not name)        # True (empty string is falsy)
+
+items = [1, 2, 3]
+if items and len(items) > 2:
+    print("List has items")</code></pre>
+
+  <h2>Best Practices</h2>
+  <ul>
+    <li>Keep expressions simple; break complex conditions into variables.</li>
+    <li>Remember short‑circuit rules when using functions with side effects.</li>
+    <li>Use <code>any()</code> and <code>all()</code> for multiple checks on iterables.</li>
+    <li>Prefer explicit comparisons over relying on truthiness when clarity matters.</li>
+  </ul>
+
+  <h2>Handy Functions</h2>
+  <pre><code class="language-python">scores = [85, 90, 78]
+print(all(score >= 70 for score in scores))  # True (all pass)
+print(any(score < 60 for score in scores))   # False (none below 60)</code></pre>
+</section>
+
+<footer>
+  <p>&copy; 2025 Python Training</p>
+</footer>
+
+<!-- Prism JS -->
+<script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/prism.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-python.min.js"></script>
+
 </body>
 </html>

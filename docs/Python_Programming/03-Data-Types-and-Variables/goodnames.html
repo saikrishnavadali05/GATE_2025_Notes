@@ -1,9 +1,116 @@
 <!DOCTYPE html>
-<html>
-<head><title>Goodnames</title></head>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Python Variable Naming Best Practices</title>
+
+  <!-- Prism CSS for code highlighting -->
+  <link href="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/themes/prism.css" rel="stylesheet" />
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 20px;
+      background-color: #fff;
+      color: #222;
+    }
+    header {
+      background-color: #2e7d32;
+      color: white;
+      padding: 20px;
+      text-align: center;
+      border-radius: 6px;
+      margin-bottom: 30px;
+    }
+    h2 {
+      color: #2e7d32;
+      margin-top: 30px;
+    }
+    pre {
+      background-color: #e8f5e9;
+      border-radius: 6px;
+      padding: 15px;
+      overflow-x: auto;
+      font-size: 15px;
+      line-height: 1.5;
+    }
+    ul {
+      margin-left: 20px;
+    }
+    footer {
+      background-color: #2e7d32;
+      color: white;
+      text-align: center;
+      padding: 12px;
+      margin-top: 40px;
+      border-radius: 6px;
+    }
+  </style>
+</head>
 <body>
-<h1>Goodnames</h1>
-<p>This is a placeholder page for the topic: Goodnames.</p>
-<a href="../python-programming.html">Back to Home</a>
+
+<header>
+  <h1>Python Variable Naming Best Practices</h1>
+</header>
+
+<section>
+  <h2>Why Are Good Variable Names Important?</h2>
+  <p>Clear and descriptive variable names make your code easier to read, understand, and maintain. They serve as documentation and help other developers (and your future self) know what your code is doing.</p>
+
+  <h2>Basic Rules for Python Variable Names</h2>
+  <ul>
+    <li>Must start with a letter (a-z, A-Z) or an underscore (_).</li>
+    <li>Can contain letters, digits (0-9), and underscores.</li>
+    <li>Cannot be a Python keyword (like <code>for</code>, <code>if</code>, <code>class</code>).</li>
+    <li>Case-sensitive: <code>myVar</code> and <code>myvar</code> are different variables.</li>
+  </ul>
+
+  <h2>Best Practices for Naming Variables</h2>
+  <ul>
+    <li><strong>Be descriptive:</strong> Use meaningful names that describe the data or purpose.</li>
+    <li><strong>Use lowercase with underscores:</strong> Follow <em>snake_case</em> style for variable names.</li>
+    <li><strong>Avoid single letter names:</strong> Except for counters or iterators (like <code>i</code>, <code>j</code>).</li>
+    <li><strong>Use nouns for variables:</strong> Variables represent data or objects.</li>
+    <li><strong>Use verbs for functions:</strong> Functions perform actions.</li>
+    <li><strong>Avoid abbreviations:</strong> Unless very common or obvious (e.g., <code>num</code> for number).</li>
+    <li><strong>Use constants for fixed values:</strong> Use uppercase letters with underscores (e.g., <code>MAX_SIZE</code>).</li>
+  </ul>
+
+  <h2>Examples of Good Variable Names</h2>
+  <pre><code class="language-python">user_age = 25
+total_price = 199.99
+file_path = "/home/user/data.txt"
+is_active = True
+max_speed = 120
+names_list = ["Alice", "Bob", "Charlie"]</code></pre>
+
+  <h2>Examples of Poor Variable Names</h2>
+  <pre><code class="language-python">a = 25
+tp = 199.99
+fp = "/home/user/data.txt"
+flag = True
+x = 120
+lst = ["Alice", "Bob", "Charlie"]</code></pre>
+
+  <h2>Additional Tips</h2>
+  <ul>
+    <li>Use comments to explain complex or non-obvious variables.</li>
+    <li>Keep variable names consistent throughout your code.</li>
+    <li>For boolean variables, use prefixes like <code>is_</code>, <code>has_</code>, or <code>can_</code> (e.g., <code>is_valid</code>).</li>
+    <li>For collections, use plural names (e.g., <code>users</code>, <code>items</code>).</li>
+  </ul>
+</section>
+
+<footer>
+  <p>&copy; 2025 Python Training</p>
+</footer>
+
+<!-- Prism JS for syntax highlighting -->
+<script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/prism.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-python.min.js"></script>
+
 </body>
 </html>

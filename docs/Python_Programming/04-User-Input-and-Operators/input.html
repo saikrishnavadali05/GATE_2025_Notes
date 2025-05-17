@@ -1,9 +1,113 @@
 <!DOCTYPE html>
-<html>
-<head><title>Input</title></head>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Input in Python</title>
+
+  <!-- Prism CSS for syntax highlighting -->
+  <link href="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/themes/prism.css" rel="stylesheet" />
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      max-width: 900px;
+      margin: auto;
+      padding: 20px;
+      background-color: #fefefe;
+      color: #222;
+    }
+    header {
+      background-color: #43a047;
+      color: white;
+      padding: 20px;
+      text-align: center;
+      border-radius: 8px;
+      margin-bottom: 30px;
+    }
+    h2 {
+      color: #2e7d32;
+      margin-top: 30px;
+    }
+    pre {
+      background-color: #e8f5e9;
+      padding: 15px;
+      border-radius: 6px;
+      font-size: 15px;
+      line-height: 1.5;
+      overflow-x: auto;
+    }
+    ul {
+      margin-top: 10px;
+    }
+    footer {
+      margin-top: 40px;
+      background-color: #43a047;
+      color: white;
+      text-align: center;
+      padding: 12px;
+      border-radius: 6px;
+    }
+  </style>
+</head>
 <body>
-<h1>Input</h1>
-<p>This is a placeholder page for the topic: Input.</p>
-<a href="../python-programming.html">Back to Home</a>
+
+<header>
+  <h1>Input in Python</h1>
+  <p>Learn how to take user input from the command line using the <code>input()</code> function</p>
+</header>
+
+<section>
+  <h2>Basic Usage</h2>
+  <p>The <code>input()</code> function reads a line from input, converts it to a string, and returns it.</p>
+  <pre><code class="language-python">name = input("Enter your name: ")
+print("Hello,", name)</code></pre>
+
+  <h2>Converting Input</h2>
+  <p>Since all input is read as a string, you often need to convert it:</p>
+  <pre><code class="language-python">age = input("Enter your age: ")
+age = int(age)  # Convert to integer
+print("You will be", age + 1, "next year.")</code></pre>
+
+  <h2>Multiple Inputs</h2>
+  <pre><code class="language-python">a, b = input("Enter two numbers separated by space: ").split()
+a = int(a)
+b = int(b)
+print("Sum:", a + b)</code></pre>
+
+  <h2>Using map() to Simplify</h2>
+  <pre><code class="language-python">x, y = map(int, input("Enter two integers: ").split())
+print("Product:", x * y)</code></pre>
+
+  <h2>Input with Lists</h2>
+  <pre><code class="language-python"># Input: 1 2 3 4 5
+numbers = list(map(int, input("Enter numbers: ").split()))
+print("You entered:", numbers)</code></pre>
+
+  <h2>Best Practices</h2>
+  <ul>
+    <li>Always validate or convert input before using it.</li>
+    <li>Use <code>try-except</code> blocks to catch conversion errors.</li>
+    <li>Keep input prompts clear for the user.</li>
+    <li>Use <code>split()</code> to handle space-separated input values.</li>
+    <li>Use <code>map()</code> for efficient conversion of multiple values.</li>
+  </ul>
+
+  <h2>Error Handling Example</h2>
+  <pre><code class="language-python">try:
+    num = int(input("Enter a number: "))
+    print("Square:", num * num)
+except ValueError:
+    print("That was not a valid number!")</code></pre>
+</section>
+
+<footer>
+  <p>&copy; 2025 Python Training - Input Handling</p>
+</footer>
+
+<!-- PrismJS Scripts -->
+<script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/prism.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-python.min.js"></script>
+
 </body>
 </html>

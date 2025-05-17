@@ -1,9 +1,146 @@
 <!DOCTYPE html>
-<html>
-<head><title>Membership</title></head>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Membership Operators in Python</title>
+
+  <!-- Prism CSS for syntax highlighting -->
+  <link href="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/themes/prism.css" rel="stylesheet" />
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 20px;
+      background-color: #f9f9f9;
+      color: #222;
+    }
+    header {
+      background-color: #1e88e5;
+      color: white;
+      padding: 20px;
+      border-radius: 8px;
+      text-align: center;
+    }
+    h2 {
+      color: #1e88e5;
+      margin-top: 30px;
+    }
+    pre {
+      background-color: #e3f2fd;
+      padding: 15px;
+      border-radius: 6px;
+      overflow-x: auto;
+    }
+    code {
+      font-family: Consolas, monospace;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 20px;
+    }
+    th, td {
+      padding: 12px;
+      border: 1px solid #ccc;
+      text-align: center;
+    }
+    th {
+      background-color: #bbdefb;
+    }
+    footer {
+      text-align: center;
+      margin-top: 40px;
+      padding: 12px;
+      background-color: #1e88e5;
+      color: white;
+      border-radius: 8px;
+    }
+  </style>
+</head>
 <body>
-<h1>Membership</h1>
-<p>This is a placeholder page for the topic: Membership.</p>
-<a href="../python-programming.html">Back to Home</a>
+
+<header>
+  <h1>Membership Operators in Python</h1>
+  <p>Check if a value exists within a sequence</p>
+</header>
+
+<section>
+  <h2>What Are Membership Operators?</h2>
+  <p>Membership operators are used to test whether a value is present in a sequence (like a list, tuple, set, string, or dictionary).</p>
+
+  <h2>Operator Table</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>Operator</th>
+        <th>Description</th>
+        <th>Example</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code>in</code></td>
+        <td>Returns True if a value is found in the sequence</td>
+        <td><code>'a' in 'apple' → True</code></td>
+      </tr>
+      <tr>
+        <td><code>not in</code></td>
+        <td>Returns True if a value is NOT found in the sequence</td>
+        <td><code>5 not in [1, 2, 3] → True</code></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h2>Examples</h2>
+  <pre><code class="language-python"># Strings
+word = "hello"
+print("h" in word)      # True
+print("z" not in word)  # True
+
+# Lists
+fruits = ["apple", "banana", "cherry"]
+print("apple" in fruits)        # True
+print("grape" not in fruits)    # True
+
+# Tuples
+nums = (1, 2, 3)
+print(2 in nums)                # True
+
+# Sets
+letters = {'a', 'b', 'c'}
+print('d' in letters)           # False
+
+# Dictionaries (checks keys)
+info = {"name": "Sai", "age": 27}
+print("name" in info)           # True
+print("Sai" in info.values())   # True</code></pre>
+
+  <h2>Best Practices</h2>
+  <ul>
+    <li>Use <code>in</code> to simplify conditional logic.</li>
+    <li>Use <code>in</code> on dictionaries when checking for keys, use <code>.values()</code> or <code>.items()</code> to check values or key-value pairs.</li>
+    <li>Use <code>not in</code> to filter or validate inputs cleanly.</li>
+    <li>For large data lookups, prefer using sets or dicts over lists for faster performance.</li>
+  </ul>
+
+  <h2>Real-World Example</h2>
+  <pre><code class="language-python">banned_words = {"bad", "ugly", "hate"}
+
+comment = "I hate this product!"
+if any(word in comment.lower() for word in banned_words):
+    print("Comment contains inappropriate content!")</code></pre>
+</section>
+
+<footer>
+  &copy; 2025 Python Training — Membership Operators Explained
+</footer>
+
+<!-- Prism JS for syntax highlighting -->
+<script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/prism.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-python.min.js"></script>
+
 </body>
 </html>
