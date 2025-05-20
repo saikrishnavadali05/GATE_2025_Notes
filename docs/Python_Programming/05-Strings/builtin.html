@@ -1,9 +1,95 @@
 <!DOCTYPE html>
-<html>
-<head><title>Builtin</title></head>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Built-in String Functions</title>
+
+  <!-- Prism CSS for syntax highlighting -->
+  <link href="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/themes/prism.css" rel="stylesheet" />
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 20px;
+      background-color: #fefefe;
+      color: #222;
+    }
+    header {
+      background-color: #0077b6;
+      color: white;
+      padding: 20px;
+      text-align: center;
+      border-radius: 4px;
+      margin-bottom: 30px;
+    }
+    h2 {
+      color: #0077b6;
+      margin-top: 30px;
+    }
+    pre {
+      background-color: #e0f7fa;
+      border-radius: 6px;
+      padding: 15px;
+      overflow-x: auto;
+      font-size: 15px;
+      line-height: 1.4;
+    }
+    footer {
+      background-color: #0077b6;
+      color: white;
+      text-align: center;
+      padding: 12px;
+      margin-top: 40px;
+      border-radius: 4px;
+    }
+  </style>
+</head>
 <body>
-<h1>Builtin</h1>
-<p>This is a placeholder page for the topic: Builtin.</p>
-<a href="../python-programming.html">Back to Home</a>
+
+<header>
+  <h1>Built-in String Functions</h1>
+</header>
+
+<section>
+  <h2>Overview</h2>
+  <p>Python provides several built-in functions to work with strings. These methods make it easier to manipulate and analyze text data.</p>
+
+  <h2>Examples</h2>
+
+  <pre><code class="language-python"># Example 1: len() - Get the length of the string
+text = "Hello, World!"
+print(len(text))           # 13</code></pre>
+
+  <pre><code class="language-python"># Example 2: str() - Convert another data type to a string
+number = 123
+converted = str(number)
+print(converted)           # "123"
+print(type(converted))     # &lt;class 'str'&gt;</code></pre>
+
+  <pre><code class="language-python"># Example 3: type() - Check the type of the object
+word = "Python"
+print(type(word))          # &lt;class 'str'&gt;</code></pre>
+
+  <pre><code class="language-python"># Example 4: print() - Display output to the console
+name = "Sai"
+print("Hello", name)       # Hello Sai</code></pre>
+
+  <pre><code class="language-python"># Example 5: input() - Get input from the user
+# Uncomment to test interactively
+# user_input = input("Enter your name: ")
+# print("Hi", user_input)</code></pre>
+</section>
+
+<footer>
+  <p>&copy; 2025 Python Training Session</p>
+</footer>
+
+<!-- Prism JS -->
+<script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/prism.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-python.min.js"></script>
+
 </body>
 </html>

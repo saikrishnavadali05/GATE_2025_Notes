@@ -1,9 +1,101 @@
 <!DOCTYPE html>
-<html>
-<head><title>Tuples</title></head>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Tuples in Python - Core Data Structures</title>
+  <link href="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/themes/prism.css" rel="stylesheet" />
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 20px;
+      background-color: #fefefe;
+      color: #222;
+    }
+    header {
+      background-color: #4a90e2;
+      color: white;
+      padding: 20px;
+      text-align: center;
+      border-radius: 4px;
+      margin-bottom: 30px;
+    }
+    h1, h2 {
+      color: #4a90e2;
+    }
+    p {
+      font-size: 18px;
+      line-height: 1.6;
+      margin-bottom: 15px;
+    }
+    pre {
+      background-color: #eee;
+      padding: 15px;
+      border-radius: 5px;
+      overflow-x: auto;
+      font-size: 16px;
+    }
+    ul {
+      margin-left: 20px;
+      font-size: 17px;
+    }
+    ul li {
+      margin-bottom: 10px;
+    }
+  </style>
+</head>
 <body>
-<h1>Tuples</h1>
-<p>This is a placeholder page for the topic: Tuples.</p>
-<a href="../python-programming.html">Back to Home</a>
+
+<header>
+  <h1>Tuples in Python</h1>
+</header>
+
+<section>
+  <h2>What is a Tuple?</h2>
+  <p>
+    A tuple is an ordered, immutable collection of items in Python. Unlike lists, tuples cannot be changed after creation. They can contain elements of different types.
+  </p>
+
+  <h2>Creating Tuples</h2>
+  <pre><code>my_tuple = (1, 2, 3)
+mixed_tuple = (1, "hello", 3.14, True)</code></pre>
+
+  <h2>Examples</h2>
+
+  <pre><code># 1. Accessing elements
+colors = ("red", "green", "blue")
+print(colors[1])  # Output: green
+  </code></pre>
+
+  <pre><code># 2. Nested tuples
+nested = ((1, 2), (3, 4))
+print(nested[0])    # Output: (1, 2)
+print(nested[0][1]) # Output: 2
+  </code></pre>
+
+  <pre><code># 3. Tuple unpacking
+point = (10, 20)
+x, y = point
+print(x)  # Output: 10
+print(y)  # Output: 20
+  </code></pre>
+
+  <pre><code># 4. Single element tuple (note the comma)
+single = (5,)
+print(type(single))  # Output: &lt;class 'tuple'&gt;
+  </code></pre>
+
+  <pre><code># 5. Using tuples as dictionary keys
+my_dict = { (1, 2): "point A", (3, 4): "point B" }
+print(my_dict[(1, 2)])  # Output: point A
+  </code></pre>
+
+</section>
+
+<script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/prism.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-python.min.js"></script>
+
 </body>
 </html>

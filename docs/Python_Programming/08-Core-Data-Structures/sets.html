@@ -1,9 +1,99 @@
 <!DOCTYPE html>
-<html>
-<head><title>Sets</title></head>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Sets in Python - Core Data Structures</title>
+  <link href="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/themes/prism.css" rel="stylesheet" />
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 20px;
+      background-color: #fefefe;
+      color: #222;
+    }
+    header {
+      background-color: #4a90e2;
+      color: white;
+      padding: 20px;
+      text-align: center;
+      border-radius: 4px;
+      margin-bottom: 30px;
+    }
+    h1, h2 {
+      color: #4a90e2;
+    }
+    p {
+      font-size: 18px;
+      line-height: 1.6;
+      margin-bottom: 15px;
+    }
+    pre {
+      background-color: #eee;
+      padding: 15px;
+      border-radius: 5px;
+      overflow-x: auto;
+      font-size: 16px;
+    }
+    ul {
+      margin-left: 20px;
+      font-size: 17px;
+    }
+    ul li {
+      margin-bottom: 10px;
+    }
+  </style>
+</head>
 <body>
-<h1>Sets</h1>
-<p>This is a placeholder page for the topic: Sets.</p>
-<a href="../python-programming.html">Back to Home</a>
+
+<header>
+  <h1>Sets in Python</h1>
+</header>
+
+<section>
+  <h2>What is a Set?</h2>
+  <p>
+    A set is an unordered collection of unique elements in Python. Sets are mutable but do not allow duplicate values. They support operations like union, intersection, difference, and symmetric difference.
+  </p>
+
+  <h2>Creating Sets</h2>
+  <pre><code>my_set = {1, 2, 3}
+empty_set = set()  # Note: {} creates an empty dictionary, not a set</code></pre>
+
+  <h2>Examples</h2>
+
+  <pre><code># 1. Creating and printing a set
+fruits = {"apple", "banana", "cherry"}
+print(fruits)  # Output: {'banana', 'apple', 'cherry'}
+  </code></pre>
+
+  <pre><code># 2. Adding elements to a set
+fruits.add("orange")
+print(fruits)
+  </code></pre>
+
+  <pre><code># 3. Removing elements from a set
+fruits.remove("banana")
+print(fruits)
+  </code></pre>
+
+  <pre><code># 4. Set operations: union and intersection
+a = {1, 2, 3}
+b = {3, 4, 5}
+print(a.union(b))        # Output: {1, 2, 3, 4, 5}
+print(a.intersection(b)) # Output: {3}
+  </code></pre>
+
+  <pre><code># 5. Checking membership
+print("apple" in fruits)  # Output: True or False depending on current set contents
+  </code></pre>
+
+</section>
+
+<script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/prism.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-python.min.js"></script>
+
 </body>
 </html>

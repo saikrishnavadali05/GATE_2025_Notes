@@ -1,9 +1,98 @@
 <!DOCTYPE html>
-<html>
-<head><title>Dicts</title></head>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Dictionaries in Python - Core Data Structures</title>
+  <link href="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/themes/prism.css" rel="stylesheet" />
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 20px;
+      background-color: #fefefe;
+      color: #222;
+    }
+    header {
+      background-color: #4a90e2;
+      color: white;
+      padding: 20px;
+      text-align: center;
+      border-radius: 4px;
+      margin-bottom: 30px;
+    }
+    h1, h2 {
+      color: #4a90e2;
+    }
+    p {
+      font-size: 18px;
+      line-height: 1.6;
+      margin-bottom: 15px;
+    }
+    pre {
+      background-color: #eee;
+      padding: 15px;
+      border-radius: 5px;
+      overflow-x: auto;
+      font-size: 16px;
+    }
+    ul {
+      margin-left: 20px;
+      font-size: 17px;
+    }
+    ul li {
+      margin-bottom: 10px;
+    }
+  </style>
+</head>
 <body>
-<h1>Dicts</h1>
-<p>This is a placeholder page for the topic: Dicts.</p>
-<a href="../python-programming.html">Back to Home</a>
+
+<header>
+  <h1>Dictionaries in Python</h1>
+</header>
+
+<section>
+  <h2>What is a Dictionary?</h2>
+  <p>
+    A dictionary is an unordered collection of key-value pairs in Python. Keys must be unique and immutable, values can be of any type. Dictionaries are mutable and widely used for fast lookups.
+  </p>
+
+  <h2>Creating Dictionaries</h2>
+  <pre><code>my_dict = {"name": "Alice", "age": 30}
+empty_dict = {}  # Empty dictionary</code></pre>
+
+  <h2>Examples</h2>
+
+  <pre><code># 1. Creating and printing a dictionary
+person = {"name": "John", "age": 25, "city": "New York"}
+print(person)  # Output: {'name': 'John', 'age': 25, 'city': 'New York'}
+  </code></pre>
+
+  <pre><code># 2. Accessing values by key
+print(person["name"])  # Output: John
+  </code></pre>
+
+  <pre><code># 3. Adding or updating key-value pairs
+person["email"] = "john@example.com"
+person["age"] = 26
+print(person)
+  </code></pre>
+
+  <pre><code># 4. Removing a key-value pair
+del person["city"]
+print(person)
+  </code></pre>
+
+  <pre><code># 5. Iterating through keys and values
+for key, value in person.items():
+    print(key, ":", value)
+  </code></pre>
+
+</section>
+
+<script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/prism.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-python.min.js"></script>
+
 </body>
 </html>

@@ -1,9 +1,96 @@
 <!DOCTYPE html>
-<html>
-<head><title>Indexing</title></head>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>String Indexing in Python</title>
+
+  <!-- Prism CSS for syntax highlighting -->
+  <link href="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/themes/prism.css" rel="stylesheet" />
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 20px;
+      background-color: #fefefe;
+      color: #222;
+    }
+    header {
+      background-color: #005f73;
+      color: white;
+      padding: 20px;
+      text-align: center;
+      border-radius: 4px;
+      margin-bottom: 30px;
+    }
+    h2 {
+      color: #005f73;
+      margin-top: 30px;
+    }
+    pre {
+      background-color: #e0fbfc;
+      border-radius: 6px;
+      padding: 15px;
+      overflow-x: auto;
+      font-size: 15px;
+      line-height: 1.4;
+    }
+    footer {
+      background-color: #005f73;
+      color: white;
+      text-align: center;
+      padding: 12px;
+      margin-top: 40px;
+      border-radius: 4px;
+    }
+  </style>
+</head>
 <body>
-<h1>Indexing</h1>
-<p>This is a placeholder page for the topic: Indexing.</p>
-<a href="../python-programming.html">Back to Home</a>
+
+<header>
+  <h1>String Indexing in Python</h1>
+</header>
+
+<section>
+  <h2>What is String Indexing?</h2>
+  <p>In Python, strings are sequences of characters. Each character in the string has a specific position (index), starting from <code>0</code> for the first character. Python also supports negative indexing, where <code>-1</code> refers to the last character.</p>
+
+  <h2>Examples</h2>
+
+  <pre><code class="language-python"># Example 1: Accessing characters using positive index
+text = "Python"
+print(text[0])   # Output: 'P'
+print(text[2])   # Output: 't'</code></pre>
+
+  <pre><code class="language-python"># Example 2: Accessing characters using negative index
+text = "Python"
+print(text[-1])  # Output: 'n'
+print(text[-3])  # Output: 'h'</code></pre>
+
+  <pre><code class="language-python"># Example 3: IndexError when index is out of range
+text = "Hi"
+# print(text[5])  # Uncommenting this will raise IndexError</code></pre>
+
+  <pre><code class="language-python"># Example 4: Loop through characters using index
+text = "Code"
+for i in range(len(text)):
+    print(f"Character at index {i} is {text[i]}")</code></pre>
+
+  <pre><code class="language-python"># Example 5: Using indexing with user input
+name = input("Enter your name: ")
+if len(name) >= 2:
+    print("Second character of your name:", name[1])</code></pre>
+</section>
+
+<footer>
+  <p>&copy; 2025 Python Training Session</p>
+</footer>
+
+<!-- Prism JS -->
+<script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/prism.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-python.min.js"></script>
+
 </body>
 </html>

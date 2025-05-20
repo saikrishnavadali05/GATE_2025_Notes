@@ -1,9 +1,123 @@
 <!DOCTYPE html>
-<html>
-<head><title>Return</title></head>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Escape Sequence: Carriage Return (\r) in Python</title>
+
+  <!-- Prism CSS for syntax highlighting -->
+  <link href="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/themes/prism.css" rel="stylesheet" />
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 20px;
+      background-color: #f0f8ff;
+      color: #003366;
+    }
+    header {
+      background-color: #003366;
+      color: white;
+      padding: 20px;
+      text-align: center;
+      border-radius: 4px;
+      margin-bottom: 30px;
+    }
+    h2 {
+      color: #003366;
+      margin-top: 30px;
+    }
+    p {
+      line-height: 1.6;
+      font-size: 16px;
+    }
+    pre {
+      background-color: #e6f0ff;
+      border-radius: 6px;
+      padding: 15px;
+      overflow-x: auto;
+      font-size: 15px;
+      line-height: 1.4;
+      margin-top: 10px;
+      margin-bottom: 30px;
+    }
+    footer {
+      background-color: #003366;
+      color: white;
+      text-align: center;
+      padding: 12px;
+      margin-top: 40px;
+      border-radius: 4px;
+    }
+  </style>
+</head>
 <body>
-<h1>Return</h1>
-<p>This is a placeholder page for the topic: Return.</p>
-<a href="../python-programming.html">Back to Home</a>
+
+<header>
+  <h1>Escape Sequence: Carriage Return (\r) in Python</h1>
+</header>
+
+<section>
+  <h2>What is the Carriage Return Escape Sequence?</h2>
+  <p>The carriage return escape sequence <code>\\r</code> moves the cursor back to the beginning of the current line without advancing to the next line. When printed, it can overwrite the beginning of the line with new content.</p>
+
+  <h2>Examples of Using <code>\\r</code></h2>
+
+  <pre><code class="language-python"># Example 1: Simple overwrite
+print("Hello World\rPython")
+
+# Output:
+# Python World
+  </code></pre>
+
+  <pre><code class="language-python"># Example 2: Overwriting entire line
+print("1234567890\rABCDE")
+
+# Output:
+# ABCDE67890
+  </code></pre>
+
+  <pre><code class="language-python"># Example 3: Using carriage return with print progress
+import time
+print("Loading", end="")
+for i in range(5):
+    print(".", end="", flush=True)
+    time.sleep(0.5)
+print("\rDone!      ")
+
+# Output:
+# Done!
+  </code></pre>
+
+  <pre><code class="language-python"># Example 4: Carriage return with string formatting
+text = "Hello\rBye"
+print(text)
+
+# Output:
+# Byeo
+  </code></pre>
+
+  <pre><code class="language-python"># Example 5: Mixing carriage return with newline
+print("First Line\rSecond\r\nThird Line")
+
+# Output:
+# Second
+# Third Line
+  </code></pre>
+
+  <h2>Summary</h2>
+  <p>The <code>\\r</code> escape sequence allows overwriting of text on the current line by returning the cursor to the start of that line. It is useful in command-line interfaces to update text dynamically, such as progress indicators.</p>
+</section>
+
+<footer>
+  <p>&copy; 2025 Python Training Session</p>
+</footer>
+
+<!-- Prism JS -->
+<script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/prism.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-python.min.js"></script>
+
 </body>
 </html>

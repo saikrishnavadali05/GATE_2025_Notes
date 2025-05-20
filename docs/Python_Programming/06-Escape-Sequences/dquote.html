@@ -1,9 +1,119 @@
 <!DOCTYPE html>
-<html>
-<head><title>Dquote</title></head>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Escape Sequence: Double Quote (") in Python</title>
+
+  <!-- Prism CSS for syntax highlighting -->
+  <link href="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/themes/prism.css" rel="stylesheet" />
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 20px;
+      background-color: #fff8f0;
+      color: #5a2a00;
+    }
+    header {
+      background-color: #5a2a00;
+      color: white;
+      padding: 20px;
+      text-align: center;
+      border-radius: 4px;
+      margin-bottom: 30px;
+    }
+    h2 {
+      color: #5a2a00;
+      margin-top: 30px;
+    }
+    p {
+      line-height: 1.6;
+      font-size: 16px;
+    }
+    pre {
+      background-color: #fff1e0;
+      border-radius: 6px;
+      padding: 15px;
+      overflow-x: auto;
+      font-size: 15px;
+      line-height: 1.4;
+      margin-top: 10px;
+      margin-bottom: 30px;
+    }
+    footer {
+      background-color: #5a2a00;
+      color: white;
+      text-align: center;
+      padding: 12px;
+      margin-top: 40px;
+      border-radius: 4px;
+    }
+  </style>
+</head>
 <body>
-<h1>Dquote</h1>
-<p>This is a placeholder page for the topic: Dquote.</p>
-<a href="../python-programming.html">Back to Home</a>
+
+<header>
+  <h1>Escape Sequence: Double Quote (") in Python</h1>
+</header>
+
+<section>
+  <h2>What is the Double Quote Escape Sequence?</h2>
+  <p>The double quote escape sequence <code>\"</code> allows you to include double quote characters inside strings that are enclosed by double quotes without ending the string prematurely.</p>
+
+  <h2>Examples of Using <code>\"</code></h2>
+
+  <pre><code class="language-python"># Example 1: Including double quotes inside a string
+print("She said, \"Hello!\"")
+
+# Output:
+# She said, "Hello!"
+  </code></pre>
+
+  <pre><code class="language-python"># Example 2: Double quotes in a sentence
+quote = "The sign read: \"No Entry\""
+print(quote)
+
+# Output:
+# The sign read: "No Entry"
+  </code></pre>
+
+  <pre><code class="language-python"># Example 3: Using escape to include multiple quotes
+print("He replied, \"That's great!\"")
+
+# Output:
+# He replied, "That's great!"
+  </code></pre>
+
+  <pre><code class="language-python"># Example 4: Using double quotes inside double-quoted string with escapes
+text = "This is a \"quoted\" word"
+print(text)
+
+# Output:
+# This is a "quoted" word
+  </code></pre>
+
+  <pre><code class="language-python"># Example 5: Escaping quotes in file paths or JSON strings
+json_str = "{\"name\": \"John\", \"age\": 30}"
+print(json_str)
+
+# Output:
+# {"name": "John", "age": 30}
+  </code></pre>
+
+  <h2>Summary</h2>
+  <p>Use the escape sequence <code>\"</code> to include double quote characters inside double-quoted strings in Python, allowing for clear and correct string representation.</p>
+</section>
+
+<footer>
+  <p>&copy; 2025 Python Training Session</p>
+</footer>
+
+<!-- Prism JS -->
+<script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/prism.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-python.min.js"></script>
+
 </body>
 </html>

@@ -1,9 +1,116 @@
 <!DOCTYPE html>
-<html>
-<head><title>Backspace</title></head>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Escape Sequence: Backspace (\b) in Python</title>
+
+  <!-- Prism CSS for syntax highlighting -->
+  <link href="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/themes/prism.css" rel="stylesheet" />
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 20px;
+      background-color: #f9f9f9;
+      color: #3b3b3b;
+    }
+    header {
+      background-color: #4a90e2;
+      color: white;
+      padding: 20px;
+      text-align: center;
+      border-radius: 4px;
+      margin-bottom: 30px;
+    }
+    h2 {
+      color: #4a90e2;
+      margin-top: 30px;
+    }
+    p {
+      line-height: 1.6;
+      font-size: 16px;
+    }
+    pre {
+      background-color: #e3f2fd;
+      border-radius: 6px;
+      padding: 15px;
+      overflow-x: auto;
+      font-size: 15px;
+      line-height: 1.4;
+      margin-top: 10px;
+      margin-bottom: 30px;
+    }
+    footer {
+      background-color: #4a90e2;
+      color: white;
+      text-align: center;
+      padding: 12px;
+      margin-top: 40px;
+      border-radius: 4px;
+    }
+  </style>
+</head>
 <body>
-<h1>Backspace</h1>
-<p>This is a placeholder page for the topic: Backspace.</p>
-<a href="../python-programming.html">Back to Home</a>
+
+<header>
+  <h1>Escape Sequence: Backspace (\b) in Python</h1>
+</header>
+
+<section>
+  <h2>What is the Backspace Escape Sequence?</h2>
+  <p>The backspace escape sequence <code>\b</code> moves the cursor one position back, effectively deleting the character before it when printed in many consoles. It can be used to remove characters in strings during output.</p>
+
+  <h2>Examples of Using <code>\b</code></h2>
+
+  <pre><code class="language-python"># Example 1: Removing last character
+print("Hello\b")
+
+# Output:
+# Hell
+  </code></pre>
+
+  <pre><code class="language-python"># Example 2: Removing multiple characters
+print("Python\b\b\b")
+
+# Output:
+# Pyth
+  </code></pre>
+
+  <pre><code class="language-python"># Example 3: Backspace in the middle of string (overwrites previous char)
+print("12345\b6")
+
+# Output:
+# 12346
+  </code></pre>
+
+  <pre><code class="language-python"># Example 4: Using backspace to erase and replace characters
+print("ABCDE\b\bXY")
+
+# Output:
+# ABCXY
+  </code></pre>
+
+  <pre><code class="language-python"># Example 5: Backspace with multiple tabs and spaces
+print("A\tB\tC\b\bD")
+
+# Output:
+# A       B       D
+  </code></pre>
+
+  <h2>Note:</h2>
+  <p>The effect of <code>\b</code> can vary depending on the terminal or console used. It works well in many standard command-line interfaces but might behave differently in some IDE output windows.</p>
+</section>
+
+<footer>
+  <p>&copy; 2025 Python Training Session</p>
+</footer>
+
+<!-- Prism JS -->
+<script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/prism.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-python.min.js"></script>
+
 </body>
 </html>

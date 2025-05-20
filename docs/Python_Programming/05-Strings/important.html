@@ -1,9 +1,123 @@
 <!DOCTYPE html>
-<html>
-<head><title>Important</title></head>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Important String Operations in Python</title>
+
+  <!-- Prism CSS for syntax highlighting -->
+  <link href="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/themes/prism.css" rel="stylesheet" />
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 20px;
+      background-color: #fff8e1;
+      color: #333;
+    }
+    header {
+      background-color: #ff6f00;
+      color: white;
+      padding: 20px;
+      text-align: center;
+      border-radius: 4px;
+      margin-bottom: 30px;
+    }
+    h2 {
+      color: #ff6f00;
+      margin-top: 30px;
+    }
+    pre {
+      background-color: #fff3e0;
+      border-radius: 6px;
+      padding: 15px;
+      overflow-x: auto;
+      font-size: 15px;
+      line-height: 1.4;
+      margin-bottom: 25px;
+    }
+    footer {
+      background-color: #ff6f00;
+      color: white;
+      text-align: center;
+      padding: 12px;
+      margin-top: 40px;
+      border-radius: 4px;
+    }
+    code {
+      font-size: 14px;
+    }
+  </style>
+</head>
 <body>
-<h1>Important</h1>
-<p>This is a placeholder page for the topic: Important.</p>
-<a href="../python-programming.html">Back to Home</a>
+
+<header>
+  <h1>Important String Operations in Python</h1>
+</header>
+
+<section>
+  <h2>Overview</h2>
+  <p>This page covers some essential string operations that are useful in daily Python programming.</p>
+
+  <h2>1. Checking if a String Contains a Substring</h2>
+  <pre><code class="language-python">text = "Python is awesome"
+
+# Using 'in' keyword
+print("awesome" in text)    # Output: True
+
+# Using find() method
+print(text.find("is"))      # Output: 7 (index where substring starts)
+print(text.find("java"))    # Output: -1 (not found)</code></pre>
+
+  <h2>2. Changing Case</h2>
+  <pre><code class="language-python">text = "Python"
+
+print(text.upper())    # Output: PYTHON
+print(text.lower())    # Output: python
+print(text.title())    # Output: Python
+print(text.capitalize()) # Output: Python
+print(text.swapcase()) # Output: pYTHON</code></pre>
+
+  <h2>3. Trimming Whitespace</h2>
+  <pre><code class="language-python">text = "   Hello World!   "
+
+print(text.strip())    # Output: "Hello World!"
+print(text.lstrip())   # Output: "Hello World!   "
+print(text.rstrip())   # Output: "   Hello World!"</code></pre>
+
+  <h2>4. Splitting and Joining Strings</h2>
+  <pre><code class="language-python">text = "apple,banana,cherry"
+
+# Split by comma
+fruits = text.split(",")
+print(fruits)              # Output: ['apple', 'banana', 'cherry']
+
+# Join with space
+joined_text = " ".join(fruits)
+print(joined_text)         # Output: "apple banana cherry"</code></pre>
+
+  <h2>5. Replacing Substrings</h2>
+  <pre><code class="language-python">text = "I like apples"
+
+# Replace apples with oranges
+new_text = text.replace("apples", "oranges")
+print(new_text)             # Output: I like oranges
+
+# Replace only first occurrence
+text2 = "spam spam spam"
+print(text2.replace("spam", "eggs", 2))  # Output: eggs eggs spam</code></pre>
+
+</section>
+
+<footer>
+  <p>&copy; 2025 Python Training Session</p>
+</footer>
+
+<!-- Prism JS -->
+<script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/prism.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-python.min.js"></script>
+
 </body>
 </html>

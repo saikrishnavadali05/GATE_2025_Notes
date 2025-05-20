@@ -1,9 +1,116 @@
 <!DOCTYPE html>
-<html>
-<head><title>Alarm</title></head>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Escape Sequence: Alarm (\a) in Python</title>
+
+  <!-- Prism CSS for syntax highlighting -->
+  <link href="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/themes/prism.css" rel="stylesheet" />
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 20px;
+      background-color: #f9f9f9;
+      color: #3b3b3b;
+    }
+    header {
+      background-color: #4a90e2;
+      color: white;
+      padding: 20px;
+      text-align: center;
+      border-radius: 4px;
+      margin-bottom: 30px;
+    }
+    h2 {
+      color: #4a90e2;
+      margin-top: 30px;
+    }
+    p {
+      line-height: 1.6;
+      font-size: 16px;
+    }
+    pre {
+      background-color: #e3f2fd;
+      border-radius: 6px;
+      padding: 15px;
+      overflow-x: auto;
+      font-size: 15px;
+      line-height: 1.4;
+      margin-top: 10px;
+      margin-bottom: 30px;
+    }
+    footer {
+      background-color: #4a90e2;
+      color: white;
+      text-align: center;
+      padding: 12px;
+      margin-top: 40px;
+      border-radius: 4px;
+    }
+  </style>
+</head>
 <body>
-<h1>Alarm</h1>
-<p>This is a placeholder page for the topic: Alarm.</p>
-<a href="../python-programming.html">Back to Home</a>
+
+<header>
+  <h1>Escape Sequence: Alarm (\a) in Python</h1>
+</header>
+
+<section>
+  <h2>What is the Alarm Escape Sequence?</h2>
+  <p>The alarm escape sequence <code>\a</code> triggers an audible beep or alert sound from the system's speaker (if available). It is often used to notify the user or alert about some event in console applications.</p>
+
+  <h2>Examples of Using <code>\a</code></h2>
+
+  <pre><code class="language-python"># Example 1: Simple beep
+print("Alert!\a")
+
+# Output:
+# Alert! (with beep sound)
+  </code></pre>
+
+  <pre><code class="language-python"># Example 2: Multiple alarms
+print("Warning!\a\a\a")
+
+# Output:
+# Warning! (three beep sounds)
+  </code></pre>
+
+  <pre><code class="language-python"># Example 3: Alarm before message
+print("\aSystem Error!")
+
+# Output:
+# (beep sound) System Error!
+  </code></pre>
+
+  <pre><code class="language-python"># Example 4: Alarm after message with newline
+print("Process Complete\a\n")
+
+# Output:
+# Process Complete (beep sound and new line)
+  </code></pre>
+
+  <pre><code class="language-python"># Example 5: Alarm in combination with other escape sequences
+print("Loading...\a\tDone!")
+
+# Output:
+# Loading... (beep)     Done!
+  </code></pre>
+
+  <h2>Note:</h2>
+  <p>Whether the beep sound actually plays depends on your system configuration and terminal. Some systems or IDEs may not produce any sound for <code>\a</code>.</p>
+</section>
+
+<footer>
+  <p>&copy; 2025 Python Training Session</p>
+</footer>
+
+<!-- Prism JS -->
+<script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/prism.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-python.min.js"></script>
+
 </body>
 </html>

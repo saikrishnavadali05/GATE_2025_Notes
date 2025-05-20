@@ -1,9 +1,117 @@
 <!DOCTYPE html>
-<html>
-<head><title>Backslash</title></head>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Escape Sequence: Backslash (\\) in Python</title>
+
+  <!-- Prism CSS for syntax highlighting -->
+  <link href="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/themes/prism.css" rel="stylesheet" />
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 20px;
+      background-color: #f0f8ff;
+      color: #003366;
+    }
+    header {
+      background-color: #003366;
+      color: white;
+      padding: 20px;
+      text-align: center;
+      border-radius: 4px;
+      margin-bottom: 30px;
+    }
+    h2 {
+      color: #003366;
+      margin-top: 30px;
+    }
+    p {
+      line-height: 1.6;
+      font-size: 16px;
+    }
+    pre {
+      background-color: #e6f0ff;
+      border-radius: 6px;
+      padding: 15px;
+      overflow-x: auto;
+      font-size: 15px;
+      line-height: 1.4;
+      margin-top: 10px;
+      margin-bottom: 30px;
+    }
+    footer {
+      background-color: #003366;
+      color: white;
+      text-align: center;
+      padding: 12px;
+      margin-top: 40px;
+      border-radius: 4px;
+    }
+  </style>
+</head>
 <body>
-<h1>Backslash</h1>
-<p>This is a placeholder page for the topic: Backslash.</p>
-<a href="../python-programming.html">Back to Home</a>
+
+<header>
+  <h1>Escape Sequence: Backslash (\\) in Python</h1>
+</header>
+
+<section>
+  <h2>What is the Backslash Escape Sequence?</h2>
+  <p>The backslash <code>\\</code> is used in Python strings to represent a single backslash character. Since backslash is the escape character itself, to print a literal backslash, you need to escape it by using double backslashes.</p>
+
+  <h2>Examples of Using <code>\\\\</code></h2>
+
+  <pre><code class="language-python"># Example 1: Printing a single backslash
+print("This is a backslash: \\")
+
+# Output:
+# This is a backslash: \
+  </code></pre>
+
+  <pre><code class="language-python"># Example 2: File path on Windows using double backslashes
+print("C:\\\\Users\\\\Admin\\\\Documents")
+
+# Output:
+# C:\Users\Admin\Documents
+  </code></pre>
+
+  <pre><code class="language-python"># Example 3: Raw string to avoid escaping backslash
+print(r"C:\\Users\\Admin\\Documents")
+
+# Output:
+# C:\\Users\\Admin\\Documents
+  </code></pre>
+
+  <pre><code class="language-python"># Example 4: Using backslash to escape quotes
+print("He said, \\\"Hello!\\\"")
+
+# Output:
+# He said, "Hello!"
+  </code></pre>
+
+  <pre><code class="language-python"># Example 5: Backslash at end of line to continue code on next line
+print("Hello, " \\
+      "world!")
+
+# Output:
+# Hello, world!
+  </code></pre>
+
+  <h2>Summary</h2>
+  <p>The backslash <code>\\</code> is an escape character in Python strings. To include a literal backslash, use double backslashes <code>\\\\</code>. It also allows continuation of code to the next line.</p>
+</section>
+
+<footer>
+  <p>&copy; 2025 Python Training Session</p>
+</footer>
+
+<!-- Prism JS -->
+<script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/prism.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-python.min.js"></script>
+
 </body>
 </html>

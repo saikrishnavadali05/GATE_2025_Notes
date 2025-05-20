@@ -1,9 +1,119 @@
 <!DOCTYPE html>
-<html>
-<head><title>Squote</title></head>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Escape Sequence: Single Quote (') in Python</title>
+
+  <!-- Prism CSS for syntax highlighting -->
+  <link href="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/themes/prism.css" rel="stylesheet" />
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 20px;
+      background-color: #f9f9f9;
+      color: #3b3b3b;
+    }
+    header {
+      background-color: #4a90e2;
+      color: white;
+      padding: 20px;
+      text-align: center;
+      border-radius: 4px;
+      margin-bottom: 30px;
+    }
+    h2 {
+      color: #4a90e2;
+      margin-top: 30px;
+    }
+    p {
+      line-height: 1.6;
+      font-size: 16px;
+    }
+    pre {
+      background-color: #e3f2fd;
+      border-radius: 6px;
+      padding: 15px;
+      overflow-x: auto;
+      font-size: 15px;
+      line-height: 1.4;
+      margin-top: 10px;
+      margin-bottom: 30px;
+    }
+    footer {
+      background-color: #4a90e2;
+      color: white;
+      text-align: center;
+      padding: 12px;
+      margin-top: 40px;
+      border-radius: 4px;
+    }
+  </style>
+</head>
 <body>
-<h1>Squote</h1>
-<p>This is a placeholder page for the topic: Squote.</p>
-<a href="../python-programming.html">Back to Home</a>
+
+<header>
+  <h1>Escape Sequence: Single Quote (') in Python</h1>
+</header>
+
+<section>
+  <h2>What is the Single Quote Escape Sequence?</h2>
+  <p>The single quote escape sequence <code>\'</code> allows you to include single quote characters inside strings that are enclosed by single quotes without ending the string prematurely.</p>
+
+  <h2>Examples of Using <code>\'</code></h2>
+
+  <pre><code class="language-python"># Example 1: Including single quote inside a string
+print('It\'s a beautiful day!')
+
+# Output:
+# It's a beautiful day!
+  </code></pre>
+
+  <pre><code class="language-python"># Example 2: Single quotes inside a sentence
+sentence = 'She said, \'Hello there!\''
+print(sentence)
+
+# Output:
+# She said, 'Hello there!'
+  </code></pre>
+
+  <pre><code class="language-python"># Example 3: Using escape to include multiple single quotes
+print('It\'s John\'s book.')
+
+# Output:
+# It's John's book.
+  </code></pre>
+
+  <pre><code class="language-python"># Example 4: Using single quotes inside single-quoted string with escapes
+text = 'That\'s "amazing"!'
+print(text)
+
+# Output:
+# That's "amazing"!
+  </code></pre>
+
+  <pre><code class="language-python"># Example 5: Escaping quotes in contractions or possessives
+contracted = 'Don\'t stop believing.'
+print(contracted)
+
+# Output:
+# Don't stop believing.
+  </code></pre>
+
+  <h2>Summary</h2>
+  <p>Use the escape sequence <code>\'</code> to include single quote characters inside single-quoted strings in Python, allowing clear and accurate string representation.</p>
+</section>
+
+<footer>
+  <p>&copy; 2025 Python Training Session</p>
+</footer>
+
+<!-- Prism JS -->
+<script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/prism.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-python.min.js"></script>
+
 </body>
 </html>

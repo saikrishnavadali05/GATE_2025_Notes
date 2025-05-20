@@ -1,9 +1,140 @@
 <!DOCTYPE html>
-<html>
-<head><title>Ifelifelse</title></head>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>If-Elif-Else Statement in Python</title>
+
+  <link href="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/themes/prism.css" rel="stylesheet" />
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 20px;
+      background-color: #fefefe;
+      color: #222;
+    }
+    header {
+      background-color: #4a90e2;
+      color: white;
+      padding: 20px;
+      text-align: center;
+      border-radius: 4px;
+      margin-bottom: 30px;
+    }
+    h1, h2 {
+      color: #4a90e2;
+    }
+    p {
+      font-size: 18px;
+      line-height: 1.5;
+    }
+    pre {
+      background-color: #e0f0ff;
+      border-radius: 6px;
+      padding: 15px;
+      font-size: 15px;
+      overflow-x: auto;
+      line-height: 1.4;
+    }
+  </style>
+</head>
 <body>
-<h1>Ifelifelse</h1>
-<p>This is a placeholder page for the topic: Ifelifelse.</p>
-<a href="../python-programming.html">Back to Home</a>
+
+<header>
+  <h1>If-Elif-Else Statement in Python</h1>
+</header>
+
+<section>
+  <h2>What is an If-Elif-Else Statement?</h2>
+  <p>
+    The <code>if-elif-else</code> statement allows you to check multiple conditions sequentially. Python executes the first condition that is true, skipping the rest.
+  </p>
+
+  <h2>Syntax</h2>
+  <pre><code class="language-python">if condition1:
+    # code block 1
+elif condition2:
+    # code block 2
+else:
+    # code block if all conditions fail
+</code></pre>
+
+  <h2>Example</h2>
+  <pre><code class="language-python">marks = 75
+if marks >= 90:
+    print("Grade A")
+elif marks >= 75:
+    print("Grade B")
+elif marks >= 60:
+    print("Grade C")
+else:
+    print("Fail")</code></pre>
+
+  <h2>How It Works</h2>
+  <p>
+    Python checks each condition from top to bottom. Once a true condition is found, the corresponding block executes, and the rest are skipped.
+  </p>
+
+  <h2>Additional Examples</h2>
+  <pre><code class="language-python"># Example 1
+num = 0
+if num > 0:
+    print("Positive")
+elif num == 0:
+    print("Zero")
+else:
+    print("Negative")
+
+# Example 2
+day = "Tuesday"
+if day == "Monday":
+    print("Start of the week")
+elif day == "Friday":
+    print("Almost weekend")
+elif day == "Sunday":
+    print("Weekend!")
+else:
+    print("Midweek day")
+
+# Example 3
+score = 85
+if score >= 90:
+    print("Excellent")
+elif score >= 80:
+    print("Very Good")
+elif score >= 70:
+    print("Good")
+else:
+    print("Needs Improvement")
+
+# Example 4
+temperature = 15
+if temperature > 30:
+    print("Hot")
+elif temperature > 20:
+    print("Warm")
+elif temperature > 10:
+    print("Cool")
+else:
+    print("Cold")
+
+# Example 5
+color = "green"
+if color == "red":
+    print("Stop")
+elif color == "yellow":
+    print("Get Ready")
+elif color == "green":
+    print("Go")
+else:
+    print("Invalid color")</code></pre>
+</section>
+
+<script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/prism.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-python.min.js"></script>
+
 </body>
 </html>

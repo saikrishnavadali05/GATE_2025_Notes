@@ -1,9 +1,92 @@
 <!DOCTYPE html>
-<html>
-<head><title>Format</title></head>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>String Formatting</title>
+
+  <!-- Prism CSS for syntax highlighting -->
+  <link href="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/themes/prism.css" rel="stylesheet" />
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 20px;
+      background-color: #fefefe;
+      color: #222;
+    }
+    header {
+      background-color: #00695c;
+      color: white;
+      padding: 20px;
+      text-align: center;
+      border-radius: 4px;
+      margin-bottom: 30px;
+    }
+    h2 {
+      color: #00695c;
+      margin-top: 30px;
+    }
+    pre {
+      background-color: #e0f2f1;
+      border-radius: 6px;
+      padding: 15px;
+      overflow-x: auto;
+      font-size: 15px;
+      line-height: 1.4;
+    }
+    footer {
+      background-color: #00695c;
+      color: white;
+      text-align: center;
+      padding: 12px;
+      margin-top: 40px;
+      border-radius: 4px;
+    }
+  </style>
+</head>
 <body>
-<h1>Format</h1>
-<p>This is a placeholder page for the topic: Format.</p>
-<a href="../python-programming.html">Back to Home</a>
+
+<header>
+  <h1>String Formatting</h1>
+</header>
+
+<section>
+  <h2>Overview</h2>
+  <p>String formatting in Python allows you to build strings dynamically by injecting values. You can use the <code>format()</code> method, f-strings (Python 3.6+), or older formatting styles.</p>
+
+  <h2>Examples</h2>
+
+  <pre><code class="language-python"># Example 1: Using format() with positional arguments
+print("Hello, {}!".format("Sai"))  # Hello, Sai!</code></pre>
+
+  <pre><code class="language-python"># Example 2: Using format() with named arguments
+print("Name: {name}, Age: {age}".format(name="Krishna", age=27))</code></pre>
+
+  <pre><code class="language-python"># Example 3: f-strings (recommended)
+name = "Pooja"
+age = 30
+print(f"{name} is {age} years old")  # Pooja is 30 years old</code></pre>
+
+  <pre><code class="language-python"># Example 4: Formatting numbers with f-strings
+pi = 3.14159
+print(f"Pi rounded to 2 decimals: {pi:.2f}")  # Pi rounded to 2 decimals: 3.14</code></pre>
+
+  <pre><code class="language-python"># Example 5: Padding and alignment
+print("{:<10} | {:^10} | {:>10}".format("Left", "Center", "Right"))
+# Left       |   Center   |      Right</code></pre>
+
+</section>
+
+<footer>
+  <p>&copy; 2025 Python Training Session</p>
+</footer>
+
+<!-- Prism JS -->
+<script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/prism.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-python.min.js"></script>
+
 </body>
 </html>

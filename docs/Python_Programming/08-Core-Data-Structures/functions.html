@@ -1,9 +1,117 @@
 <!DOCTYPE html>
-<html>
-<head><title>Functions</title></head>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Functions in Python - Core Data Structures</title>
+  <link href="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/themes/prism.css" rel="stylesheet" />
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 20px;
+      background-color: #fefefe;
+      color: #222;
+    }
+    header {
+      background-color: #4a90e2;
+      color: white;
+      padding: 20px;
+      text-align: center;
+      border-radius: 4px;
+      margin-bottom: 30px;
+    }
+    h1, h2 {
+      color: #4a90e2;
+    }
+    p {
+      font-size: 18px;
+      line-height: 1.6;
+      margin-bottom: 15px;
+    }
+    pre {
+      background-color: #eee;
+      padding: 15px;
+      border-radius: 5px;
+      overflow-x: auto;
+      font-size: 16px;
+    }
+    ul {
+      margin-left: 20px;
+      font-size: 17px;
+    }
+    ul li {
+      margin-bottom: 10px;
+    }
+  </style>
+</head>
 <body>
-<h1>Functions</h1>
-<p>This is a placeholder page for the topic: Functions.</p>
-<a href="../python-programming.html">Back to Home</a>
+
+<header>
+  <h1>Functions in Python</h1>
+</header>
+
+<section>
+  <h2>What is a Function?</h2>
+  <p>
+    A function is a reusable block of code designed to perform a specific task. Functions help make programs modular, organized, and easier to maintain.
+  </p>
+
+  <h2>Defining a Function</h2>
+  <pre><code>def function_name(parameters):
+    """Docstring explaining the function."""
+    # Function body
+    return value</code></pre>
+
+  <h2>Examples</h2>
+  
+  <pre><code>def greet():
+    print("Hello, World!")
+
+greet()
+# Output: Hello, World!
+  </code></pre>
+
+  <pre><code>def add(a, b):
+    return a + b
+
+result = add(3, 5)
+print(result)
+# Output: 8
+  </code></pre>
+
+  <pre><code>def factorial(n):
+    if n == 0:
+        return 1
+    else:
+        return n * factorial(n-1)
+
+print(factorial(5))
+# Output: 120
+  </code></pre>
+
+  <pre><code>def is_even(num):
+    return num % 2 == 0
+
+print(is_even(4))  # True
+print(is_even(7))  # False
+  </code></pre>
+
+  <pre><code>def greet_person(name="Guest"):
+    print(f"Hello, {name}!")
+
+greet_person("Alice")
+greet_person()
+# Output:
+# Hello, Alice!
+# Hello, Guest!
+  </code></pre>
+
+</section>
+
+<script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/prism.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-python.min.js"></script>
+
 </body>
 </html>

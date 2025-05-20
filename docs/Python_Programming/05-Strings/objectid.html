@@ -1,9 +1,104 @@
 <!DOCTYPE html>
-<html>
-<head><title>Objectid</title></head>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Object Identity in Strings</title>
+
+  <!-- Prism CSS for syntax highlighting -->
+  <link href="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/themes/prism.css" rel="stylesheet" />
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 20px;
+      background-color: #fefefe;
+      color: #222;
+    }
+    header {
+      background-color: #005f73;
+      color: white;
+      padding: 20px;
+      text-align: center;
+      border-radius: 4px;
+      margin-bottom: 30px;
+    }
+    h2 {
+      color: #005f73;
+      margin-top: 30px;
+    }
+    pre {
+      background-color: #e0fbfc;
+      border-radius: 6px;
+      padding: 15px;
+      overflow-x: auto;
+      font-size: 15px;
+      line-height: 1.4;
+    }
+    footer {
+      background-color: #005f73;
+      color: white;
+      text-align: center;
+      padding: 12px;
+      margin-top: 40px;
+      border-radius: 4px;
+    }
+  </style>
+</head>
 <body>
-<h1>Objectid</h1>
-<p>This is a placeholder page for the topic: Objectid.</p>
-<a href="../python-programming.html">Back to Home</a>
+
+<header>
+  <h1>Object Identity in Strings</h1>
+</header>
+
+<section>
+  <h2>What is Object Identity?</h2>
+  <p>Each object in Python has a unique identity, which can be seen using the built-in <code>id()</code> function. This identity is based on the memory location of the object. Python sometimes reuses objects for optimization, especially immutable ones like strings.</p>
+
+  <h2>Examples</h2>
+
+  <pre><code class="language-python"># Example 1: Two identical string literals share the same memory
+a = "hello"
+b = "hello"
+print(id(a), id(b))       # Same id
+print(a is b)             # True</code></pre>
+
+  <pre><code class="language-python"># Example 2: Strings created differently may have different ids
+x = "world"
+y = "".join(["w", "o", "r", "l", "d"])
+print(id(x), id(y))       # Likely different ids
+print(x == y)             # True (same content)
+print(x is y)             # False (different objects)</code></pre>
+
+  <pre><code class="language-python"># Example 3: Reassigning changes identity
+msg = "Hi"
+print(id(msg))
+msg = "Hello"
+print(id(msg))            # Different id after reassignment</code></pre>
+
+  <pre><code class="language-python"># Example 4: Small string interning in Python
+a = "py"
+b = "py"
+print(a is b)             # True (interned)
+print(id(a), id(b))</code></pre>
+
+  <pre><code class="language-python"># Example 5: Comparing object ids
+s1 = "example"
+s2 = "example"
+s3 = s1
+print(s1 is s2)           # True (may be interned)
+print(s1 is s3)           # True (same reference)</code></pre>
+</section>
+
+<footer>
+  <p>&copy; 2025 Python Training Session</p>
+</footer>
+
+<!-- Prism JS -->
+<script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/prism.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-python.min.js"></script>
+
 </body>
 </html>

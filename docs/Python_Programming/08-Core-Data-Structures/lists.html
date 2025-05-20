@@ -1,9 +1,102 @@
 <!DOCTYPE html>
-<html>
-<head><title>Lists</title></head>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Lists in Python - Core Data Structures</title>
+  <link href="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/themes/prism.css" rel="stylesheet" />
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 20px;
+      background-color: #fefefe;
+      color: #222;
+    }
+    header {
+      background-color: #4a90e2;
+      color: white;
+      padding: 20px;
+      text-align: center;
+      border-radius: 4px;
+      margin-bottom: 30px;
+    }
+    h1, h2 {
+      color: #4a90e2;
+    }
+    p {
+      font-size: 18px;
+      line-height: 1.6;
+      margin-bottom: 15px;
+    }
+    pre {
+      background-color: #eee;
+      padding: 15px;
+      border-radius: 5px;
+      overflow-x: auto;
+      font-size: 16px;
+    }
+    ul {
+      margin-left: 20px;
+      font-size: 17px;
+    }
+    ul li {
+      margin-bottom: 10px;
+    }
+  </style>
+</head>
 <body>
-<h1>Lists</h1>
-<p>This is a placeholder page for the topic: Lists.</p>
-<a href="../python-programming.html">Back to Home</a>
+
+<header>
+  <h1>Lists in Python</h1>
+</header>
+
+<section>
+  <h2>What is a List?</h2>
+  <p>
+    A list is a built-in Python data structure that stores an ordered collection of items, which can be of mixed types. Lists are mutable, meaning you can change their content after creation.
+  </p>
+
+  <h2>Creating Lists</h2>
+  <pre><code>my_list = [1, 2, 3, 4, 5]
+mixed_list = [1, "two", 3.0, True]</code></pre>
+
+  <h2>Examples</h2>
+
+  <pre><code># 1. Accessing elements
+fruits = ["apple", "banana", "cherry"]
+print(fruits[0])  # Output: apple
+  </code></pre>
+
+  <pre><code># 2. Adding elements
+fruits.append("orange")
+print(fruits)
+# Output: ['apple', 'banana', 'cherry', 'orange']
+  </code></pre>
+
+  <pre><code># 3. Removing elements
+fruits.remove("banana")
+print(fruits)
+# Output: ['apple', 'cherry', 'orange']
+  </code></pre>
+
+  <pre><code># 4. Slicing lists
+numbers = [10, 20, 30, 40, 50]
+print(numbers[1:4])
+# Output: [20, 30, 40]
+  </code></pre>
+
+  <pre><code># 5. List comprehension
+squares = [x**2 for x in range(6)]
+print(squares)
+# Output: [0, 1, 4, 9, 16, 25]
+  </code></pre>
+
+</section>
+
+<script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/prism.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-python.min.js"></script>
+
 </body>
 </html>

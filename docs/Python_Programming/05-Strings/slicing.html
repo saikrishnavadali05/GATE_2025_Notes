@@ -1,9 +1,154 @@
 <!DOCTYPE html>
-<html>
-<head><title>Slicing</title></head>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>String Slicing in Python</title>
+
+  <!-- Prism CSS for syntax highlighting -->
+  <link href="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/themes/prism.css" rel="stylesheet" />
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 20px;
+      background-color: #fefefe;
+      color: #222;
+    }
+    header {
+      background-color: #00695c;
+      color: white;
+      padding: 20px;
+      text-align: center;
+      border-radius: 4px;
+      margin-bottom: 30px;
+    }
+    h2 {
+      color: #00695c;
+      margin-top: 30px;
+    }
+    pre {
+      background-color: #e0f2f1;
+      border-radius: 6px;
+      padding: 15px;
+      overflow-x: auto;
+      font-size: 15px;
+      line-height: 1.4;
+      margin-bottom: 25px;
+    }
+    footer {
+      background-color: #00695c;
+      color: white;
+      text-align: center;
+      padding: 12px;
+      margin-top: 40px;
+      border-radius: 4px;
+    }
+    code {
+      font-size: 14px;
+    }
+  </style>
+</head>
 <body>
-<h1>Slicing</h1>
-<p>This is a placeholder page for the topic: Slicing.</p>
-<a href="../python-programming.html">Back to Home</a>
+
+<header>
+  <h1>String Slicing in Python</h1>
+</header>
+
+<section>
+  <h2>Overview</h2>
+  <p>String slicing is a powerful technique to extract parts of strings using the syntax:</p>
+  <p><code>string[start:stop:step]</code></p>
+  <ul>
+    <li><b>start</b>: Starting index (inclusive, default 0)</li>
+    <li><b>stop</b>: Ending index (exclusive, default end of string)</li>
+    <li><b>step</b>: Step size (default 1)</li>
+  </ul>
+  <p>Negative indices and steps can be used for reverse slicing and other effects.</p>
+
+  <h2>Basic Examples</h2>
+  <pre><code class="language-python">text = "Hello, World!"
+
+# 1. Slice from index 0 to 4 (first 5 chars)
+print(text[0:5])  # Output: Hello
+
+# 2. Slice from index 7 to end
+print(text[7:])   # Output: World!
+
+# 3. Slice from start to index 4
+print(text[:5])   # Output: Hello
+
+# 4. Slice entire string
+print(text[:])    # Output: Hello, World!
+
+# 5. Step slicing - every 2nd character
+print(text[::2])  # Output: Hlo ol!
+</code></pre>
+
+  <h2>Negative Indexing</h2>
+  <pre><code class="language-python"># Using negative indices to slice from the end
+
+# 6. Last character
+print(text[-1])    # Output: !
+
+# 7. Last 6 characters
+print(text[-6:])   # Output: World!
+
+# 8. Slice excluding last character
+print(text[:-1])   # Output: Hello, World
+
+# 9. Slice from -6 to -1 (excluding last char)
+print(text[-6:-1]) # Output: World
+
+# 10. Using negative step to reverse string
+print(text[::-1])  # Output: !dlroW ,olleH
+</code></pre>
+
+  <h2>Advanced Step Slicing</h2>
+  <pre><code class="language-python"># 11. Every 3rd character
+print(text[::3])    # Output: Hl r!
+
+# 12. Reverse every 2nd character
+print(text[::-2])   # Output: !lo rH
+
+# 13. Slice subset and reverse
+print(text[7:12][::-1])  # Output: dlroW
+
+# 14. Negative step with start and stop
+print(text[12:7:-1])     # Output: dlroW
+
+# 15. Slice from middle to start, stepping backwards by 2
+print(text[10:0:-2])     # Output: l rH
+</code></pre>
+
+  <h2>Edge Cases & Empty Slices</h2>
+  <pre><code class="language-python"># 16. Start index > stop index without negative step returns empty string
+print(text[5:2])   # Output: ''
+
+# 17. Out-of-range indices are handled gracefully
+print(text[0:100]) # Output: Hello, World!
+
+# 18. Empty slice when step is zero (raises error)
+# print(text[::0])  # Uncommenting raises ValueError
+
+# 19. Single character slice
+print(text[4:5])   # Output: o
+
+# 20. Slice with step larger than string length
+print(text[::50])  # Output: H
+</code></pre>
+
+</section>
+
+<footer>
+  <p>&copy; 2025 Python Training Session</p>
+</footer>
+
+<!-- Prism JS -->
+<script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/prism.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-python.min.js"></script>
+
 </body>
 </html>

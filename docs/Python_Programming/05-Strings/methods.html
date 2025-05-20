@@ -1,9 +1,93 @@
 <!DOCTYPE html>
-<html>
-<head><title>Methods</title></head>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>String Methods</title>
+
+  <!-- Prism CSS for syntax highlighting -->
+  <link href="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/themes/prism.css" rel="stylesheet" />
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 20px;
+      background-color: #fefefe;
+      color: #222;
+    }
+    header {
+      background-color: #6a0dad;
+      color: white;
+      padding: 20px;
+      text-align: center;
+      border-radius: 4px;
+      margin-bottom: 30px;
+    }
+    h2 {
+      color: #6a0dad;
+      margin-top: 30px;
+    }
+    pre {
+      background-color: #f3e5f5;
+      border-radius: 6px;
+      padding: 15px;
+      overflow-x: auto;
+      font-size: 15px;
+      line-height: 1.4;
+    }
+    footer {
+      background-color: #6a0dad;
+      color: white;
+      text-align: center;
+      padding: 12px;
+      margin-top: 40px;
+      border-radius: 4px;
+    }
+  </style>
+</head>
 <body>
-<h1>Methods</h1>
-<p>This is a placeholder page for the topic: Methods.</p>
-<a href="../python-programming.html">Back to Home</a>
+
+<header>
+  <h1>String Methods</h1>
+</header>
+
+<section>
+  <h2>Overview</h2>
+  <p>String methods allow you to perform specific operations on string data. These are accessed using the dot <code>.</code> operator on string objects.</p>
+
+  <h2>Examples</h2>
+
+  <pre><code class="language-python"># Example 1: upper() - Convert to uppercase
+msg = "hello world"
+print(msg.upper())         # HELLO WORLD</code></pre>
+
+  <pre><code class="language-python"># Example 2: lower() - Convert to lowercase
+msg = "Python IS Fun"
+print(msg.lower())         # python is fun</code></pre>
+
+  <pre><code class="language-python"># Example 3: strip() - Remove leading/trailing whitespace
+dirty = "   clean me   "
+print(dirty.strip())       # "clean me"</code></pre>
+
+  <pre><code class="language-python"># Example 4: replace() - Replace a substring
+text = "I love Java"
+print(text.replace("Java", "Python"))  # I love Python</code></pre>
+
+  <pre><code class="language-python"># Example 5: split() - Split the string into a list
+csv = "apple,banana,grape"
+fruits = csv.split(",")
+print(fruits)              # ['apple', 'banana', 'grape']</code></pre>
+</section>
+
+<footer>
+  <p>&copy; 2025 Python Training Session</p>
+</footer>
+
+<!-- Prism JS -->
+<script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/prism.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-python.min.js"></script>
+
 </body>
 </html>

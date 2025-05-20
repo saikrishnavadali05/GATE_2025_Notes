@@ -1,9 +1,116 @@
 <!DOCTYPE html>
-<html>
-<head><title>Ifelse</title></head>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>If-Else Statement in Python</title>
+
+  <link href="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/themes/prism.css" rel="stylesheet" />
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 20px;
+      background-color: #fefefe;
+      color: #222;
+    }
+    header {
+      background-color: #4a90e2;
+      color: white;
+      padding: 20px;
+      text-align: center;
+      border-radius: 4px;
+      margin-bottom: 30px;
+    }
+    h1, h2 {
+      color: #4a90e2;
+    }
+    p {
+      font-size: 18px;
+      line-height: 1.5;
+    }
+    pre {
+      background-color: #e0f0ff;
+      border-radius: 6px;
+      padding: 15px;
+      font-size: 15px;
+      overflow-x: auto;
+      line-height: 1.4;
+    }
+  </style>
+</head>
 <body>
-<h1>Ifelse</h1>
-<p>This is a placeholder page for the topic: Ifelse.</p>
-<a href="../python-programming.html">Back to Home</a>
+
+<header>
+  <h1>If-Else Statement in Python</h1>
+</header>
+
+<section>
+  <h2>What is an If-Else Statement?</h2>
+  <p>
+    The <code>if-else</code> statement allows you to execute one block of code if a condition is true, and another block of code if the condition is false.
+  </p>
+
+  <h2>Syntax</h2>
+  <pre><code class="language-python">if condition:
+    # code if condition is True
+else:
+    # code if condition is False
+</code></pre>
+
+  <h2>Example</h2>
+  <pre><code class="language-python">age = 16
+if age >= 18:
+    print("You are eligible to vote.")
+else:
+    print("You are not eligible to vote yet.")</code></pre>
+
+  <h2>How It Works</h2>
+  <p>
+    Python checks the condition. If it is true, the code inside the <code>if</code> block runs. Otherwise, the code inside the <code>else</code> block runs.
+  </p>
+
+  <h2>Additional Examples</h2>
+  <pre><code class="language-python"># Example 1
+num = -5
+if num > 0:
+    print("Positive number")
+else:
+    print("Zero or negative number")
+
+# Example 2
+temperature = 20
+if temperature > 30:
+    print("It's a hot day")
+else:
+    print("It's a cool day")
+
+# Example 3
+name = "Bob"
+if name == "Alice":
+    print("Hello, Alice!")
+else:
+    print("You are not Alice")
+
+# Example 4
+score = 40
+if score >= 50:
+    print("You passed!")
+else:
+    print("You failed!")
+
+# Example 5
+is_raining = True
+if not is_raining:
+    print("Let's go for a walk!")
+else:
+    print("Better to stay inside")</code></pre>
+</section>
+
+<script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/prism.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-python.min.js"></script>
+
 </body>
 </html>

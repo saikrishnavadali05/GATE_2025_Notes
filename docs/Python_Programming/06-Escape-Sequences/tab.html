@@ -1,9 +1,121 @@
 <!DOCTYPE html>
-<html>
-<head><title>Tab</title></head>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Escape Sequence: Tab (\t) in Python</title>
+
+  <!-- Prism CSS for syntax highlighting -->
+  <link href="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/themes/prism.css" rel="stylesheet" />
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 20px;
+      background-color: #f9f9f9;
+      color: #3b3b3b;
+    }
+    header {
+      background-color: #4a90e2;
+      color: white;
+      padding: 20px;
+      text-align: center;
+      border-radius: 4px;
+      margin-bottom: 30px;
+    }
+    h2 {
+      color: #4a90e2;
+      margin-top: 30px;
+    }
+    p {
+      line-height: 1.6;
+      font-size: 16px;
+    }
+    pre {
+      background-color: #e3f2fd;
+      border-radius: 6px;
+      padding: 15px;
+      overflow-x: auto;
+      font-size: 15px;
+      line-height: 1.4;
+      margin-top: 10px;
+      margin-bottom: 30px;
+    }
+    footer {
+      background-color: #4a90e2;
+      color: white;
+      text-align: center;
+      padding: 12px;
+      margin-top: 40px;
+      border-radius: 4px;
+    }
+  </style>
+</head>
 <body>
-<h1>Tab</h1>
-<p>This is a placeholder page for the topic: Tab.</p>
-<a href="../python-programming.html">Back to Home</a>
+
+<header>
+  <h1>Escape Sequence: Tab (\t) in Python</h1>
+</header>
+
+<section>
+  <h2>What is the Tab Escape Sequence?</h2>
+  <p>The tab escape sequence <code>\t</code> inserts a horizontal tab space in a string, which helps in formatting output by adding indentation or spacing between text.</p>
+
+  <h2>Examples of Using <code>\t</code></h2>
+
+  <pre><code class="language-python"># Example 1: Simple tab space between words
+print("Name:\tJohn")
+
+# Output:
+# Name:    John
+  </code></pre>
+
+  <pre><code class="language-python"># Example 2: Tab used for columns alignment
+print("Item\tPrice")
+print("Pen\t$1.20")
+print("Notebook\t$2.50")
+
+# Output:
+# Item    Price
+# Pen     $1.20
+# Notebook    $2.50
+  </code></pre>
+
+  <pre><code class="language-python"># Example 3: Multiple tabs for more spacing
+print("A\t\tB\t\tC")
+
+# Output:
+# A       B       C
+  </code></pre>
+
+  <pre><code class="language-python"># Example 4: Tab inside a sentence
+print("Hello\tWorld!")
+
+# Output:
+# Hello   World!
+  </code></pre>
+
+  <pre><code class="language-python"># Example 5: Using tab to format a list
+items = "Apple\tBanana\tCherry"
+print(items)
+
+# Output:
+# Apple   Banana  Cherry
+  </code></pre>
+
+  <h2>Summary</h2>
+  <p>Use the escape sequence <code>\t</code> to insert horizontal tab spaces in strings for neat, readable, and aligned text output in Python programs.</p>
+</section>
+
+<footer>
+  <p>&copy; 2025 Python Training Session</p>
+</footer>
+
+<!-- Prism JS -->
+<script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/prism.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-python.min.js"></script>
+
 </body>
 </html>
