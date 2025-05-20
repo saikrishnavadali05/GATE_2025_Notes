@@ -1,9 +1,75 @@
 <!DOCTYPE html>
-<html>
-<head><title>Namespaces</title></head>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Namespaces in Python</title>
+  <link rel="stylesheet" href="../style.css">
+</head>
+
 <body>
-<h1>Namespaces</h1>
-<p>This is a placeholder page for the topic: Namespaces.</p>
-<a href="../python-programming.html">Back to Home</a>
+  <div class="container">
+    <h1>Namespaces in Python</h1>
+
+    <p>A <strong>namespace</strong> in Python refers to the naming system used to ensure that names are unique and won't lead to conflicts. Namespaces map names to objects. Python uses different types of namespaces, including:</p>
+
+    <ul>
+      <li><strong>Local Namespace</strong> – Inside a function</li>
+      <li><strong>Global Namespace</strong> – At the top level of a script/module</li>
+      <li><strong>Built-in Namespace</strong> – Containing built-in functions and exceptions</li>
+    </ul>
+
+    <h2>Why Are Namespaces Important?</h2>
+    <ul>
+      <li>They avoid naming conflicts between identifiers.</li>
+      <li>They make code easier to read and maintain.</li>
+      <li>They support modularity by isolating scopes.</li>
+    </ul>
+
+    <h2>Example 1: Local Namespace</h2>
+    <pre><code>def greet():
+    name = "Alice"
+    print("Hello", name)
+
+greet()</code></pre>
+
+    <h2>Example 2: Global Namespace</h2>
+    <pre><code>language = "Python"
+
+def show():
+    print("Programming in", language)
+
+show()</code></pre>
+
+    <h2>Example 3: Modifying Global Inside Function</h2>
+    <pre><code>count = 10
+
+def update():
+    global count
+    count += 1
+
+update()
+print(count)</code></pre>
+
+    <h2>Example 4: Built-in Namespace</h2>
+    <pre><code>print(len("hello"))  # 'len' is from built-in namespace</code></pre>
+
+    <h2>Example 5: Nested Function (Enclosing Namespace)</h2>
+    <pre><code>def outer():
+    x = "outer value"
+
+    def inner():
+        print(x)  # access enclosing scope
+
+    inner()
+
+outer()</code></pre>
+
+    <p>In summary, understanding namespaces is crucial for writing clean and bug-free Python programs.</p>
+
+    <a href="packages.html" class="nav-link">Next: Packages</a>
+  </div>
 </body>
+
 </html>
