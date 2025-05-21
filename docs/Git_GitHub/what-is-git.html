@@ -215,14 +215,37 @@
   </section>
 
   <section>
-    <h2><span>📝</span> Common Git Commands</h2>
+    <h2><span>🔄</span> Common Git Workflow in a Project</h2>
+    <p>The following sequence of Git commands is commonly followed throughout the lifecycle of a project:</p>
     <ul>
-      <li><code>git init</code> Initialize a new Git repository</li>
-      <li><code>git clone &lt;url&gt;</code> Clone a remote repo</li>
-      <li><code>git add .</code> Stage all changes</li>
-      <li><code>git commit -m "message"</code> Save your changes</li>
-      <li><code>git push</code> Upload changes to GitHub (or any Git remote)</li>
+      <li><code>git clone &lt;url&gt;</code>: Clone an existing repository to start working on a project</li>
+      <li><code>git checkout -b feature-name</code>: Create and switch to a new feature branch</li>
+      <li><code>git add .</code>: Stage changes after editing or adding files</li>
+      <li><code>git commit -m "Describe the change"</code>: Commit staged changes with a meaningful message</li>
+      <li><code>git pull origin main</code>: Pull latest changes from the main branch before pushing</li>
+      <li><code>git push origin feature-name</code>: Push the branch to the remote repository</li>
+      <li>Create a pull request on the hosting platform (e.g., GitHub)</li>
+      <li>Get code reviewed and merged into the main branch</li>
+      <li><code>git checkout main</code> & <code>git pull</code>: Switch back to main and pull latest updates</li>
+      <li><code>git branch -d feature-name</code>: Delete the local branch once it’s merged</li>
     </ul>
+  </section>
+
+  <section>
+    <h2><span>🖥️</span> Working with Git in VS Code</h2>
+    <p>Visual Studio Code provides a user-friendly UI to work with Git. Here's how to use it:</p>
+    <ul>
+      <li>Open your project folder in VS Code</li>
+      <li>Click the <strong>Source Control</strong> icon (<code>Ctrl+Shift+G</code> or 🧭 icon in sidebar)</li>
+      <li>Stage changes using the <strong>+</strong> button next to modified files</li>
+      <li>Add a commit message and click the ✔️ checkmark to commit</li>
+      <li>Use the three-dot menu (...) to pull, push, or view branches</li>
+      <li>Switch or create branches from the status bar (bottom left corner)</li>
+      <li>View Git logs, diffs, and resolve merge conflicts with built-in UI</li>
+      <li>Use the integrated terminal for advanced Git commands</li>
+      <li>Install extensions like <strong>GitLens</strong> for enhanced Git capabilities</li>
+    </ul>
+    <p>VS Code also integrates well with GitHub via the <a href="https://marketplace.visualstudio.com/items?itemName=GitHub.vscode-pull-request-github" target="_blank">GitHub Pull Requests Extension</a>.</p>
   </section>
 
   <section>
