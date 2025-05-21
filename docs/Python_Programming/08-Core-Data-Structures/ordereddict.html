@@ -55,16 +55,16 @@
 <section>
   <h2>What is an OrderedDict?</h2>
   <p>
-    An <code>OrderedDict</code> is a subclass of the built-in dictionary that maintains the insertion order of keys. Unlike regular dictionaries prior to Python 3.7, OrderedDict remembers the order in which items were inserted.
+    An <code class="language-python">OrderedDict</code> is a subclass of the built-in dictionary that maintains the insertion order of keys. Unlike regular dictionaries prior to Python 3.7, OrderedDict remembers the order in which items were inserted.
   </p>
 
   <h2>Importing OrderedDict</h2>
-  <pre><code>from collections import OrderedDict
+  <pre><code class="language-python">from collections import OrderedDict
 </code></pre>
 
   <h2>Examples</h2>
 
-  <pre><code># 1. Creating an OrderedDict
+  <pre><code class="language-python"># 1. Creating an OrderedDict
 from collections import OrderedDict
 od = OrderedDict()
 od['apple'] = 3
@@ -73,7 +73,7 @@ od['cherry'] = 5
 print(od)  # OrderedDict([('apple', 3), ('banana', 2), ('cherry', 5)])
   </code></pre>
 
-  <pre><code># 2. Insertion order is preserved
+  <pre><code class="language-python"># 2. Insertion order is preserved
 for key in od:
     print(key)
 # Output:
@@ -82,12 +82,12 @@ for key in od:
 # cherry
   </code></pre>
 
-  <pre><code># 3. Updating a value does not change order
+  <pre><code class="language-python"># 3. Updating a value does not change order
 od['banana'] = 4
 print(list(od.keys()))  # ['apple', 'banana', 'cherry']
   </code></pre>
 
-  <pre><code># 4. Move a key to the end or beginning
+  <pre><code class="language-python"># 4. Move a key to the end or beginning
 od.move_to_end('apple')  # Moves 'apple' to the end
 print(list(od.keys()))  # ['banana', 'cherry', 'apple']
 
@@ -95,7 +95,7 @@ od.move_to_end('banana', last=False)  # Moves 'banana' to the beginning
 print(list(od.keys()))  # ['banana', 'cherry', 'apple']
   </code></pre>
 
-  <pre><code># 5. Comparing OrderedDicts considers order
+  <pre><code class="language-python"># 5. Comparing OrderedDicts considers order
 od2 = OrderedDict([('banana', 4), ('cherry', 5), ('apple', 3)])
 print(od == od2)  # False because order differs
   </code></pre>

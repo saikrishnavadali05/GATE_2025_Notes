@@ -30,14 +30,14 @@
     </ul>
 
     <h2>Example 1: Local Namespace</h2>
-    <pre><code>def greet():
+    <pre><code class="language-python">def greet():
     name = "Alice"
     print("Hello", name)
 
 greet()</code></pre>
 
     <h2>Example 2: Global Namespace</h2>
-    <pre><code>language = "Python"
+    <pre><code class="language-python">language = "Python"
 
 def show():
     print("Programming in", language)
@@ -45,7 +45,7 @@ def show():
 show()</code></pre>
 
     <h2>Example 3: Modifying Global Inside Function</h2>
-    <pre><code>count = 10
+    <pre><code class="language-python">count = 10
 
 def update():
     global count
@@ -55,10 +55,10 @@ update()
 print(count)</code></pre>
 
     <h2>Example 4: Built-in Namespace</h2>
-    <pre><code>print(len("hello"))  # 'len' is from built-in namespace</code></pre>
+    <pre><code class="language-python">print(len("hello"))  # 'len' is from built-in namespace</code></pre>
 
     <h2>Example 5: Nested Function (Enclosing Namespace)</h2>
-    <pre><code>def outer():
+    <pre><code class="language-python">def outer():
     x = "outer value"
 
     def inner():

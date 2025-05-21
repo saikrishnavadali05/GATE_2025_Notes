@@ -15,7 +15,7 @@
   <div class="container">
     
     <p>
-      A <strong>module</strong> is a file containing Python code (functions, classes, variables) that you can reuse in other Python programs using the <code>import</code> statement. This helps you organize code logically and encourages reusability.
+      A <strong>module</strong> is a file containing Python code (functions, classes, variables) that you can reuse in other Python programs using the <code class="language-python">import</code> statement. This helps you organize code logically and encourages reusability.
     </p>
 
     <h2>Why Use Modules?</h2>
@@ -27,30 +27,30 @@
     </ul>
 
     <h2>Using Built-in Modules</h2>
-    <pre><code>import math
+    <pre><code class="language-python">import math
 
 print(math.sqrt(16))  # Output: 4.0
 print(math.pi)        # Output: 3.141592653589793</code></pre>
 
     <h2>Creating and Using Your Own Module</h2>
-    <p>Suppose you create a file named <code>my_utils.py</code>:</p>
-    <pre><code># my_utils.py
+    <p>Suppose you create a file named <code class="language-python">my_utils.py</code>:</p>
+    <pre><code class="language-python"># my_utils.py
 def greet(name):
     return f"Hello, {name}!"
 </code></pre>
     <p>Then use it in another Python file:</p>
-    <pre><code>import my_utils
+    <pre><code class="language-python">import my_utils
 
 print(my_utils.greet("Sai"))  # Output: Hello, Sai!</code></pre>
 
     <h2>Importing Specific Functions</h2>
-    <pre><code>from math import sqrt, pi
+    <pre><code class="language-python">from math import sqrt, pi
 
 print(sqrt(9))  # Output: 3.0
 print(pi)       # Output: 3.141592653589793</code></pre>
 
     <h2>Renaming Modules (Alias)</h2>
-    <pre><code>import math as m
+    <pre><code class="language-python">import math as m
 
 print(m.pow(2, 3))  # Output: 8.0</code></pre>
 
