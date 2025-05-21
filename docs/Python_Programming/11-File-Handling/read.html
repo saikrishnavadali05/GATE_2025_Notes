@@ -1,9 +1,93 @@
 <!DOCTYPE html>
-<html>
-<head><title>Read</title></head>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Reading Files in Python</title>
+  <link href="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/themes/prism.css" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+
 <body>
-<h1>Read</h1>
-<p>This is a placeholder page for the topic: Read.</p>
-<a href="../python-programming.html">Back to Home</a>
+  <header>
+    <h1>Reading Files in Python</h1>
+  </header>
+  <div class="container">
+    <p>Reading files is a fundamental operation in Python programming. Python provides built-in functions and methods to open, read, and close files efficiently.</p>
+
+    <h2>Key Concepts</h2>
+    <ul>
+      <li><strong>Opening Files:</strong> Use <code>open()</code> with a filename and mode (e.g., <code>'r'</code> for reading).</li>
+      <li><strong>Reading Modes:</strong> Text mode (default), binary mode (use <code>'rb'</code>).</li>
+      <li><strong>Reading Methods:</strong> <code>read()</code>, <code>readline()</code>, <code>readlines()</code>.</li>
+      <li><strong>Context Managers:</strong> Use <code>with</code> statement to auto-close files.</li>
+      <li><strong>Handling Large Files:</strong> Read in chunks or line-by-line to save memory.</li>
+    </ul>
+
+    <h2>10 Python Examples for Reading Files</h2>
+
+    <h3>Example 1: Reading entire file content</h3>
+    <pre><code class="language-python">with open('example.txt', 'r') as file:
+    content = file.read()
+    print(content)</code></pre>
+
+    <h3>Example 2: Reading file line by line using readline()</h3>
+    <pre><code class="language-python">with open('example.txt', 'r') as file:
+    line = file.readline()
+    while line:
+        print(line.strip())
+        line = file.readline()</code></pre>
+
+    <h3>Example 3: Reading all lines into a list</h3>
+    <pre><code class="language-python">with open('example.txt', 'r') as file:
+    lines = file.readlines()
+    for line in lines:
+        print(line.strip())</code></pre>
+
+    <h3>Example 4: Using a for loop directly on the file object</h3>
+    <pre><code class="language-python">with open('example.txt', 'r') as file:
+    for line in file:
+        print(line.strip())</code></pre>
+
+    <h3>Example 5: Reading a specific number of characters</h3>
+    <pre><code class="language-python">with open('example.txt', 'r') as file:
+    content = file.read(100)  # read first 100 characters
+    print(content)</code></pre>
+
+    <h3>Example 6: Reading file in binary mode</h3>
+    <pre><code class="language-python">with open('image.png', 'rb') as file:
+    data = file.read()
+    print(len(data), "bytes read")</code></pre>
+
+    <h3>Example 7: Reading large files line by line</h3>
+    <pre><code class="language-python">with open('largefile.txt', 'r') as file:
+    for line in file:
+        process(line)  # replace with your processing logic</code></pre>
+
+    <h3>Example 8: Reading file with encoding specified</h3>
+    <pre><code class="language-python">with open('example_utf8.txt', 'r', encoding='utf-8') as file:
+    content = file.read()
+    print(content)</code></pre>
+
+    <h3>Example 9: Reading and stripping whitespace</h3>
+    <pre><code class="language-python">with open('example.txt', 'r') as file:
+    lines = [line.strip() for line in file]
+    print(lines)</code></pre>
+
+    <h3>Example 10: Handling file not found error</h3>
+    <pre><code class="language-python">try:
+    with open('missing.txt', 'r') as file:
+        content = file.read()
+except FileNotFoundError:
+    print("File not found!")</code></pre>
+
+    <a href="xml.html" class="nav-link">Back: XML</a>
+    <a href="write.html" class="nav-link">Next: Writing Files</a>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/prism.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-python.min.js"></script>
 </body>
+
 </html>

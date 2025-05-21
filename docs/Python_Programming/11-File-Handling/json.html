@@ -1,9 +1,134 @@
 <!DOCTYPE html>
-<html>
-<head><title>Json</title></head>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>JSON File Handling in Python</title>
+  <link href="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/themes/prism.css" rel="stylesheet" />
+  <link rel="stylesheet" href="../style.css" />
+</head>
+
 <body>
-<h1>Json</h1>
-<p>This is a placeholder page for the topic: Json.</p>
-<a href="../python-programming.html">Back to Home</a>
+  <header>
+    <h1>Working with JSON Files in Python</h1>
+  </header>
+
+  <div class="container">
+    <p>
+      JSON (JavaScript Object Notation) is a lightweight, text-based format for data exchange. Python's built-in
+      <code>json</code> module allows easy reading, writing, and manipulation of JSON data.
+    </p>
+
+    <h2>Key Features of the <code>json</code> Module</h2>
+    <ul>
+      <li>Convert Python objects to JSON strings and vice versa.</li>
+      <li>Read and write JSON files efficiently.</li>
+      <li>Supports complex nested structures: lists, dicts, strings, numbers, booleans, and None.</li>
+      <li>Custom encoding and decoding with <code>JSONEncoder</code> and <code>JSONDecoder</code>.</li>
+      <li>Indentation and formatting options for human-readable JSON output.</li>
+    </ul>
+
+    <h2>Example 1: Convert Python dict to JSON string</h2>
+    <pre><code class="language-python">import json
+
+data = {'name': 'Alice', 'age': 30, 'city': 'New York'}
+json_str = json.dumps(data)
+print(json_str)</code></pre>
+
+    <h2>Example 2: Convert JSON string to Python dict</h2>
+    <pre><code class="language-python">import json
+
+json_str = '{"name": "Bob", "age": 25, "city": "Chicago"}'
+data = json.loads(json_str)
+print(data['name'])</code></pre>
+
+    <h2>Example 3: Write JSON to a file</h2>
+    <pre><code class="language-python">import json
+
+data = {'name': 'John', 'age': 40, 'city': 'Boston'}
+with open('data.json', 'w') as f:
+    json.dump(data, f)</code></pre>
+
+    <h2>Example 4: Read JSON from a file</h2>
+    <pre><code class="language-python">import json
+
+with open('data.json', 'r') as f:
+    data = json.load(f)
+print(data)</code></pre>
+
+    <h2>Example 5: Pretty-print JSON string with indentation</h2>
+    <pre><code class="language-python">import json
+
+data = {'name': 'Eve', 'age': 22, 'languages': ['Python', 'JavaScript']}
+json_str = json.dumps(data, indent=4)
+print(json_str)</code></pre>
+
+    <h2>Example 6: JSON with non-ASCII characters</h2>
+    <pre><code class="language-python">import json
+
+data = {'name': 'José', 'city': 'München'}
+json_str = json.dumps(data, ensure_ascii=False)
+print(json_str)</code></pre>
+
+    <h2>Example 7: Serialize custom Python object</h2>
+    <pre><code class="language-python">import json
+
+class Person:
+    def __init__(self, name, age):
+        self.name = name
+        self.age = age
+
+def person_encoder(obj):
+    if isinstance(obj, Person):
+        return {'name': obj.name, 'age': obj.age}
+    raise TypeError('Object not serializable')
+
+p = Person('Anna', 28)
+json_str = json.dumps(p, default=person_encoder)
+print(json_str)</code></pre>
+
+    <h2>Example 8: Deserialize JSON to custom Python object</h2>
+    <pre><code class="language-python">import json
+
+class Person:
+    def __init__(self, name, age):
+        self.name = name
+        self.age = age
+
+def person_decoder(d):
+    return Person(d['name'], d['age'])
+
+json_str = '{"name": "Anna", "age": 28}'
+p = json.loads(json_str, object_hook=person_decoder)
+print(p.name, p.age)</code></pre>
+
+    <h2>Example 9: Handling JSON arrays</h2>
+    <pre><code class="language-python">import json
+
+json_str = '[{"name": "Alice"}, {"name": "Bob"}, {"name": "Charlie"}]'
+data = json.loads(json_str)
+for item in data:
+    print(item['name'])</code></pre>
+
+    <h2>Example 10: Encoding Python sets (not supported natively)</h2>
+    <pre><code class="language-python">import json
+
+def set_encoder(obj):
+    if isinstance(obj, set):
+        return list(obj)
+    raise TypeError('Type not serializable')
+
+data = {'numbers': {1, 2, 3}}
+json_str = json.dumps(data, default=set_encoder)
+print(json_str)</code></pre>
+
+    <a href="csv.html" class="nav-link">Back: CSV Files</a>
+    <a href="xml.html" class="nav-link">Next: XML Files</a>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/prism.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-python.min.js"></script>
 </body>
+
 </html>

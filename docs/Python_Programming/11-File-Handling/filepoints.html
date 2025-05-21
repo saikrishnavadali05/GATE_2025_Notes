@@ -1,9 +1,100 @@
 <!DOCTYPE html>
-<html>
-<head><title>Filepoints</title></head>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Important Points for File Handling in Python</title>
+  <link href="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/themes/prism.css" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+
 <body>
-<h1>Filepoints</h1>
-<p>This is a placeholder page for the topic: Filepoints.</p>
-<a href="../python-programming.html">Back to Home</a>
+  <header>
+    <h1>Important Points for File Handling in Python</h1>
+  </header>
+  <div class="container">
+    <p>File handling is a crucial skill in Python programming. Below are key points and best practices to ensure safe and efficient file operations.</p>
+
+    <h2>Key Points</h2>
+    <ul>
+      <li><strong>Use context managers:</strong> Always use <code>with open()</code> to handle files, which automatically closes the file after use.</li>
+      <li><strong>File modes:</strong> Understand file modes like <code>'r'</code> (read), <code>'w'</code> (write), <code>'a'</code> (append), <code>'b'</code> (binary), and <code>'+' </code>(read/write).</li>
+      <li><strong>File encoding:</strong> Specify encoding (e.g., <code>utf-8</code>) when reading/writing text files to avoid encoding errors.</li>
+      <li><strong>Exception handling:</strong> Use try-except blocks to gracefully handle errors like <code>FileNotFoundError</code> and <code>IOError</code>.</li>
+      <li><strong>Path management:</strong> Use <code>os.path</code> or <code>pathlib</code> for cross-platform path handling.</li>
+      <li><strong>Avoid data loss:</strong> Be cautious with write mode <code>'w'</code>, as it overwrites existing files.</li>
+      <li><strong>Large files:</strong> Read large files in chunks or line by line to avoid memory overload.</li>
+      <li><strong>File permissions:</strong> Be aware of file permissions and ensure your script has rights to access or modify files.</li>
+      <li><strong>Temporary files:</strong> Use the <code>tempfile</code> module for creating temporary files and directories safely.</li>
+      <li><strong>Close files:</strong> If not using context managers, always close files explicitly using <code>file.close()</code>.</li>
+    </ul>
+
+    <h2>Best Practices Examples</h2>
+
+    <h3>Example 1: Using with statement to read a file</h3>
+    <pre><code class="language-python">with open('data.txt', 'r', encoding='utf-8') as file:
+    content = file.read()
+print(content)</code></pre>
+
+    <h3>Example 2: Writing to a file with exception handling</h3>
+    <pre><code class="language-python">try:
+    with open('output.txt', 'w', encoding='utf-8') as file:
+        file.write("Hello, world!")
+except IOError as e:
+    print("File error:", e)</code></pre>
+
+    <h3>Example 3: Using pathlib for paths</h3>
+    <pre><code class="language-python">from pathlib import Path
+file_path = Path('example.txt')
+if file_path.exists():
+    print("File exists.")</code></pre>
+
+    <h3>Example 4: Reading a large file line by line</h3>
+    <pre><code class="language-python">with open('large_file.txt', 'r') as file:
+    for line in file:
+        print(line.strip())</code></pre>
+
+    <h3>Example 5: Appending to a file</h3>
+    <pre><code class="language-python">with open('log.txt', 'a') as file:
+    file.write("New log entry\n")</code></pre>
+
+    <h3>Example 6: Using tempfile for a temporary file</h3>
+    <pre><code class="language-python">import tempfile
+with tempfile.TemporaryFile() as temp_file:
+    temp_file.write(b'Hello temp')
+    temp_file.seek(0)
+    print(temp_file.read())</code></pre>
+
+    <h3>Example 7: Checking file permissions</h3>
+    <pre><code class="language-python">import os
+filepath = 'example.txt'
+if os.access(filepath, os.W_OK):
+    print("File is writable")</code></pre>
+
+    <h3>Example 8: Safely renaming a file</h3>
+    <pre><code class="language-python">import os
+os.rename('oldname.txt', 'newname.txt')</code></pre>
+
+    <h3>Example 9: Deleting a file with error handling</h3>
+    <pre><code class="language-python">import os
+try:
+    os.remove('tempfile.txt')
+except FileNotFoundError:
+    print("File not found.")</code></pre>
+
+    <h3>Example 10: Writing JSON to a file</h3>
+    <pre><code class="language-python">import json
+data = {'name': 'Alice', 'age': 30}
+with open('data.json', 'w') as file:
+    json.dump(data, file)</code></pre>
+
+    <a href="delete.html" class="nav-link">Back: Deleting Files</a>
+    <a href="important.html" class="nav-link">Next: Important Points Summary</a>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/prism.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-python.min.js"></script>
 </body>
+
 </html>

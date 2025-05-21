@@ -1,9 +1,89 @@
 <!DOCTYPE html>
-<html>
-<head><title>Write</title></head>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Writing Files in Python</title>
+  <link href="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/themes/prism.css" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+
 <body>
-<h1>Write</h1>
-<p>This is a placeholder page for the topic: Write.</p>
-<a href="../python-programming.html">Back to Home</a>
+  <header>
+    <h1>Writing Files in Python</h1>
+  </header>
+  <div class="container">
+    <p>Writing data to files is a core operation for data persistence, logging, and data export. Python offers simple and flexible methods to write text or binary data to files.</p>
+
+    <h2>Key Concepts</h2>
+    <ul>
+      <li><strong>Opening Files for Writing:</strong> Use <code>'w'</code> mode to write (overwrites existing content), <code>'a'</code> to append.</li>
+      <li><strong>Writing Methods:</strong> <code>write()</code>, <code>writelines()</code>.</li>
+      <li><strong>Binary Writing:</strong> Use <code>'wb'</code> mode for writing binary data.</li>
+      <li><strong>File Auto-closing:</strong> Use <code>with</code> statement for safe file handling.</li>
+      <li><strong>File Position:</strong> Writing starts at the beginning (overwrite) or end (append) depending on mode.</li>
+    </ul>
+
+    <h2>10 Python Examples for Writing Files</h2>
+
+    <h3>Example 1: Writing a string to a file</h3>
+    <pre><code class="language-python">with open('output.txt', 'w') as file:
+    file.write("Hello, world!\n")</code></pre>
+
+    <h3>Example 2: Writing multiple lines using writelines()</h3>
+    <pre><code class="language-python">lines = ["Line 1\n", "Line 2\n", "Line 3\n"]
+with open('output.txt', 'w') as file:
+    file.writelines(lines)</code></pre>
+
+    <h3>Example 3: Appending text to an existing file</h3>
+    <pre><code class="language-python">with open('output.txt', 'a') as file:
+    file.write("This line is appended.\n")</code></pre>
+
+    <h3>Example 4: Writing numbers as strings</h3>
+    <pre><code class="language-python">numbers = [1, 2, 3, 4]
+with open('numbers.txt', 'w') as file:
+    for num in numbers:
+        file.write(str(num) + '\\n')</code></pre>
+
+    <h3>Example 5: Writing with encoding specified</h3>
+    <pre><code class="language-python">with open('utf8.txt', 'w', encoding='utf-8') as file:
+    file.write("Some UTF-8 text: café\n")</code></pre>
+
+    <h3>Example 6: Writing binary data</h3>
+    <pre><code class="language-python">with open('binaryfile.bin', 'wb') as file:
+    data = bytes([120, 3, 255, 0])
+    file.write(data)</code></pre>
+
+    <h3>Example 7: Writing formatted data using f-strings</h3>
+    <pre><code class="language-python">name = "Alice"
+score = 95
+with open('results.txt', 'w') as file:
+    file.write(f"{name} scored {score} points.\n")</code></pre>
+
+    <h3>Example 8: Using try-except with file writing</h3>
+    <pre><code class="language-python">try:
+    with open('output.txt', 'w') as file:
+        file.write("Safe writing example\n")
+except IOError as e:
+    print("File write error:", e)</code></pre>
+
+    <h3>Example 9: Writing lines from user input</h3>
+    <pre><code class="language-python">with open('user_input.txt', 'w') as file:
+    for _ in range(3):
+        line = input("Enter a line: ")
+        file.write(line + '\\n')</code></pre>
+
+    <h3>Example 10: Overwriting a file with empty content</h3>
+    <pre><code class="language-python">with open('output.txt', 'w') as file:
+    pass  # this truncates the file, making it empty</code></pre>
+
+    <a href="read.html" class="nav-link">Back: Reading Files</a>
+    <a href="delete.html" class="nav-link">Next: Deleting Files</a>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/prism.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-python.min.js"></script>
 </body>
+
 </html>

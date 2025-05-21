@@ -1,9 +1,98 @@
 <!DOCTYPE html>
-<html>
-<head><title>Delete</title></head>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Deleting Files and Directories in Python</title>
+  <link href="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/themes/prism.css" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+
 <body>
-<h1>Delete</h1>
-<p>This is a placeholder page for the topic: Delete.</p>
-<a href="../python-programming.html">Back to Home</a>
+  <header>
+    <h1>Deleting Files and Directories in Python</h1>
+  </header>
+  <div class="container">
+    <p>Deleting files and directories is an essential operation for managing storage and cleaning up unnecessary data. Python's <code>os</code> and <code>shutil</code> modules provide methods to safely remove files and folders.</p>
+
+    <h2>Key Concepts</h2>
+    <ul>
+      <li><strong>os.remove(path):</strong> Deletes a file at the specified path.</li>
+      <li><strong>os.unlink(path):</strong> Alias for <code>os.remove()</code>, also deletes a file.</li>
+      <li><strong>os.rmdir(path):</strong> Removes an empty directory.</li>
+      <li><strong>shutil.rmtree(path):</strong> Recursively deletes a directory and all its contents.</li>
+      <li><strong>Check before deleting:</strong> Always check if the file or directory exists to avoid errors.</li>
+      <li><strong>Handle exceptions:</strong> Use try-except to gracefully handle deletion errors.</li>
+    </ul>
+
+    <h2>10 Python Examples for Deleting Files and Directories</h2>
+
+    <h3>Example 1: Delete a single file</h3>
+    <pre><code class="language-python">import os
+os.remove('sample.txt')</code></pre>
+
+    <h3>Example 2: Delete a file with error handling</h3>
+    <pre><code class="language-python">import os
+try:
+    os.remove('sample.txt')
+except FileNotFoundError:
+    print("File not found.")</code></pre>
+
+    <h3>Example 3: Delete a file using os.unlink()</h3>
+    <pre><code class="language-python">import os
+os.unlink('sample.txt')</code></pre>
+
+    <h3>Example 4: Remove an empty directory</h3>
+    <pre><code class="language-python">import os
+os.rmdir('empty_folder')</code></pre>
+
+    <h3>Example 5: Remove a directory and all contents recursively</h3>
+    <pre><code class="language-python">import shutil
+shutil.rmtree('folder_with_files')</code></pre>
+
+    <h3>Example 6: Check if file exists before deleting</h3>
+    <pre><code class="language-python">import os
+file_path = 'sample.txt'
+if os.path.exists(file_path):
+    os.remove(file_path)
+else:
+    print("File does not exist.")</code></pre>
+
+    <h3>Example 7: Check if directory exists before removing</h3>
+    <pre><code class="language-python">import os
+dir_path = 'old_folder'
+if os.path.isdir(dir_path):
+    os.rmdir(dir_path)
+else:
+    print("Directory does not exist or is not empty.")</code></pre>
+
+    <h3>Example 8: Delete files with specific extension in a directory</h3>
+    <pre><code class="language-python">import os
+folder = 'logs'
+for filename in os.listdir(folder):
+    if filename.endswith('.log'):
+        os.remove(os.path.join(folder, filename))</code></pre>
+
+    <h3>Example 9: Safe deletion with try-except for directories</h3>
+    <pre><code class="language-python">import shutil
+try:
+    shutil.rmtree('temp_folder')
+except FileNotFoundError:
+    print("Folder not found.")</code></pre>
+
+    <h3>Example 10: Delete a file using pathlib</h3>
+    <pre><code class="language-python">from pathlib import Path
+file = Path('sample.txt')
+if file.exists():
+    file.unlink()</code></pre>
+
+    <a href="write.html" class="nav-link">Back: Writing Files</a>
+    <a href="filepoints.html" class="nav-link">Next: File Handling Important Points</a>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/prism.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-python.min.js"></script>
 </body>
+
 </html>

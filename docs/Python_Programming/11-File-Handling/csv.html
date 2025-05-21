@@ -1,9 +1,128 @@
 <!DOCTYPE html>
-<html>
-<head><title>Csv</title></head>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>CSV File Handling in Python</title>
+  <link href="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/themes/prism.css" rel="stylesheet" />
+  <link rel="stylesheet" href="../style.css" />
+</head>
+
 <body>
-<h1>Csv</h1>
-<p>This is a placeholder page for the topic: Csv.</p>
-<a href="../python-programming.html">Back to Home</a>
+  <header>
+    <h1>Working with CSV Files in Python</h1>
+  </header>
+
+  <div class="container">
+    <p>
+      CSV (Comma-Separated Values) files are widely used for storing tabular data. Python’s built-in <code>csv</code> module
+      provides powerful tools to read from and write to CSV files efficiently.
+    </p>
+
+    <h2>Key Features of the <code>csv</code> Module</h2>
+    <ul>
+      <li>Supports reading and writing CSV with customizable delimiters (commas, tabs, pipes, etc.).</li>
+      <li>Handles quoting and escaping of special characters automatically.</li>
+      <li>Provides <code>DictReader</code> and <code>DictWriter</code> for dictionary-based access.</li>
+      <li>Works well with large CSV files using iterators to conserve memory.</li>
+      <li>Allows control over newline characters and file encoding.</li>
+    </ul>
+
+    <h2>Example 1: Reading a CSV File</h2>
+    <pre><code class="language-python">import csv
+
+with open('data.csv', newline='') as csvfile:
+    reader = csv.reader(csvfile)
+    for row in reader:
+        print(row)</code></pre>
+
+    <h2>Example 2: Writing to a CSV File</h2>
+    <pre><code class="language-python">import csv
+
+with open('output.csv', 'w', newline='') as csvfile:
+    writer = csv.writer(csvfile)
+    writer.writerow(['Name', 'Age', 'City'])
+    writer.writerow(['Alice', 30, 'New York'])</code></pre>
+
+    <h2>Example 3: Using a Different Delimiter</h2>
+    <pre><code class="language-python">import csv
+
+with open('data.tsv', 'w', newline='') as tsvfile:
+    writer = csv.writer(tsvfile, delimiter='\t')
+    writer.writerow(['Name', 'Age', 'City'])
+    writer.writerow(['Bob', 25, 'Chicago'])</code></pre>
+
+    <h2>Example 4: Reading CSV with DictReader</h2>
+    <pre><code class="language-python">import csv
+
+with open('data.csv', newline='') as csvfile:
+    reader = csv.DictReader(csvfile)
+    for row in reader:
+        print(row['Name'], row['Age'])</code></pre>
+
+    <h2>Example 5: Writing CSV with DictWriter</h2>
+    <pre><code class="language-python">import csv
+
+fields = ['Name', 'Age', 'City']
+rows = [{'Name': 'John', 'Age': 40, 'City': 'Boston'}]
+
+with open('output.csv', 'w', newline='') as csvfile:
+    writer = csv.DictWriter(csvfile, fieldnames=fields)
+    writer.writeheader()
+    writer.writerows(rows)</code></pre>
+
+    <h2>Example 6: Handling Quoting in CSV</h2>
+    <pre><code class="language-python">import csv
+
+with open('quotes.csv', 'w', newline='') as csvfile:
+    writer = csv.writer(csvfile, quoting=csv.QUOTE_ALL)
+    writer.writerow(['Name', 'Quote'])
+    writer.writerow(['Alice', 'Hello, "world"!'])</code></pre>
+
+    <h2>Example 7: Skipping Headers While Reading</h2>
+    <pre><code class="language-python">import csv
+
+with open('data.csv', newline='') as csvfile:
+    reader = csv.reader(csvfile)
+    next(reader)  # skip header
+    for row in reader:
+        print(row)</code></pre>
+
+    <h2>Example 8: Reading Large CSV with Iterator</h2>
+    <pre><code class="language-python">import csv
+
+def read_large_csv(filename):
+    with open(filename, newline='') as csvfile:
+        reader = csv.reader(csvfile)
+        for row in reader:
+            yield row
+
+for row in read_large_csv('large_data.csv'):
+    print(row)</code></pre>
+
+    <h2>Example 9: Writing CSV with Custom Line Terminator</h2>
+    <pre><code class="language-python">import csv
+
+with open('custom_lines.csv', 'w', newline='') as csvfile:
+    writer = csv.writer(csvfile, lineterminator='\n\n')
+    writer.writerow(['Name', 'Age'])
+    writer.writerow(['Eve', 22])</code></pre>
+
+    <h2>Example 10: Reading CSV with Specific Encoding</h2>
+    <pre><code class="language-python">import csv
+
+with open('data_utf8.csv', newline='', encoding='utf-8') as csvfile:
+    reader = csv.reader(csvfile)
+    for row in reader:
+        print(row)</code></pre>
+
+    <a href="ch11overview.html" class="nav-link">Back: Chapter 11 Overview</a>
+    <a href="json.html" class="nav-link">Next: JSON Files</a>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/prism.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-python.min.js"></script>
 </body>
+
 </html>

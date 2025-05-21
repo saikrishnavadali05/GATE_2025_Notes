@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Chapter 11 Overview: File Handling</title>
+  <link href="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/themes/prism.css" rel="stylesheet" />
+  <link rel="stylesheet" href="../style.css" />
+</head>
+
+<body>
+  <header>
+    <h1>Chapter 11: File Handling in Python</h1>
+  </header>
+
+  <div class="container">
+    <p>
+      This chapter introduces essential techniques for managing files using Python. You will learn how to read, write,
+      modify, and delete files efficiently, as well as work with common data formats like CSV, JSON, and XML.
+    </p>
+
+    <h2>Topics Covered</h2>
+
+    <h3><a href="csv.html">CSV Files</a></h3>
+    <p>
+      - Reading and writing CSV files using the <code>csv</code> module.<br />
+      - Handling different delimiters and quoting.<br />
+      - Using <code>DictReader</code> and <code>DictWriter</code> for dictionary-based access.<br />
+      - Working with large CSV files efficiently.<br />
+      - Use cases for CSV in data exchange and simple databases.
+    </p>
+
+    <h3><a href="json.html">JSON Files</a></h3>
+    <p>
+      - Loading and dumping JSON data with the <code>json</code> module.<br />
+      - Managing nested and complex JSON structures.<br />
+      - Pretty-printing and compacting JSON data.<br />
+      - Custom serialization with <code>JSONEncoder</code> and <code>JSONDecoder</code>.<br />
+      - Using JSON for configuration and API communication.
+    </p>
+
+    <h3><a href="xml.html">XML Files</a></h3>
+    <p>
+      - Parsing XML documents with <code>xml.etree.ElementTree</code>.<br />
+      - Creating and modifying XML elements and attributes.<br />
+      - Navigating XML trees and extracting data.<br />
+      - Understanding namespaces and XML validation.<br />
+      - Use cases for XML in data interchange and configuration.
+    </p>
+
+    <h3><a href="read.html">Reading Files</a></h3>
+    <p>
+      - Opening files with various modes (<code>r</code>, <code>rb</code>, etc.).<br />
+      - Reading files line-by-line or entire contents.<br />
+      - Using file iterators for memory-efficient reading.<br />
+      - Handling encoding and decoding of text files.<br />
+      - Detecting and managing end-of-file and empty files.
+    </p>
+
+    <h3><a href="write.html">Writing Files</a></h3>
+    <p>
+      - Writing text and binary data to files.<br />
+      - Appending data versus overwriting.<br />
+      - Buffering and flushing output streams.<br />
+      - Creating temporary files safely.<br />
+      - Managing file permissions and error handling during writes.
+    </p>
+
+    <h3><a href="delete.html">Deleting Files</a></h3>
+    <p>
+      - Removing files and directories using <code>os.remove()</code> and <code>os.rmdir()</code>.<br />
+      - Using <code>shutil.rmtree()</code> to delete directories recursively.<br />
+      - Handling errors if files or directories do not exist.<br />
+      - Safe deletion practices and confirmation prompts.<br />
+      - Cleaning up temporary files and directories.
+    </p>
+
+    <h3><a href="filepoints.html">File Pointers and Positioning</a></h3>
+    <p>
+      - Understanding file pointers and their role in file I/O.<br />
+      - Using <code>seek()</code> to move the pointer to desired positions.<br />
+      - Using <code>tell()</code> to find the current position.<br />
+      - Working with relative and absolute file positions.<br />
+      - Practical examples of random access in files.
+    </p>
+
+    <h3><a href="important.html">Important File Handling Tips</a></h3>
+    <p>
+      - Using context managers (<code>with</code> statements) to ensure files close automatically.<br />
+      - Handling exceptions during file operations to avoid data loss.<br />
+      - Managing file locks and concurrency issues.<br />
+      - Choosing the right file mode and encoding for your application.<br />
+      - Performance considerations when working with large files.
+    </p>
+
+    <a href="../10-Advanced-Python-Tools/ch10overview.html" class="nav-link">Back to Chapter 10 Overview</a>
+    <a href="assignment.html" class="nav-link">Next: Chapter 11 Assignment</a>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/prism.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-python.min.js"></script>
+</body>
+
+</html>
