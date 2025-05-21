@@ -1,9 +1,85 @@
 <!DOCTYPE html>
-<html>
-<head><title>Comprehensions</title></head>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>List, Dict, and Set Comprehensions</title>
+  <link href="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/themes/prism.css" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+
 <body>
-<h1>Comprehensions</h1>
-<p>This is a placeholder page for the topic: Comprehensions.</p>
-<a href="../python-programming.html">Back to Home</a>
+  <header>
+    <h1>List, Dict, and Set Comprehensions</h1>
+  </header>
+
+  <div class="container">
+    <p>
+      Comprehensions in Python provide a concise way to create lists, dictionaries, and sets using a single readable expression.
+      They make code more elegant and efficient, especially when working with iterables.
+    </p>
+
+    <h2>List Comprehensions</h2>
+
+    <h3>Example 1: Basic list comprehension</h3>
+    <pre><code class="language-python">squares = [x**2 for x in range(10)]
+print(squares)</code></pre>
+
+    <h3>Example 2: Using an if condition</h3>
+    <pre><code class="language-python">evens = [x for x in range(20) if x % 2 == 0]
+print(evens)</code></pre>
+
+    <h3>Example 3: Nested loops in comprehension</h3>
+    <pre><code class="language-python">pairs = [(x, y) for x in [1, 2] for y in [3, 4]]
+print(pairs)</code></pre>
+
+    <h3>Example 4: Conditional expression inside comprehension</h3>
+    <pre><code class="language-python">results = [x if x > 5 else 0 for x in range(10)]
+print(results)</code></pre>
+
+    <h3>Example 5: Flattening a list of lists</h3>
+    <pre><code class="language-python">matrix = [[1, 2], [3, 4], [5, 6]]
+flat = [num for row in matrix for num in row]
+print(flat)</code></pre>
+
+    <h2>Dictionary Comprehensions</h2>
+
+    <h3>Example 6: Creating a dict from a list</h3>
+    <pre><code class="language-python">nums = [1, 2, 3]
+squares = {n: n**2 for n in nums}
+print(squares)</code></pre>
+
+    <h3>Example 7: Filtering items in dict comprehension</h3>
+    <pre><code class="language-python">nums = range(10)
+even_squares = {n: n**2 for n in nums if n % 2 == 0}
+print(even_squares)</code></pre>
+
+    <h3>Example 8: Swapping keys and values</h3>
+    <pre><code class="language-python">d = {'a': 1, 'b': 2}
+swapped = {v: k for k, v in d.items()}
+print(swapped)</code></pre>
+
+    <h2>Set Comprehensions</h2>
+
+    <h3>Example 9: Basic set comprehension</h3>
+    <pre><code class="language-python">unique_squares = {x**2 for x in [-2, -1, 0, 1, 2]}
+print(unique_squares)</code></pre>
+
+    <h3>Example 10: Using conditionals in set comprehension</h3>
+    <pre><code class="language-python">filtered = {x for x in range(10) if x % 3 != 0}
+print(filtered)</code></pre>
+
+    <p>
+      Comprehensions are powerful tools for writing clear, concise, and performant Python code when working with iterables.
+    </p>
+
+    <a href="tools.html" class="nav-link">Back: Useful Python Tools</a>
+    <a href="assignment.html" class="nav-link">Next: Assignment</a>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/prism.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-python.min.js"></script>
 </body>
+
 </html>
