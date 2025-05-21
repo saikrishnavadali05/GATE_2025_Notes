@@ -1,9 +1,78 @@
 <!DOCTYPE html>
-<html>
-<head><title>Regex</title></head>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Regular Expressions</title>
+  <link href="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/themes/prism.css" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css">
+</head>
+
 <body>
-<h1>Regex</h1>
-<p>This is a placeholder page for the topic: Regex.</p>
-<a href="../python-programming.html">Back to Home</a>
+  <header>
+    <h1>Regular Expressions</h1>
+  </header>
+  <div class="container">
+    <p>Regular expressions (regex) are powerful tools used for pattern matching and text processing. Python provides the <code>re</code> module to work with regular expressions.</p>
+
+    <h2>Example 1: Match a word</h2>
+    <pre><code class="language-python">import re
+pattern = r"apple"
+text = "I ate an apple."
+print(re.search(pattern, text))</code></pre>
+
+    <h2>Example 2: Match digits</h2>
+    <pre><code class="language-python">pattern = r"\d+"
+text = "There are 24 apples"
+print(re.findall(pattern, text))</code></pre>
+
+    <h2>Example 3: Match email address</h2>
+    <pre><code class="language-python">pattern = r"[\w.-]+@[\w.-]+\.\w+"
+text = "Contact us at info@example.com"
+print(re.search(pattern, text))</code></pre>
+
+    <h2>Example 4: Validate phone number</h2>
+    <pre><code class="language-python">pattern = r"\d{10}"
+text = "My number is 9876543210"
+print(re.search(pattern, text))</code></pre>
+
+    <h2>Example 5: Match words starting with 'a'</h2>
+    <pre><code class="language-python">pattern = r"\ba\w*"
+text = "apple and banana"
+print(re.findall(pattern, text))</code></pre>
+
+    <h2>Example 6: Extract domain from URL</h2>
+    <pre><code class="language-python">pattern = r"https?://(\w+\.\w+)"
+text = "Visit https://example.com for more"
+print(re.search(pattern, text).group(1))</code></pre>
+
+    <h2>Example 7: Replace digits with '#' symbol</h2>
+    <pre><code class="language-python">pattern = r"\d"
+text = "Phone: 12345"
+print(re.sub(pattern, "#", text))</code></pre>
+
+    <h2>Example 8: Match repeated characters</h2>
+    <pre><code class="language-python">pattern = r"a{2,4}"
+text = "aaa aa aaaaa"
+print(re.findall(pattern, text))</code></pre>
+
+    <h2>Example 9: Ignore case while matching</h2>
+    <pre><code class="language-python">pattern = r"python"
+text = "I love Python"
+print(re.search(pattern, text, re.IGNORECASE))</code></pre>
+
+    <h2>Example 10: Match optional character</h2>
+    <pre><code class="language-python">pattern = r"colou?r"
+text = "color and colour are both accepted"
+print(re.findall(pattern, text))</code></pre>
+
+    <a href="ch10overview.html" class="nav-link">Back: Chapter Overview</a>
+    <a href="exceptions.html" class="nav-link">Next: Exception Handling</a>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/prism.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-python.min.js"></script>
 </body>
+
 </html>

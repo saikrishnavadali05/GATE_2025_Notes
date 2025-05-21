@@ -1,9 +1,92 @@
 <!DOCTYPE html>
-<html>
-<head><title>Exceptions</title></head>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exception Handling</title>
+  <link href="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/themes/prism.css" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css">
+</head>
+
 <body>
-<h1>Exceptions</h1>
-<p>This is a placeholder page for the topic: Exceptions.</p>
-<a href="../python-programming.html">Back to Home</a>
+  <header>
+    <h1>Exception Handling</h1>
+  </header>
+  <div class="container">
+    <p>Exception handling in Python allows your program to respond to unexpected errors gracefully using the <code>try</code>, <code>except</code>, <code>finally</code>, and <code>else</code> blocks.</p>
+
+    <h2>Example 1: Basic try-except</h2>
+    <pre><code class="language-python">try:
+  x = 1 / 0
+except ZeroDivisionError:
+  print("Cannot divide by zero")</code></pre>
+
+    <h2>Example 2: Catching multiple exceptions</h2>
+    <pre><code class="language-python">try:
+  int("abc")
+except (ValueError, TypeError) as e:
+  print(f"Error: {e}")</code></pre>
+
+    <h2>Example 3: Using else block</h2>
+    <pre><code class="language-python">try:
+  x = 10
+except:
+  print("Error")
+else:
+  print("No error")</code></pre>
+
+    <h2>Example 4: Finally block</h2>
+    <pre><code class="language-python">try:
+  f = open("file.txt")
+except FileNotFoundError:
+  print("File not found")
+finally:
+  print("Finished")</code></pre>
+
+    <h2>Example 5: Raising exceptions manually</h2>
+    <pre><code class="language-python">x = -1
+if x < 0:
+  raise ValueError("Negative value not allowed")</code></pre>
+
+    <h2>Example 6: Custom exception class</h2>
+    <pre><code class="language-python">class MyError(Exception):
+  pass
+raise MyError("Something went wrong")</code></pre>
+
+    <h2>Example 7: Nested try-except</h2>
+    <pre><code class="language-python">try:
+  try:
+    x = 1 / 0
+  except ZeroDivisionError:
+    print("Inner error")
+except:
+  print("Outer error")</code></pre>
+
+    <h2>Example 8: Using assert</h2>
+    <pre><code class="language-python">x = 5
+assert x > 10, "x should be greater than 10"</code></pre>
+
+    <h2>Example 9: Re-raising exception</h2>
+    <pre><code class="language-python">try:
+  raise ValueError("Invalid input")
+except ValueError as e:
+  print("Caught")
+  raise</code></pre>
+
+    <h2>Example 10: Logging exceptions</h2>
+    <pre><code class="language-python">import logging
+try:
+  1 / 0
+except ZeroDivisionError as e:
+  logging.error("Exception occurred", exc_info=True)</code></pre>
+
+    <a href="regex.html" class="nav-link">Back: Regular Expressions</a>
+    <a href="tools.html" class="nav-link">Next: Useful Python Tools</a>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/prism.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-python.min.js"></script>
 </body>
+
 </html>

@@ -1,9 +1,101 @@
 <!DOCTYPE html>
-<html>
-<head><title>Tools</title></head>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Python Debugging Tools</title>
+  <link href="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/themes/prism.css" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css">
+</head>
+
 <body>
-<h1>Tools</h1>
-<p>This is a placeholder page for the topic: Tools.</p>
-<a href="../python-programming.html">Back to Home</a>
+  <header>
+    <h1>Python Debugging Tools</h1>
+  </header>
+  <div class="container">
+    <p>Debugging is a vital part of software development. Python provides various tools to inspect, diagnose, and resolve issues in code effectively. Below are some essential debugging tools every Python developer should know.</p>
+
+    <h2>Example 1: Using pdb</h2>
+    <pre><code class="language-python">import pdb
+x = 10
+y = 20
+pdb.set_trace()
+print(x + y)</code></pre>
+
+    <h2>Example 2: Using breakpoint()</h2>
+    <pre><code class="language-python">def divide(a, b):
+  breakpoint()
+  return a / b
+
+print(divide(10, 2))</code></pre>
+
+    <h2>Example 3: Logging instead of print debugging</h2>
+    <pre><code class="language-python">import logging
+logging.basicConfig(level=logging.DEBUG)
+x = 5
+logging.debug(f"x = {x}")</code></pre>
+
+    <h2>Example 4: Using traceback to get error details</h2>
+    <pre><code class="language-python">import traceback
+try:
+  1 / 0
+except Exception as e:
+  print("Error:", traceback.format_exc())</code></pre>
+
+    <h2>Example 5: Using warnings module</h2>
+    <pre><code class="language-python">import warnings
+warnings.warn("This is a warning message")</code></pre>
+
+    <h2>Example 6: Using assert to catch bugs early</h2>
+    <pre><code class="language-python">def calculate_area(radius):
+  assert radius > 0, "Radius must be positive"
+  return 3.14 * radius ** 2
+
+print(calculate_area(5))</code></pre>
+
+    <h2>Example 7: Using faulthandler for low-level crashes</h2>
+    <pre><code class="language-python">import faulthandler
+faulthandler.enable()</code></pre>
+
+    <h2>Example 8: Profiling with cProfile</h2>
+    <pre><code class="language-python">import cProfile
+def test():
+  total = 0
+  for i in range(1000):
+    total += i
+  return total
+
+cProfile.run('test()')</code></pre>
+
+    <h2>Example 9: Memory profiling with memory_profiler</h2>
+    <pre><code class="language-python"># Run using: mprof run script.py and then mprof plot
+from memory_profiler import profile
+
+@profile
+def compute():
+  a = [i for i in range(100000)]
+  return sum(a)
+
+compute()</code></pre>
+
+    <h2>Example 10: Line profiling with line_profiler</h2>
+    <pre><code class="language-python"># Use kernprof -l script.py then python -m line_profiler script.py.lprof
+@profile
+def multiply():
+  total = 1
+  for i in range(1, 100):
+    total *= i
+  return total
+
+multiply()</code></pre>
+
+    <a href="exceptions.html" class="nav-link">Back: Exception Handling</a>
+    <a href="comprehensions.html" class="nav-link">Next: Comprehensions</a>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/prism.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-python.min.js"></script>
 </body>
+
 </html>
