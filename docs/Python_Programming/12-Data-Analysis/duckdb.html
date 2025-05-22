@@ -1,9 +1,77 @@
 <!DOCTYPE html>
-<html>
-<head><title>Duckdb</title></head>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DuckDB Basics - Data Analysis</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
 <body>
-<h1>Duckdb</h1>
-<p>This is a placeholder page for the topic: Duckdb.</p>
-<a href="../python-programming.html">Back to Home</a>
+  <header>
+    <h1>DuckDB - Embedded SQL OLAP Database</h1>
+  </header>
+
+  <div class="container">
+    <p>
+      DuckDB is an in-process SQL OLAP database management system designed for efficient analytical queries. It's optimized for fast read-heavy workloads and is ideal for data science applications, especially when working with Pandas and large datasets.
+    </p>
+
+    <h2>Key Features</h2>
+    <ul>
+      <li>SQL support for analytical queries</li>
+      <li>Seamless integration with Pandas DataFrames</li>
+      <li>No server required – runs embedded in Python</li>
+      <li>High performance on columnar storage</li>
+      <li>Export results to Arrow, Parquet, and Pandas</li>
+    </ul>
+
+    <h2>10 Examples</h2>
+    <pre><code class="language-python">import duckdb
+import pandas as pd
+
+# Example 1: Run a SQL query on a Pandas DataFrame
+df = pd.DataFrame({"id": [1, 2, 3], "value": [10, 20, 30]})
+result = duckdb.query("SELECT * FROM df WHERE value > 15").df()
+print(result)
+
+# Example 2: Simple SELECT query
+print(duckdb.query("SELECT 42 AS answer").fetchall())
+
+# Example 3: Create a DuckDB table
+duckdb.query("CREATE TABLE items (name VARCHAR, price INTEGER)")
+
+# Example 4: Insert values
+duckdb.query("INSERT INTO items VALUES ('Pen', 10), ('Book', 30)")
+
+# Example 5: Select from table
+print(duckdb.query("SELECT * FROM items").fetchdf())
+
+# Example 6: Aggregate functions
+print(duckdb.query("SELECT AVG(price) FROM items").fetchone())
+
+# Example 7: Join operations
+users = pd.DataFrame({"id": [1, 2], "name": ["Alice", "Bob"]})
+scores = pd.DataFrame({"id": [1, 2], "score": [90, 85]})
+query = "SELECT u.name, s.score FROM users u JOIN scores s ON u.id = s.id"
+print(duckdb.query(query).df())
+
+# Example 8: Working with Parquet
+# duckdb.query("CREATE TABLE parquet_table AS SELECT * FROM 'data.parquet'")
+
+# Example 9: Export to Pandas
+data = duckdb.query("SELECT * FROM items").df()
+print(data)
+
+# Example 10: Using SQL functions
+print(duckdb.query("SELECT LENGTH('DuckDB')").fetchone())</code></pre>
+
+    <div class="navigation">
+      <a href="pandas.html" class="nav-link">Back: Pandas</a>
+      <a href="sql.html" class="nav-link">Next: SQL</a>
+    </div>
+  </div>
 </body>
+
 </html>

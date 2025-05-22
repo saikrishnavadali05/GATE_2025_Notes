@@ -1,9 +1,77 @@
 <!DOCTYPE html>
-<html>
-<head><title>Pandas</title></head>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pandas Basics - Data Analysis</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
 <body>
-<h1>Pandas</h1>
-<p>This is a placeholder page for the topic: Pandas.</p>
-<a href="../python-programming.html">Back to Home</a>
+  <header>
+    <h1>Pandas - Data Manipulation and Analysis</h1>
+  </header>
+
+  <div class="container">
+    <p>
+      Pandas is a powerful data analysis and manipulation library for Python. It provides two core data structures: Series (1D) and DataFrame (2D), which are built on top of NumPy and allow for easy and efficient data handling.
+    </p>
+
+    <h2>Key Features</h2>
+    <ul>
+      <li>Easy handling of missing data</li>
+      <li>Label-based indexing for rows and columns</li>
+      <li>Built-in methods for data aggregation, filtering, and transformation</li>
+      <li>Tools for reading/writing data from CSV, Excel, SQL, and more</li>
+      <li>Time series functionality</li>
+    </ul>
+
+    <h2>10 Examples</h2>
+    <pre><code class="language-python">import pandas as pd
+
+# Example 1: Create a DataFrame
+data = {'Name': ['Alice', 'Bob'], 'Age': [25, 30]}
+df = pd.DataFrame(data)
+print(df)
+
+# Example 2: Read CSV
+df = pd.read_csv('data.csv')
+print(df.head())
+
+# Example 3: Select columns and rows
+print(df['Name'])
+print(df.loc[0])
+
+# Example 4: Filtering data
+print(df[df['Age'] > 26])
+
+# Example 5: Adding new column
+df['Age+10'] = df['Age'] + 10
+print(df)
+
+# Example 6: Group by and aggregate
+print(df.groupby('Name').mean())
+
+# Example 7: Handling missing values
+df['City'] = [None, 'NY']
+print(df.fillna('Unknown'))
+
+# Example 8: Sorting
+print(df.sort_values(by='Age'))
+
+# Example 9: Merging DataFrames
+df2 = pd.DataFrame({'Name': ['Alice'], 'Score': [90]})
+print(pd.merge(df, df2, on='Name'))
+
+# Example 10: Export to CSV
+df.to_csv('output.csv', index=False)</code></pre>
+
+    <div class="navigation">
+      <a href="numpy.html" class="nav-link">Back: NumPy</a>
+      <a href="duckdb.html" class="nav-link">Next: DuckDB</a>
+    </div>
+  </div>
 </body>
+
 </html>

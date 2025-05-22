@@ -1,9 +1,85 @@
 <!DOCTYPE html>
-<html>
-<head><title>Sql</title></head>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SQL with Python - Data Analysis</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
 <body>
-<h1>Sql</h1>
-<p>This is a placeholder page for the topic: Sql.</p>
-<a href="../python-programming.html">Back to Home</a>
+  <header>
+    <h1>Using SQL in Python</h1>
+  </header>
+
+  <div class="container">
+    <p>
+      SQL (Structured Query Language) is a standard language used to communicate with databases. Python provides multiple libraries such as <code>sqlite3</code>, <code>SQLAlchemy</code>, and integration with tools like <code>Pandas</code> and <code>DuckDB</code> to work with SQL seamlessly.
+    </p>
+
+    <h2>Why Use SQL in Python?</h2>
+    <ul>
+      <li>Efficient querying of structured data</li>
+      <li>Database integration for applications and analysis</li>
+      <li>Combines the power of SQL with Python's flexibility</li>
+      <li>Useful for handling large datasets directly in memory or files</li>
+    </ul>
+
+    <h2>Popular Libraries</h2>
+    <ul>
+      <li><strong>sqlite3</strong> - Built-in module to interact with SQLite databases</li>
+      <li><strong>SQLAlchemy</strong> - ORM that allows SQL expressions and database abstraction</li>
+      <li><strong>Pandas.read_sql()</strong> - Read SQL query results into a DataFrame</li>
+      <li><strong>DuckDB</strong> - Fast analytical database with SQL interface, works well with Pandas</li>
+    </ul>
+
+    <h2>10 Examples</h2>
+    <pre><code class="language-python">import sqlite3
+import pandas as pd
+
+# Example 1: Create connection and cursor
+conn = sqlite3.connect(':memory:')
+cursor = conn.cursor()
+
+# Example 2: Create table
+cursor.execute("CREATE TABLE students (id INTEGER, name TEXT, score REAL)")
+
+# Example 3: Insert data
+cursor.execute("INSERT INTO students VALUES (1, 'Alice', 85.5)")
+conn.commit()
+
+# Example 4: Query data
+cursor.execute("SELECT * FROM students")
+print(cursor.fetchall())
+
+# Example 5: Use parameters
+cursor.execute("SELECT * FROM students WHERE score > ?", (80,))
+print(cursor.fetchall())
+
+# Example 6: Read into Pandas DataFrame
+pd.read_sql("SELECT * FROM students", conn)
+
+# Example 7: Use Pandas to SQL
+df = pd.DataFrame({'id': [2], 'name': ['Bob'], 'score': [90.0]})
+df.to_sql('students', conn, if_exists='append', index=False)
+
+# Example 8: SQLAlchemy ORM basics (requires install)
+from sqlalchemy import create_engine
+engine = create_engine('sqlite:///:memory:')
+
+# Example 9: DuckDB in-memory SQL
+import duckdb
+duckdb.query("SELECT 1 + 1").fetchall()
+
+# Example 10: Join query with Pandas
+pd.read_sql_query("SELECT * FROM students s JOIN students t ON s.id = t.id", conn)</code></pre>
+
+    <div class="navigation">
+      <a href="duckdb.html" class="nav-link">Back: DuckDB</a>
+      <a href="assignment.html" class="nav-link">Next: Assignment</a>
+    </div>
+  </div>
 </body>
+
 </html>
