@@ -1,9 +1,85 @@
 <!DOCTYPE html>
-<html>
-<head><title>Lemmatization</title></head>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Lemmatization - Natural Language Processing</title>
+  <link rel="stylesheet" href="../style.css" />
+</head>
+
 <body>
-<h1>Lemmatization</h1>
-<p>This is a placeholder page for the topic: Lemmatization.</p>
-<a href="../python-programming.html">Back to Home</a>
+  <header>
+    <h1>Lemmatization in NLP</h1>
+  </header>
+
+  <div class="container">
+    <p>
+      Lemmatization is the process of reducing words to their base or dictionary form called a lemma. Unlike stemming, lemmatization considers the context and part of speech, resulting in meaningful root forms.
+    </p>
+
+    <h2>Why Use Lemmatization?</h2>
+    <ul>
+      <li>Converts words to their meaningful base forms.</li>
+      <li>Improves accuracy in text analysis and search.</li>
+      <li>Handles irregular words better than stemming.</li>
+      <li>Useful for linguistic analysis and NLP tasks.</li>
+    </ul>
+
+    <h2>Popular Lemmatizers</h2>
+    <ul>
+      <li><strong>WordNet Lemmatizer:</strong> Based on the WordNet lexical database.</li>
+      <li><strong>Spacy Lemmatizer:</strong> Efficient lemmatization with POS tagging support.</li>
+      <li><strong>TextBlob Lemmatizer:</strong> Simplifies lemmatization with user-friendly API.</li>
+    </ul>
+
+    <h2>10 Examples of Lemmatization</h2>
+    <pre><code class="language-python">from nltk.stem import WordNetLemmatizer
+from nltk.corpus import wordnet
+
+lemmatizer = WordNetLemmatizer()
+
+words = ["running", "runs", "runner", "better", "cats", "studies", "wolves", "was", "geese"]
+
+# Example 1: Lemmatize without POS (default noun)
+print([lemmatizer.lemmatize(word) for word in words])
+
+# Example 2: Lemmatize as verb
+print([lemmatizer.lemmatize(word, pos='v') for word in words])
+
+# Example 3: Lemmatize "better" as adjective
+print(lemmatizer.lemmatize("better", pos='a'))
+
+# Example 4: Lemmatize "was" as verb
+print(lemmatizer.lemmatize("was", pos='v'))
+
+# Example 5: Lemmatize plural nouns
+print(lemmatizer.lemmatize("wolves"))
+print(lemmatizer.lemmatize("geese"))
+
+# Example 6: Lemmatize with context (sentence)
+sentence = ["The", "cats", "are", "running", "fast"]
+print([lemmatizer.lemmatize(word, pos='v') if word in ["running", "are"] else lemmatizer.lemmatize(word) for word in sentence])
+
+# Example 7: Lemmatize irregular verbs
+print(lemmatizer.lemmatize("went", pos='v'))
+print(lemmatizer.lemmatize("gone", pos='v'))
+
+# Example 8: Lemmatize adjectives
+print(lemmatizer.lemmatize("faster", pos='a'))
+print(lemmatizer.lemmatize("fastest", pos='a'))
+
+# Example 9: Lemmatize words with suffixes
+print(lemmatizer.lemmatize("happiness", pos='n'))
+
+# Example 10: Lemmatize compound words (no change)
+print(lemmatizer.lemmatize("multiuser"))</code></pre>
+
+    <div class="navigation">
+      <a href="stemming.html" class="nav-link">Back: Stemming</a>
+      <a href="stemvslemma.html" class="nav-link">Next: Stemming vs Lemmatization</a>
+    </div>
+  </div>
 </body>
+
 </html>

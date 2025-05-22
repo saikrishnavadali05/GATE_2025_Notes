@@ -1,9 +1,93 @@
 <!DOCTYPE html>
-<html>
-<head><title>Cleansing</title></head>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Text Cleansing - Natural Language Processing</title>
+  <link rel="stylesheet" href="../style.css" />
+</head>
+
 <body>
-<h1>Cleansing</h1>
-<p>This is a placeholder page for the topic: Cleansing.</p>
-<a href="../python-programming.html">Back to Home</a>
+  <header>
+    <h1>Text Cleansing in NLP</h1>
+  </header>
+
+  <div class="container">
+    <p>
+      Text cleansing (or text preprocessing) is a crucial step in NLP to prepare raw text data for analysis. It involves removing noise and normalizing the text to improve the quality and accuracy of downstream tasks like tokenization, classification, or sentiment analysis.
+    </p>
+
+    <h2>Common Text Cleansing Steps</h2>
+    <ul>
+      <li><strong>Lowercasing:</strong> Convert all text to lowercase for uniformity.</li>
+      <li><strong>Removing punctuation:</strong> Strip punctuation marks to focus on words.</li>
+      <li><strong>Removing numbers:</strong> Optionally remove digits if not relevant.</li>
+      <li><strong>Removing whitespace:</strong> Trim extra spaces and newlines.</li>
+      <li><strong>Removing stopwords:</strong> Remove common words like "the", "is", "and" that add little meaning.</li>
+      <li><strong>Removing special characters:</strong> Clean out symbols like emojis or HTML tags.</li>
+      <li><strong>Spell correction:</strong> Fix common typos and misspellings (advanced step).</li>
+      <li><strong>Token normalization:</strong> Convert words to base forms via stemming or lemmatization.</li>
+    </ul>
+
+    <h2>10 Examples of Text Cleansing</h2>
+    <pre><code class="language-python">import re
+import nltk
+from nltk.corpus import stopwords
+from nltk.stem import PorterStemmer, WordNetLemmatizer
+
+text = "Hello!!! This is an example: NLP @2024 with #Python. Let's clean it."
+
+# Example 1: Lowercase
+text_lower = text.lower()
+print(text_lower)
+
+# Example 2: Remove punctuation
+text_no_punct = re.sub(r'[^\w\s]', '', text_lower)
+print(text_no_punct)
+
+# Example 3: Remove numbers
+text_no_numbers = re.sub(r'\d+', '', text_no_punct)
+print(text_no_numbers)
+
+# Example 4: Remove extra whitespace
+text_clean = " ".join(text_no_numbers.split())
+print(text_clean)
+
+# Example 5: Remove stopwords
+stop_words = set(stopwords.words('english'))
+filtered_words = [w for w in text_clean.split() if w not in stop_words]
+print(filtered_words)
+
+# Example 6: Remove special characters (like hashtags)
+text_no_special = re.sub(r'[#@]', '', text)
+print(text_no_special)
+
+# Example 7: Stemming
+ps = PorterStemmer()
+stemmed = [ps.stem(w) for w in filtered_words]
+print(stemmed)
+
+# Example 8: Lemmatization
+lemmatizer = WordNetLemmatizer()
+lemmatized = [lemmatizer.lemmatize(w) for w in filtered_words]
+print(lemmatized)
+
+# Example 9: Spell correction (using textblob)
+from textblob import TextBlob
+corrected = str(TextBlob(text).correct())
+print(corrected)
+
+# Example 10: Remove HTML tags (if present)
+html_text = "<p>Hello <b>world</b>!</p>"
+clean_html = re.sub(r'<.*?>', '', html_text)
+print(clean_html)</code></pre>
+
+    <div class="navigation">
+      <a href="nltk.html" class="nav-link">Back: NLTK Basics</a>
+      <a href="senttoken.html" class="nav-link">Next: Sentence Tokenization</a>
+    </div>
+  </div>
 </body>
+
 </html>

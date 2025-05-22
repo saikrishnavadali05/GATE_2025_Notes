@@ -1,9 +1,78 @@
 <!DOCTYPE html>
-<html>
-<head><title>Sentiment</title></head>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Sentiment Analysis - NLP</title>
+  <link rel="stylesheet" href="../style.css" />
+</head>
+
 <body>
-<h1>Sentiment</h1>
-<p>This is a placeholder page for the topic: Sentiment.</p>
-<a href="../python-programming.html">Back to Home</a>
+  <header>
+    <h1>Sentiment Analysis in NLP</h1>
+  </header>
+
+  <div class="container">
+    <p>
+      Sentiment Analysis, also called opinion mining, is the computational study of opinions, sentiments, and emotions expressed in text. It is widely used in understanding customer feedback, social media, and market research.
+    </p>
+
+    <h2>Types of Sentiment Analysis</h2>
+    <ul>
+      <li><strong>Polarity Detection:</strong> Classifying text as positive, negative, or neutral.</li>
+      <li><strong>Emotion Detection:</strong> Identifying specific emotions like joy, anger, sadness.</li>
+      <li><strong>Aspect-based Sentiment Analysis:</strong> Extracting sentiment about specific aspects or features.</li>
+    </ul>
+
+    <h2>Popular Techniques</h2>
+    <ul>
+      <li>Lexicon-based approaches (e.g., VADER, TextBlob)</li>
+      <li>Machine learning models (SVM, Naive Bayes)</li>
+      <li>Deep learning models (RNN, LSTM, Transformers)</li>
+      <li>Pretrained pipelines from libraries like Hugging Face</li>
+    </ul>
+
+    <h2>10 Examples of Sentiment Analysis</h2>
+    <pre><code class="language-python">from textblob import TextBlob
+from vaderSentiment.vaderSentiment import SentimentIntensityAnalyzer
+from transformers import pipeline
+
+# Example 1: Simple polarity detection using TextBlob
+text = "I love this product! It works wonderfully."
+blob = TextBlob(text)
+print(blob.sentiment.polarity)
+
+# Example 2: Using VADER for social media text
+analyzer = SentimentIntensityAnalyzer()
+scores = analyzer.polarity_scores(text)
+print(scores)
+
+# Example 3: Sentiment classification with Hugging Face transformers
+sentiment_pipeline = pipeline("sentiment-analysis")
+result = sentiment_pipeline(text)
+print(result)
+
+# Example 4: Aspect-based sentiment extraction
+
+# Example 5: Training a custom sentiment classifier using scikit-learn
+
+# Example 6: Handling sarcasm and negations
+
+# Example 7: Visualizing sentiment over time in tweets
+
+# Example 8: Multilingual sentiment analysis
+
+# Example 9: Combining sentiment analysis with topic modeling
+
+# Example 10: Sentiment analysis for product reviews and feedback
+</code></pre>
+
+    <div class="navigation">
+      <a href="summarization.html" class="nav-link">Back: Summarization</a>
+      <a href="ch15overview.html" class="nav-link">Next: Chapter 15 Overview</a>
+    </div>
+  </div>
 </body>
+
 </html>

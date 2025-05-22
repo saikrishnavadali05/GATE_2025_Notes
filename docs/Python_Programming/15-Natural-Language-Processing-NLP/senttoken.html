@@ -1,9 +1,91 @@
 <!DOCTYPE html>
-<html>
-<head><title>Senttoken</title></head>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Sentence Tokenization - Natural Language Processing</title>
+  <link rel="stylesheet" href="../style.css" />
+</head>
+
 <body>
-<h1>Senttoken</h1>
-<p>This is a placeholder page for the topic: Senttoken.</p>
-<a href="../python-programming.html">Back to Home</a>
+  <header>
+    <h1>Sentence Tokenization in NLP</h1>
+  </header>
+
+  <div class="container">
+    <p>
+      Sentence tokenization is the process of splitting a paragraph or text into individual sentences. It is a foundational step in NLP tasks like parsing, sentiment analysis, and machine translation.
+    </p>
+
+    <h2>Why Sentence Tokenization?</h2>
+    <ul>
+      <li>Helps in understanding sentence boundaries.</li>
+      <li>Facilitates sentence-level analysis and processing.</li>
+      <li>Enables better feature extraction for models.</li>
+    </ul>
+
+    <h2>Popular Tools for Sentence Tokenization</h2>
+    <ul>
+      <li><strong>NLTK’s sent_tokenize:</strong> A robust tokenizer that handles punctuation and abbreviations.</li>
+      <li><strong>Spacy:</strong> Fast and accurate sentence splitting.</li>
+      <li><strong>Regex-based tokenization:</strong> Basic splitting using punctuation patterns.</li>
+    </ul>
+
+    <h2>10 Examples of Sentence Tokenization</h2>
+    <pre><code class="language-python">import nltk
+from nltk.tokenize import sent_tokenize
+
+text = "Hello world! This is an example. NLP is fun. Let's tokenize sentences."
+
+# Example 1: Basic sentence tokenization
+sentences = sent_tokenize(text)
+print(sentences)
+
+# Example 2: Tokenize a paragraph with abbreviations
+text2 = "Dr. Smith went to Washington. He arrived at 3 p.m. It was sunny."
+print(sent_tokenize(text2))
+
+# Example 3: Using PunktSentenceTokenizer for training
+from nltk.tokenize import PunktSentenceTokenizer
+custom_tokenizer = PunktSentenceTokenizer(text2)
+print(custom_tokenizer.tokenize(text2))
+
+# Example 4: Using SpaCy for sentence tokenization
+import spacy
+nlp = spacy.load("en_core_web_sm")
+doc = nlp(text)
+print([sent.text for sent in doc.sents])
+
+# Example 5: Sentence tokenization with regex (basic)
+import re
+sentences_regex = re.split(r'(?<=[.!?]) +', text)
+print(sentences_regex)
+
+# Example 6: Tokenizing sentences with newline characters
+text3 = "Hello world!\nHow are you?\nI am fine."
+print(sent_tokenize(text3))
+
+# Example 7: Tokenize complex sentences with quotes
+text4 = 'He said, "NLP is amazing!" Did you hear that?'
+print(sent_tokenize(text4))
+
+# Example 8: Count sentences
+print(f"Number of sentences: {len(sentences)}")
+
+# Example 9: Tokenize sentences and strip whitespace
+sentences_stripped = [s.strip() for s in sentences]
+print(sentences_stripped)
+
+# Example 10: Sentence tokenization in other languages (e.g., German)
+text_de = "Hallo Welt! Dies ist ein Beispiel."
+print(sent_tokenize(text_de, language='german'))</code></pre>
+
+    <div class="navigation">
+      <a href="cleansing.html" class="nav-link">Back: Text Cleansing</a>
+      <a href="wordtoken.html" class="nav-link">Next: Word Tokenization</a>
+    </div>
+  </div>
 </body>
+
 </html>

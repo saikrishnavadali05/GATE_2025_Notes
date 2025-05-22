@@ -1,9 +1,114 @@
 <!DOCTYPE html>
-<html>
-<head><title>Flask</title></head>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Flask - Web Development</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
 <body>
-<h1>Flask</h1>
-<p>This is a placeholder page for the topic: Flask.</p>
-<a href="../python-programming.html">Back to Home</a>
+  <header>
+    <h1>Flask: Lightweight Web Framework</h1>
+  </header>
+
+  <div class="container">
+    <p>
+      Flask is a popular Python microframework designed to make web development simple and flexible. It allows developers to build web applications with minimal setup, focusing on extensibility and modular design.
+    </p>
+
+    <h2>Key Features of Flask</h2>
+    <ul>
+      <li>Simple and lightweight core with a modular design</li>
+      <li>Easy routing and URL mapping with decorators</li>
+      <li>Integrated development server and debugger for rapid development</li>
+      <li>Template rendering with Jinja2 for dynamic HTML pages</li>
+      <li>Support for RESTful request dispatching</li>
+      <li>Session management and secure cookies</li>
+      <li>Extension support for databases, authentication, forms, and more</li>
+      <li>Flexible configuration options</li>
+      <li>Strong community and rich ecosystem of extensions</li>
+      <li>Ideal for small to medium web applications and APIs</li>
+    </ul>
+
+    <h2>10 Practical Flask Examples</h2>
+    <pre><code class="language-python">
+from flask import Flask, request, jsonify, render_template, redirect, url_for, session
+
+# Example 1: Basic Flask app
+app = Flask(__name__)
+
+@app.route('/')
+def home():
+    return "Hello, Flask!"
+
+# Example 2: Route with variable
+@app.route('/user/&lt;username&gt;')
+def show_user(username):
+    return f"User: {username}"
+
+# Example 3: HTTP methods - GET and POST
+@app.route('/login', methods=['GET', 'POST'])
+def login():
+    if request.method == 'POST':
+        username = request.form['username']
+        return f"Logged in as {username}"
+    return '''
+        &lt;form method="post"&gt;
+          Username: &lt;input type="text" name="username"&gt;
+          &lt;input type="submit" value="Login"&gt;
+        &lt;/form&gt;
+    '''
+
+# Example 4: JSON response
+@app.route('/api/data')
+def api_data():
+    return jsonify({"name": "Flask", "version": "2.x"})
+
+# Example 5: Using templates (requires a 'templates' folder with index.html)
+@app.route('/template')
+def template():
+    return render_template('index.html', title="Welcome", message="Hello from Flask")
+
+# Example 6: Redirect and url_for
+@app.route('/redirect')
+def redirect_example():
+    return redirect(url_for('home'))
+
+# Example 7: Using sessions
+app.secret_key = 'supersecretkey'
+
+@app.route('/set_session')
+def set_session():
+    session['user'] = 'SaiKrishna'
+    return "Session set"
+
+@app.route('/get_session')
+def get_session():
+    user = session.get('user', 'Not set')
+    return f"User in session: {user}"
+
+# Example 8: Custom error handler
+@app.errorhandler(404)
+def page_not_found(e):
+    return "Sorry, page not found!", 404
+
+# Example 9: Serving static files (place your files in 'static' folder)
+@app.route('/static-example')
+def static_example():
+    return '<img src="/static/logo.png" alt="Logo">'
+
+# Example 10: Running the app
+if __name__ == '__main__':
+    app.run(debug=True)
+    </code></pre>
+
+    <div class="navigation">
+      <a href="ch14overview.html" class="nav-link">Back: Chapter 14 Overview</a>
+      <a href="fastapi.html" class="nav-link">Next: FastAPI</a>
+    </div>
+  </div>
 </body>
+
 </html>

@@ -1,9 +1,77 @@
 <!DOCTYPE html>
-<html>
-<head><title>Opencv</title></head>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>OpenCV - Image Processing</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
 <body>
-<h1>Opencv</h1>
-<p>This is a placeholder page for the topic: Opencv.</p>
-<a href="../python-programming.html">Back to Home</a>
+  <header>
+    <h1>OpenCV for Image Processing</h1>
+  </header>
+
+  <div class="container">
+    <p>
+      OpenCV (Open Source Computer Vision Library) is an open-source computer vision and machine learning software library. It provides a common infrastructure for computer vision applications and accelerates the usage of machine perception in commercial products.
+    </p>
+
+    <h2>Why Use OpenCV?</h2>
+    <ul>
+      <li>Fast and efficient for image and video processing</li>
+      <li>Supports real-time applications</li>
+      <li>Extensive functionalities: face detection, object tracking, image transformations, etc.</li>
+      <li>Wide community and documentation support</li>
+    </ul>
+
+    <h2>10 Examples</h2>
+    <pre><code class="language-python">import cv2
+
+# Example 1: Read and display image
+img = cv2.imread('image.jpg')
+cv2.imshow('Image', img)
+cv2.waitKey(0)
+cv2.destroyAllWindows()
+
+# Example 2: Convert to grayscale
+gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
+
+# Example 3: Resize image
+resized = cv2.resize(img, (100, 100))
+
+# Example 4: Draw rectangle
+cv2.rectangle(img, (50, 50), (150, 150), (0, 255, 0), 2)
+
+# Example 5: Save image
+cv2.imwrite('output.jpg', img)
+
+# Example 6: Capture from webcam
+cap = cv2.VideoCapture(0)
+ret, frame = cap.read()
+cv2.imshow('Webcam', frame)
+cap.release()
+cv2.destroyAllWindows()
+
+# Example 7: Gaussian blur
+blurred = cv2.GaussianBlur(img, (5, 5), 0)
+
+# Example 8: Edge detection
+edges = cv2.Canny(img, 100, 200)
+
+# Example 9: Image thresholding
+_, thresh = cv2.threshold(gray, 127, 255, cv2.THRESH_BINARY)
+
+# Example 10: Contour detection
+contours, _ = cv2.findContours(thresh, cv2.RETR_TREE, cv2.CHAIN_APPROX_SIMPLE)
+cv2.drawContours(img, contours, -1, (0, 255, 0), 2)</code></pre>
+
+    <div class="navigation">
+      <a href="dsa.html" class="nav-link">Back: DSA</a>
+      <a href="assignment.html" class="nav-link">Next: Assignment</a>
+    </div>
+  </div>
 </body>
+
 </html>

@@ -1,9 +1,86 @@
 <!DOCTYPE html>
-<html>
-<head><title>Pos</title></head>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Part of Speech Tagging - NLP</title>
+  <link rel="stylesheet" href="../style.css" />
+</head>
+
 <body>
-<h1>Pos</h1>
-<p>This is a placeholder page for the topic: Pos.</p>
-<a href="../python-programming.html">Back to Home</a>
+  <header>
+    <h1>Part of Speech (POS) Tagging in NLP</h1>
+  </header>
+
+  <div class="container">
+    <p>
+      Part of Speech tagging assigns word classes (nouns, verbs, adjectives, etc.) to each word in a sentence. It is a foundational step in many NLP tasks, helping understand the syntactic structure and meaning of text.
+    </p>
+
+    <h2>Why is POS Tagging Important?</h2>
+    <ul>
+      <li>Helps in parsing sentence structure</li>
+      <li>Improves named entity recognition and chunking</li>
+      <li>Supports machine translation and sentiment analysis</li>
+    </ul>
+
+    <h2>POS Tags in NLTK</h2>
+    <p>
+      NLTK uses the Penn Treebank tagset, e.g., <code>NN</code> for noun, <code>VB</code> for verb, <code>JJ</code> for adjective, etc.
+    </p>
+
+    <h2>10 Examples of POS Tagging with NLTK</h2>
+    <pre><code class="language-python">import nltk
+from nltk.tokenize import word_tokenize
+from nltk import pos_tag
+
+nltk.download('averaged_perceptron_tagger')
+nltk.download('punkt')
+
+text = "The quick brown fox jumps over the lazy dog."
+tokens = word_tokenize(text)
+
+# Example 1: Basic POS tagging
+tagged = pos_tag(tokens)
+print(tagged)
+
+# Example 2: Tagging multiple sentences
+sentences = [
+    "I love Python programming.",
+    "She is reading a book."
+]
+for sent in sentences:
+    print(pos_tag(word_tokenize(sent)))
+
+# Example 3: Extracting nouns from text
+nouns = [word for word, pos in tagged if pos.startswith('NN')]
+print("Nouns:", nouns)
+
+# Example 4: Extracting verbs from text
+verbs = [word for word, pos in tagged if pos.startswith('VB')]
+print("Verbs:", verbs)
+
+# Example 5: Filtering adjectives
+adjectives = [word for word, pos in tagged if pos == 'JJ']
+print("Adjectives:", adjectives)
+
+# Example 6: Using POS tags for Named Entity Recognition preprocessing
+
+# Example 7: Tagging with custom tagsets or other NLP libraries (like spaCy)
+
+# Example 8: Visualizing POS tags frequency
+
+# Example 9: Using POS tags for dependency parsing
+
+# Example 10: POS tagging in different languages (requires specialized models)
+</code></pre>
+
+    <div class="navigation">
+      <a href="stopwords.html" class="nav-link">Back: Stopwords</a>
+      <a href="ner.html" class="nav-link">Next: Named Entity Recognition</a>
+    </div>
+  </div>
 </body>
+
 </html>

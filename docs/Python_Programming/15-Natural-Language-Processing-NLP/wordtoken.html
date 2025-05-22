@@ -1,9 +1,90 @@
 <!DOCTYPE html>
-<html>
-<head><title>Wordtoken</title></head>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Word Tokenization - Natural Language Processing</title>
+  <link rel="stylesheet" href="../style.css" />
+</head>
+
 <body>
-<h1>Wordtoken</h1>
-<p>This is a placeholder page for the topic: Wordtoken.</p>
-<a href="../python-programming.html">Back to Home</a>
+  <header>
+    <h1>Word Tokenization in NLP</h1>
+  </header>
+
+  <div class="container">
+    <p>
+      Word tokenization is the process of splitting sentences or text into individual words or tokens. It is essential for tasks like parsing, text analysis, and language modeling.
+    </p>
+
+    <h2>Why Word Tokenization?</h2>
+    <ul>
+      <li>Enables detailed text analysis at the word level.</li>
+      <li>Prepares text data for feature extraction and modeling.</li>
+      <li>Helps in handling punctuation, contractions, and special characters.</li>
+    </ul>
+
+    <h2>Popular Word Tokenization Methods</h2>
+    <ul>
+      <li><strong>NLTK’s word_tokenize:</strong> Handles punctuation and contractions effectively.</li>
+      <li><strong>RegexpTokenizer:</strong> Tokenizes based on regular expressions.</li>
+      <li><strong>Spacy tokenizer:</strong> Fast and accurate tokenization with linguistic annotations.</li>
+    </ul>
+
+    <h2>10 Examples of Word Tokenization</h2>
+    <pre><code class="language-python">import nltk
+from nltk.tokenize import word_tokenize, RegexpTokenizer
+
+text = "Hello world! NLP's tokenization is essential for text analysis."
+
+# Example 1: Basic word tokenization
+tokens = word_tokenize(text)
+print(tokens)
+
+# Example 2: Tokenizing contractions correctly
+text2 = "Don't hesitate to ask questions."
+print(word_tokenize(text2))
+
+# Example 3: Using RegexpTokenizer to keep only words
+tokenizer = RegexpTokenizer(r'\w+')
+print(tokenizer.tokenize(text))
+
+# Example 4: Using SpaCy tokenizer
+import spacy
+nlp = spacy.load("en_core_web_sm")
+doc = nlp(text)
+print([token.text for token in doc])
+
+# Example 5: Tokenize and convert to lowercase
+tokens_lower = [t.lower() for t in tokens]
+print(tokens_lower)
+
+# Example 6: Tokenize words including hyphens
+text3 = "State-of-the-art NLP techniques are evolving."
+print(word_tokenize(text3))
+
+# Example 7: Tokenizing text with numbers and symbols
+text4 = "Python 3.8.5 was released in 2020!"
+print(word_tokenize(text4))
+
+# Example 8: Removing punctuation tokens
+tokens_no_punc = [t for t in tokens if t.isalpha()]
+print(tokens_no_punc)
+
+# Example 9: Tokenizing multilingual text
+text_de = "Hallo Welt! Wie geht's?"
+print(word_tokenize(text_de, language='german'))
+
+# Example 10: Tokenizing emoji and special characters (basic)
+text5 = "I love NLP 😊 #AI"
+print(word_tokenize(text5))</code></pre>
+
+    <div class="navigation">
+      <a href="senttoken.html" class="nav-link">Back: Sentence Tokenization</a>
+      <a href="stemming.html" class="nav-link">Next: Stemming</a>
+    </div>
+  </div>
 </body>
+
 </html>

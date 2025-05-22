@@ -1,9 +1,76 @@
 <!DOCTYPE html>
-<html>
-<head><title>Summarization</title></head>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Text Summarization - NLP</title>
+  <link rel="stylesheet" href="../style.css" />
+</head>
+
 <body>
-<h1>Summarization</h1>
-<p>This is a placeholder page for the topic: Summarization.</p>
-<a href="../python-programming.html">Back to Home</a>
+  <header>
+    <h1>Text Summarization in NLP</h1>
+  </header>
+
+  <div class="container">
+    <p>
+      Text Summarization is the process of automatically creating a concise and meaningful summary of a longer text document. It helps in quickly understanding large volumes of text by extracting the most important information.
+    </p>
+
+    <h2>Types of Summarization</h2>
+    <ul>
+      <li><strong>Extractive Summarization:</strong> Selects important sentences or phrases directly from the original text.</li>
+      <li><strong>Abstractive Summarization:</strong> Generates new sentences that capture the main ideas, similar to human-written summaries.</li>
+    </ul>
+
+    <h2>Popular Techniques</h2>
+    <ul>
+      <li>Frequency-based methods (TF-IDF, TextRank)</li>
+      <li>Neural network models (Transformer-based models like BART, T5)</li>
+      <li>Pretrained summarization models (Hugging Face Transformers)</li>
+    </ul>
+
+    <h2>10 Examples of Text Summarization</h2>
+    <pre><code class="language-python">from sklearn.feature_extraction.text import TfidfVectorizer
+from sklearn.cluster import KMeans
+from transformers import pipeline
+
+# Example 1: Simple extractive summarization using TF-IDF scoring
+text = """Natural language processing (NLP) is a field of artificial intelligence ..."""
+sentences = text.split('. ')
+vectorizer = TfidfVectorizer()
+X = vectorizer.fit_transform(sentences)
+
+# Example 2: KMeans clustering to select representative sentences
+kmeans = KMeans(n_clusters=2)
+kmeans.fit(X)
+top_sentence_indices = kmeans.cluster_centers_.argsort()[:,-1]
+
+# Example 3: Using Hugging Face Transformers for abstractive summarization
+summarizer = pipeline("summarization")
+summary = summarizer(text, max_length=50, min_length=25, do_sample=False)
+
+# Example 4: TextRank algorithm for extractive summarization using networkx
+
+# Example 5: Summarizing multiple documents
+
+# Example 6: Summarizing news articles
+
+# Example 7: Handling very long texts by chunking before summarizing
+
+# Example 8: Evaluating summaries with ROUGE scores
+
+# Example 9: Customizing summarization parameters for better results
+
+# Example 10: Using summarization in chatbots and virtual assistants
+</code></pre>
+
+    <div class="navigation">
+      <a href="topicmodeling.html" class="nav-link">Back: Topic Modeling</a>
+      <a href="sentiment.html" class="nav-link">Next: Sentiment Analysis</a>
+    </div>
+  </div>
 </body>
+
 </html>

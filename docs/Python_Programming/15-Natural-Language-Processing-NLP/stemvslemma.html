@@ -1,9 +1,90 @@
 <!DOCTYPE html>
-<html>
-<head><title>Stemvslemma</title></head>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Stemming vs Lemmatization - NLP</title>
+  <link rel="stylesheet" href="../style.css" />
+</head>
+
 <body>
-<h1>Stemvslemma</h1>
-<p>This is a placeholder page for the topic: Stemvslemma.</p>
-<a href="../python-programming.html">Back to Home</a>
+  <header>
+    <h1>Stemming vs Lemmatization</h1>
+  </header>
+
+  <div class="container">
+    <p>
+      Stemming and Lemmatization are both text normalization techniques used in Natural Language Processing to reduce words to their base or root forms. However, they differ in approach and accuracy.
+    </p>
+
+    <h2>Key Differences</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Aspect</th>
+          <th>Stemming</th>
+          <th>Lemmatization</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Definition</td>
+          <td>Chops off word endings to get the stem (may not be a real word).</td>
+          <td>Reduces word to its dictionary root (lemma) using vocabulary and POS.</td>
+        </tr>
+        <tr>
+          <td>Method</td>
+          <td>Rule-based or algorithmic cutting of suffixes.</td>
+          <td>Dictionary-based and uses morphological analysis.</td>
+        </tr>
+        <tr>
+          <td>Output</td>
+          <td>May not be a valid word (e.g., “running” → “run”).</td>
+          <td>Valid root word with proper meaning (e.g., “running” → “run”).</td>
+        </tr>
+        <tr>
+          <td>Speed</td>
+          <td>Generally faster.</td>
+          <td>Slower due to more complex processing.</td>
+        </tr>
+        <tr>
+          <td>Accuracy</td>
+          <td>Less accurate, may produce stems that aren't actual words.</td>
+          <td>More accurate and linguistically meaningful.</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h2>10 Examples Comparing Stemming and Lemmatization</h2>
+    <pre><code class="language-python">from nltk.stem import PorterStemmer, WordNetLemmatizer
+
+ps = PorterStemmer()
+lemmatizer = WordNetLemmatizer()
+
+words = ["running", "runs", "runner", "better", "cats", "studies", "wolves", "was", "geese"]
+
+for word in words:
+    stem = ps.stem(word)
+    lemma = lemmatizer.lemmatize(word)
+    print(f"Word: {word:10} | Stem: {stem:10} | Lemma: {lemma}")
+
+# Examples with POS for lemmatizer
+print("Lemmatize 'better' as adjective:", lemmatizer.lemmatize("better", pos='a'))
+print("Stem 'better':", ps.stem("better"))</code></pre>
+
+    <h2>Summary</h2>
+    <ul>
+      <li>Use stemming when speed is important and slight inaccuracies are acceptable.</li>
+      <li>Use lemmatization when accuracy and meaningful roots are required.</li>
+      <li>Many NLP pipelines combine both or choose based on task requirements.</li>
+    </ul>
+
+    <div class="navigation">
+      <a href="lemmatization.html" class="nav-link">Back: Lemmatization</a>
+      <a href="stopwords.html" class="nav-link">Next: Stopwords</a>
+    </div>
+  </div>
 </body>
+
 </html>

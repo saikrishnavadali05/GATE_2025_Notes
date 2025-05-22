@@ -1,9 +1,86 @@
 <!DOCTYPE html>
-<html>
-<head><title>Topicmodeling</title></head>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Topic Modeling - NLP</title>
+  <link rel="stylesheet" href="../style.css" />
+</head>
+
 <body>
-<h1>Topicmodeling</h1>
-<p>This is a placeholder page for the topic: Topicmodeling.</p>
-<a href="../python-programming.html">Back to Home</a>
+  <header>
+    <h1>Topic Modeling in NLP</h1>
+  </header>
+
+  <div class="container">
+    <p>
+      Topic Modeling is an unsupervised machine learning technique that automatically identifies abstract topics from a collection of documents or text data. It helps in discovering hidden thematic structures in large text corpora.
+    </p>
+
+    <h2>Why Use Topic Modeling?</h2>
+    <ul>
+      <li>Summarizes large volumes of text data</li>
+      <li>Improves information retrieval and content recommendation</li>
+      <li>Supports exploratory data analysis and text mining</li>
+      <li>Facilitates clustering and classification of documents</li>
+    </ul>
+
+    <h2>Popular Topic Modeling Techniques</h2>
+    <ul>
+      <li><strong>Latent Dirichlet Allocation (LDA)</strong> - Probabilistic model that assumes documents are mixtures of topics</li>
+      <li><strong>Non-negative Matrix Factorization (NMF)</strong> - Linear algebra approach to decompose document-term matrices</li>
+      <li><strong>Latent Semantic Analysis (LSA)</strong> - Uses singular value decomposition to identify topic structure</li>
+    </ul>
+
+    <h2>10 Examples of Topic Modeling</h2>
+    <pre><code class="language-python">from sklearn.decomposition import LatentDirichletAllocation
+from sklearn.feature_extraction.text import CountVectorizer
+
+documents = [
+    "Cats are small furry animals.",
+    "Dogs are loyal and friendly pets.",
+    "Birds can fly and have feathers.",
+    "Fish live in water and swim.",
+    "Lions are big cats that live in the wild.",
+]
+
+# Example 1: Convert text to document-term matrix
+vectorizer = CountVectorizer(stop_words='english')
+dtm = vectorizer.fit_transform(documents)
+
+# Example 2: Initialize LDA model
+lda = LatentDirichletAllocation(n_components=2, random_state=42)
+
+# Example 3: Fit LDA model
+lda.fit(dtm)
+
+# Example 4: Display topics with top words
+def display_topics(model, feature_names, no_top_words):
+    for topic_idx, topic in enumerate(model.components_):
+        print(f"Topic {topic_idx}: ", end='')
+        print(" ".join([feature_names[i] for i in topic.argsort()[:-no_top_words - 1:-1]]))
+
+display_topics(lda, vectorizer.get_feature_names_out(), 3)
+
+# Example 5: Transform new document to topic distribution
+
+# Example 6: Tune number of topics and hyperparameters
+
+# Example 7: Use NMF as alternative to LDA
+
+# Example 8: Preprocessing text with tokenization and lemmatization before topic modeling
+
+# Example 9: Visualize topics using pyLDAvis
+
+# Example 10: Use topic modeling for document clustering
+</code></pre>
+
+    <div class="navigation">
+      <a href="ner.html" class="nav-link">Back: Named Entity Recognition</a>
+      <a href="summarization.html" class="nav-link">Next: Summarization</a>
+    </div>
+  </div>
 </body>
+
 </html>

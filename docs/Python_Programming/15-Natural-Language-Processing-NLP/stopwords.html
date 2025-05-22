@@ -1,9 +1,86 @@
 <!DOCTYPE html>
-<html>
-<head><title>Stopwords</title></head>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Stopwords - NLP</title>
+  <link rel="stylesheet" href="../style.css" />
+</head>
+
 <body>
-<h1>Stopwords</h1>
-<p>This is a placeholder page for the topic: Stopwords.</p>
-<a href="../python-programming.html">Back to Home</a>
+  <header>
+    <h1>Stopwords in Natural Language Processing</h1>
+  </header>
+
+  <div class="container">
+    <p>
+      Stopwords are commonly used words in a language that usually do not add significant meaning to a sentence. Examples include "is", "and", "the", "in". Removing stopwords is a common preprocessing step in NLP to focus on meaningful words.
+    </p>
+
+    <h2>Why Remove Stopwords?</h2>
+    <ul>
+      <li>Reduces noise in text data</li>
+      <li>Improves performance in text analysis and machine learning models</li>
+      <li>Reduces dimensionality of text features</li>
+    </ul>
+
+    <h2>Common Stopwords List</h2>
+    <p>Languages have their own sets of stopwords. For English, the NLTK library provides a comprehensive list.</p>
+
+    <h2>10 Examples of Using Stopwords with NLTK</h2>
+    <pre><code class="language-python">import nltk
+from nltk.corpus import stopwords
+from nltk.tokenize import word_tokenize
+
+nltk.download('stopwords')
+nltk.download('punkt')
+
+stop_words = set(stopwords.words('english'))
+text = "This is a sample sentence, showing off the stopwords filtration."
+
+words = word_tokenize(text)
+
+filtered_sentence = [w for w in words if w.lower() not in stop_words]
+print("Original:", words)
+print("Filtered:", filtered_sentence)
+
+# Example 2: Custom stopwords list
+custom_stopwords = stop_words.union({"sample", "showing"})
+
+filtered_custom = [w for w in words if w.lower() not in custom_stopwords]
+print("Filtered with custom stopwords:", filtered_custom)
+
+# Example 3: Counting stopwords in text
+stopword_count = sum(1 for w in words if w.lower() in stop_words)
+print("Number of stopwords:", stopword_count)
+
+# Example 4: Removing stopwords before TF-IDF
+# (Use scikit-learn's TfidfVectorizer(stop_words='english'))
+
+# Example 5: Stopwords in other languages
+spanish_stopwords = set(stopwords.words('spanish'))
+print("Spanish stopwords sample:", list(spanish_stopwords)[:10])
+
+# Example 6: Checking if a word is a stopword
+print("'the' is stopword?", 'the' in stop_words)
+print("'Python' is stopword?", 'Python' in stop_words)
+
+# Example 7: Removing stopwords from large text corpus
+# (use list comprehensions or filter functions)
+
+# Example 8: Visualizing stopwords frequency with wordclouds (requires wordcloud library)
+
+# Example 9: Stopwords and sentiment analysis — removing stopwords may affect sentiment scores
+
+# Example 10: Using stopwords to improve topic modeling by filtering out common words
+</code></pre>
+
+    <div class="navigation">
+      <a href="stemvslemma.html" class="nav-link">Back: Stemming vs Lemmatization</a>
+      <a href="pos.html" class="nav-link">Next: Part of Speech Tagging</a>
+    </div>
+  </div>
 </body>
+
 </html>

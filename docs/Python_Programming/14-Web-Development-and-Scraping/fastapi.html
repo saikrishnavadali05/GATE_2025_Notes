@@ -1,9 +1,110 @@
 <!DOCTYPE html>
-<html>
-<head><title>Fastapi</title></head>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FastAPI - Modern Web Framework</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
 <body>
-<h1>Fastapi</h1>
-<p>This is a placeholder page for the topic: Fastapi.</p>
-<a href="../python-programming.html">Back to Home</a>
+  <header>
+    <h1>FastAPI: High-Performance Python Web Framework</h1>
+  </header>
+
+  <div class="container">
+    <p>
+      FastAPI is a modern, fast (high-performance) web framework for building APIs with Python 3.7+ based on standard Python type hints. It is designed for building APIs quickly with automatic data validation, serialization, and interactive documentation.
+    </p>
+
+    <h2>Key Features of FastAPI</h2>
+    <ul>
+      <li>Fast to code, reduces bugs, and easy to maintain</li>
+      <li>Based on Python type hints for automatic validation</li>
+      <li>Automatic interactive API docs with Swagger UI and ReDoc</li>
+      <li>Supports asynchronous programming with async/await</li>
+      <li>Dependency injection system for modularity and testability</li>
+      <li>Built on top of Starlette for web handling and Pydantic for data parsing</li>
+      <li>Excellent performance comparable to Node.js and Go</li>
+      <li>Easy integration with OAuth2 and security utilities</li>
+      <li>Designed for building RESTful APIs and microservices</li>
+      <li>Strong community and active development</li>
+    </ul>
+
+    <h2>10 Practical FastAPI Examples</h2>
+    <pre><code class="language-python">
+from fastapi import FastAPI, Path, Query, Body
+from pydantic import BaseModel
+from typing import Optional
+
+app = FastAPI()
+
+# Example 1: Basic endpoint
+@app.get("/")
+def read_root():
+    return {"message": "Hello, FastAPI"}
+
+# Example 2: Path parameter
+@app.get("/items/{item_id}")
+def read_item(item_id: int = Path(..., description="The ID of the item to get")):
+    return {"item_id": item_id}
+
+# Example 3: Query parameters
+@app.get("/search/")
+def search(q: Optional[str] = Query(None, max_length=50)):
+    return {"query": q}
+
+# Example 4: Request body with Pydantic model
+class Item(BaseModel):
+    name: str
+    price: float
+    is_offer: Optional[bool] = None
+
+@app.post("/items/")
+def create_item(item: Item):
+    return {"item": item}
+
+# Example 5: Async endpoint
+@app.get("/async/")
+async def async_endpoint():
+    return {"message": "This is async"}
+
+# Example 6: Using default values
+@app.get("/defaults/")
+def defaults(limit: int = 10, offset: int = 0):
+    return {"limit": limit, "offset": offset}
+
+# Example 7: Multiple request methods
+@app.api_route("/multi-method/", methods=["GET", "POST"])
+def multi_method():
+    return {"message": "Supports GET and POST"}
+
+# Example 8: Dependency Injection example
+from fastapi import Depends
+
+def common_parameters(q: Optional[str] = None, skip: int = 0, limit: int = 10):
+    return {"q": q, "skip": skip, "limit": limit}
+
+@app.get("/dependency/")
+def read_dependency(commons: dict = Depends(common_parameters)):
+    return commons
+
+# Example 9: Custom response status code
+from fastapi import status
+
+@app.post("/items-with-status/", status_code=status.HTTP_201_CREATED)
+def create_item_with_status(item: Item):
+    return item
+
+# Example 10: Running FastAPI (use `uvicorn filename:app --reload` to run)
+    </code></pre>
+
+    <div class="navigation">
+      <a href="flask.html" class="nav-link">Back: Flask</a>
+      <a href="scraping.html" class="nav-link">Next: Web Scraping</a>
+    </div>
+  </div>
 </body>
+
 </html>

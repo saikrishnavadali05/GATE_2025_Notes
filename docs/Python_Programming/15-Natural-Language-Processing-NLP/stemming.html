@@ -1,9 +1,89 @@
 <!DOCTYPE html>
-<html>
-<head><title>Stemming</title></head>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Stemming - Natural Language Processing</title>
+  <link rel="stylesheet" href="../style.css" />
+</head>
+
 <body>
-<h1>Stemming</h1>
-<p>This is a placeholder page for the topic: Stemming.</p>
-<a href="../python-programming.html">Back to Home</a>
+  <header>
+    <h1>Stemming in NLP</h1>
+  </header>
+
+  <div class="container">
+    <p>
+      Stemming is the process of reducing words to their root or base form by chopping off suffixes. It helps in normalizing text and is useful for tasks like search, indexing, and text mining.
+    </p>
+
+    <h2>Why Use Stemming?</h2>
+    <ul>
+      <li>Reduces different forms of a word to a common base form.</li>
+      <li>Improves performance in search and information retrieval.</li>
+      <li>Simplifies text analysis by reducing vocabulary size.</li>
+    </ul>
+
+    <h2>Popular Stemming Algorithms</h2>
+    <ul>
+      <li><strong>Porter Stemmer:</strong> One of the most commonly used stemmers, good balance between accuracy and speed.</li>
+      <li><strong>Snowball Stemmer:</strong> An improved and more flexible version of Porter Stemmer supporting multiple languages.</li>
+      <li><strong>Lancaster Stemmer:</strong> More aggressive stemmer producing shorter stems, sometimes over-stemming.</li>
+    </ul>
+
+    <h2>10 Examples of Stemming</h2>
+    <pre><code class="language-python">from nltk.stem import PorterStemmer, SnowballStemmer, LancasterStemmer
+
+words = ["running", "runs", "runner", "easily", "fairly", "cats", "studies", "studying"]
+
+# Example 1: Using Porter Stemmer
+porter = PorterStemmer()
+print([porter.stem(word) for word in words])
+
+# Example 2: Using Snowball Stemmer (English)
+snowball = SnowballStemmer("english")
+print([snowball.stem(word) for word in words])
+
+# Example 3: Using Lancaster Stemmer
+lancaster = LancasterStemmer()
+print([lancaster.stem(word) for word in words])
+
+# Example 4: Comparing stemmers on a verb
+word = "consolidation"
+print("Porter:", porter.stem(word))
+print("Snowball:", snowball.stem(word))
+print("Lancaster:", lancaster.stem(word))
+
+# Example 5: Stemming plural nouns
+print(porter.stem("geese"))
+print(porter.stem("wolves"))
+
+# Example 6: Stemming compound words
+print(porter.stem("multiuser"))
+print(snowball.stem("multiuser"))
+
+# Example 7: Stemming words with suffixes
+print(porter.stem("happiness"))
+print(porter.stem("happily"))
+
+# Example 8: Stemming words with prefixes
+print(porter.stem("unhappy"))
+print(snowball.stem("unhappy"))
+
+# Example 9: Stemming irregular verbs
+print(porter.stem("went"))
+print(snowball.stem("went"))
+
+# Example 10: Stemming words with hyphens
+print(porter.stem("co-operate"))
+print(snowball.stem("co-operate"))</code></pre>
+
+    <div class="navigation">
+      <a href="wordtoken.html" class="nav-link">Back: Word Tokenization</a>
+      <a href="lemmatization.html" class="nav-link">Next: Lemmatization</a>
+    </div>
+  </div>
 </body>
+
 </html>

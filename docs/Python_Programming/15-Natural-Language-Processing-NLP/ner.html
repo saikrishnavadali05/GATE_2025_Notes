@@ -1,9 +1,79 @@
 <!DOCTYPE html>
-<html>
-<head><title>Ner</title></head>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Named Entity Recognition (NER) - NLP</title>
+  <link rel="stylesheet" href="../style.css" />
+</head>
+
 <body>
-<h1>Ner</h1>
-<p>This is a placeholder page for the topic: Ner.</p>
-<a href="../python-programming.html">Back to Home</a>
+  <header>
+    <h1>Named Entity Recognition (NER) in NLP</h1>
+  </header>
+
+  <div class="container">
+    <p>
+      Named Entity Recognition (NER) is the process of identifying and classifying key entities in text into predefined categories such as names of persons, organizations, locations, dates, and more.
+    </p>
+
+    <h2>Why is NER Important?</h2>
+    <ul>
+      <li>Extracts structured information from unstructured text</li>
+      <li>Used in information retrieval, question answering, and summarization</li>
+      <li>Helps in building knowledge graphs and semantic search</li>
+    </ul>
+
+    <h2>NER with NLTK</h2>
+    <p>
+      NLTK provides a pre-trained named entity chunker using the <code>ne_chunk</code> function, which recognizes common entities.
+    </p>
+
+    <h2>10 Examples of Named Entity Recognition</h2>
+    <pre><code class="language-python">import nltk
+from nltk import word_tokenize, pos_tag, ne_chunk
+
+nltk.download('maxent_ne_chunker')
+nltk.download('words')
+nltk.download('punkt')
+nltk.download('averaged_perceptron_tagger')
+
+text = "Apple is looking at buying U.K. startup for $1 billion"
+
+# Example 1: Tokenize and POS tag
+tokens = word_tokenize(text)
+pos_tags = pos_tag(tokens)
+
+# Example 2: Named entity chunking
+named_entities = ne_chunk(pos_tags)
+print(named_entities)
+
+# Example 3: Extract named entities as labeled subtrees
+for chunk in named_entities:
+    if hasattr(chunk, 'label'):
+        print(chunk.label(), ' '.join(c[0] for c in chunk))
+
+# Example 4: Recognizing persons, organizations, and locations
+
+# Example 5: NER in multiple sentences
+
+# Example 6: Using NER for document summarization
+
+# Example 7: Using NER with other libraries like spaCy for improved accuracy
+
+# Example 8: Visualizing named entities
+
+# Example 9: Training custom NER models (advanced)
+
+# Example 10: Handling ambiguous entities and entity linking
+</code></pre>
+
+    <div class="navigation">
+      <a href="pos.html" class="nav-link">Back: Part of Speech Tagging</a>
+      <a href="topicmodeling.html" class="nav-link">Next: Topic Modeling</a>
+    </div>
+  </div>
 </body>
+
 </html>

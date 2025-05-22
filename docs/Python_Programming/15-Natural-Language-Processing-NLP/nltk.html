@@ -1,9 +1,92 @@
 <!DOCTYPE html>
-<html>
-<head><title>Nltk</title></head>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>NLTK Basics - Natural Language Processing</title>
+  <link rel="stylesheet" href="../style.css" />
+</head>
+
 <body>
-<h1>Nltk</h1>
-<p>This is a placeholder page for the topic: Nltk.</p>
-<a href="../python-programming.html">Back to Home</a>
+  <header>
+    <h1>NLTK (Natural Language Toolkit)</h1>
+  </header>
+
+  <div class="container">
+    <p>
+      NLTK is one of the most widely-used Python libraries for natural language processing. It provides easy-to-use interfaces for over 50 corpora and lexical resources, along with a suite of text processing libraries for classification, tokenization, stemming, tagging, parsing, and semantic reasoning.
+    </p>
+
+    <h2>Key Features of NLTK</h2>
+    <ul>
+      <li>Access to extensive linguistic corpora and lexical databases like WordNet.</li>
+      <li>Tools for tokenization, sentence segmentation, and word stemming.</li>
+      <li>Support for part-of-speech tagging and named entity recognition.</li>
+      <li>Text classification and sentiment analysis utilities.</li>
+      <li>Flexible and modular API suited for both beginners and researchers.</li>
+    </ul>
+
+    <h2>10 Practical Examples</h2>
+    <pre><code class="language-python">import nltk
+from nltk.tokenize import word_tokenize, sent_tokenize
+from nltk.corpus import stopwords
+from nltk.stem import PorterStemmer, WordNetLemmatizer
+
+# Example 1: Download NLTK data (run once)
+nltk.download('punkt')
+nltk.download('stopwords')
+nltk.download('wordnet')
+
+# Example 2: Sentence tokenization
+text = "Hello there! How are you doing today?"
+sentences = sent_tokenize(text)
+print(sentences)
+
+# Example 3: Word tokenization
+words = word_tokenize(text)
+print(words)
+
+# Example 4: Remove stopwords
+stop_words = set(stopwords.words('english'))
+filtered_words = [w for w in words if w.lower() not in stop_words]
+print(filtered_words)
+
+# Example 5: Stemming
+ps = PorterStemmer()
+stemmed_words = [ps.stem(w) for w in filtered_words]
+print(stemmed_words)
+
+# Example 6: Lemmatization
+lemmatizer = WordNetLemmatizer()
+lemmatized_words = [lemmatizer.lemmatize(w) for w in filtered_words]
+print(lemmatized_words)
+
+# Example 7: POS tagging
+nltk.download('averaged_perceptron_tagger')
+pos_tags = nltk.pos_tag(words)
+print(pos_tags)
+
+# Example 8: Named Entity Recognition (NER)
+nltk.download('maxent_ne_chunker')
+nltk.download('words')
+from nltk import ne_chunk
+tree = ne_chunk(pos_tags)
+print(tree)
+
+# Example 9: Frequency distribution of words
+freq_dist = nltk.FreqDist(words)
+print(freq_dist.most_common(5))
+
+# Example 10: Concordance
+text_obj = nltk.Text(words)
+text_obj.concordance("today")</code></pre>
+
+    <div class="navigation">
+      <a href="ch15overview.html" class="nav-link">Back: Chapter 15 Overview</a>
+      <a href="cleansing.html" class="nav-link">Next: Text Cleansing</a>
+    </div>
+  </div>
 </body>
+
 </html>

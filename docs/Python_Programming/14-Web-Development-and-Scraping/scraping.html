@@ -1,9 +1,97 @@
 <!DOCTYPE html>
-<html>
-<head><title>Scraping</title></head>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Web Scraping with Python</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
 <body>
-<h1>Scraping</h1>
-<p>This is a placeholder page for the topic: Scraping.</p>
-<a href="../python-programming.html">Back to Home</a>
+  <header>
+    <h1>Web Scraping with Python</h1>
+  </header>
+
+  <div class="container">
+    <p>
+      Web scraping is the process of extracting data from websites. Python offers powerful libraries like <code>requests</code> and <code>BeautifulSoup</code> to scrape and parse HTML content. This is useful for gathering data from the web for analysis, automation, or building datasets.
+    </p>
+
+    <h2>Why Use Web Scraping?</h2>
+    <ul>
+      <li>Extract data from websites without APIs</li>
+      <li>Automate data collection tasks</li>
+      <li>Create datasets for analysis or machine learning</li>
+      <li>Monitor website changes or prices</li>
+      <li>Gather competitive intelligence</li>
+      <li>Convert unstructured web data into structured formats</li>
+      <li>Scrape multiple pages with automation</li>
+      <li>Integrate scraping with other Python tools for data processing</li>
+      <li>Learn HTML parsing and HTTP requests</li>
+      <li>Understand ethical scraping and legal considerations</li>
+    </ul>
+
+    <h2>10 Practical Web Scraping Examples</h2>
+    <pre><code class="language-python">
+import requests
+from bs4 import BeautifulSoup
+
+# Example 1: Simple GET request
+response = requests.get("https://example.com")
+print(response.status_code)
+
+# Example 2: Parse HTML content
+soup = BeautifulSoup(response.text, 'html.parser')
+print(soup.title.string)
+
+# Example 3: Find all links
+links = soup.find_all('a')
+for link in links:
+    print(link.get('href'))
+
+# Example 4: Find element by id
+header = soup.find(id="header")
+print(header.text if header else "No header found")
+
+# Example 5: Find elements by class
+items = soup.find_all(class_="item")
+print([item.text for item in items])
+
+# Example 6: Scrape multiple pages (pagination example)
+for page in range(1, 4):
+    url = f"https://example.com/page/{page}"
+    r = requests.get(url)
+    sp = BeautifulSoup(r.text, 'html.parser')
+    print(f"Page {page} title:", sp.title.string)
+
+# Example 7: Extract table data
+table = soup.find('table')
+rows = table.find_all('tr') if table else []
+for row in rows:
+    cols = [ele.text.strip() for ele in row.find_all('td')]
+    print(cols)
+
+# Example 8: Use CSS selectors
+items = soup.select('div.content > ul > li')
+print([item.text for item in items])
+
+# Example 9: Handle headers and user-agent
+headers = {'User-Agent': 'Mozilla/5.0'}
+resp = requests.get("https://example.com", headers=headers)
+print(resp.status_code)
+
+# Example 10: Save scraped data to file
+with open("output.html", "w", encoding="utf-8") as f:
+    f.write(soup.prettify())
+    </code></pre>
+
+    <div class="navigation">
+      <a href="fastapi.html" class="nav-link">Back: FastAPI</a>
+      <a href="ch14overview.html" class="nav-link">Back to Overview</a>
+      <a href="assignment.html" class="nav-link">Next: Assignment</a>
+    </div>
+  </div>
 </body>
+
 </html>
