@@ -1,165 +1,67 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Assignment Operators in Python</title>
-
-  <!-- Prism CSS for syntax highlighting -->
-  <link href="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/themes/prism.css" rel="stylesheet" />
-
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      max-width: 900px;
-      margin: 0 auto;
-      padding: 20px;
-      background-color: #fefefe;
-      color: #222;
-    }
-    header {
-      background-color: #005f73;
-      color: white;
-      padding: 20px;
-      text-align: center;
-      border-radius: 4px;
-      margin-bottom: 30px;
-    }
-    h2 {
-      color: #005f73;
-      margin-top: 30px;
-    }
-    pre {
-      background-color: #e0fbfc;
-      border-radius: 6px;
-      padding: 15px;
-      overflow-x: auto;
-      font-size: 15px;
-      line-height: 1.4;
-    }
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      margin-top: 20px;
-    }
-    th, td {
-      border: 1px solid #bbb;
-      padding: 10px;
-      text-align: left;
-    }
-    th {
-      background-color: #94d2bd;
-    }
-    footer {
-      background-color: #005f73;
-      color: white;
-      text-align: center;
-      padding: 12px;
-      margin-top: 40px;
-      border-radius: 4px;
-    }
-  </style>
+  <title>Chapter 4: User Input and Operators Assignments</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
+
 <body>
+  <header>
+    <h1>Chapter 4: User Input and Operators Assignments</h1>
+  </header>
 
-<header>
-  <h1>Assignment Operators in Python</h1>
-</header>
+  <div class="container">
+    <p>Test your understanding of user input and Python operators with the following exercises.</p>
 
-<section>
-  <h2>What are Assignment Operators?</h2>
-  <p>Assignment operators are used to assign values to variables. In Python, in addition to the simple <code>=</code> assignment, we have compound operators that perform an operation and assign the result to the same variable.</p>
+    <h2>Basic (10 Questions)</h2>
+    <ol>
+      <li>Write a program to take your name and age as input and display them using <code>print()</code>.</li>
+      <li>Accept two numbers from the user and print their sum, difference, product, and quotient.</li>
+      <li>Check if a given number is even or odd using the modulus operator (<code>%</code>).</li>
+      <li>Take an integer input and check if it is positive, negative, or zero.</li>
+      <li>Use command line arguments to read two numbers and print their average.</li>
+      <li>Demonstrate the use of <code>//</code> and <code>**</code> operators with sample values.</li>
+      <li>Take a string input and use the <code>in</code> operator to check for a specific character.</li>
+      <li>Take a number input and check if it lies between 10 and 100 using comparison operators.</li>
+      <li>Use <code>is</code> and <code>is not</code> to compare two variables.</li>
+      <li>Print the result of different bitwise operators (<code>&</code>, <code>|</code>, <code>^</code>, <code>~</code>).</li>
+    </ol>
 
-  <h2>Types of Assignment Operators</h2>
-  <table>
-    <tr>
-      <th>Operator</th>
-      <th>Description</th>
-      <th>Example</th>
-    </tr>
-    <tr>
-      <td>=</td>
-      <td>Assigns value from right side to left side</td>
-      <td>x = 5</td>
-    </tr>
-    <tr>
-      <td>+=</td>
-      <td>Adds right side to left side and assigns result</td>
-      <td>x += 3 <br> (x = x + 3)</td>
-    </tr>
-    <tr>
-      <td>-=</td>
-      <td>Subtracts right side from left side</td>
-      <td>x -= 2 <br> (x = x - 2)</td>
-    </tr>
-    <tr>
-      <td>*=</td>
-      <td>Multiplies and assigns result</td>
-      <td>x *= 4 <br> (x = x * 4)</td>
-    </tr>
-    <tr>
-      <td>/=</td>
-      <td>Divides and assigns result</td>
-      <td>x /= 2 <br> (x = x / 2)</td>
-    </tr>
-    <tr>
-      <td>%=</td>
-      <td>Modulus and assigns result</td>
-      <td>x %= 3 <br> (x = x % 3)</td>
-    </tr>
-    <tr>
-      <td>//=</td>
-      <td>Floor division and assigns result</td>
-      <td>x //= 2</td>
-    </tr>
-    <tr>
-      <td>**=</td>
-      <td>Exponentiation and assigns result</td>
-      <td>x **= 3 <br> (x = x ** 3)</td>
-    </tr>
-    <tr>
-      <td>&=</td>
-      <td>Bitwise AND and assigns result</td>
-      <td>x &= 2</td>
-    </tr>
-    <tr>
-      <td>|=</td>
-      <td>Bitwise OR and assigns result</td>
-      <td>x |= 3</td>
-    </tr>
-    <tr>
-      <td>^=</td>
-      <td>Bitwise XOR and assigns result</td>
-      <td>x ^= 1</td>
-    </tr>
-    <tr>
-      <td>>>=</td>
-      <td>Bitwise right shift and assigns result</td>
-      <td>x >>= 1</td>
-    </tr>
-    <tr>
-      <td>&lt;&lt;=</td>
-      <td>Bitwise left shift and assigns result</td>
-      <td>x &lt;&lt;= 2</td>
-    </tr>
-  </table>
+    <h2>Intermediate (10 Questions)</h2>
+    <ol start="11">
+      <li>Write a program to accept two numbers and swap them without using a third variable.</li>
+      <li>Use <code>and</code>, <code>or</code>, <code>not</code> to evaluate logical expressions and print results.</li>
+      <li>Check if a character is a vowel using membership operators.</li>
+      <li>Take three numbers as input and find the greatest using comparison and logical operators.</li>
+      <li>Use bitwise shift operators (<code>&lt;&lt;</code>, <code>&gt;&gt;</code>) on a number and explain the result.</li>
+      <li>Write a Python script that accepts command-line arguments and checks if they are valid integers.</li>
+      <li>Check whether two user inputs refer to the same object using <code>is</code>.</li>
+      <li>Build a calculator that supports +, -, *, / using if-else and user input.</li>
+      <li>Accept a float and round it to the nearest integer.</li>
+      <li>Take a string and number input, and print the string repeated that many times.</li>
+    </ol>
 
-  <h2>Examples</h2>
-  <pre><code class="language-python">x = 10
-x += 5     # x becomes 15
-x *= 2     # x becomes 30
-x //= 4    # x becomes 7
-x **= 2    # x becomes 49
-print(x)   # Output: 49</code></pre>
-</section>
+    <h2>Advanced (10 Questions)</h2>
+    <ol start="21">
+      <li>Implement a mini CLI-based program that takes two numbers and an operator as arguments and performs the operation.</li>
+      <li>Simulate a login system that accepts username and password input and checks if they match predefined values.</li>
+      <li>Write a function that performs bitwise AND on a list of numbers taken as input.</li>
+      <li>Use <code>eval()</code> to evaluate a user-provided arithmetic expression and display the result.</li>
+      <li>Write a script to check if a number is divisible by both 3 and 5 using logical operators.</li>
+      <li>Create a menu-driven CLI app that lets users choose between different mathematical operations.</li>
+      <li>Take a number input and check whether it is a power of 2 using bitwise operations.</li>
+      <li>Compare the identities of multiple variables and explain using <code>id()</code>.</li>
+      <li>Take five inputs and determine which of them are even using a single line expression with logical and arithmetic operators.</li>
+      <li>Accept an expression from the user and identify all the operators used in it.</li>
+    </ol>
 
-<footer>
-  <p>&copy; 2025 Python Training Session</p>
-</footer>
-
-<!-- Prism JS -->
-<script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/prism.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-python.min.js"></script>
-
+    <div class="navigation">
+      <a href="ch4overview.html" class="nav-link">Back: Chapter 4 Overview</a>
+    </div>
+  </div>
 </body>
+
 </html>

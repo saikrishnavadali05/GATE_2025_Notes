@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Assignment Operators in Python</title>
+
+  <!-- Prism CSS for syntax highlighting -->
+  <link href="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/themes/prism.css" rel="stylesheet" />
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 20px;
+      background-color: #fefefe;
+      color: #222;
+    }
+    header {
+      background-color: #005f73;
+      color: white;
+      padding: 20px;
+      text-align: center;
+      border-radius: 4px;
+      margin-bottom: 30px;
+    }
+    h2 {
+      color: #005f73;
+      margin-top: 30px;
+    }
+    pre {
+      background-color: #e0fbfc;
+      border-radius: 6px;
+      padding: 15px;
+      overflow-x: auto;
+      font-size: 15px;
+      line-height: 1.4;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 20px;
+    }
+    th, td {
+      border: 1px solid #bbb;
+      padding: 10px;
+      text-align: left;
+    }
+    th {
+      background-color: #94d2bd;
+    }
+    footer {
+      background-color: #005f73;
+      color: white;
+      text-align: center;
+      padding: 12px;
+      margin-top: 40px;
+      border-radius: 4px;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Assignment Operators in Python</h1>
+</header>
+
+<section>
+  <h2>What are Assignment Operators?</h2>
+  <p>Assignment operators are used to assign values to variables. In Python, in addition to the simple <code>=</code> assignment, we have compound operators that perform an operation and assign the result to the same variable.</p>
+
+  <h2>Types of Assignment Operators</h2>
+  <table>
+    <tr>
+      <th>Operator</th>
+      <th>Description</th>
+      <th>Example</th>
+    </tr>
+    <tr>
+      <td>=</td>
+      <td>Assigns value from right side to left side</td>
+      <td>x = 5</td>
+    </tr>
+    <tr>
+      <td>+=</td>
+      <td>Adds right side to left side and assigns result</td>
+      <td>x += 3 <br> (x = x + 3)</td>
+    </tr>
+    <tr>
+      <td>-=</td>
+      <td>Subtracts right side from left side</td>
+      <td>x -= 2 <br> (x = x - 2)</td>
+    </tr>
+    <tr>
+      <td>*=</td>
+      <td>Multiplies and assigns result</td>
+      <td>x *= 4 <br> (x = x * 4)</td>
+    </tr>
+    <tr>
+      <td>/=</td>
+      <td>Divides and assigns result</td>
+      <td>x /= 2 <br> (x = x / 2)</td>
+    </tr>
+    <tr>
+      <td>%=</td>
+      <td>Modulus and assigns result</td>
+      <td>x %= 3 <br> (x = x % 3)</td>
+    </tr>
+    <tr>
+      <td>//=</td>
+      <td>Floor division and assigns result</td>
+      <td>x //= 2</td>
+    </tr>
+    <tr>
+      <td>**=</td>
+      <td>Exponentiation and assigns result</td>
+      <td>x **= 3 <br> (x = x ** 3)</td>
+    </tr>
+    <tr>
+      <td>&=</td>
+      <td>Bitwise AND and assigns result</td>
+      <td>x &= 2</td>
+    </tr>
+    <tr>
+      <td>|=</td>
+      <td>Bitwise OR and assigns result</td>
+      <td>x |= 3</td>
+    </tr>
+    <tr>
+      <td>^=</td>
+      <td>Bitwise XOR and assigns result</td>
+      <td>x ^= 1</td>
+    </tr>
+    <tr>
+      <td>>>=</td>
+      <td>Bitwise right shift and assigns result</td>
+      <td>x >>= 1</td>
+    </tr>
+    <tr>
+      <td>&lt;&lt;=</td>
+      <td>Bitwise left shift and assigns result</td>
+      <td>x &lt;&lt;= 2</td>
+    </tr>
+  </table>
+
+  <h2>Examples</h2>
+  <pre><code class="language-python">x = 10
+x += 5     # x becomes 15
+x *= 2     # x becomes 30
+x //= 4    # x becomes 7
+x **= 2    # x becomes 49
+print(x)   # Output: 49</code></pre>
+</section>
+
+<footer>
+  <p>&copy; 2025 Python Training Session</p>
+</footer>
+
+<!-- Prism JS -->
+<script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/prism.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-python.min.js"></script>
+
+</body>
+</html>
