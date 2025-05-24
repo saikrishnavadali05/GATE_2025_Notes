@@ -1,215 +1,83 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Python Data Types & Operators</title>
-
-  <!-- Prism CSS for syntax highlighting -->
-  <link href="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/themes/prism.css" rel="stylesheet" />
-
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      background-color: #fdfdfd;
-      color: #222;
-      margin: 0;
-      padding: 0 20px 40px 20px;
-      max-width: 900px;
-      margin-left: auto;
-      margin-right: auto;
-    }
-    header {
-      background-color: #306998;
-      color: white;
-      padding: 20px;
-      text-align: center;
-      margin-bottom: 20px;
-      border-radius: 4px;
-    }
-    h2 {
-      color: #306998;
-      margin-top: 30px;
-    }
-    pre {
-      padding: 12px;
-      border-radius: 6px;
-      overflow-x: auto;
-      font-size: 15px;
-      line-height: 1.4;
-    }
-    table {
-      border-collapse: collapse;
-      width: 100%;
-      margin-top: 10px;
-      margin-bottom: 30px;
-    }
-    th, td {
-      border: 1px solid #ddd;
-      padding: 8px;
-    }
-    th {
-      background-color: #dce6f0;
-      text-align: left;
-    }
-    footer {
-      background-color: #306998;
-      color: white;
-      text-align: center;
-      padding: 10px;
-      margin-top: 40px;
-      border-radius: 4px;
-    }
-  </style>
+  <title>Chapter 4 Overview - User Input and Operators</title>
+  <link rel="stylesheet" href="../style.css" />
 </head>
+
 <body>
+  <header>
+    <h1>Chapter 4: User Input and Operators - Overview</h1>
+  </header>
 
-<header>
-  <h1>Python Data Types & Operators</h1>
-  <p>Foundations for Writing Effective Python Code</p>
-</header>
+  <div class="container">
+    <p>This chapter introduces two key programming concepts: capturing user input and working with operators. These are vital skills for building interactive and functional Python programs.</p>
 
-<section>
-  <h2>1. Python Data Types Overview</h2>
-  <p>Data types determine the kind of operations that can be applied to values. Python is <em>dynamically typed</em>, meaning the interpreter infers the type at runtime.</p>
+    <h2>What You Will Learn</h2>
+    <p>By the end of this chapter, you'll know how to accept input from users, handle command-line arguments, and use Python's rich set of operators to manipulate data and control logic.</p>
 
-  <h2>2. Primitive (Basic) Data Types</h2>
-  <ul>
-    <li><strong>int</strong> Whole numbers.</li>
-    <pre><code class="language-python">age = 27</code></pre>
+    <h2>Detailed Topics</h2>
+    <ul>
+      <li>
+        <strong><a href="input.html">User Input</a></strong><br />
+        Learn how to take input from users during program execution using the <code>input()</code> function.
+      </li>
+      <li>
+        <strong><a href="cliargs.html">Command Line Arguments</a></strong><br />
+        Understand how to work with arguments passed via the command line using the <code>sys</code> module.
+      </li>
+      <li>
+        <strong><a href="numeric.html">Numeric Operators</a></strong><br />
+        Explore arithmetic operators like addition, subtraction, multiplication, and division.
+      </li>
+      <li>
+        <strong><a href="comparison.html">Comparison Operators</a></strong><br />
+        Learn how to compare values and make decisions using relational operators.
+      </li>
+      <li>
+        <strong><a href="logical.html">Logical Operators</a></strong><br />
+        Understand logical operations like AND, OR, and NOT to control program flow.
+      </li>
+      <li>
+        <strong><a href="membership.html">Membership Operators</a></strong><br />
+        Check for the presence of an element within a container using <code>in</code> and <code>not in</code>.
+      </li>
+      <li>
+        <strong><a href="identity.html">Identity Operators</a></strong><br />
+        Differentiate between two objects using <code>is</code> and <code>is not</code>.
+      </li>
+      <li>
+        <strong><a href="bitwise.html">Bitwise Operators</a></strong><br />
+        Perform low-level operations using bitwise operators like AND, OR, XOR, etc.
+      </li>
+      <li>
+        <strong><a href="assignmentop.html">Assignment Operators</a></strong><br />
+        Use compound assignment operators to simplify expressions and make your code concise.
+      </li>
+      <li>
+        <strong><a href="assignment.html">Assignments</a></strong><br />
+        Apply what you've learned through practical exercises and challenges.
+      </li>
+    </ul>
 
-    <li><strong>float</strong> Decimal numbers.</li>
-    <pre><code class="language-python">temperature = 36.6</code></pre>
+    <h2>Why This Chapter is Important</h2>
+    <p>Handling user input makes your programs interactive, while operators form the core of data manipulation and logical processing. Mastering these tools is key to becoming a proficient Python programmer.</p>
 
-    <li><strong>bool</strong> Boolean truth values.</li>
-    <pre><code class="language-python">is_logged_in = False</code></pre>
+    <h2>Study Tips</h2>
+    <ul>
+      <li>Try out code snippets in your Python environment to see how each operator behaves.</li>
+      <li>Practice combining multiple types of operators in small programs.</li>
+      <li>Experiment with edge cases in user input to build robust scripts.</li>
+    </ul>
 
-    <li><strong>NoneType</strong> Absence of a value.</li>
-    <pre><code class="language-python">result = None</code></pre>
-  </ul>
-
-  <h2>3. Text Type</h2>
-  <p><strong>str</strong> Immutable sequence of Unicode characters.</p>
-  <pre><code class="language-python">greeting = "Hello, World!"</code></pre>
-
-  <h2>4. Sequence Types</h2>
-  <ul>
-    <li><strong>list</strong> Mutable ordered collection.</li>
-    <pre><code class="language-python">cities = ["Hyderabad", "Mysuru", "Coorg"]</code></pre>
-
-    <li><strong>tuple</strong> Immutable ordered collection.</li>
-    <pre><code class="language-python">origin = (0, 0)</code></pre>
-
-    <li><strong>range</strong> Arithmetic progression of integers.</li>
-    <pre><code class="language-python">for i in range(1, 4):
-    print(i)</code></pre>
-  </ul>
-
-  <h2>5. Mapping Type</h2>
-  <p><strong>dict</strong> Mutable ke alue store.</p>
-  <pre><code class="language-python">employee = {
-    "id": 101,
-    "name": "Sai Krishna",
-    "role": "Engineer"
-}</code></pre>
-
-  <h2>6. Set Types</h2>
-  <ul>
-    <li><strong>set</strong> Unordered collection of unique elements.</li>
-    <pre><code class="language-python">unique_numbers = {1, 2, 3}</code></pre>
-
-    <li><strong>frozenset</strong> Immutable version of a set.</li>
-    <pre><code class="language-python">constants = frozenset({3.14, 2.718})</code></pre>
-  </ul>
-
-  <h2>7. Type Conversion & Checking</h2>
-  <pre><code class="language-python">int("42")            # 42
-str(3.14)             # '3.14'
-list("abc")          # ['a', 'b', 'c']
-
-isinstance(42, int)   # True
-type(None)            # <class 'NoneType'>
-  </code></pre>
-
-  <h2>8. Mutability Summary</h2>
-  <table>
-    <tr>
-      <th>Immutable Types</th>
-      <th>Mutable Types</th>
-    </tr>
-    <tr>
-      <td>int, float, bool, str, tuple, frozenset, bytes</td>
-      <td>list, dict, set, bytearray</td>
-    </tr>
-  </table>
-
-  <h2>9. Python Operators</h2>
-  <p>Operators are symbols that let you perform computations and comparisons.</p>
-
-  <h3>9.1 Arithmetic Operators</h3>
-  <pre><code class="language-python">a, b = 9, 4
-print(a + b)  # 13
-print(a - b)  # 5
-print(a * b)  # 36
-print(a / b)  # 2.25
-print(a // b) # 2
-print(a % b)  # 1
-print(a ** b) # 6561
-  </code></pre>
-
-  <h3>9.2 Comparison Operators</h3>
-  <pre><code class="language-python">print(a == b)  # False
-print(a != b)  # True
-print(a > b)   # True
-print(a < b)   # False
-print(a >= b)  # True
-print(a <= b)  # False
-  </code></pre>
-
-  <h3>9.3 Logical Operators</h3>
-  <pre><code class="language-python">x, y = True, False
-print(x and y)  # False
-print(x or y)   # True
-print(not x)    # False
-  </code></pre>
-
-  <h3>9.4 Assignment Operators</h3>
-  <pre><code class="language-python">counter = 10
-counter += 5   # 15
-counter *= 2   # 30
-counter //= 4  # 7
-  </code></pre>
-
-  <h3>9.5 Membership & Identity Operators</h3>
-  <pre><code class="language-python"># Membership
-letters = ["a", "b", "c"]
-print("a" in letters)   # True
-print("d" not in letters) # True
-
-# Identity
-p = [1, 2]
-q = p
-r = [1, 2]
-print(p is q)  # True (same object)
-print(p is r)  # False (same content, different objects)
-  </code></pre>
-
-  <h2>10. Quick Exercises</h2>
-  <ul>
-    <li>Write a function that returns the last element of any list without using indexing.</li>
-    <li>Check if the number 17 is prime using comparison and logical operators.</li>
-    <li>Create a set of vowels present in a given string.</li>
-    <li>Demonstrate the difference between <code>is</code> and <code>==</code> with an example.</li>
-  </ul>
-</section>
-
-<footer>
-  <p>&copy; 2025 Python Training Session</p>
-</footer>
-
-<!-- Prism JS -->
-<script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/prism.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-python.min.js"></script>
-
+    <div class="navigation">
+      <a href="../index.html" class="nav-link">Back to Home</a>
+      <a href="input.html" class="nav-link">Next: User Input</a>
+    </div>
+  </div>
 </body>
+
 </html>

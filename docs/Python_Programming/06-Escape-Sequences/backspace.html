@@ -63,6 +63,9 @@
   <h2>What is the Backspace Escape Sequence?</h2>
   <p>The backspace escape sequence <code>\b</code> moves the cursor one position back, effectively deleting the character before it when printed in many consoles. It can be used to remove characters in strings during output.</p>
 
+  <h2>Note:</h2>
+  <p>The effect of <code>\b</code> can vary depending on the terminal or console used. It works well in many standard command-line interfaces but might behave differently in some IDE output windows.</p>
+
   <h2>Examples of Using <code>\b</code></h2>
 
   <pre><code class="language-python"># Example 1: Removing last character
@@ -100,8 +103,6 @@ print("A\tB\tC\b\bD")
 # A       B       D
   </code></pre>
 
-  <h2>Note:</h2>
-  <p>The effect of <code>\b</code> can vary depending on the terminal or console used. It works well in many standard command-line interfaces but might behave differently in some IDE output windows.</p>
 </section>
 
 <footer>

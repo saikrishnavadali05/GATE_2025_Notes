@@ -1,134 +1,83 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Python Basics: From Scripts to Style</title>
-
-  <!-- Prism CSS for syntax highlighting -->
-  <link href="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/themes/prism.css" rel="stylesheet" />
-
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      background-color: #fdfdfd;
-      color: #222;
-      margin: 0;
-      padding: 0 20px 40px 20px;
-      max-width: 900px;
-      margin-left: auto;
-      margin-right: auto;
-    }
-    header {
-      background-color: #306998;
-      color: white;
-      padding: 20px;
-      text-align: center;
-      margin-bottom: 20px;
-      border-radius: 4px;
-    }
-    h2 {
-      color: #306998;
-      margin-top: 30px;
-    }
-    pre {
-      padding: 12px;
-      border-radius: 6px;
-      overflow-x: auto;
-      font-size: 15px;
-      line-height: 1.4;
-    }
-    footer {
-      background-color: #306998;
-      color: white;
-      text-align: center;
-      padding: 10px;
-      margin-top: 40px;
-      border-radius: 4px;
-    }
-  </style>
+  <title>Chapter 2 Overview - Python Basics</title>
+  <link rel="stylesheet" href="../style.css" />
 </head>
+
 <body>
+  <header>
+    <h1>Chapter 2: Python Basics - Overview</h1>
+  </header>
 
-<header>
-  <h1>Python Basics</h1>
-  <p>Essential Concepts Before You Start Coding</p>
-</header>
+  <div class="container">
+    <p>This chapter dives into the fundamental concepts that form the building blocks of Python programming. Understanding these basics is crucial for writing clean, efficient, and readable code.</p>
 
-<section>
-  <h2>1. About Python</h2>
-  <p>Python is a high-level, interpreted programming language known for its readability and broad standard library. It supports multiple paradigms, including procedural, object-oriented, and functional programming.</p>
+    <h2>What You Will Learn</h2>
+    <p>By the end of this chapter, you will be familiar with Python's core programming constructs, the interpreter, running scripts, code organization, and best practices like commenting and code style checking.</p>
 
-  <h2>2. Header (Shebang)</h2>
-  <p>A <em>shebang</em> tells Unix-like systems which interpreter to use when running the script directly.</p>
-  <pre><code class="language-bash">#!/usr/bin/env python3
-# example.py</code></pre>
+    <h2>Detailed Topics</h2>
+    <ul>
+      <li>
+        <strong><a href="header.html">Python Script Header</a></strong><br />
+        Learn about the importance of script headers, how to declare them, and what metadata can be included. This helps in documenting your scripts effectively.
+      </li>
+      <li>
+        <strong><a href="decomposition.html">Decomposition</a></strong><br />
+        Understand how breaking problems into smaller, manageable parts (decomposition) is essential for solving complex problems and improving code readability.
+      </li>
+      <li>
+        <strong><a href="interpreter.html">Python Interpreter</a></strong><br />
+        Get introduced to the Python interpreter, how it executes code line-by-line, and the difference between interactive mode and running scripts.
+      </li>
+      <li>
+        <strong><a href="run.html">Running Python Scripts</a></strong><br />
+        Learn different methods to run Python scripts including from the command line, IDEs, and text editors.
+      </li>
+      <li>
+        <strong><a href="scripts.html">Python Scripts</a></strong><br />
+        Discover the structure of Python scripts, how to write, save, and execute them, and tips for organizing code into files.
+      </li>
+      <li>
+        <strong><a href="pylint.html">Code Style and Pylint</a></strong><br />
+        Understand the importance of writing clean code, using style guides like PEP 8, and how tools like Pylint help maintain code quality.
+      </li>
+      <li>
+        <strong><a href="comments.html">Comments in Python</a></strong><br />
+        Learn best practices for commenting your code to make it understandable for others and your future self.
+      </li>
+      <li>
+        <strong><a href="print.html">The print() Function</a></strong><br />
+        Master the use of the print() function to display output, format strings, and debug your code effectively.
+      </li>
+      <li>
+        <strong><a href="indentation.html">Indentation in Python</a></strong><br />
+        Understand why Python uses indentation instead of braces, and how proper indentation is vital for code execution and readability.
+      </li>
+      <li>
+        <strong><a href="continuation.html">Line Continuation</a></strong><br />
+        Learn how to write long statements across multiple lines using explicit and implicit line continuation techniques.
+      </li>
+      <li>
+        <strong><a href="assignment.html">Assignments</a></strong><br />
+        Apply what you have learned with practical assignments designed to reinforce the concepts covered in this chapter.
+      </li>
+    </ul>
 
-  <h2>3. Decomposition</h2>
-  <p>Break large problems into smaller, manageable functions or modules. This boosts readability, testing, and reuse.</p>
-  <pre><code class="language-python">def read_data(path):
-    ...
+    <h2>Why This Chapter is Important</h2>
+    <p>This chapter lays the essential groundwork needed to write and run Python code correctly. Mastering these basics is a prerequisite for moving on to more advanced topics and for developing good programming habits early on.</p>
 
-def process(data):
-    ...
+    <h2>How to Use This Chapter</h2>
+    <p>Follow the linked sections sequentially to build your understanding step-by-step. Practice the examples, write your own small scripts, and complete the assignments to deepen your learning.</p>
 
-def main():
-    raw = read_data("data.csv")
-    result = process(raw)
-    print(result)
-
-if __name__ == "__main__":
-    main()</code></pre>
-
-  <h2>4. Interpreter vs. Compiler</h2>
-  <p>Python code is executed by the <strong>Python interpreter</strong>, which converts source lines to bytecode on the fly and then runs it in the CPython virtual machine. No explicit compilation step is required.</p>
-
-  <h2>5. Running Python</h2>
-  <ul>
-    <li><strong>Interactive Mode:</strong> Start a REPL with <code>python</code> or <code>python -i</code>.</li>
-    <li><strong>Script Mode:</strong> Execute a <code>.py</code> file: <code>python script.py</code>.</li>
-    <li><strong>Module as Script:</strong> <code>python -m module_name</code>.</li>
-  </ul>
-
-  <h2>6. Scripts vs. Modules</h2>
-  <p>A <em>script</em> runs top-to-bottom for its side-effects, while a <em>module</em> exposes functions, classes, or variables to import elsewhere. Guard reusable code with <code>if __name__ == "__main__"</code> so it only executes when run directly.</p>
-
-  <h2>7. pylint & Code Quality</h2>
-  <p><code>pylint</code> is a static code analyzer that flags errors and enforces style conventions.</p>
-  <pre><code class="language-bash">pip install pylint
-pylint my_project/</code></pre>
-
-  <h2>8. Comments</h2>
-  <p>Use comments to clarify <em>why</em> code exists, not <em>what</em> it does (which should be evident).</p>
-  <pre><code class="language-python"># Calculate compound interest over n years
-amount = principal * (1 + rate) ** years</code></pre>
-
-  <h2>9. print()</h2>
-  <p>The built-in <code>print()</code> function sends text to <code>stdout</code>. Use f-strings for readable formatting.</p>
-  <pre><code class="language-python">name = "Sai"
-print(f"Hello, {name}!")</code></pre>
-
-  <h2>10. Indentation</h2>
-  <p>Python uses indentation to define blocks; the standard is 4 spaces. Mixing tabs and spaces raises <code>IndentationError</code>.</p>
-  <pre><code class="language-python">for i in range(3):
-    print(i)
-    if i == 1:
-        break</code></pre>
-
-  <h2>11. Line Continuation</h2>
-  <p>Long statements can span multiple lines using a backslash <code>\</code> or by wrapping in parentheses.</p>
-  <pre><code class="language-python">total = (price
-         + tax
-         - discount)</code></pre>
-</section>
-
-<footer>
-  <p>&copy; 2025 Python Training Session</p>
-</footer>
-
-<!-- Prism JS -->
-<script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/prism.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-python.min.js"></script>
-
+    <div class="navigation">
+      <a href="../index.html" class="nav-link">Back to Home</a>
+      <a href="header.html" class="nav-link">Next: Python Script Header</a>
+    </div>
+  </div>
 </body>
+
 </html>
