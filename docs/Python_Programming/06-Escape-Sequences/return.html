@@ -70,7 +70,7 @@
   <p><strong>Tip:</strong> Only the characters at the beginning of the line are replaced, not the entire line.</p>
   <pre><code class="language-python">print("Hello World\rPython")
 # Output:
-# Python World</code></pre>
+# PythonWorld</code></pre>
 
   <h3>Example 2: Partial Overwriting</h3>
   <p>Here, "1234567890" is printed first. Then <code>\r</code> brings the cursor to the start. "ABCDE" replaces the first 5 characters, resulting in "ABCDE67890".</p>
@@ -89,7 +89,7 @@ for i in range(5):
     time.sleep(0.5)
 print("\rDone!      ")
 # Output:
-# Done!</code></pre>
+# Done!      .</code></pre>
 
   <h3>Example 4: In a String</h3>
   <p>The string "Hello\rBye" means "Bye" is printed starting from the beginning, replacing "Hel" from "Hello". The remaining "lo" is kept, resulting in "Byeo".</p>
@@ -97,15 +97,16 @@ print("\rDone!      ")
   <pre><code class="language-python">text = "Hello\rBye"
 print(text)
 # Output:
-# Byeo</code></pre>
+# Byelo</code></pre>
 
   <h3>Example 5: Carriage Return with Newline</h3>
   <p>This example combines both <code>\r</code> and <code>\n</code>. First, "First Line" is overwritten by "Second" due to <code>\r</code>. Then <code>\n</code> prints "Third Line" on the next line.</p>
   <p><strong>Note:</strong> <code>\n</code> moves to a new line, while <code>\r</code> only moves the cursor to the beginning of the same line.</p>
   <pre><code class="language-python">print("First Line\rSecond\r\nThird Line")
 # Output:
-# Second
-# Third Line</code></pre>
+# SecondLine
+# Third Line
+</code></pre>
 
   <h2>Summary</h2>
   <p>The <code>\r</code> escape sequence returns the cursor to the beginning of the current line, allowing you to overwrite existing text. It's especially useful for updating lines in terminal output, like showing progress dynamically.</p>
