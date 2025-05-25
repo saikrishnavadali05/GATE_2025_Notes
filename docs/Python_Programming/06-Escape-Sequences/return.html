@@ -41,7 +41,7 @@
       font-size: 15px;
       line-height: 1.4;
       margin-top: 10px;
-      margin-bottom: 30px;
+      margin-bottom: 10px;
     }
     footer {
       background-color: #003366;
@@ -61,54 +61,54 @@
 
 <section>
   <h2>What is the Carriage Return Escape Sequence?</h2>
-  <p>The carriage return escape sequence <code>\\r</code> moves the cursor back to the beginning of the current line without advancing to the next line. When printed, it can overwrite the beginning of the line with new content.</p>
+  <p>The carriage return escape sequence <code>\r</code> moves the cursor back to the beginning of the current line without advancing to the next line. When printed, it can overwrite the beginning of the line with new content.</p>
 
-  <h2>Examples of Using <code>\\r</code></h2>
+  <h2>Examples of Using <code>\r</code></h2>
 
-  <pre><code class="language-python"># Example 1: Simple overwrite
-print("Hello World\rPython")
-
+  <h3>Example 1: Simple Overwrite</h3>
+  <p>In this example, the string "Hello World" is printed. But <code>\rPython</code> moves the cursor to the start and prints "Python", replacing "Hello" with it. So you get "Python World".</p>
+  <p><strong>Tip:</strong> Only the characters at the beginning of the line are replaced, not the entire line.</p>
+  <pre><code class="language-python">print("Hello World\rPython")
 # Output:
-# Python World
-  </code></pre>
+# Python World</code></pre>
 
-  <pre><code class="language-python"># Example 2: Overwriting entire line
-print("1234567890\rABCDE")
-
+  <h3>Example 2: Partial Overwriting</h3>
+  <p>Here, "1234567890" is printed first. Then <code>\r</code> brings the cursor to the start. "ABCDE" replaces the first 5 characters, resulting in "ABCDE67890".</p>
+  <p><strong>Key Idea:</strong> Characters after the overwritten part are left unchanged.</p>
+  <pre><code class="language-python">print("1234567890\rABCDE")
 # Output:
-# ABCDE67890
-  </code></pre>
+# ABCDE67890</code></pre>
 
-  <pre><code class="language-python"># Example 3: Using carriage return with print progress
-import time
+  <h3>Example 3: Progress Indicator</h3>
+  <p>"Loading....." is printed one dot at a time using a loop. Then <code>\r</code> moves the cursor back and "Done!" replaces it, giving a clean output.</p>
+  <p><strong>Real-world Use:</strong> This is often used in command-line tools to show progress or status updates without printing new lines every time.</p>
+  <pre><code class="language-python">import time
 print("Loading", end="")
 for i in range(5):
     print(".", end="", flush=True)
     time.sleep(0.5)
 print("\rDone!      ")
-
 # Output:
-# Done!
-  </code></pre>
+# Done!</code></pre>
 
-  <pre><code class="language-python"># Example 4: Carriage return with string formatting
-text = "Hello\rBye"
+  <h3>Example 4: In a String</h3>
+  <p>The string "Hello\rBye" means "Bye" is printed starting from the beginning, replacing "Hel" from "Hello". The remaining "lo" is kept, resulting in "Byeo".</p>
+  <p><strong>Why this happens:</strong> Strings aren't magically erased — only overwritten. So anything longer than the replacement remains.</p>
+  <pre><code class="language-python">text = "Hello\rBye"
 print(text)
-
 # Output:
-# Byeo
-  </code></pre>
+# Byeo</code></pre>
 
-  <pre><code class="language-python"># Example 5: Mixing carriage return with newline
-print("First Line\rSecond\r\nThird Line")
-
+  <h3>Example 5: Carriage Return with Newline</h3>
+  <p>This example combines both <code>\r</code> and <code>\n</code>. First, "First Line" is overwritten by "Second" due to <code>\r</code>. Then <code>\n</code> prints "Third Line" on the next line.</p>
+  <p><strong>Note:</strong> <code>\n</code> moves to a new line, while <code>\r</code> only moves the cursor to the beginning of the same line.</p>
+  <pre><code class="language-python">print("First Line\rSecond\r\nThird Line")
 # Output:
 # Second
-# Third Line
-  </code></pre>
+# Third Line</code></pre>
 
   <h2>Summary</h2>
-  <p>The <code>\\r</code> escape sequence allows overwriting of text on the current line by returning the cursor to the start of that line. It is useful in command-line interfaces to update text dynamically, such as progress indicators.</p>
+  <p>The <code>\r</code> escape sequence returns the cursor to the beginning of the current line, allowing you to overwrite existing text. It's especially useful for updating lines in terminal output, like showing progress dynamically.</p>
 </section>
 
 <footer>
