@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>5G NR Initial Access</title>
+  <link rel="stylesheet" href="css/style.css">
+  <script defer src="js/script.js"></script>
+</head>
+<body>
+
+<a href="index.html" class="home-button">← Back to Home</a>
+
+<h1>2. Initial Access in 5G NR</h1>
+
+<button class="accordion">What is Initial Access?</button>
+<div class="panel">
+  <p>
+    Initial Access is the first step a mobile device (UE) performs to connect with a 5G NR base station (gNB). It includes cell search, synchronization, and random access procedures.
+  </p>
+</div>
+
+<button class="accordion">Step 1: Cell Search and Synchronization</button>
+<div class="panel">
+  <ul>
+    <li>UE looks for Synchronization Signal Blocks (SSBs) broadcast by gNB.</li>
+    <li>Each SSB contains:
+      <ul>
+        <li><strong>PSS:</strong> Primary Synchronization Signal</li>
+        <li><strong>SSS:</strong> Secondary Synchronization Signal</li>
+        <li><strong>PBCH:</strong> Physical Broadcast Channel</li>
+      </ul>
+    </li>
+    <li>The UE uses PSS/SSS to detect the cell and synchronize frequency/time.</li>
+  </ul>
+</div>
+
+<button class="accordion">Step 2: Broadcast System Information</button>
+<div class="panel">
+  <p>
+    After synchronization, the UE reads the PBCH to obtain basic configuration. Additional information is fetched from:
+  </p>
+  <ul>
+    <li><strong>SIB1:</strong> Contains cell configuration needed for access</li>
+    <li><strong>Other SIBs:</strong> May be broadcast on-demand or periodically</li>
+  </ul>
+</div>
+
+<button class="accordion">Step 3: Random Access Procedure (RACH)</button>
+<div class="panel">
+  <p>
+    The UE uses the RACH to request a dedicated connection. Two types exist:
+  </p>
+  <ul>
+    <li><strong>Contention-Based RACH:</strong> Multiple UEs may try simultaneously (requires resolution)</li>
+    <li><strong>Contention-Free RACH:</strong> gNB assigns resources (used in handover or special cases)</li>
+  </ul>
+</div>
+
+<button class="accordion">RACH Message Flow</button>
+<div class="panel">
+  <ol>
+    <li>UE sends a random access preamble</li>
+    <li>gNB replies with a Random Access Response (RAR)</li>
+    <li>UE sends RRC Connection Request</li>
+    <li>gNB responds with RRC Connection Setup</li>
+    <li>UE completes the process with RRC Connection Setup Complete</li>
+  </ol>
+</div>
+
+<button class="accordion">Beam Sweeping and Initial Access</button>
+<div class="panel">
+  <p>
+    Since 5G uses directional antennas (beamforming), SSBs are transmitted in different directions using beam sweeping. The UE selects the best beam for communication.
+  </p>
+</div>
+
+</body>
+</html>

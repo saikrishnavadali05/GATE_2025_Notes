@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>5G NR Scheduling</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <script defer src="../js/script.js"></script>
+</head>
+<body>
+
+<a href="index.html" class="home-button">← Back to Home</a>
+
+<h1>3. Scheduling in 5G NR</h1>
+
+<button class="accordion">What is Scheduling?</button>
+<div class="panel">
+  <p>
+    Scheduling in 5G NR is the process by which the base station (gNB) allocates radio resources (time and frequency) to User Equipment (UE) for uplink (UL) and downlink (DL) data transmissions.
+  </p>
+</div>
+
+<button class="accordion">Who Controls Scheduling?</button>
+<div class="panel">
+  <p>
+    The <strong>gNB</strong> is fully in control of scheduling in both UL and DL. The UE waits for instructions from the gNB.
+  </p>
+</div>
+
+<button class="accordion">Types of Scheduling</button>
+<div class="panel">
+  <ul>
+    <li><strong>Dynamic Scheduling:</strong> Resources are allocated on a per-slot or per-TTI basis. Offers flexibility and efficiency.</li>
+    <li><strong>Semi-Persistent Scheduling (SPS):</strong> Pre-allocated periodic resources, mainly used for VoIP or low-latency traffic.</li>
+    <li><strong>Configured Grant:</strong> Mainly for uplink transmissions with predictable traffic (e.g., IoT, URLLC).</li>
+  </ul>
+</div>
+
+<button class="accordion">DL Scheduling Procedure</button>
+<div class="panel">
+  <ol>
+    <li>gNB sends a <strong>DCI (Downlink Control Information)</strong> message via PDCCH.</li>
+    <li>UE reads the DCI and extracts resource and modulation info.</li>
+    <li>UE receives data via PDSCH.</li>
+    <li>UE sends HARQ acknowledgment via PUCCH or PUSCH.</li>
+  </ol>
+</div>
+
+<button class="accordion">UL Scheduling Procedure</button>
+<div class="panel">
+  <ol>
+    <li>UE sends a <strong>SRS (Sounding Reference Signal)</strong> or BSR (Buffer Status Report).</li>
+    <li>gNB allocates uplink resources via DCI.</li>
+    <li>UE transmits data on PUSCH.</li>
+    <li>gNB sends HARQ ACK/NACK.</li>
+  </ol>
+</div>
+
+<button class="accordion">Grant-Free Scheduling</button>
+<div class="panel">
+  <p>
+    In grant-free or configured grant uplink scheduling, the UE can transmit without waiting for a scheduling grant. This reduces latency and is useful for URLLC scenarios.
+  </p>
+</div>
+
+<button class="accordion">Flexible Slot-Based Scheduling</button>
+<div class="panel">
+  <p>
+    5G NR supports flexible slot structures—each slot can carry DL, UL, or special symbols. This enables faster responses and adaptability in scheduling decisions.
+  </p>
+</div>
+
+<button class="accordion">Challenges in 5G Scheduling</button>
+<div class="panel">
+  <ul>
+    <li>Beam management with directional antennas</li>
+    <li>Latency-sensitive URLLC scheduling</li>
+    <li>Efficient multiplexing of diverse traffic types (eMBB, mMTC, URLLC)</li>
+    <li>QoS-aware scheduling and prioritization</li>
+  </ul>
+</div>
+
+</body>
+</html>

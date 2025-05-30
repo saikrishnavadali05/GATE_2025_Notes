@@ -103,3 +103,26 @@ ul {
 .home-button:hover {
   background-color: #5149d8;
 }
+
+.index-links {
+  list-style: none;
+  padding: 0;
+  max-width: 600px;
+  margin: 20px auto;
+}
+
+.index-links li {
+  margin: 10px 0;
+}
+
+.index-links a {
+  text-decoration: none;
+  font-size: 1.2rem;
+  color: #0073e6;
+  border-bottom: 1px solid transparent;
+  transition: border-bottom 0.3s;
+}
+
+.index-links a:hover {
+  border-bottom: 1px solid #0073e6;
+}
