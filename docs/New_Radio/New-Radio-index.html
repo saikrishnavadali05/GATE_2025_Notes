@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Learn 5G New Radio (NR) - Basics</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <h1>📡 5G New Radio (NR) - Learning from Basics</h1>
+
+  <button class="accordion">📘 What is 5G NR?</button>
+  <div class="panel">
+    <p>5G NR is the new radio access technology developed by 3GPP for the 5G mobile network. It offers high speed, low latency, and supports a wide variety of use cases including enhanced mobile broadband, IoT, and ultra-reliable communications.</p>
+  </div>
+
+  <button class="accordion">📶 5G NR Architecture</button>
+  <div class="panel">
+    <ul>
+      <li><a href="#">gNB - Next Generation NodeB</a></li>
+      <li><a href="#">NG Core Network</a></li>
+      <li><a href="#">Interfaces: NG, Xn</a></li>
+    </ul>
+  </div>
+
+  <button class="accordion">📡 Frequency Bands & Spectrum</button>
+  <div class="panel">
+    <ul>
+      <li><a href="#">FR1 (Sub 6 GHz)</a></li>
+      <li><a href="#">FR2 (mmWave)</a></li>
+      <li><a href="#">Bandwidth & Duplexing</a></li>
+    </ul>
+  </div>
+
+  <button class="accordion">🧠 Protocol Stack</button>
+  <div class="panel">
+    <ul>
+      <li><a href="#">RRC - Radio Resource Control</a></li>
+      <li><a href="#">PDCP, RLC, MAC, PHY</a></li>
+    </ul>
+  </div>
+
+  <button class="accordion">📍 Beamforming & Massive MIMO</button>
+  <div class="panel">
+    <p>Beamforming is a technique to direct signal in specific directions. Massive MIMO uses multiple antennas to enhance capacity and reliability in 5G NR.</p>
+  </div>
+
+  <button class="accordion">⚡ Numerology & Subcarrier Spacing</button>
+  <div class="panel">
+    <p>5G NR supports scalable numerology: 15, 30, 60, 120, and 240 kHz subcarrier spacing to support diverse deployment scenarios and latency requirements.</p>
+  </div>
+
+  <button class="accordion">📊 5G NR vs 4G LTE</button>
+  <div class="panel">
+    <ul>
+      <li><a href="#">Comparison of Latency</a></li>
+      <li><a href="#">Spectral Efficiency</a></li>
+      <li><a href="#">New Capabilities in NR</a></li>
+    </ul>
+  </div>
+
+  <button class="accordion">🔗 References</button>
+  <div class="panel">
+    <ul>
+      <li><a href="https://www.3gpp.org" target="_blank">3GPP Official Website</a></li>
+      <li><a href="https://www.qualcomm.com/5g" target="_blank">Qualcomm - 5G Resources</a></li>
+      <li><a href="https://www.ni.com/en-us/innovations/5g.html" target="_blank">NI - 5G Technology</a></li>
+    </ul>
+  </div>
+
+  <script>
+    const accordions = document.querySelectorAll('.accordion');
+    accordions.forEach((acc) => {
+      acc.addEventListener('click', function () {
+        this.classList.toggle('active');
+        const panel = this.nextElementSibling;
+        if (panel.style.maxHeight) {
+          panel.style.maxHeight = null;
+        } else {
+          panel.style.maxHeight = panel.scrollHeight + 'px';
+        }
+      });
+    });
+  </script>
+
+</body>
+</html>
