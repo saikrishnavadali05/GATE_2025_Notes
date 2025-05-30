@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Learn 5G New Radio (NR) - Basics</title>
   <link rel="stylesheet" href="css/styles.css">
 </head>
@@ -70,7 +71,7 @@
 
   <script>
     const accordions = document.querySelectorAll('.accordion');
-    accordions.forEach((acc) => {
+    accordions.forEach(acc => {
       acc.addEventListener('click', function () {
         this.classList.toggle('active');
         const panel = this.nextElementSibling;
