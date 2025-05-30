@@ -11,7 +11,7 @@ structure = {
 }
 
 # Boilerplate HTML template generator
-def generate_html(title, relative_path_to_home="../New-Radio-index.html"):
+def generate_html(title, relative_path_to_home="../../New-Radio-index.html"):
     return f"""<!DOCTYPE html>
 <html lang="en">
 <head>
