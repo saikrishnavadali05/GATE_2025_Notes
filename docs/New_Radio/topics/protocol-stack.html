@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>5G NR Protocol Stack</title>
+  <link rel="stylesheet" href="css/style.css">
+  <script defer src="js/script.js"></script>
+</head>
+<body>
+
+<a href="index.html" class="home-button">← Back to Home</a>
+
+<h1>4. 5G NR Protocol Stack</h1>
+
+<button class="accordion">Overview of Protocol Stack</button>
+<div class="panel">
+  <p>
+    The 5G NR protocol stack is divided into two planes:
+  </p>
+  <ul>
+    <li><strong>User Plane:</strong> Handles data traffic (e.g., video, web)</li>
+    <li><strong>Control Plane:</strong> Manages signaling and control messages</li>
+  </ul>
+</div>
+
+<button class="accordion">User Plane Layers</button>
+<div class="panel">
+  <ul>
+    <li><strong>PDCP (Packet Data Convergence Protocol):</strong> Header compression, encryption</li>
+    <li><strong>RLC (Radio Link Control):</strong> Segmentation, retransmission</li>
+    <li><strong>MAC (Medium Access Control):</strong> Scheduling, HARQ</li>
+    <li><strong>PHY (Physical Layer):</strong> Modulation, channel coding</li>
+  </ul>
+</div>
+
+<button class="accordion">Control Plane Layers</button>
+<div class="panel">
+  <ul>
+    <li><strong>RRC (Radio Resource Control):</strong> Connection setup, mobility, security</li>
+    <li><strong>PDCP, RLC, MAC, PHY:</strong> Same layers as user plane with control-specific functions</li>
+  </ul>
+</div>
+
+<button class="accordion">gNB and UE Stack</button>
+<div class="panel">
+  <p>
+    Both gNB (base station) and UE (user equipment) implement the same protocol layers. Communication happens layer-to-layer between them (e.g., PDCP of UE ↔ PDCP of gNB).
+  </p>
+</div>
+
+<button class="accordion">Stack Representation</button>
+<div class="panel">
+  <p>Here's a simplified view of the 5G NR stack:</p>
+  <pre>
+    Application
+    └── NAS (Non-Access Stratum)
+        └── RRC
+            └── PDCP
+                └── RLC
+                    └── MAC
+                        └── PHY
+  </pre>
+</div>
+
+</body>
+</html>

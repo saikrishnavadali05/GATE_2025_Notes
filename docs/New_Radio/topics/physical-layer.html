@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>5G NR Physical Layer</title>
+  <link rel="stylesheet" href="css/style.css">
+  <script defer src="js/script.js"></script>
+</head>
+<body>
+
+<a href="index.html" class="home-button">← Back to Home</a>
+
+<h1>5. 5G NR Physical Layer</h1>
+
+<button class="accordion">Overview</button>
+<div class="panel">
+  <p>
+    The physical layer (PHY) is responsible for actual transmission and reception of data over the air interface. It handles modulation, coding, resource mapping, and more.
+  </p>
+</div>
+
+<button class="accordion">Key Features</button>
+<div class="panel">
+  <ul>
+    <li><strong>OFDMA:</strong> Used for downlink and uplink</li>
+    <li><strong>Massive MIMO:</strong> Enhances throughput and coverage using multiple antennas</li>
+    <li><strong>Beamforming:</strong> Directs signal energy to specific directions</li>
+    <li><strong>Dynamic TDD:</strong> Adjusts uplink and downlink slots dynamically</li>
+    <li><strong>Flexible Numerology:</strong> Multiple subcarrier spacings (15, 30, 60, 120, 240 kHz)</li>
+  </ul>
+</div>
+
+<button class="accordion">Numerology in 5G</button>
+<div class="panel">
+  <p>
+    5G supports scalable subcarrier spacing, referred to as numerology μ:
+  </p>
+  <ul>
+    <li>μ = 0 → 15 kHz (same as LTE)</li>
+    <li>μ = 1 → 30 kHz</li>
+    <li>μ = 2 → 60 kHz</li>
+    <li>μ = 3 → 120 kHz</li>
+    <li>μ = 4 → 240 kHz (used for mmWave)</li>
+  </ul>
+</div>
+
+<button class="accordion">Slot and Frame Structure</button>
+<div class="panel">
+  <p>
+    5G uses 10 ms frames, each divided into 1 ms subframes. The number of slots per subframe depends on the numerology. For example:
+  </p>
+  <ul>
+    <li>15 kHz → 1 slot/subframe</li>
+    <li>30 kHz → 2 slots/subframe</li>
+    <li>120 kHz → 8 slots/subframe</li>
+  </ul>
+</div>
+
+<button class="accordion">Physical Channels</button>
+<div class="panel">
+  <ul>
+    <li><strong>PDSCH:</strong> Physical Downlink Shared Channel</li>
+    <li><strong>PUSCH:</strong> Physical Uplink Shared Channel</li>
+    <li><strong>PDCCH:</strong> Downlink Control Channel</li>
+    <li><strong>PUCCH:</strong> Uplink Control Channel</li>
+    <li><strong>PBCH:</strong> Broadcast Channel</li>
+  </ul>
+</div>
+
+</body>
+</html>
