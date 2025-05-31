@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Sets in Python - Core Data Structures</title>
+  <link href="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/themes/prism.css" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+
+<header>
+  <h1>Enumerate in Python</h1>
+</header>
+
+<section>
+  <h2>What is Enumerate?</h2>
+  <p>
+    <code>enumerate()</code> is a built-in function in Python used to loop over an iterable while keeping track of the index of each item. It returns an enumerate object which yields pairs containing the index and the value.
+  </p>
+
+  <h2>Syntax</h2>
+  <pre><code class="language-python">enumerate(iterable, start=0)</code></pre>
+  <p>
+    - <code>iterable</code>: any iterable object (like a list, tuple, or string)<br>
+    - <code>start</code>: the index to start counting from (default is 0)
+  </p>
+
+  <h2>Examples</h2>
+
+  <pre><code class="language-python"># 1. Using enumerate with a list
+fruits = ["apple", "banana", "cherry"]
+for index, fruit in enumerate(fruits):
+    print(index, fruit)
+# Output:
+# 0 apple
+# 1 banana
+# 2 cherry
+  </code></pre>
+
+  <pre><code class="language-python"># 2. Starting the index from 1
+for index, fruit in enumerate(fruits, start=1):
+    print(index, fruit)
+# Output:
+# 1 apple
+# 2 banana
+# 3 cherry
+  </code></pre>
+
+  <pre><code class="language-python"># 3. Converting enumerate object to a list
+enumerated_list = list(enumerate(fruits))
+print(enumerated_list)
+# Output: [(0, 'apple'), (1, 'banana'), (2, 'cherry')]
+  </code></pre>
+
+  <pre><code class="language-python"># 4. Using enumerate with a string
+for index, letter in enumerate("hello"):
+    print(index, letter)
+# Output:
+# 0 h
+# 1 e
+# 2 l
+# 3 l
+# 4 o
+  </code></pre>
+
+  <pre><code class="language-python"># 5. Ignoring the index using underscore
+for _, fruit in enumerate(fruits):
+    print(fruit)
+# Output:
+# apple
+# banana
+# cherry
+  </code></pre>
+
+</section>
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/prism.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-python.min.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Sets in Python - Core Data Structures</title>
+  <link href="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/themes/prism.css" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <h1>map in Python</h1>
+</header>
+
+<section>
+  <h2>What is map?</h2>
+  <p>
+    The <code>map()</code> function applies a given function to all items in an iterable (like a list or tuple) and returns a map object (which is an iterator). It's commonly used for transforming data.
+  </p>
+
+  <h2>Basic Syntax</h2>
+  <pre><code class="language-python">map(function, iterable)</code></pre>
+
+  <h2>Examples</h2>
+
+  <pre><code class="language-python"># 1. Using map with a built-in function
+numbers = [1, 2, 3, 4]
+squares = map(pow, numbers, [2]*len(numbers))
+print(list(squares))  # Output: [1, 4, 9, 16]
+  </code></pre>
+
+  <pre><code class="language-python"># 2. Using map with a lambda function
+numbers = [1, 2, 3, 4]
+doubled = map(lambda x: x * 2, numbers)
+print(list(doubled))  # Output: [2, 4, 6, 8]
+  </code></pre>
+
+  <pre><code class="language-python"># 3. Converting strings to integers
+str_nums = ["1", "2", "3"]
+int_nums = map(int, str_nums)
+print(list(int_nums))  # Output: [1, 2, 3]
+  </code></pre>
+
+  <pre><code class="language-python"># 4. Applying map to multiple iterables
+a = [1, 2, 3]
+b = [4, 5, 6]
+result = map(lambda x, y: x + y, a, b)
+print(list(result))  # Output: [5, 7, 9]
+  </code></pre>
+
+  <pre><code class="language-python"># 5. Using map to strip whitespace from strings
+names = [" Alice ", " Bob ", " Charlie "]
+clean_names = map(str.strip, names)
+print(list(clean_names))  # Output: ['Alice', 'Bob', 'Charlie']
+  </code></pre>
+
+</section>
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/prism.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-python.min.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Sets in Python - Core Data Structures</title>
+  <link href="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/themes/prism.css" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <h1>lambda in Python</h1>
+</header>
+
+<section>
+  <h2>What is lambda?</h2>
+  <p>
+    A <code>lambda</code> function in Python is an anonymous, inline function defined with the <code>lambda</code> keyword. It can have any number of arguments but only one expression. It's commonly used for short, simple functions.
+  </p>
+
+  <h2>Basic Syntax</h2>
+  <pre><code class="language-python">lambda arguments: expression</code></pre>
+
+  <h2>Examples</h2>
+
+  <pre><code class="language-python"># 1. Basic lambda function
+square = lambda x: x * x
+print(square(5))  # Output: 25
+  </code></pre>
+
+  <pre><code class="language-python"># 2. Lambda with multiple arguments
+add = lambda x, y: x + y
+print(add(3, 4))  # Output: 7
+  </code></pre>
+
+  <pre><code class="language-python"># 3. Using lambda with map
+numbers = [1, 2, 3]
+squares = map(lambda x: x ** 2, numbers)
+print(list(squares))  # Output: [1, 4, 9]
+  </code></pre>
+
+  <pre><code class="language-python"># 4. Using lambda with filter
+nums = [1, 2, 3, 4, 5]
+even = filter(lambda x: x % 2 == 0, nums)
+print(list(even))  # Output: [2, 4]
+  </code></pre>
+
+  <pre><code class="language-python"># 5. Using lambda with sorted
+pairs = [(1, 'one'), (3, 'three'), (2, 'two')]
+sorted_pairs = sorted(pairs, key=lambda x: x[1])
+print(sorted_pairs)  # Output: [(3, 'three'), (2, 'two'), (1, 'one')]
+  </code></pre>
+
+</section>
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/prism.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-python.min.js"></script>
+
+</body>
+</html>

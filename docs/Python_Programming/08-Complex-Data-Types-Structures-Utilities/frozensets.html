@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Sets in Python - Core Data Structures</title>
+  <link href="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/themes/prism.css" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <h1>Frozensets in Python</h1>
+</header>
+
+<section>
+  <h2>What is a Frozenset?</h2>
+  <p>
+    A <code>frozenset</code> is an immutable version of a set in Python. Like sets, frozensets are unordered collections of unique elements. However, unlike sets, frozensets cannot be modified after creation—no elements can be added or removed.
+  </p>
+
+  <h2>Creating Frozensets</h2>
+  <pre><code class="language-python">my_frozenset = frozenset([1, 2, 3, 2])
+print(my_frozenset)  # Output: frozenset({1, 2, 3})</code></pre>
+
+  <h2>Examples</h2>
+
+  <pre><code class="language-python"># 1. Creating and printing a frozenset
+colors = frozenset(["red", "green", "blue"])
+print(colors)  # Output: frozenset({'red', 'green', 'blue'})
+  </code></pre>
+
+  <pre><code class="language-python"># 2. Attempting to add an element (will raise an error)
+colors.add("yellow")  # AttributeError: 'frozenset' object has no attribute 'add'
+  </code></pre>
+
+  <pre><code class="language-python"># 3. Using frozensets as dictionary keys (allowed because they are immutable)
+fs1 = frozenset([1, 2])
+fs2 = frozenset([3, 4])
+my_dict = {fs1: "a", fs2: "b"}
+print(my_dict)
+  </code></pre>
+
+  <pre><code class="language-python"># 4. Frozenset operations: union and intersection
+a = frozenset([1, 2, 3])
+b = frozenset([3, 4, 5])
+print(a.union(b))        # Output: frozenset({1, 2, 3, 4, 5})
+print(a.intersection(b)) # Output: frozenset({3})
+  </code></pre>
+
+  <pre><code class="language-python"># 5. Checking membership
+print("red" in colors)  # Output: True
+  </code></pre>
+
+</section>
+
+
+<script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/prism.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-python.min.js"></script>
+
+</body>
+</html>

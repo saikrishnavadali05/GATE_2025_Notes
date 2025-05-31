@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Sets in Python - Core Data Structures</title>
+  <link href="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/themes/prism.css" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+
+<header>
+  <h1>filter in Python</h1>
+</header>
+
+<section>
+  <h2>What is filter?</h2>
+  <p>
+    The <code>filter()</code> function constructs an iterator from elements of an iterable for which a function returns <code>True</code>. It is commonly used to select elements based on a condition.
+  </p>
+
+  <h2>Basic Syntax</h2>
+  <pre><code class="language-python">filter(function, iterable)</code></pre>
+
+  <h2>Examples</h2>
+
+  <pre><code class="language-python"># 1. Filtering even numbers from a list
+numbers = [1, 2, 3, 4, 5, 6]
+even_numbers = filter(lambda x: x % 2 == 0, numbers)
+print(list(even_numbers))  # Output: [2, 4, 6]
+  </code></pre>
+
+  <pre><code class="language-python"># 2. Filtering out empty strings
+words = ["apple", "", "banana", None, "cherry", ""]
+non_empty = filter(None, words)
+print(list(non_empty))  # Output: ['apple', 'banana', 'cherry']
+  </code></pre>
+
+  <pre><code class="language-python"># 3. Using filter with a named function
+def is_positive(n):
+    return n > 0
+
+numbers = [-2, 0, 3, 5, -1]
+positive_numbers = filter(is_positive, numbers)
+print(list(positive_numbers))  # Output: [3, 5]
+  </code></pre>
+
+  <pre><code class="language-python"># 4. Filtering characters from a string
+chars = filter(lambda c: c.isalpha(), "a1b2c3")
+print(''.join(chars))  # Output: abc
+  </code></pre>
+
+  <pre><code class="language-python"># 5. Filtering using None as function
+values = [0, 1, False, True, '', 'Hello']
+filtered = filter(None, values)
+print(list(filtered))  # Output: [1, True, 'Hello']
+  </code></pre>
+
+</section>
+
+
+<script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/prism.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-python.min.js"></script>
+
+</body>
+</html>

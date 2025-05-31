@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Sets in Python - Core Data Structures</title>
+  <link href="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/themes/prism.css" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+
+<header>
+  <h1>Generator Expressions in Python</h1>
+</header>
+
+<section>
+  <h2>What is a Generator Expression?</h2>
+  <p>
+    A generator expression is a concise way to create a generator without defining a full generator function. It produces items one by one, which is memory efficient for large data sets.
+  </p>
+
+  <h2>Basic Syntax</h2>
+  <pre><code class="language-python">(expression for item in iterable [if condition])</code></pre>
+
+  <h2>Examples</h2>
+
+  <pre><code class="language-python"># 1. Simple generator expression
+gen = (x * x for x in range(5))
+print(gen)  # Output: <generator object ...>
+print(list(gen))  # Output: [0, 1, 4, 9, 16]
+  </code></pre>
+
+  <pre><code class="language-python"># 2. Generator expression with condition
+gen = (x for x in range(10) if x % 2 == 0)
+print(list(gen))  # Output: [0, 2, 4, 6, 8]
+  </code></pre>
+
+  <pre><code class="language-python"># 3. Using generator expressions with sum()
+total = sum(x * 2 for x in range(5))
+print(total)  # Output: 20
+  </code></pre>
+
+  <pre><code class="language-python"># 4. Comparing list comprehension and generator expression
+list_comp = [x * x for x in range(5)]
+gen_exp = (x * x for x in range(5))
+print(list_comp)  # Output: [0, 1, 4, 9, 16]
+print(gen_exp)    # Output: <generator object ...>
+  </code></pre>
+
+  <pre><code class="language-python"># 5. Iterating over a generator expression
+gen = (x + 1 for x in range(3))
+for val in gen:
+    print(val)
+# Output:
+# 1
+# 2
+# 3
+  </code></pre>
+
+</section>
+
+
+<script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/prism.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-python.min.js"></script>
+
+</body>
+</html>

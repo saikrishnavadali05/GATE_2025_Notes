@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Sets in Python - Core Data Structures</title>
+  <link href="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/themes/prism.css" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+
+<header>
+  <h1>Generators in Python</h1>
+</header>
+
+<section>
+  <h2>What is a Generator?</h2>
+  <p>
+    A generator is a special type of iterator in Python that allows you to iterate over data without storing the entire sequence in memory. Generators are created using functions and the <code>yield</code> keyword. They are memory-efficient and lazy, meaning they produce items one at a time as needed.
+  </p>
+
+  <h2>Creating Generators</h2>
+  <pre><code class="language-python">def my_generator():
+    yield 1
+    yield 2
+    yield 3
+
+gen = my_generator()
+print(next(gen))  # Output: 1</code></pre>
+
+  <h2>Examples</h2>
+
+  <pre><code class="language-python"># 1. Basic generator using yield
+def count_up_to(n):
+    count = 1
+    while count <= n:
+        yield count
+        count += 1
+
+for num in count_up_to(3):
+    print(num)
+# Output: 1 2 3
+  </code></pre>
+
+  <pre><code class="language-python"># 2. Using next() with a generator
+gen = count_up_to(2)
+print(next(gen))  # Output: 1
+print(next(gen))  # Output: 2
+# print(next(gen))  # Raises StopIteration
+  </code></pre>
+
+  <pre><code class="language-python"># 3. Generator expression (like list comprehension but with ())
+squares = (x*x for x in range(5))
+for square in squares:
+    print(square)
+# Output: 0 1 4 9 16
+  </code></pre>
+
+  <pre><code class="language-python"># 4. Memory efficiency
+import sys
+
+list_nums = [x for x in range(1000)]
+gen_nums = (x for x in range(1000))
+
+print(sys.getsizeof(list_nums))  # Larger memory
+print(sys.getsizeof(gen_nums))   # Much smaller memory
+  </code></pre>
+
+  <pre><code class="language-python"># 5. Infinite generator
+def infinite_numbers():
+    num = 0
+    while True:
+        yield num
+        num += 1
+
+# To use safely, break manually
+for i in infinite_numbers():
+    if i > 3:
+        break
+    print(i)
+# Output: 0 1 2 3
+  </code></pre>
+
+</section>
+
+    
+
+<script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/prism.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-python.min.js"></script>
+
+</body>
+</html>

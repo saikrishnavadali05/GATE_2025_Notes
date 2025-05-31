@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Sets in Python - Core Data Structures</title>
+  <link href="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/themes/prism.css" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <h1>Iterators in Python</h1>
+</header>
+
+<section>
+  <h2>What is an Iterator?</h2>
+  <p>
+    An <strong>iterator</strong> is an object in Python that enables you to traverse through all the elements of a collection, one element at a time. It implements two special methods: <code>__iter__()</code> and <code>__next__()</code>. The <code>iter()</code> function returns an iterator from an iterable, and <code>next()</code> retrieves the next item.
+  </p>
+
+  <h2>Creating Iterators</h2>
+  <pre><code class="language-python">numbers = [1, 2, 3]
+it = iter(numbers)
+print(next(it))  # Output: 1
+print(next(it))  # Output: 2</code></pre>
+
+  <h2>Examples</h2>
+
+  <pre><code class="language-python"># 1. Using iter() and next()
+fruits = ["apple", "banana", "cherry"]
+fruit_iter = iter(fruits)
+print(next(fruit_iter))  # Output: apple
+print(next(fruit_iter))  # Output: banana
+  </code></pre>
+
+  <pre><code class="language-python"># 2. Iterating using a for loop (internally uses iter and next)
+for fruit in fruits:
+    print(fruit)
+# Output:
+# apple
+# banana
+# cherry
+  </code></pre>
+
+  <pre><code class="language-python"># 3. Custom iterator class
+class CountDown:
+    def __init__(self, start):
+        self.current = start
+
+    def __iter__(self):
+        return self
+
+    def __next__(self):
+        if self.current <= 0:
+            raise StopIteration
+        num = self.current
+        self.current -= 1
+        return num
+
+cd = CountDown(3)
+for num in cd:
+    print(num)
+# Output: 3 2 1
+  </code></pre>
+
+  <pre><code class="language-python"># 4. Handling StopIteration
+nums = [10, 20]
+it = iter(nums)
+print(next(it))  # Output: 10
+print(next(it))  # Output: 20
+# print(next(it))  # Raises StopIteration
+  </code></pre>
+
+  <pre><code class="language-python"># 5. Checking if object is an iterator
+from collections.abc import Iterator
+
+print(isinstance(it, Iterator))         # True
+print(isinstance(nums, Iterator))       # False
+print(isinstance(iter(nums), Iterator)) # True
+  </code></pre>
+
+</section>
+
+
+    
+
+<script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/prism.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-python.min.js"></script>
+
+</body>
+</html>

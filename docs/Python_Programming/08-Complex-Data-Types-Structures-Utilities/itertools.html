@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Sets in Python - Core Data Structures</title>
+  <link href="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/themes/prism.css" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+
+<header>
+  <h1>itertools in Python</h1>
+</header>
+
+<section>
+  <h2>What is itertools?</h2>
+  <p>
+    <code>itertools</code> is a standard Python module that provides fast, memory-efficient tools for working with iterators. It includes functions for creating infinite iterators, chaining iterators, filtering, grouping, and combining elements.
+  </p>
+
+  <h2>Importing itertools</h2>
+  <pre><code class="language-python">import itertools</code></pre>
+
+  <h2>Examples</h2>
+
+  <pre><code class="language-python"># 1. count(): infinite counting
+for i in itertools.count(5):
+    if i > 8:
+        break
+    print(i)
+# Output: 5 6 7 8
+  </code></pre>
+
+  <pre><code class="language-python"># 2. cycle(): repeat elements endlessly
+count = 0
+for item in itertools.cycle(["A", "B"]):
+    if count > 3:
+        break
+    print(item)
+    count += 1
+# Output: A B A B
+  </code></pre>
+
+  <pre><code class="language-python"># 3. repeat(): repeat an object multiple times
+for item in itertools.repeat("Hello", 3):
+    print(item)
+# Output: Hello Hello Hello
+  </code></pre>
+
+  <pre><code class="language-python"># 4. chain(): combine multiple iterables
+a = [1, 2]
+b = [3, 4]
+for x in itertools.chain(a, b):
+    print(x)
+# Output: 1 2 3 4
+  </code></pre>
+
+  <pre><code class="language-python"># 5. combinations(): all possible pairs
+items = [1, 2, 3]
+for combo in itertools.combinations(items, 2):
+    print(combo)
+# Output: (1, 2) (1, 3) (2, 3)
+  </code></pre>
+
+  <pre><code class="language-python"># 6. permutations(): all possible orders
+for p in itertools.permutations([1, 2], 2):
+    print(p)
+# Output: (1, 2) (2, 1)
+  </code></pre>
+
+  <pre><code class="language-python"># 7. product(): cartesian product
+for prod in itertools.product([1, 2], ['a', 'b']):
+    print(prod)
+# Output: (1, 'a') (1, 'b') (2, 'a') (2, 'b')
+  </code></pre>
+
+  <pre><code class="language-python"># 8. groupby(): group by condition or key
+data = [("A", 1), ("A", 2), ("B", 3)]
+for key, group in itertools.groupby(data, key=lambda x: x[0]):
+    print(key, list(group))
+# Output: A [('A', 1), ('A', 2)] B [('B', 3)]
+  </code></pre>
+
+</section>
+
+    
+
+<script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/prism.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-python.min.js"></script>
+
+</body>
+</html>

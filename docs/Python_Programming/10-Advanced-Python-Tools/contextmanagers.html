@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Sets in Python - Core Data Structures</title>
+  <link href="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/themes/prism.css" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <h1>Context Managers in Python</h1>
+</header>
+
+<section>
+  <h2>What is a Context Manager?</h2>
+  <p>
+    A context manager is a Python construct that allows setup and cleanup actions around a block of code using the <code>with</code> statement. It ensures resources like files or network connections are properly managed and released.
+  </p>
+
+  <h2>Basic Syntax</h2>
+  <pre><code class="language-python">with expression [as variable]:
+    # code block
+</code></pre>
+
+  <h2>Examples</h2>
+
+  <pre><code class="language-python"># 1. Using context manager to open a file
+with open('example.txt', 'w') as f:
+    f.write('Hello, World!')
+# File is automatically closed after this block
+  </code></pre>
+
+  <pre><code class="language-python"># 2. Custom context manager using a class
+class MyContext:
+    def __enter__(self):
+        print("Entering the context")
+        return self
+
+    def __exit__(self, exc_type, exc_val, exc_tb):
+        print("Exiting the context")
+
+with MyContext() as ctx:
+    print("Inside the context")
+  </code></pre>
+
+  <pre><code class="language-python"># Output:
+# Entering the context
+# Inside the context
+# Exiting the context
+  </code></pre>
+
+  <pre><code class="language-python"># 3. Custom context manager using contextlib
+from contextlib import contextmanager
+
+@contextmanager
+def my_context():
+    print("Before the block")
+    yield
+    print("After the block")
+
+with my_context():
+    print("Inside the block")
+  </code></pre>
+
+  <pre><code class="language-python"># Output:
+# Before the block
+# Inside the block
+# After the block
+  </code></pre>
+
+  <h2>Why Use Context Managers?</h2>
+  <ul>
+    <li>Automatically manage resources (files, locks, connections).</li>
+    <li>Ensure cleanup happens even if exceptions occur.</li>
+    <li>Make code cleaner and easier to read.</li>
+  </ul>
+
+</section>
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/prism.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-python.min.js"></script>
+
+</body>
+</html>

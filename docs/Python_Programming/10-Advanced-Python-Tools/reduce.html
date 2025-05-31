@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Sets in Python - Core Data Structures</title>
+  <link href="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/themes/prism.css" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+
+<header>
+  <h1>reduce in Python</h1>
+</header>
+
+<section>
+  <h2>What is reduce?</h2>
+  <p>
+    The <code>reduce()</code> function, from the <code>functools</code> module, applies a function cumulatively to the items of an iterable, reducing it to a single value. It's often used for aggregations like summing or multiplying.
+  </p>
+
+  <h2>Importing reduce</h2>
+  <pre><code class="language-python">from functools import reduce</code></pre>
+
+  <h2>Basic Syntax</h2>
+  <pre><code class="language-python">reduce(function, iterable[, initializer])</code></pre>
+
+  <h2>Examples</h2>
+
+  <pre><code class="language-python"># 1. Summing elements
+from functools import reduce
+numbers = [1, 2, 3, 4]
+total = reduce(lambda x, y: x + y, numbers)
+print(total)  # Output: 10
+  </code></pre>
+
+  <pre><code class="language-python"># 2. Multiplying elements
+numbers = [1, 2, 3, 4]
+product = reduce(lambda x, y: x * y, numbers)
+print(product)  # Output: 24
+  </code></pre>
+
+  <pre><code class="language-python"># 3. Finding the maximum value
+numbers = [3, 8, 2, 5]
+maximum = reduce(lambda x, y: x if x > y else y, numbers)
+print(maximum)  # Output: 8
+  </code></pre>
+
+  <pre><code class="language-python"># 4. Using an initializer
+numbers = [1, 2, 3]
+total = reduce(lambda x, y: x + y, numbers, 10)
+print(total)  # Output: 16 (10 + 1 + 2 + 3)
+  </code></pre>
+
+  <pre><code class="language-python"># 5. Concatenating strings
+words = ["Hello", "World", "!"]
+sentence = reduce(lambda x, y: x + " " + y, words)
+print(sentence)  # Output: Hello World !
+  </code></pre>
+
+</section>
+
+
+<script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/prism.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-python.min.js"></script>
+
+</body>
+</html>
