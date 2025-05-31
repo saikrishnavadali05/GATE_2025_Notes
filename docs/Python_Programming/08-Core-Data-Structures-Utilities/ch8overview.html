@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Chapter 8 Overview - Core Data Structures and Utilities in Python</title>
+  <link href="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/themes/prism.css" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <h1>Chapter 8 Overview: Core Data Structures and Utilties in Python</h1>
+</header>
+
+<section id="data-types">
+  <h2>Python Data Types</h2>
+  <p>
+    Python’s built-in data types are broadly categorized into simple (primitive) types and complex (collection) types.
+  </p>
+
+  <h3>Simple Data Types</h3>
+  <ul>
+    <li><strong>int:</strong> Integer numbers, e.g., <code>42</code>, <code>-7</code>.</li>
+    <li><strong>float:</strong> Floating-point numbers, e.g., <code>3.14</code>, <code>-0.001</code>.</li>
+    <li><strong>complex:</strong> Complex numbers with real and imaginary parts, e.g., <code>2 + 3j</code>.</li>
+    <li><strong>bool:</strong> Boolean values, <code>True</code> or <code>False</code>.</li>
+    <li><strong>str:</strong> Unicode text strings, e.g., <code>"Hello"</code>.</li>
+    <li><strong>bytes:</strong> Immutable sequences of bytes, used for binary data.</li>
+    <li><strong>bytearray:</strong> Mutable sequences of bytes.</li>
+    <li><strong>NoneType:</strong> The special <code>None</code> object representing absence of a value.</li>
+  </ul>
+
+  <h3>Complex (Collection) Data Types</h3>
+  <ul>
+    <li><strong>list:</strong> Ordered, mutable sequences of items, e.g., <code>[1, 2, 3]</code>.</li>
+    <li><strong>tuple:</strong> Ordered, immutable sequences of items, e.g., <code>(1, 2, 3)</code>.</li>
+    <li><strong>set:</strong> Unordered collections of unique items, e.g., <code>{1, 2, 3}</code>.</li>
+    <li><strong>frozenset:</strong> Immutable sets.</li>
+    <li><strong>dict:</strong> Key-value mappings, e.g., <code>{'name': 'Alice', 'age': 30}</code>.</li>
+  </ul>
+</section>
+
+<section id="underlying-data-structures">
+  <h2>Underlying Data Structures of Python Data Types</h2>
+  <p>
+    Understanding the underlying data structures helps to grasp how Python manages data efficiently under the hood.
+  </p>
+
+  <ul>
+    <li><strong>List:</strong> Implemented as a dynamic array, allowing fast indexing and amortized efficient append operations.</li>
+    <li><strong>Tuple:</strong> Similar to lists but immutable; also implemented as a fixed-size array, providing fast access.</li>
+    <li><strong>Set:</strong> Implemented as a hash table, enabling fast membership testing, insertion, and deletion.</li>
+    <li><strong>FrozenSet:</strong> An immutable hash table based collection similar to sets.</li>
+    <li><strong>Dictionary (dict):</strong> Built as a highly optimized hash table for mapping keys to values with average O(1) lookup, insertion, and deletion.</li>
+  </ul>
+
+  <p>
+    Other simple types like <code>int</code>, <code>float</code>, <code>bool</code>, and <code>str</code> have specialized implementations optimized for performance and memory, but are not built on collection data structures.
+  </p>
+</section>
+
+<section id="iterables">
+  <h2>Python Iterables</h2>
+  <p>
+    Iterables are objects capable of returning their elements one at a time, allowing you to loop over them using a <code>for</code> loop or other iteration contexts.
+  </p>
+
+  <ul>
+    <li><strong>List:</strong> Iterates over elements in order.</li>
+    <li><strong>Tuple:</strong> Iterates over elements in order.</li>
+    <li><strong>Set:</strong> Iterates over unique elements in arbitrary order.</li>
+    <li><strong>Dictionary:</strong> Iterates over keys by default.</li>
+    <li><strong>Range:</strong> Represents a sequence of numbers; efficient and lazy evaluated iterable.</li>
+    <li><strong>String:</strong> Iterable over characters.</li>
+    <li><strong>Generator:</strong> Special iterables that produce items lazily using yield statements.</li>
+    <li><strong>File objects:</strong> Iterable over lines in a file.</li>
+    <li><strong>Enumerate:</strong> Iterable that yields index and value pairs from another iterable.</li>
+    <li><strong>Zip:</strong> Iterable that aggregates elements from multiple iterables.</li>
+  </ul>
+</section>
+
+<section id="utilities">
+  <h2>Python Utilities: Functions and More</h2>
+  <p>
+    Python provides many utilities to work with data structures and iterables effectively.
+  </p>
+
+  <ul>
+    <li><strong>Functions:</strong> Encapsulate reusable blocks of code to perform tasks or computations.</li>
+    <li><strong>Lambda Functions:</strong> Small anonymous functions defined with the <code>lambda</code> keyword.</li>
+    <li><strong>Map:</strong> Applies a function to all items in an iterable, returning an iterator.</li>
+    <li><strong>Filter:</strong> Filters elements from an iterable based on a function that returns True or False.</li>
+    <li><strong>Reduce:</strong> Aggregates iterable items using a function to produce a single cumulative value (available in <code>functools</code> module).</li>
+    <li><strong>List Comprehensions:</strong> Concise syntax to create lists by iterating and optionally filtering.</li>
+    <li><strong>Generator Expressions:</strong> Similar to list comprehensions but produce generators for lazy evaluation.</li>
+    <li><strong>Itertools Module:</strong> Offers utilities for efficient looping, such as <code>chain</code>, <code>cycle</code>, <code>combinations</code>, and more.</li>
+  </ul>
+</section>
+
+
+<script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/prism.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-python.min.js"></script>
+
+</body>
+</html>
