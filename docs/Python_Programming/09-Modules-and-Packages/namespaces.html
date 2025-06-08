@@ -13,40 +13,157 @@
   <header>
     <h1>Namespaces in Python</h1>
   </header>
+
   <div class="container">
 
-    <p>A <strong>namespace</strong> in Python refers to the naming system used to ensure that names are unique and won't lead to conflicts. Namespaces map names to objects. Python uses different types of namespaces, including:</p>
+  <p>A <strong>namespace</strong> in Python refers to the naming system used to ensure that names are unique and won't lead to conflicts. Namespaces map names to objects. Python uses different types of namespaces, including:</p>
 
-    <ul>
-      <li><strong>Local Namespace</strong> Inside a function</li>
-      <li><strong>Global Namespace</strong> At the top level of a script/module</li>
-      <li><strong>Built-in Namespace</strong> Containing built-in functions and exceptions</li>
-    </ul>
+  <ul>
+    <li><strong>Local Namespace</strong>: Inside a function</li>
+    <li><strong>Global Namespace</strong>: At the top level of a script/module</li>
+    <li><strong>Built-in Namespace</strong>: Containing built-in functions and exceptions</li>
+  </ul>
 
-    <h2>Why Are Namespaces Important?</h2>
-    <ul>
-      <li>They avoid naming conflicts between identifiers.</li>
-      <li>They make code easier to read and maintain.</li>
-      <li>They support modularity by isolating scopes.</li>
-    </ul>
+  <h2>LEGB Rule: Scope Resolution in Python</h2>
+  <p>
+    Python resolves variable names using the <strong>LEGB rule</strong>, which stands for:
+  </p>
+  <ul>
+    <li><strong>L – Local</strong>: Names assigned within a function or lambda. This is the innermost scope.</li>
+    <li><strong>E – Enclosing</strong>: Names in enclosing function scopes (for nested functions).</li>
+    <li><strong>G – Global</strong>: Names defined at the top-level of a module or declared global inside a function.</li>
+    <li><strong>B – Built-in</strong>: Names that are preloaded in Python like <code>len</code>, <code>sum</code>, etc.</li>
+  </ul>
 
-    <h2>Example 1: Local Namespace</h2>
-    <pre><code class="language-python">def greet():
+  <h3>Local Scope</h3>
+  <p>
+    A <strong>Local</strong> scope is the innermost scope. It refers to names defined inside the current function. When Python executes a function, it creates a local namespace specific to that function.
+  </p>
+
+  <h3>Enclosing Scope</h3>
+  <p>
+    An <strong>Enclosing</strong> scope occurs when functions are nested. The enclosing function's variables can be accessed by the inner function unless shadowed or overridden.
+  </p>
+
+  <h3>Global Scope</h3>
+  <p>
+    The <strong>Global</strong> scope refers to names defined at the top level of a script or module. These names are accessible anywhere in the module unless overridden by a local name.
+  </p>
+
+  <h3>Built-in Scope</h3>
+  <p>
+    The <strong>Built-in</strong> scope is the outermost scope that contains names predefined by Python. These are always available, such as <code>print</code>, <code>type</code>, <code>int</code>, <code>len</code>, and more.
+  </p>
+
+  <h3>Example of LEGB Rule</h3>
+  <pre><code class="language-python">x = "global"
+
+def outer():
+    x = "enclosing"
+    
+    def inner():
+        x = "local"
+        print(x)
+
+    inner()
+
+outer()  # Output: local</code></pre>
+
+  <h3>If Local Is Not Defined</h3>
+  <pre><code class="language-python">x = "global"
+
+def outer():
+    x = "enclosing"
+    
+    def inner():
+        print(x)
+    
+    inner()
+
+outer()  # Output: enclosing</code></pre>
+
+  <h2>nonlocal Keyword</h2>
+  <p>
+    The <code>nonlocal</code> keyword is used to modify a variable in the enclosing (E) scope inside a nested function. It tells Python not to treat the variable as local.
+  </p>
+  <pre><code class="language-python">def outer():
+    message = "outer"
+
+    def inner():
+        nonlocal message
+        message = "modified"
+        print("Inner:", message)
+
+    inner()
+    print("Outer:", message)
+
+outer()</code></pre>
+
+  <h2>Variable Shadowing</h2>
+  <p>
+    Variable shadowing occurs when a variable in a local scope has the same name as a variable in an outer scope. The inner one hides the outer one.
+  </p>
+  <pre><code class="language-python">x = 5
+
+def func():
+    x = 10  # Shadows global x
+    print(x)
+
+func()       # Output: 10
+print(x)     # Output: 5</code></pre>
+
+  <h2>Using globals() and locals()</h2>
+  <p>Python provides built-in functions to inspect namespaces:</p>
+  <ul>
+    <li><code>globals()</code> returns a dictionary of the global namespace</li>
+    <li><code>locals()</code> returns a dictionary of the local namespace</li>
+  </ul>
+  <pre><code class="language-python">x = 42
+print(globals()['x'])  # Access x from global scope
+
+def demo():
+    y = 99
+    print(locals())     # Shows local variables
+
+demo()</code></pre>
+
+  <h2>Namespace Collisions and Best Practices</h2>
+  <ul>
+    <li>Avoid using names that clash with built-ins like <code>list</code>, <code>str</code>, <code>sum</code>.</li>
+    <li>Use descriptive variable names to improve clarity.</li>
+    <li>Use modules, classes, or prefixes to isolate similar names in different scopes.</li>
+  </ul>
+
+  <h2>Internal Implementation of Namespaces</h2>
+  <p>Under the hood, Python implements namespaces using dictionaries. You can access them via:</p>
+  <pre><code class="language-python">x = 10
+print(globals())  # Dictionary of all global symbols
+</code></pre>
+
+  <h2>Why Are Namespaces Important?</h2>
+  <ul>
+    <li>They avoid naming conflicts between identifiers.</li>
+    <li>They make code easier to read and maintain.</li>
+    <li>They support modularity by isolating scopes.</li>
+  </ul>
+
+  <h2>Example 1: Local Namespace</h2>
+  <pre><code class="language-python">def greet():
     name = "Alice"
     print("Hello", name)
 
 greet()</code></pre>
 
-    <h2>Example 2: Global Namespace</h2>
-    <pre><code class="language-python">language = "Python"
+  <h2>Example 2: Global Namespace</h2>
+  <pre><code class="language-python">language = "Python"
 
 def show():
     print("Programming in", language)
 
 show()</code></pre>
 
-    <h2>Example 3: Modifying Global Inside Function</h2>
-    <pre><code class="language-python">count = 10
+  <h2>Example 3: Modifying Global Inside Function</h2>
+  <pre><code class="language-python">count = 10
 
 def update():
     global count
@@ -55,11 +172,11 @@ def update():
 update()
 print(count)</code></pre>
 
-    <h2>Example 4: Built-in Namespace</h2>
-    <pre><code class="language-python">print(len("hello"))  # 'len' is from built-in namespace</code></pre>
+  <h2>Example 4: Built-in Namespace</h2>
+  <pre><code class="language-python">print(len("hello"))  # 'len' is from built-in namespace</code></pre>
 
-    <h2>Example 5: Nested Function (Enclosing Namespace)</h2>
-    <pre><code class="language-python">def outer():
+  <h2>Example 5: Nested Function (Enclosing Namespace)</h2>
+  <pre><code class="language-python">def outer():
     x = "outer value"
 
     def inner():
@@ -69,9 +186,70 @@ print(count)</code></pre>
 
 outer()</code></pre>
 
-    <p>In summary, understanding namespaces is crucial for writing clean and bug-free Python programs.</p>
 
-  </div>
+  <p>In summary, understanding namespaces, the LEGB rule, and related tools is essential for writing clean and bug-free Python programs.</p>
+
+<h2>Namespace Packages in Python (Explicit vs Implicit)</h2>
+
+<p>
+  In addition to runtime namespaces (Local, Enclosing, Global, Built-in), Python also has the concept of 
+  <strong>namespace packages</strong>, which relate to how modules and sub-packages are organized on disk.
+</p>
+
+<p>
+  A <strong>namespace package</strong> allows you to spread a single Python package across multiple directories or distributions. This is especially useful for large frameworks or plugin systems.
+</p>
+
+<h3>Explicit Namespace Package</h3>
+<p>
+  An <strong>explicit namespace package</strong> uses an <code>__init__.py</code> file to mark a directory as a Python package. This traditional method supports:
+</p>
+<ul>
+  <li>Code initialization inside <code>__init__.py</code></li>
+  <li>Relative imports</li>
+  <li>Bundling all submodules in one directory</li>
+</ul>
+
+<pre><code class="language-text">my_project/
+├── animals/
+│   ├── __init__.py
+│   └── dog.py
+</code></pre>
+
+<p>Here, <code>animals</code> is an explicit namespace package.</p>
+
+<h3>Implicit Namespace Package</h3>
+<p>
+  An <strong>implicit namespace package</strong> omits the <code>__init__.py</code> file. Introduced in Python 3.3+, it allows a package to exist across multiple folders without explicitly marking it.
+</p>
+
+<pre><code class="language-text">plugins_A/
+└── framework/
+    └── tools.py
+
+plugins_B/
+└── framework/
+    └── utils.py
+</code></pre>
+
+<p>
+  As long as both <code>plugins_A</code> and <code>plugins_B</code> are in <code>sys.path</code>, Python will treat <code>framework</code> as a namespace package, combining content from both directories.
+</p>
+
+<h3>How Is This Different from LEGB Namespaces?</h3>
+<ul>
+  <li><strong>LEGB</strong> defines how Python looks up variable names during execution (runtime scope resolution).</li>
+  <li><strong>Namespace packages</strong> define how Python locates and resolves modules across directories (import-time module resolution).</li>
+  <li>Both are related to names, but they work at different phases: <em>runtime vs import-time</em>.</li>
+</ul>
+
+<p>
+  So, while runtime namespaces map names to objects in memory, package namespaces organize modules and their availability in your file system.
+</p>
+
+
+</div>
+
 
   <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/prism.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-python.min.js"></script>  
