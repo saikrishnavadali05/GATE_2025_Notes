@@ -11,7 +11,7 @@
 
 <body>
   <header>
-    <h1>Namespaces in Python</h1>
+    <h1>LEGB Namespaces & Package Namespaces Differences</h1>
   </header>
 
   <div class="container">
@@ -36,31 +36,7 @@
   <li>Bundling all submodules in one directory</li>
 </ul>
 
-<pre><code class="language-text">my_project/
-├── animals/
-│   ├── __init__.py
-│   └── dog.py
-</code></pre>
-
-<p>Here, <code>animals</code> is an explicit namespace package.</p>
-
-<h3>Implicit Namespace Package</h3>
-<p>
-  An <strong>implicit namespace package</strong> omits the <code>__init__.py</code> file. Introduced in Python 3.3+, it allows a package to exist across multiple folders without explicitly marking it.
-</p>
-
-<pre><code class="language-text">plugins_A/
-└── framework/
-    └── tools.py
-
-plugins_B/
-└── framework/
-    └── utils.py
-</code></pre>
-
-<p>
-  As long as both <code>plugins_A</code> and <code>plugins_B</code> are in <code>sys.path</code>, Python will treat <code>framework</code> as a namespace package, combining content from both directories.
-</p>
+<p>please refer to the <a href="packagesinit.html">Understanding __init__ in Packages</a> for more details on implicit and explicit namespace packages.</p>
 
 <h3>How Is This Different from LEGB Namespaces?</h3>
 <ul>
