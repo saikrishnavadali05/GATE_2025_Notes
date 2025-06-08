@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Fixing ModuleNotFoundError in Python Packages</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/themes/prism.min.css" rel="stylesheet" />
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/prism.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-python.min.js"></script>
+  <style>
+    code {
+      font-family: 'Fira Code', monospace;
+    }
+  </style>
+</head>
+<body class="bg-gray-50 text-gray-900 font-sans p-8">
+
+  <div class="max-w-5xl mx-auto bg-white rounded-xl shadow-lg p-10 space-y-10">
+
+    <h1 class="text-4xl font-extrabold text-blue-700 mb-6">
+      📦 Fixing <code>ModuleNotFoundError</code> in Python Package Imports
+    </h1>
+
+    <!-- Section 1: Problem -->
+    <section>
+      <h2 class="text-3xl font-semibold text-gray-800 mb-4">❓ The Problem Explained</h2>
+      <p class="mb-3">
+        You have a Python package folder <code class="bg-gray-100 px-1 rounded">Demo_Project</code> with two files:
+      </p>
+      <ul class="list-disc list-inside mb-3">
+        <li><code class="bg-gray-100 px-1 rounded">from_keyword_demo.py</code></li>
+        <li><code class="bg-gray-100 px-1 rounded">math_functions.py</code></li>
+      </ul>
+      <p class="mb-3">
+        Inside <code class="bg-gray-100 px-1 rounded">from_keyword_demo.py</code>, you have this import line:
+      </p>
+      <pre class="rounded bg-gray-100 p-4 mb-3"><code class="language-python">from math_functions import addition</code></pre>
+      <p>
+        But when you run <code class="bg-gray-100 px-1 rounded">import Demo_Project.from_keyword_demo</code> in another script or interactive shell, you get this error:
+      </p>
+      <pre class="rounded bg-red-100 text-red-800 p-4 font-mono mb-4">ModuleNotFoundError: No module named 'math_functions'</pre>
+      <p class="text-gray-700">
+        This means Python cannot find <code>math_functions.py</code> as a top-level module outside your package.
+      </p>
+    </section>
+
+    <!-- Section 2: Root Cause -->
+    <section>
+      <h2 class="text-3xl font-semibold text-gray-800 mb-4">🎯 Root Cause: Understanding Python Import Behavior</h2>
+      <p class="mb-3">
+        When you write <code class="bg-gray-100 px-1 rounded">from math_functions import addition</code> inside <code>from_keyword_demo.py</code>, Python interprets <code>math_functions</code> as a <em>top-level</em> module.
+      </p>
+      <p class="mb-3">
+        But since <code>math_functions.py</code> is inside the <code>Demo_Project</code> folder (a package), Python doesn't find it in the global module search path.
+      </p>
+      <p class="mb-3">
+        <strong>Summary:</strong> Your import statement is not “package-aware” and should specify it is importing <em>within the same package</em>.
+      </p>
+    </section>
+
+    <!-- Section 3: Solution -->
+    <section>
+      <h2 class="text-3xl font-semibold text-gray-800 mb-4">✅ Solution: Correct Ways to Import Within a Package</h2>
+
+      <h3 class="text-xl font-semibold text-green-700 mb-2">1. Use Relative Imports (Recommended)</h3>
+      <p class="mb-3">
+        Prefix the module name with a dot <code class="bg-gray-100 px-1 rounded">.</code> to indicate it's relative to the current package:
+      </p>
+      <pre class="rounded bg-gray-100 p-4 mb-4"><code class="language-python">from .math_functions import addition</code></pre>
+      <p>
+        This tells Python: <em>look inside the current package folder for math_functions.py</em>.
+      </p>
+
+      <h3 class="text-xl font-semibold text-green-700 mb-2">2. Use Absolute Imports (Also Valid)</h3>
+      <p class="mb-3">
+        Explicitly import using the full package path from the project root:
+      </p>
+      <pre class="rounded bg-gray-100 p-4 mb-4"><code class="language-python">from Demo_Project.math_functions import addition</code></pre>
+      <p>
+        This approach requires your project folder (the one containing <code>Demo_Project</code>) to be on Python's <code>PYTHONPATH</code> or the current working directory.
+      </p>
+    </section>
+
+    <!-- Section 4: Directory Structure -->
+    <section>
+      <h2 class="text-3xl font-semibold text-gray-800 mb-4">📁 Correct Project Directory Structure</h2>
+      <p class="mb-3">
+        Your folder should look like this to behave as a proper package:
+      </p>
+      <pre class="rounded bg-gray-100 p-4 overflow-x-auto mb-3"><code>Demo_Project/
+├── __init__.py           # Makes Python treat this as a package
+├── from_keyword_demo.py  # Your script importing math_functions
+└── math_functions.py     # The module containing functions like addition</code></pre>
+      <p class="text-sm text-gray-600 italic">
+        Note: The <code>__init__.py</code> can be empty, but it is essential for Python versions before 3.3 to recognize folders as packages.
+      </p>
+    </section>
+
+    <!-- Section 5: Running Your Code -->
+    <section>
+      <h2 class="text-3xl font-semibold text-gray-800 mb-4">🚀 How to Run the Code Correctly</h2>
+      <p class="mb-3">
+        <strong>Don't run package modules directly using:</strong>
+      </p>
+      <pre class="rounded bg-red-100 text-red-700 p-4 mb-4"><code>python from_keyword_demo.py</code></pre>
+      <p class="mb-3">
+        Running like this treats <code>from_keyword_demo.py</code> as a standalone script and breaks relative imports.
+      </p>
+      <p class="mb-3">
+        <strong>Instead, run your module as part of the package with the <code>-m</code> switch from the folder above <code>Demo_Project</code>:</strong>
+      </p>
+      <pre class="rounded bg-green-100 text-green-800 p-4 mb-4"><code>python -m Demo_Project.from_keyword_demo</code></pre>
+      <p>
+        This runs the module with the correct package context so relative imports work perfectly.
+      </p>
+    </section>
+
+    <!-- Section 6: Summary Table -->
+    <section>
+      <h2 class="text-3xl font-semibold text-gray-800 mb-4">🧠 Summary & Best Practices</h2>
+      <div class="overflow-x-auto">
+        <table class="min-w-full border border-gray-300 text-left rounded">
+          <thead class="bg-blue-100">
+            <tr>
+              <th class="border px-6 py-3 font-medium">Concept</th>
+              <th class="border px-6 py-3 font-medium">Recommended Practice</th>
+              <th class="border px-6 py-3 font-medium">Notes</th>
+            </tr>
+          </thead>
+          <tbody class="bg-white">
+            <tr>
+              <td class="border px-6 py-3 align-top">In-package imports</td>
+              <td class="border px-6 py-3 align-top"><code>from .module import name</code> (relative) or <code>from package.module import name</code> (absolute)</td>
+              <td class="border px-6 py-3 align-top">Relative imports are easier to maintain when moving code inside packages.</td>
+            </tr>
+            <tr class="bg-gray-50">
+              <td class="border px-6 py-3 align-top">Execution method</td>
+              <td class="border px-6 py-3 align-top">Use <code>python -m package.module</code> from the parent directory of your package</td>
+              <td class="border px-6 py-3 align-top">Direct script runs break relative imports and cause module not found errors.</td>
+            </tr>
+            <tr>
+              <td class="border px-6 py-3 align-top">Package structure</td>
+              <td class="border px-6 py-3 align-top">Include <code>__init__.py</code> file in folders to mark packages</td>
+              <td class="border px-6 py-3 align-top">Essential for older Python versions and to avoid import issues.</td>
+            </tr>
+            <tr class="bg-gray-50">
+              <td class="border px-6 py-3 align-top">Common mistakes</td>
+              <td class="border px-6 py-3 align-top">Using top-level imports inside package modules without relative notation</td>
+              <td class="border px-6 py-3 align-top">Causes Python to look outside the package folder for modules.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- Section 7: Extra Help -->
+    <section>
+      <h2 class="text-3xl font-semibold text-gray-800 mb-4">🙋‍♂️ Need More Help?</h2>
+      <p class="mb-3">
+        If you want, I can provide:
+      </p>
+      <ul class="list-disc list-inside mb-4">
+        <li>A working zipped project with correct structure and imports</li>
+        <li>Step-by-step setup instructions for VS Code or other editors</li>
+        <li>Code snippets to run and test directly</li>
+      </ul>
+      <p>
+        Just ask!
+      </p>
+    </section>
+
+  </div>
+
+</body>
+</html>
