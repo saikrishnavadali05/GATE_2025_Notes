@@ -83,3 +83,13 @@ body {
   .panel a:hover {
     background-color: #388e3c; /* Darker green on hover */
   }
+
+  .new-badge {
+    background-color: #92585c;
+    color: white;
+    font-size: 0.7em;
+    padding: 2px 5px;
+    margin-left: 6px;
+    border-radius: 3px;
+    text-transform: uppercase;
+}

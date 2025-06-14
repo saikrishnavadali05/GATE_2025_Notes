@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Reading Files in Python</title>
+  <link href="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/themes/prism.css" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <header>
+    <h1>Appending to Files in Python</h1>
+  </header>
+  <div class="container">
+    <p>Appending to files is a common task in Python when you want to add content without overwriting existing data. Python provides an <code>'a'</code> mode in the <code>open()</code> function to simplify this process.</p>
+
+    <h2>Key Concepts</h2>
+    <ul>
+      <li><strong>Append Mode (<code>'a'</code>):</strong> Opens the file for writing; content is added at the end. Creates the file if it doesn't exist.</li>
+      <li><strong>Append and Read Mode (<code>'a+'</code>):</strong> Opens the file for both appending and reading.</li>
+      <li><strong>No Overwrite:</strong> Unlike write mode (<code>'w'</code>), append mode does not erase the existing content.</li>
+      <li><strong>File Pointer:</strong> In append mode, the file pointer is always at the end. Use <code>seek()</code> if reading is required before writing (in <code>'a+'</code> mode).</li>
+      <li><strong>Use Cases:</strong> Logging, journaling, storing user data, maintaining running outputs, etc.</li>
+    </ul>
+
+    <h2>10 Python Examples for Appending to Files</h2>
+
+    <h3>Example 1: Basic append using 'a' mode</h3>
+    <pre><code class="language-python">with open('log.txt', 'a') as file:
+    file.write('New log entry\\n')</code></pre>
+
+    <h3>Example 2: Appending multiple lines</h3>
+    <pre><code class="language-python">lines = ['Line 1\\n', 'Line 2\\n']
+with open('notes.txt', 'a') as file:
+    file.writelines(lines)</code></pre>
+
+    <h3>Example 3: Appending inside a loop</h3>
+    <pre><code class="language-python">with open('data.txt', 'a') as file:
+    for i in range(3):
+        file.write(f'Item {i}\\n')</code></pre>
+
+    <h3>Example 4: Appending user input</h3>
+    <pre><code class="language-python">text = input("Enter your note: ")
+with open('notes.txt', 'a') as file:
+    file.write(text + '\\n')</code></pre>
+
+    <h3>Example 5: Creating a file if it doesn't exist</h3>
+    <pre><code class="language-python">with open('newfile.txt', 'a') as file:
+    file.write('First line in a new file\\n')</code></pre>
+
+    <h3>Example 6: Using 'a+' to read and append</h3>
+    <pre><code class="language-python">with open('combined.txt', 'a+') as file:
+    file.seek(0)
+    print("Current content:\\n", file.read())
+    file.write('Appended after reading\\n')</code></pre>
+
+    <h3>Example 7: Append with a timestamp</h3>
+    <pre><code class="language-python">from datetime import datetime
+
+with open('timelog.txt', 'a') as file:
+    file.write(f"{datetime.now()}: Task done\\n")</code></pre>
+
+    <h3>Example 8: Append structured data (CSV-style)</h3>
+    <pre><code class="language-python">name, score = 'John', 95
+with open('scores.csv', 'a') as file:
+    file.write(f'{name},{score}\\n')</code></pre>
+
+    <h3>Example 9: Append error logs in exception handling</h3>
+    <pre><code class="language-python">try:
+    result = 10 / 0
+except ZeroDivisionError as e:
+    with open('errors.log', 'a') as file:
+        file.write(f"Error: {e}\\n")</code></pre>
+
+    <h3>Example 10: Append a blank line for separation</h3>
+    <pre><code class="language-python">with open('summary.txt', 'a') as file:
+    file.write('\\n')  # Adds a blank line</code></pre>
+
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/prism.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-python.min.js"></script>
+</body>
+</html>

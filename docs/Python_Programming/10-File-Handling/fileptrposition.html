@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Reading Files in Python</title>
+  <link href="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/themes/prism.css" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <header>
+    <h1>File Pointers and Positioning in Python</h1>
+  </header>
+  <div class="container">
+    <p>File pointers are crucial in file I/O operations as they indicate the current position in the file. Python provides built-in methods like <code>seek()</code> and <code>tell()</code> to control and monitor this position, enabling random access to file content.</p>
+
+    <h2>Key Concepts</h2>
+    <ul>
+      <li><strong>File Pointer:</strong> A marker that indicates the current position in the file during reading or writing.</li>
+      <li><strong><code>tell()</code>:</strong> Returns the current position of the file pointer.</li>
+      <li><strong><code>seek(offset, whence)</code>:</strong> Moves the file pointer to a specific byte position.
+        <ul>
+          <li><code>0</code>: from the beginning (default)</li>
+          <li><code>1</code>: from the current position</li>
+          <li><code>2</code>: from the end of the file</li>
+        </ul>
+      </li>
+      <li><strong>seek() in Text vs Binary:</strong> More accurate in binary mode since character encoding can cause byte shifts in text mode.</li>
+      <li><strong>Random Access:</strong> Use <code>seek()</code> to read or write at a specific byte location.</li>
+      <li><strong>Line Access:</strong> Although <code>seek()</code> works by bytes, specific lines can be reached by looping with counters or using <code>linecache</code>.</li>
+    </ul>
+
+    <h2>Examples: File Pointers and Positioning</h2>
+
+    <h3>Example 1: Get current file position</h3>
+    <pre><code class="language-python">with open('example.txt', 'r') as file:
+    print("Current position:", file.tell())
+    file.read(10)
+    print("Position after reading 10 chars:", file.tell())</code></pre>
+
+    <h3>Example 2: Move file pointer to a specific position</h3>
+    <pre><code class="language-python">with open('example.txt', 'r') as file:
+    file.seek(5)
+    print(file.read(10))  # Reads 10 characters from 6th character</code></pre>
+
+    <h3>Example 3: Move pointer relative to end (binary mode)</h3>
+    <pre><code class="language-python">with open('example.txt', 'rb') as file:
+    file.seek(-10, 2)
+    print(file.read())  # Last 10 bytes</code></pre>
+
+    <h3>Example 4: Rewind and reread</h3>
+    <pre><code class="language-python">with open('example.txt', 'r') as file:
+    print(file.read(5))
+    file.seek(0)
+    print(file.read(5))</code></pre>
+
+    <h3>Example 5: Random access read</h3>
+    <pre><code class="language-python">def read_from(file_path, start, length):
+    with open(file_path, 'r') as file:
+        file.seek(start)
+        return file.read(length)
+
+print(read_from('example.txt', 10, 15))</code></pre>
+
+    <h2>Going to a Specific Line in a File</h2>
+    <p>File pointers work in bytes, not lines. To go to a specific line (e.g., line 100), you generally need to iterate through lines. However, efficient techniques exist to avoid reading the entire file into memory.</p>
+
+    <h3>Example 6: Read a specific line by number</h3>
+    <pre><code class="language-python">def read_line(filepath, line_number):
+    with open(filepath, 'r') as file:
+        for current_line, line in enumerate(file, start=1):
+            if current_line == line_number:
+                return line.strip()
+    return None
+
+print(read_line('example.txt', 5))</code></pre>
+
+    <h3>Example 7: Using linecache for direct line access</h3>
+    <pre><code class="language-python">import linecache
+
+line = linecache.getline('example.txt', 10)
+print("Line 10:", line.strip())</code></pre>
+    <p><strong>Note:</strong> <code>linecache</code> caches file lines in memory and is best used for quick access to known line numbers, especially in larger files.</p>
+
+    <h3>Example 8: Skip to line using itertools</h3>
+    <pre><code class="language-python">from itertools import islice
+
+with open('example.txt', 'r') as file:
+    target_line = next(islice(file, 9, 10), None)  # 10th line (index 9)
+    print("Line 10:", target_line.strip())</code></pre>
+
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/prism.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-python.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Reading Files in Python</title>
+  <link href="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/themes/prism.css" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <header>
+    <h1>File Modes in Python</h1>
+  </header>
+  <div class="container">
+    <p>File modes in Python define how a file is opened — for reading, writing, appending, etc. Choosing the correct mode is essential for proper file handling and data safety.</p>
+
+    <h2>Common File Modes</h2>
+    <ul>
+      <li><code>'r'</code> - Read (default). Fails if file does not exist.</li>
+      <li><code>'w'</code> - Write. Creates new or overwrites existing file.</li>
+      <li><code>'a'</code> - Append. Adds to end of file. Creates if not found.</li>
+      <li><code>'r+'</code> - Read & write. File must exist.</li>
+      <li><code>'w+'</code> - Write & read. Overwrites file.</li>
+      <li><code>'a+'</code> - Append & read. File pointer at end.</li>
+      <li><code>'b'</code> - Binary mode (add to other modes, e.g., <code>'rb'</code>).</li>
+      <li><code>'x'</code> - Exclusive creation. Fails if file exists.</li>
+    </ul>
+
+    <h2>10 Python Examples for File Modes</h2>
+
+    <h3>Example 1: Reading a file ('r')</h3>
+    <pre><code class="language-python">with open('sample.txt', 'r') as file:
+    print(file.read())</code></pre>
+
+    <h3>Example 2: Writing to a file ('w')</h3>
+    <pre><code class="language-python">with open('output.txt', 'w') as file:
+    file.write('Overwriting content\\n')</code></pre>
+
+    <h3>Example 3: Appending to a file ('a')</h3>
+    <pre><code class="language-python">with open('log.txt', 'a') as file:
+    file.write('Appended line\\n')</code></pre>
+
+    <h3>Example 4: Read & write ('r+')</h3>
+    <pre><code class="language-python">with open('sample.txt', 'r+') as file:
+    content = file.read()
+    file.seek(0)
+    file.write('Updated content\\n')</code></pre>
+
+    <h3>Example 5: Write & read ('w+')</h3>
+    <pre><code class="language-python">with open('data.txt', 'w+') as file:
+    file.write('New Data\\n')
+    file.seek(0)
+    print(file.read())</code></pre>
+
+    <h3>Example 6: Append & read ('a+')</h3>
+    <pre><code class="language-python">with open('data.txt', 'a+') as file:
+    file.write('More data\\n')
+    file.seek(0)
+    print(file.read())</code></pre>
+
+    <h3>Example 7: Reading binary data ('rb')</h3>
+    <pre><code class="language-python">with open('image.jpg', 'rb') as file:
+    data = file.read()
+    print(f'{len(data)} bytes read')</code></pre>
+
+    <h3>Example 8: Writing binary data ('wb')</h3>
+    <pre><code class="language-python">binary_data = b'\\x41\\x42\\x43'
+with open('binary.bin', 'wb') as file:
+    file.write(binary_data)</code></pre>
+
+    <h3>Example 9: Creating file exclusively ('x')</h3>
+    <pre><code class="language-python">try:
+    with open('unique.txt', 'x') as file:
+        file.write('This file is created exclusively')
+except FileExistsError:
+    print("File already exists!")</code></pre>
+
+    <h3>Example 10: Invalid mode handling</h3>
+    <pre><code class="language-python">try:
+    with open('data.txt', 'z') as file:
+        pass
+except ValueError as e:
+    print("Invalid mode:", e)</code></pre>
+
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/prism.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-python.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Reading Files in Python</title>
+  <link href="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/themes/prism.css" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <header>
+    <h1>File Types in Python</h1>
+  </header>
+  <div class="container">
+    <p>Python can work with various file types, from plain text to complex binary formats. Understanding file types helps you choose the right file mode and libraries for processing them efficiently.</p>
+
+    <h2>Common File Types</h2>
+    <ul>
+      <li><strong>Text Files (.txt, .csv, .log):</strong> Human-readable. Use text modes like <code>'r'</code>, <code>'w'</code>, or <code>'a'</code>.</li>
+      <li><strong>Binary Files (.jpg, .exe, .mp3):</strong> Raw bytes. Use binary modes like <code>'rb'</code> or <code>'wb'</code>.</li>
+      <li><strong>CSV Files (.csv):</strong> Comma-separated values, ideal for tabular data. Use the <code>csv</code> module.</li>
+      <li><strong>JSON Files (.json):</strong> Structured data in key-value format. Use the <code>json</code> module.</li>
+      <li><strong>Log Files (.log):</strong> Used for tracking application logs.</li>
+      <li><strong>Config Files (.ini, .yaml, .toml):</strong> Store application settings. Use relevant modules like <code>configparser</code> or <code>pyyaml</code>.</li>
+      <li><strong>Image Files (.png, .jpg):</strong> Use libraries like <code>Pillow</code> or open in binary mode.</li>
+      <li><strong>PDF and Word (.pdf, .docx):</strong> Require specialized libraries such as <code>PyPDF2</code> or <code>python-docx</code>.</li>
+    </ul>
+
+    <h2>10 Python Examples for Working with Different File Types</h2>
+
+    <h3>Example 1: Reading a text file</h3>
+    <pre><code class="language-python">with open('notes.txt', 'r') as file:
+    print(file.read())</code></pre>
+
+    <h3>Example 2: Writing to a CSV file</h3>
+    <pre><code class="language-python">import csv
+
+with open('data.csv', 'w', newline='') as file:
+    writer = csv.writer(file)
+    writer.writerow(['Name', 'Score'])
+    writer.writerow(['John', 90])</code></pre>
+
+    <h3>Example 3: Reading a JSON file</h3>
+    <pre><code class="language-python">import json
+
+with open('config.json', 'r') as file:
+    data = json.load(file)
+    print(data['username'])</code></pre>
+
+    <h3>Example 4: Writing JSON to a file</h3>
+    <pre><code class="language-python">import json
+
+data = {'username': 'sai', 'score': 100}
+with open('output.json', 'w') as file:
+    json.dump(data, file)</code></pre>
+
+    <h3>Example 5: Reading a binary file</h3>
+    <pre><code class="language-python">with open('photo.jpg', 'rb') as file:
+    data = file.read()
+    print(len(data), "bytes read")</code></pre>
+
+    <h3>Example 6: Appending to a log file</h3>
+    <pre><code class="language-python">with open('app.log', 'a') as file:
+    file.write('New entry added\\n')</code></pre>
+
+    <h3>Example 7: Reading a config (.ini) file</h3>
+    <pre><code class="language-python">import configparser
+
+config = configparser.ConfigParser()
+config.read('settings.ini')
+print(config['DEFAULT']['theme'])</code></pre>
+
+    <h3>Example 8: Reading an image using Pillow</h3>
+    <pre><code class="language-python">from PIL import Image
+
+img = Image.open('image.png')
+print(img.format, img.size)</code></pre>
+
+    <h3>Example 9: Extracting text from a PDF</h3>
+    <pre><code class="language-python">import PyPDF2
+
+with open('doc.pdf', 'rb') as file:
+    reader = PyPDF2.PdfReader(file)
+    print(reader.pages[0].extract_text())</code></pre>
+
+    <h3>Example 10: Reading a Word (.docx) file</h3>
+    <pre><code class="language-python">from docx import Document
+
+doc = Document('file.docx')
+for para in doc.paragraphs:
+    print(para.text)</code></pre>
+
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/prism.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-python.min.js"></script>
+</body>
+
+</html>

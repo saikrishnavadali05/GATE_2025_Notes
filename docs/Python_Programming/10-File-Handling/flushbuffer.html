@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Reading Files in Python</title>
+  <link href="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/themes/prism.css" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <header>
+    <h1>Buffering and Flushing in Python</h1>
+  </header>
+  <div class="container">
+    <p>When working with files in Python, data is often not written directly to disk immediately. Instead, it is temporarily stored in a <strong>buffer</strong>. This improves performance, especially for large I/O operations. Understanding <strong>buffering</strong> and how to <strong>flush</strong> data manually is crucial for reliability in file handling.</p>
+
+    <h2>Key Concepts</h2>
+    <ul>
+      <li><strong>Buffering:</strong> Temporary storage area for data before it’s written to disk.</li>
+      <li><strong>flush():</strong> Forces the buffer to write its contents to the file immediately.</li>
+      <li><strong>When buffers flush:</strong>
+        <ul>
+          <li>When the buffer is full</li>
+          <li>When the file is closed</li>
+          <li>When <code>flush()</code> is called</li>
+        </ul>
+      </li>
+      <li><strong>Buffered vs Unbuffered:</strong> Use <code>buffering=0</code> for unbuffered, <code>1</code> for line-buffered, or specify an integer buffer size.</li>
+    </ul>
+
+    <h2>10 Python Examples for Buffering and Flushing</h2>
+
+    <h3>Example 1: Writing with default buffering</h3>
+    <pre><code class="language-python">with open('log.txt', 'w') as f:
+    f.write('Log started\\n')
+    # Automatically buffered, flushes on close</code></pre>
+
+    <h3>Example 2: Forcing flush manually</h3>
+    <pre><code class="language-python">with open('log.txt', 'w') as f:
+    f.write('Important data\\n')
+    f.flush()  # forces immediate write</code></pre>
+
+    <h3>Example 3: Writing with no buffering (buffering=0)</h3>
+    <pre><code class="language-python"># Binary mode required for buffering=0
+with open('data.bin', 'wb', buffering=0) as f:
+    f.write(b'hello')</code></pre>
+
+    <h3>Example 4: Line buffered writing (buffering=1)</h3>
+    <pre><code class="language-python">with open('data.txt', 'w', buffering=1) as f:
+    f.write("line1\\n")  # Flushes on newline</code></pre>
+
+    <h3>Example 5: Writing with a custom buffer size</h3>
+    <pre><code class="language-python">with open('buffered.txt', 'w', buffering=8192) as f:
+    f.write('Buffered write with 8KB buffer')</code></pre>
+
+    <h3>Example 6: When flush() is needed in long-running programs</h3>
+    <pre><code class="language-python">import time
+
+with open('progress.log', 'w') as f:
+    for i in range(5):
+        f.write(f"Step {i}\\n")
+        f.flush()  # ensures each step is written immediately
+        time.sleep(1)</code></pre>
+
+    <h3>Example 7: Using flush() with sys.stdout</h3>
+    <pre><code class="language-python">import sys
+import time
+
+for i in range(3):
+    print(f"Progress {i}", end=' ', flush=True)
+    time.sleep(1)</code></pre>
+
+    <h3>Example 8: Writing and checking data before file close</h3>
+    <pre><code class="language-python">with open('temp.txt', 'w') as f:
+    f.write('Not flushed yet')
+    f.flush()  # ensures data is on disk now</code></pre>
+
+    <h3>Example 9: Using try-finally to ensure flush</h3>
+    <pre><code class="language-python">f = open('output.txt', 'w')
+try:
+    f.write('Critical log entry\\n')
+    f.flush()
+finally:
+    f.close()</code></pre>
+
+    <h3>Example 10: Comparing buffered vs unbuffered timing</h3>
+    <pre><code class="language-python">import time
+
+start = time.time()
+with open('big.txt', 'w', buffering=1024) as f:
+    for _ in range(10000):
+        f.write('x' * 100 + '\\n')
+print("Buffered:", time.time() - start, "sec")</code></pre>
+
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/prism.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-python.min.js"></script>
+</body>
+
+</html>
