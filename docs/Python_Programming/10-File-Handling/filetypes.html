@@ -26,9 +26,11 @@
       <li><strong>Config Files (.ini, .yaml, .toml):</strong> Store application settings. Use relevant modules like <code>configparser</code> or <code>pyyaml</code>.</li>
       <li><strong>Image Files (.png, .jpg):</strong> Use libraries like <code>Pillow</code> or open in binary mode.</li>
       <li><strong>PDF and Word (.pdf, .docx):</strong> Require specialized libraries such as <code>PyPDF2</code> or <code>python-docx</code>.</li>
+      <li><strong>Excel Files (.xlsx, .xls):</strong> Use <code>openpyxl</code> or <code>pandas</code> to read and write.</li>
+      <li><strong>HTML Files (.html):</strong> Use <code>BeautifulSoup</code> from <code>bs4</code> to parse HTML content.</li>
     </ul>
 
-    <h2>10 Python Examples for Working with Different File Types</h2>
+    <h2>12 Python Examples for Working with Different File Types</h2>
 
     <h3>Example 1: Reading a text file</h3>
     <pre><code class="language-python">with open('notes.txt', 'r') as file:
@@ -91,6 +93,19 @@ with open('doc.pdf', 'rb') as file:
 doc = Document('file.docx')
 for para in doc.paragraphs:
     print(para.text)</code></pre>
+
+    <h3>Example 11: Reading an Excel file</h3>
+    <pre><code class="language-python">import pandas as pd
+
+df = pd.read_excel('data.xlsx')
+print(df.head())</code></pre>
+
+    <h3>Example 12: Parsing an HTML file</h3>
+    <pre><code class="language-python">from bs4 import BeautifulSoup
+
+with open('example.html', 'r') as file:
+    soup = BeautifulSoup(file, 'html.parser')
+    print(soup.title.string)</code></pre>
 
   </div>
 
